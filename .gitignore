@@ -1,0 +1,17 @@
+# Dipendenze e build
+node_modules/
+dist/
+
+# Il manuale non è pubblicato: i docx e il testo estratto non vanno nel repository
+manuali/
+*.docx
+.cache/
+
+# Emulatore: personaggi salvati su disco (personaggi delle partite, non del repository)
+strumenti/emulatore/salvataggi/
+
+# Varie
+*.log
+*.tsbuildinfo
+.env
+.env.*

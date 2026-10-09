@@ -1,0 +1,22 @@
+{#- Pagina provvisoria, finché il disegno della scheda non è deciso: mostra che i dati di dati/ arrivano ai
+    template. Nessun campo attr_: i nomi degli attributi si scelgono con il disegno. -#}
+<header class="intestazione">
+  <h1 data-i18n="sheet.title"></h1>
+  <p data-i18n="sheet.under_construction"></p>
+</header>
+
+<section class="riepilogo">
+  <h2 data-i18n="sheet.archetypes"></h2>
+  <ul>
+    {% for a in dati.archetipi %}
+    <li>{$ a.nome $} <span class="colore colore-{$ a.colore $}">{$ a.colore $}</span></li>
+    {% endfor %}
+  </ul>
+
+  <h2 data-i18n="sheet.careers"></h2>
+  <ul>
+    {% for c in dati.carriere %}
+    <li>{$ c.nome $}</li>
+    {% endfor %}
+  </ul>
+</section>

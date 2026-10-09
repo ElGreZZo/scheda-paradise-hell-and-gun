@@ -1,0 +1,50 @@
+{
+  "$schema": "../schemi/distanze.schema.json",
+  "fonte": {
+    "manuale": "Pad 1.5",
+    "capitolo": "2 - Regole base"
+  },
+  "generato_da": "strumenti/estrai_dati.mjs",
+  "voci": [
+    {
+      "valore": 0,
+      "nome": "Ravvicinata",
+      "testo": "Distanza 0 (Ravvicinata) è la distanza tra due personaggi che si stanno abbracciando (o facendo lotta greco romana)."
+    },
+    {
+      "valore": 1,
+      "nome": "Contatto",
+      "testo": "Distanza 1 (Contatto) è la distanza sufficiente per poter derubare o colpire il proprio avversario in mischia, che si tratti di pugni, cornate, alate o coltellate."
+    },
+    {
+      "valore": 2,
+      "nome": "Vicino",
+      "testo": "Distanza 2 (Vicino) è la distanza di una stanza o una casa intera (dai 3 ai 10 metri). Un personaggio può percorrere questa distanza con una sola azione, riuscendo di fatto ad attraversare una casa, una strada oppure portarsi a distanza ravvicinata o contatto con qualcuno."
+    },
+    {
+      "valore": 3,
+      "nome": "Distante",
+      "testo": "Distanza 3 (Distante) è la distanza di un grosso spiazzale o di una struttura particolarmente grande ( dai 10 ai 40 metri). Normalmente un personaggio può percorrere questa distanza con due azioni di movimento, ovvero muovendosi per due turni di fila o attraverso le opportunità."
+    },
+    {
+      "valore": 4,
+      "nome": "Molto distante",
+      "testo": "Distanza 4 (Molto distante) è la distanza necessaria per attraversare un piccolo villaggio o un grande lago (dai 40 ai 100 metri). Tale distanza può attraversare in quattro turni circa, anche meno grazie alle opportunità di movimento. Per motivi pratici un narratore li può separare in due distanze da 3 (vedi distanza 3)."
+    },
+    {
+      "valore": 5,
+      "nome": "Lontano",
+      "testo": "Distanza 5 (Lontano) è una grossa città o una vallata ( dai 100 ai 2000 metri). In assenza di un cavallo, non ha senso considerare il numero di azioni necessarie per superare questa distanza."
+    },
+    {
+      "valore": 6,
+      "nome": "Molto lontano",
+      "testo": "Distanza 6 (Molto lontano) un viaggio di circa un giorno o più (superiore ai 30 km)."
+    },
+    {
+      "valore": 7,
+      "nome": "Molto molto lontano",
+      "testo": "Distanza 7 (Molto molto lontano) un vero e proprio viaggio di due o più giorni, spesso la distanza tra un villaggio e l'altro."
+    }
+  ]
+}

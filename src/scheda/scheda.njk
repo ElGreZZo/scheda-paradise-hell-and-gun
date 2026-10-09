@@ -1,0 +1,14 @@
+{#- Punto di partenza dell'HTML: lo scheletro della scheda. La build (strumenti/build.mjs) lo trasforma
+    in dist/scheda.html: include le parti di pagine/ e mette lo script di src/worker/ dentro
+    <script type="text/worker">. I percorsi di include partono da questa cartella (src/scheda/).
+    Delimitatori di Nunjucks cambiati (le graffe doppie sono di Roll20): vedi l'intestazione di build.mjs.
+    In pagine/: una parte per pagina o pannello, rolltemplate/ per i messaggi in chat. -#}
+<!-- Scheda del personaggio di Paradise, Hell and Guns per Roll20, generata da src/scheda/ (non modificare dist/). -->
+
+<div class="scheda">
+  {% include "pagine/in-costruzione.njk" %}
+</div>
+
+<script type="text/worker">
+{$ worker $}
+</script>

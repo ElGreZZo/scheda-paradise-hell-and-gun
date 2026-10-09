@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scheda di Paradise, Hell and Guns · emulatore Roll20</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="emulatore.css">
+</head>
+<body>
+  <p style="padding:16px">Caricamento della scheda… Se resta così, apri la pagina da un server (npm start) e non come file.</p>
+  <script type="module">
+    import { avviaEmulatore } from "./emulatore.js";
+
+    // Legge la scheda generata in dist/ (npm run build, oppure npm run dev che ricompila a ogni modifica).
+    avviaEmulatore({
+      id: "pheg-sviluppo",
+      titolo: "Scheda di Paradise, Hell and Guns (sviluppo)",
+      cartella: "../../dist/",
+      schedaCompleta: "scheda.html",
+      css: "scheda.css",
+      traduzioni: "translation.json",
+      personaggi: [{ id: "vuoto", etichetta: "Nuovo personaggio" }],
+    }).catch((e) => {
+      document.body.innerHTML = `<pre style="padding:16px;color:#b31515;white-space:pre-wrap">${e.stack || e}</pre>`;
+    });
+  </script>
+</body>
+</html>

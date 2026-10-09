@@ -1,0 +1,24 @@
+/* Base della scheda: Roll20 mette il CSS della scheda dopo il suo, quindi i selettori partono da .scheda. */
+.scheda {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #2b2118;
+  background: #f4ead8;
+  padding: 16px;
+}
+
+.scheda h1 {
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+
+.scheda h2 {
+  margin: 16px 0 4px;
+  font-size: 16px;
+}
+
+.scheda .colore {
+  font-size: 12px;
+  padding: 0 6px;
+  border-radius: 8px;
+  border: 1px solid currentColor;
+}

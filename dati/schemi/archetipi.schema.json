@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Archetipi di immortali",
+  "$ref": "comune.schema.json#/$defs/file",
+  "unevaluatedProperties": false,
+  "properties": {
+    "voci": {
+      "items": {
+        "$ref": "#/$defs/voce"
+      }
+    }
+  },
+  "$defs": {
+    "voce": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "nome",
+        "colore",
+        "descrizione",
+        "incrementi",
+        "poteri_innati",
+        "poteri_affini",
+        "natura"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "comune.schema.json#/$defs/id"
+        },
+        "nome": {
+          "$ref": "comune.schema.json#/$defs/testo"
+        },
+        "colore": {
+          "$ref": "comune.schema.json#/$defs/colore"
+        },
+        "descrizione": {
+          "$ref": "comune.schema.json#/$defs/testi"
+        },
+        "incrementi": {
+          "description": "Incrementi di caratteristica (Inc), segnati a parte dalle caratteristiche.",
+          "type": "object",
+          "propertyNames": {
+            "$ref": "comune.schema.json#/$defs/caratteristica"
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "poteri_innati": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "potere",
+              "livello"
+            ],
+            "properties": {
+              "potere": {
+                "$ref": "comune.schema.json#/$defs/id"
+              },
+              "livello": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        },
+        "poteri_affini": {
+          "$ref": "comune.schema.json#/$defs/ids"
+        },
+        "natura": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "nome",
+              "testo"
+            ],
+            "properties": {
+              "nome": {
+                "$ref": "comune.schema.json#/$defs/testo"
+              },
+              "testo": {
+                "$ref": "comune.schema.json#/$defs/testi"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

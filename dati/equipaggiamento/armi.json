@@ -1,0 +1,242 @@
+{
+  "$schema": "../schemi/armi.schema.json",
+  "fonte": {
+    "manuale": "Pad 1.5",
+    "capitolo": "11 - Armi ed oggettistica"
+  },
+  "generato_da": "strumenti/estrai_dati.mjs",
+  "voci": [
+    {
+      "id": "pugni_e_calci",
+      "nome": "Pugni e calci",
+      "abilita": "mischia",
+      "descrizione": [
+        "Normale attacco dato con pugni e calci, poco efficace, ma in assenza di altro."
+      ],
+      "danno": 1,
+      "distanza": 0,
+      "distruttivita": 0,
+      "statistiche": "Danno:1. Distanza: 0. Distruttività: ○.",
+      "note": [
+        "I danni fatti con quest'arma infliggono danni non letali."
+      ]
+    },
+    {
+      "id": "armi_improvvisate",
+      "nome": "Armi improvvisate",
+      "abilita": "mischia",
+      "descrizione": [
+        "Un attacco fatto usando un qualche arma improvvisata trovata nei paraggi, come uno sgabello, una pentola ecc."
+      ],
+      "danno": 2,
+      "distanza": 0,
+      "distruttivita": 1,
+      "statistiche": "Danno:2. Distanza: 0. Distruttività: ●.",
+      "note": [
+        "Questi oggetti non sono fatti per un combattimento, quindi si distruggono immediatamente dopo il danno. Utilizzabile solo una volta per combattimento."
+      ]
+    },
+    {
+      "id": "coltello",
+      "nome": "Coltello",
+      "abilita": "mischia",
+      "descrizione": [],
+      "danno": 1,
+      "distanza": 1,
+      "distruttivita": 0,
+      "statistiche": "Danno:1. Distanza: 1.Distruttività: ○.",
+      "note": [
+        "In caso di necessità quest’arma può essere lanciata a distanza 2.",
+        "Gli esuberi possono essere investiti nel seguente modo oltre che la lista comune:"
+      ],
+      "opportunita": [
+        {
+          "nome": "Nascondere",
+          "esuberi": 1,
+          "testo": "Dopo aver inflitto i danni, l’arma viene nascosta sotto gli indumenti o nel fodero."
+        }
+      ]
+    },
+    {
+      "id": "arma_da_mischia",
+      "nome": "Arma da mischia",
+      "abilita": "mischia",
+      "descrizione": [
+        "Generica arma da mischia ad una mano, come una spada, un’ascia ecc."
+      ],
+      "danno": 2,
+      "distanza": 1,
+      "distruttivita": 1,
+      "statistiche": "Danno:2. Distanza: 1.Distruttività: ●.",
+      "note": [
+        "Con quest'arma ottiene un esubero in più per le azioni di difesa."
+      ]
+    },
+    {
+      "id": "coppia_di_armi_da_mischia",
+      "nome": "Coppia di armi da mischia",
+      "abilita": "mischia",
+      "descrizione": [
+        "Una coppia di spade, asce o altre armi da mischia."
+      ],
+      "danno": 3,
+      "distanza": 1,
+      "distruttivita": 1,
+      "statistiche": "Danno:3. Distanza: 1.Distruttività: ●.",
+      "note": [
+        "Con quest'arma ottiene un esubero in più per le azioni di difesa e può essere fatto per ben due volte."
+      ]
+    },
+    {
+      "id": "armi_ad_asta",
+      "nome": "Armi ad asta",
+      "abilita": "mischia",
+      "descrizione": [
+        "Si intende per arma ad asta tutte quelle armi che hanno un impugnatura lunga e che gli consente di colpire bersagli più distanti."
+      ],
+      "danno": 2,
+      "distanza": 1,
+      "distruttivita": 1,
+      "statistiche": "Danno: 2. Distanza: 1. Distruttività: ●",
+      "note": [
+        "Le armi ad asta sono armi che possono effettuare una reazione contro una carica.",
+        "L’opportunità contrattacco (vedi difesa) costa 2 al posto di 3."
+      ]
+    },
+    {
+      "id": "armi_da_mischia_grandi",
+      "nome": "Armi da mischia grandi",
+      "abilita": "mischia",
+      "descrizione": [
+        "Queste armi sono tutte quelle armi così grosse da dover essere usate con entrambe le mani, come scuri per tagliare la legna o degli anacronistici spadoni."
+      ],
+      "danno": 3,
+      "distanza": 1,
+      "distruttivita": 2,
+      "statistiche": "Danno: 3. Distanza: 1. Distruttività: ●●",
+      "note": [
+        "L’opportunità Distruttività (vedi mischia) un esubero in meno."
+      ]
+    },
+    {
+      "id": "lazzo",
+      "nome": "Lazzo",
+      "abilita": "mira",
+      "descrizione": [],
+      "danno": 0,
+      "distanza": 2,
+      "distruttivita": 0,
+      "statistiche": "Danno: 0. Distanza: 2. Distruttività: ○.",
+      "note": [
+        "Quest’arma da lancio non causa danni, ma ha i seguenti effetti su bersagli umanoidi o grossi come manzi/equini.",
+        "Per ogni successo oltre i primi 3 può essere investito nel seguente modo."
+      ],
+      "opportunita": [
+        {
+          "nome": "Legare",
+          "esuberi": 1,
+          "testo": "Se il bersaglio si trova a distanza 1, l'attaccante e il bersaglio fanno un tiro contrapposto di possanza, se l’attaccante ottiene almeno un successo, il bersaglio è legato."
+        },
+        {
+          "nome": "Tirare",
+          "esuberi": 2,
+          "testo": "L’attaccante e il bersaglio effettuano un tiro contrapposto di possanza, se l’attaccante ha almeno un successo, il bersaglio si trova a distanza 1."
+        }
+      ],
+      "tabella": [
+        [
+          "1 successo",
+          "2 successi",
+          "3 successi"
+        ],
+        [
+          "Il bersaglio viene colpito ma il lazzo non causa alcun effetto.",
+          "Il bersaglio viene colpito, è intralciato e ottiene svantaggio fino alla fine del suo prossimo turno (o se viene liberato prima dai compagni)",
+          "Il bersaglio viene colpito e legato, immobilizzandolo  e ottiene svantaggio fino a quando non viene compiuta un'azione per liberarsi."
+        ]
+      ]
+    },
+    {
+      "id": "pistola",
+      "nome": "Pistola",
+      "abilita": "mira",
+      "descrizione": [
+        "Il simbolo del selvaggio west e della bandiera a stelle strisce. Esistono numerosissimi modelli con diverse qualità, ma in mano ad un immortale le loro differenza diventano minime."
+      ],
+      "danno": 1,
+      "distanza": 3,
+      "munizioni": 1,
+      "distruttivita": 1,
+      "statistiche": "Danno: 1. Distanza: 3. Munizioni: ● Distruttività: ●",
+      "note": [
+        "In caso colpisce bersagli a distanza 2 aggiunge più 1 ai danni. Con quest'arma usare l’opportunità danno extra costa un esubero in meno."
+      ]
+    },
+    {
+      "id": "coppia_di_pistole",
+      "nome": "Coppia di pistole",
+      "abilita": "mira",
+      "descrizione": [
+        "Molti pistoleri vanno in giro con una coppia di pistole nel cinturone, ma sono davvero in grado di usarle con la dovuta bravura."
+      ],
+      "danno": 2,
+      "distanza": 3,
+      "munizioni": 2,
+      "distruttivita": 1,
+      "statistiche": "Danno: 2. Distanza: 3. Munizioni: ●● Distruttività: ●",
+      "note": [
+        "Un personaggio che ha due pistole, può decidere di usarle con il seguente profilo.",
+        "In caso colpisce bersagli a distanza 2 aggiunge più 1 ai danni. Con quest'arma usare l’opportunità danno extra costa un esubero in meno e può essere fatto per ben due volte.",
+        "Se si spara ad un bersaglio che non sia una squadra di sgherri, il personaggio ha svantaggio ad attaccare."
+      ]
+    },
+    {
+      "id": "arco",
+      "nome": "Arco",
+      "abilita": "mira",
+      "descrizione": [
+        "Gli archi vengono considerate armi per selvaggi ed obsolete, oltre ai nativi americani, ben pochi ne apprezzano le capacità di infliggere silenziosamente danni a distanza."
+      ],
+      "danno": 2,
+      "distanza": 3,
+      "munizioni": 1,
+      "distruttivita": 1,
+      "statistiche": "Danno: 2. Distanza:3. Munizioni: ● Distruttività: ●",
+      "note": [
+        "Il personaggio può impiegare un intero turno a tendere l’arco, se lo fa, nel seguente turno guadagna +1 al danno e la distanza aumenta a 4. ."
+      ]
+    },
+    {
+      "id": "carabina",
+      "nome": "Carabina",
+      "abilita": "mira",
+      "descrizione": [
+        "Fucili dotati di una buona gittata e adatti per la caccia ….. all’uomo. Il suo sofisticato meccanismo a leva consente di inserire nuovi proiettili di calibro considerevole nella canna, a discapito della cadenza di fuoco."
+      ],
+      "danno": 2,
+      "distanza": 4,
+      "munizioni": 2,
+      "distruttivita": 2,
+      "statistiche": "Danno: 2. Distanza:4. Munizioni: ●● Distruttività: ●●",
+      "note": [
+        "In caso colpisce bersagli a distanza 3 o meno aggiunge più 1 ai danni. Richiede due mani per essere usato."
+      ]
+    },
+    {
+      "id": "fucile_a_pallettoni",
+      "nome": "Fucile a pallettoni",
+      "abilita": "mira",
+      "descrizione": [
+        "Che si tratti di doppiette o fucili con meccanismo a pompa, queste formidabili armi usano cartucce che sparano tante piccole sfere di piombo che saturano l’aria mentre viaggiano verso il bersaglio causando ferite devastanti."
+      ],
+      "danno": 3,
+      "distanza": 3,
+      "munizioni": 3,
+      "distruttivita": 3,
+      "statistiche": "Danno: 3. Distanza: 3. Munizioni: ●●● Distruttività: ●●●",
+      "note": [
+        "In caso colpisce bersagli a distanza 2 o meno aggiunge più 1 ai danni. Per scaricare quest’arma è sufficiente ottenere un solo 1 di dado nella pool di dadi. Richiede due armi per essere usato."
+      ]
+    }
+  ]
+}

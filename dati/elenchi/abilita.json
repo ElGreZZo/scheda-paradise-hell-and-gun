@@ -1,0 +1,870 @@
+{
+  "$schema": "../schemi/abilita.schema.json",
+  "fonte": {
+    "manuale": "Pad 1.5",
+    "capitolo": "3 - Azioni e abilità; 4 - Combattimento"
+  },
+  "generato_da": "strumenti/estrai_dati.mjs",
+  "voci": [
+    {
+      "id": "atletica",
+      "nome": "Atletica",
+      "tipo": "comune",
+      "caratteristiche": [
+        "possanza"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per tutti i tiri per saltare, spostare oggetti pesanti, buttare giù una porta e simili. Normalmente associata alla possanza."
+      ],
+      "opportunita": [
+        {
+          "nome": "Muoversi",
+          "esuberi": 1,
+          "testo": "Il personaggio si può muovere in aggiunta all’azione."
+        },
+        {
+          "nome": "Rompere oggetto",
+          "esuberi": 2,
+          "testo": "Il personaggio rompe l'oggetto che sta spostando o buttando giù, compromettendone il funzionamento finché non viene riparato."
+        }
+      ]
+    },
+    {
+      "id": "carpenteria",
+      "nome": "Carpenteria",
+      "tipo": "comune",
+      "caratteristiche": [
+        "astuzia"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per costruire, demolire o riparare strutture, staccionate, valutare status di una miniera, carrozze o barche. Normalmente associato con astuzia."
+      ],
+      "opportunita": [
+        {
+          "nome": "Compromissione",
+          "esuberi": 1,
+          "testo": "Il personaggio effettua la costruzione o riparazione nascondendo un punto debole, come parti non ben inchiodate o assi mancanti, così da far sembrare il prodotto completo e sicuro quando invece è facilmente distruggibile."
+        },
+        {
+          "nome": "Robusto",
+          "esuberi": 2,
+          "testo": "Il prodotto finito è così robusto che riduce di un ● la distruttività del primo danno che riceve."
+        },
+        {
+          "nome": "Effetto magico",
+          "esuberi": 3,
+          "testo": "Se il personaggio ha a disposizione materiali, riesce ad aggiungere un effetto magico a ciò che costruisce."
+        },
+        {
+          "nome": "Nascosto",
+          "esuberi": 3,
+          "testo": "Il personaggio riesce a nascondere una parte della struttura, come l'aggiunta di un cassetto nascosto o addirittura di un’intera stanza."
+        }
+      ]
+    },
+    {
+      "id": "cavalcare",
+      "nome": "Cavalcare",
+      "tipo": "comune",
+      "caratteristiche": [
+        "agilita"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità ogni volta che devono fare azioni complesse sopra una cavalcatura, come saltare da un cavallo all'altro, come far fare al cavallo manovre complicate come degli slalom tra gli alberi, restare appeso sul fianco di un cavallo.  Normalmente associato con agilità."
+      ],
+      "opportunita": [
+        {
+          "nome": "Manovre difensive",
+          "esuberi": 1,
+          "testo": "Le opportunità allontanare il seguace e sistemare il seguace costano due esuberi in più."
+        },
+        {
+          "nome": "Incoraggiare cavalcatura",
+          "esuberi": 2,
+          "testo": "Si riesce a motivare la cavalcatura a compiere azioni che normalmente non farebbe, come saltare tra le fiamme o in mezzo ad un branco di lupi."
+        }
+      ]
+    },
+    {
+      "id": "consapevolezza",
+      "nome": "Consapevolezza",
+      "tipo": "comune",
+      "caratteristiche": [
+        "potenza"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per resistere agli effetti mentali o capire, in un secondo momento, se è stato in qualche modo manipolato da altri tramite psicologia o altri mezzi. Può essere usato pure per resistere agli effetti di intimidire. Normalmente associato con potenza."
+      ],
+      "opportunita": [
+        {
+          "nome": "Origine del problema",
+          "esuberi": 2,
+          "testo": "Solo per immortali. Il personaggio può, tramite il suo potere, comprendere l’origine dell’influenza mentale soprannaturale che lo sta manipolando."
+        }
+      ]
+    },
+    {
+      "id": "contrattare",
+      "nome": "Contrattare",
+      "tipo": "comune",
+      "caratteristiche": [
+        "astuzia"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per poter avere un acquisizione vantaggiosa in un affare, che si tratti di un patto, vendita o acquisto di merci, contratti lavorativi. Questo tiro viene fatto anche per cercare di creare un contratto scritto, preciso e senza fregatura. Normalmente associato con astuzia."
+      ],
+      "opportunita": [
+        {
+          "nome": "Trovare piccola fregatura",
+          "esuberi": 1,
+          "testo": "Il personaggio individua piccole fregature nel contratto."
+        },
+        {
+          "nome": "Trovare grandi fregature",
+          "esuberi": 3,
+          "testo": "Il personaggio individua una fregatura, principalmente legata ad effetti paranormali che potrebbero aggirare alcune leggi scritte, mortali o meno."
+        }
+      ]
+    },
+    {
+      "id": "forgiare",
+      "nome": "Forgiare",
+      "tipo": "comune",
+      "caratteristiche": [
+        "astuzia"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per poter costruire congegni o oggetti, oltre che parti di oggetti (Come componenti per armi). Normalmente associato a l’astuzia."
+      ],
+      "opportunita": [
+        {
+          "nome": "Prodotto bello",
+          "esuberi": 1,
+          "testo": "Il prodotto è oggettivamente ben raffinato e ne da un certo fascino."
+        },
+        {
+          "nome": "Oggetto magico",
+          "esuberi": 3,
+          "testo": "[Solo immortali] Il personaggio infonde parte della sua energia, così da rendere l’oggetto magico (Il personaggio spende un mana)."
+        },
+        {
+          "nome": "Artefatto",
+          "esuberi": 6,
+          "testo": "[Solo immortali] Il personaggio infonde tante energie e risorse per far diventare la sua creazione un'opera d'arte unica, un artefatto (Il personaggio spende un’anima)."
+        }
+      ]
+    },
+    {
+      "id": "furtivita",
+      "nome": "Furtività",
+      "tipo": "comune",
+      "caratteristiche": [
+        "agilita"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per nascondersi, pedinare qualcuno senza farsi notare, rubare oggetti da una superficie o tasca. Normalmente associato con agilità."
+      ],
+      "opportunita": [
+        {
+          "nome": "Diversivo",
+          "esuberi": 1,
+          "testo": "Il personaggio genera un diversivo sonoro, lanciando un sasso e simili, spostando l’attenzione dell’osservatore a distanza 3."
+        },
+        {
+          "nome": "Muoversi",
+          "esuberi": 1,
+          "testo": "Il personaggio si può muovere in aggiunta all’azione."
+        },
+        {
+          "nome": "Spostare oggetto silenziosamente",
+          "esuberi": 2,
+          "testo": "Il personaggio, spostandosi silenziosamente, porta con sé un oggetto relativamente scomodo, come una sedia, un appendiabiti e simili, facendo in modo che siano sempre visibili, ma che l’osservatore non ci fa caso dello spostamento."
+        }
+      ]
+    },
+    {
+      "id": "gioco",
+      "nome": "Gioco",
+      "tipo": "comune",
+      "caratteristiche": [
+        "astuzia",
+        "possanza"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per tutti i tiri per giocare a carte, scacchi, giochi sportivi ecc. Normalmente associata all'astuzia o possanza per gli sport."
+      ],
+      "opportunita": [
+        {
+          "nome": "Intrattenitore",
+          "esuberi": 1,
+          "testo": "Il personaggio compie l’azione intrattenendo tutti i presenti,"
+        },
+        {
+          "nome": "Rubare oggetto",
+          "esuberi": 2,
+          "testo": "Il personaggio ne approfitta per rubare un oggetto dal tavolo o dalle tasche di un'altro giocatore."
+        },
+        {
+          "nome": "Barare malissimo",
+          "esuberi": 3,
+          "testo": "Il personaggio bara, senza farsi scoprire ovviamente. Vince in maniera definitiva, senza richiedere altri tiri."
+        }
+      ]
+    },
+    {
+      "id": "grazia",
+      "nome": "Grazia",
+      "tipo": "comune",
+      "caratteristiche": [
+        "agilita"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per tutti i tiri che richiedono una certa agilità, come delle capriole e correre in equilibrio. Normalmente associata all’agilità."
+      ],
+      "opportunita": [
+        {
+          "nome": "Muoversi",
+          "esuberi": 1,
+          "testo": "Il personaggio si può muovere in aggiunta all’azione."
+        },
+        {
+          "nome": "Salti silenziosi",
+          "esuberi": 2,
+          "testo": "Il personaggio è così aggraziato che non produce rumore mentre esegue le sue capriole."
+        },
+        {
+          "nome": "Rubare oggetto",
+          "esuberi": 3,
+          "testo": "Il personaggio ne approfitta per rubare un oggetto dal tavolo o dalle tasche di un passante."
+        }
+      ]
+    },
+    {
+      "id": "legge",
+      "nome": "Legge",
+      "tipo": "comune",
+      "caratteristiche": [
+        "astuzia"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per citare a memoria le leggi o ricordare (o applicare) la legge giusta per la sua situazione.",
+        "Molti poteri e patti degli immortali sono vincolati dalle loro leggi, questo rende del tutto necessario saperle a memoria così da poterle manipolare al momento giusto.",
+        "Normalmente associata alla caratteristica di astuzia."
+      ],
+      "opportunita": [
+        {
+          "nome": "Cavillo burocratico",
+          "esuberi": 2,
+          "testo": "Solo quando si usa il Lex Immortalis. Il personaggio ha trovato un cavillo burocratico particolarmente complicato che gli permette di trarre un modesto vantaggio, ma che ha un discreto costo."
+        },
+        {
+          "nome": "Marchiare",
+          "esuberi": 3,
+          "testo": "Solo per immortali. Il personaggio è in grado di applicare un marchio su un mortale, in caso quest'ultimo è il motivo di dibattito legale. Può essere marchiato un solo umano alla volta in tal modo e questo dev'essere presente al momento del dibattito legale."
+        },
+        {
+          "nome": "Sovverchiare priorità legislativa",
+          "esuberi": 5,
+          "testo": "Il personaggio ha fortunatamente in mente un cavillo burocratico che gli permette di avere priorità su un particolare bene o applicazione della legge. Questo gli permette di dare priorità ai suoi contratti o ai suoi marchi."
+        }
+      ]
+    },
+    {
+      "id": "ingannare",
+      "nome": "Ingannare",
+      "tipo": "comune",
+      "caratteristiche": [
+        "astuzia"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per raggirare, mentire, fare trucchetti di magia (come far sparire la monetina, estrarre la carta giusta ecc). Normalmente associata alla caratteristica di astuzia."
+      ],
+      "opportunita": [
+        {
+          "nome": "Muoversi",
+          "esuberi": 1,
+          "testo": "Il personaggio si può muovere."
+        },
+        {
+          "nome": "Bugia poco realistica",
+          "esuberi": 3,
+          "testo": "La bugia è poco realistica, quasi a negare l’evidenza, la abbastanza convincente per i prossimi 2 minuti, dopo di che, colui che è stato imbrogliato capirà l'inganno."
+        },
+        {
+          "nome": "Sostituire/Rubare oggetto",
+          "esuberi": 3,
+          "testo": "Il personaggio riesce a rubare un oggetto o a sostituirlo con un’altro che si trova a distanza 0."
+        }
+      ]
+    },
+    {
+      "id": "intimidire",
+      "nome": "Intimidire",
+      "tipo": "comune",
+      "caratteristiche": [
+        "astuzia"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per spaventare le sue vittime, che si tratti di minacce fantasiose, torture, estorcere denaro ecc. Normalmente associata alla caratteristica di astuzia."
+      ],
+      "opportunita": [
+        {
+          "nome": "Muoversi",
+          "esuberi": 1,
+          "testo": "Il personaggio si può muovere."
+        },
+        {
+          "nome": "Solo con lo sguardo",
+          "esuberi": 2,
+          "testo": "Il personaggio non ha bisogno di dire nemmeno una parola per intimidire il bersaglio."
+        },
+        {
+          "nome": "Spaventare",
+          "esuberi": 2,
+          "testo": "Utilizzabile in combattimento o il turno prima di iniziare. Il personaggio spaventa il suo avversario in modo da tirare in svantaggio il tiro di iniziativa."
+        }
+      ]
+    },
+    {
+      "id": "istruzione",
+      "nome": "Istruzione",
+      "tipo": "comune",
+      "caratteristiche": [
+        "astuzia"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per cui richiedono conoscenze del mondo materiale, come fisica, matematica, legge. Normalmente associata alla caratteristica di astuzia."
+      ],
+      "opportunita": [
+        {
+          "nome": "Informazioni manipolate",
+          "esuberi": 2,
+          "testo": "Il personaggio, per avere ragione su un argomento, manipola leggermente determinate informazioni, omettendo o facendo percorsi logici un po atipici."
+        },
+        {
+          "nome": "Insulto",
+          "esuberi": 2,
+          "testo": "Il personaggio, grazie al suo fascino, astuzia e conoscenza, riesce a fare un insulto più o meno velato nei confronti del suo interlocutore (o un terzo individuo) così tagliente e raffinato che è indubbiamente fonte di ilarità."
+        }
+      ]
+    },
+    {
+      "id": "meccanica",
+      "nome": "Meccanica",
+      "tipo": "comune",
+      "caratteristiche": [
+        "astuzia"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per tutti i tiri per riparare, scassinare, sabotare, costruire e comprendere oggetti meccanici. Ciò comprende serrature, treni, armi da fuoco ecc.",
+        "Normalmente associata all’astuzia."
+      ],
+      "opportunita": [
+        {
+          "nome": "Muoversi",
+          "esuberi": 1,
+          "testo": "Il personaggio si può muovere in aggiunta all’azione."
+        },
+        {
+          "nome": "Sabotaggio",
+          "esuberi": 2,
+          "testo": "Il personaggio manipola l'oggetto senza rendere visibile tale cambiamento."
+        },
+        {
+          "nome": "Intascare",
+          "esuberi": 2,
+          "testo": "Il personaggio esegue tutte le modifiche che deve fare, ma si intasca alcuni pezzi."
+        },
+        {
+          "nome": "Effetto magico",
+          "esuberi": 3,
+          "testo": "Se il personaggio ha a disposizione materiali o a spendere un punto mana, riesce ad aggiungere un effetto magico a ciò che costruisce."
+        }
+      ]
+    },
+    {
+      "id": "medicina",
+      "nome": "Medicina",
+      "tipo": "comune",
+      "caratteristiche": [
+        "astuzia"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per tutti i tiri per riconoscere eventuali medicine, veleni e cure, oltre che per valutare dei buoni metodi di torture senza correre il rischio di uccidere la vittima. Normalmente è un'abilità inutile per un immortale, dato che è immune alle malattie e le sue ferite guariscono in autonomia, ma potrebbe provare a prendersi cura dei suoi compagni mortali, animali o riconoscere eventuali segni lasciati dietro da un suo avversario. Normalmente associato all’astuzia."
+      ],
+      "opportunita": [
+        {
+          "nome": "Manipolare prove",
+          "esuberi": 2,
+          "testo": "Il personaggio, esaminando il malato o cadavere, coglie l’occasione per compromettere i sintomi o i segni nel cadavere, così da rendere più difficili futuri esami (+2 difficoltà)."
+        },
+        {
+          "nome": "Percepire paranormale",
+          "esuberi": 2,
+          "testo": "Il personaggio percepisce se c'è un qualche oggetto o effetto paranormale nella zona in cui percepisce."
+        }
+      ]
+    },
+    {
+      "id": "percezione",
+      "nome": "Percezione",
+      "tipo": "comune",
+      "caratteristiche": [
+        "astuzia"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per osservare, ascoltare, cercare, perquisire, insomma ogni cosa che riguarda l’uso dei cinque (sei nel caso degli immortali) sensi. Normalmente associata alla caratteristica di astuzia"
+      ],
+      "opportunita": [
+        {
+          "nome": "…Senza farsi notare",
+          "esuberi": 1,
+          "testo": "Il personaggio si guarda attorno con attenzione, ma non lo da a vedere."
+        },
+        {
+          "nome": "Muoversi",
+          "esuberi": 1,
+          "testo": "Il personaggio si guarda attorno con molta attenzione, ma riesce comunque a muoversi con una certa fretta."
+        },
+        {
+          "nome": "Percepire paranormale",
+          "esuberi": 2,
+          "testo": "Il personaggio percepisce se c'è un qualche oggetto o effetto paranormale nella zona in cui percepisce."
+        }
+      ]
+    },
+    {
+      "id": "pianificare",
+      "nome": "Pianificare",
+      "tipo": "comune",
+      "caratteristiche": [],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per pianificare in generale, che si tratti di una rapina in banca, un'evasione, un imboscata, un allalto al treno ecc."
+      ],
+      "opportunita": [
+        {
+          "nome": "Orologi sincronizzati",
+          "esuberi": 1,
+          "testo": "Al primo tiro di iniziativa dello scenario pianificato, il personaggio e i suoi alleati che hanno almeno fatto finta di sentire il piano, hanno automaticamente +3 ai tiri di iniziativa."
+        },
+        {
+          "nome": "Flashback extra",
+          "esuberi": 3,
+          "testo": "Il personaggio ha diritto a richiedere un flashback all'interno dello scenario che riguarda lo scenario stesso o i png coinvolti."
+        }
+      ]
+    },
+    {
+      "id": "socialita",
+      "nome": "Socialità",
+      "tipo": "comune",
+      "caratteristiche": [
+        "astuzia"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per percepire intenzioni, intrattenere (che si tratti di musica, balli, poesie ecc.) e altre cose che richiedono una certa empatia. Normalmente associata alla caratteristica di astuzia."
+      ],
+      "opportunita": [
+        {
+          "nome": "Muoversi",
+          "esuberi": 1,
+          "testo": "Il personaggio si può muovere."
+        },
+        {
+          "nome": "…Senza farsi notare",
+          "esuberi": 1,
+          "testo": "Il personaggio studia i suoi interlocutori e li manipola, ma non lo dà a vedere."
+        },
+        {
+          "nome": "Insulto",
+          "esuberi": 2,
+          "testo": "Il personaggio, grazie al suo fascino, astuzia e conoscenza, riesce a fare un insulto più o meno velato nei confronti del suo interlocutore (o un terzo individuo) così tagliente e raffinato che è indubbiamente fonte di ilarità."
+        },
+        {
+          "nome": "Comunicare messaggio in codice",
+          "esuberi": 2,
+          "testo": "Mentre fa la sua esibizione o chiacchierata, può mandare un segnale in codice ad un suo compagno per passare un'informazione, senza farsi notare. Un cenno di mano, un gioco di sguardi ecc."
+        }
+      ]
+    },
+    {
+      "id": "sopravvivenza",
+      "nome": "Sopravvivenza",
+      "tipo": "comune",
+      "caratteristiche": [
+        "astuzia"
+      ],
+      "costi_px": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "descrizione": [
+        "Il personaggio usa questa abilità per tutti i tiri per accendere un fuoco, creare un accampamento, pesca, cavalcare, preparare o prevenire, fare nodi, liberarsi da intralci, orientarsi, preparare trappole ecc. Normalmente associata all’astuzia."
+      ],
+      "opportunita": [
+        {
+          "nome": "Studio del terreno",
+          "esuberi": 1,
+          "testo": "Oltre al normale successo, il personaggio può avere nozioni extra sul tipo di terreno in cui si trova. Per notizie extra si intende notizie non richieste dal giocatore, ma che il narratore può ritenere utili."
+        },
+        {
+          "nome": "Pista falsa",
+          "esuberi": 2,
+          "testo": "Oltre al normale successo, il personaggio può creare una serie di finte tracce che depistano eventuali inseguitori, mandandoli in una direzione sbagliata."
+        }
+      ]
+    },
+    {
+      "id": "mischia",
+      "nome": "Mischia",
+      "tipo": "combattimento",
+      "caratteristiche": [
+        "possanza"
+      ],
+      "costi_px": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "descrizione": [
+        "Questa abilità viene usata per l'utilizzo delle armi da mischia, se non specificato diversamente, va associato alla caratteristica di possanza."
+      ],
+      "opportunita": [
+        {
+          "nome": "Non letale",
+          "esuberi": 1,
+          "testo": "Il danno dell'arma diventa non letale."
+        },
+        {
+          "nome": "Rimuovere oggetto",
+          "esuberi": 1,
+          "testo": "Il bersaglio perde un oggetto che indossa o che tiene appeso alla cintola (a scelta dell'attaccante)"
+        },
+        {
+          "nome": "Movimento",
+          "esuberi": 1,
+          "testo": "(Solo coltelli e armi da mischia) Il personaggio può effettuare un'azione di movimento."
+        },
+        {
+          "nome": "Stordire",
+          "esuberi": 2,
+          "testo": "Il bersaglio tira un dado in meno a tutte le pool di dadi fino al termine del suo prossimo turno."
+        },
+        {
+          "nome": "Distruttività",
+          "esuberi": 2,
+          "testo": "Il personaggio aggiunge ● in distruttività. Questo gli consente anche di demolire oggetti e pareti nella medesima azione."
+        },
+        {
+          "nome": "Danno extra",
+          "esuberi": 2,
+          "testo": "+ 1 al danno."
+        },
+        {
+          "nome": "Movimento",
+          "esuberi": 3,
+          "testo": "(Solo armi da mischia grandi e ad asta) Il personaggio può effettuare un'azione di movimento."
+        },
+        {
+          "nome": "Disarmare",
+          "esuberi": 3,
+          "testo": "Il bersaglio perde una delle armi (a scelta dell'attaccante)."
+        },
+        {
+          "nome": "Colpo critico",
+          "esuberi": 4,
+          "testo": "Il personaggio infligge una seconda volta il danno."
+        }
+      ]
+    },
+    {
+      "id": "mira",
+      "nome": "Mira",
+      "tipo": "combattimento",
+      "caratteristiche": [
+        "agilita"
+      ],
+      "costi_px": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "descrizione": [
+        "Questa abilità viene usata per l'utilizzo delle armi da tiro o da lancio, se non specificato diversamente, va associato alla caratteristica di agilità.",
+        "Attaccare un bersaglio con armi a distanza contro un bersaglio a distanza 1 o 0, da svantaggio ai tiri."
+      ],
+      "opportunita": [
+        {
+          "nome": "Non letali",
+          "esuberi": 1,
+          "testo": "Il danno dell'arma diventa non letale."
+        },
+        {
+          "nome": "Movimento",
+          "esuberi": 1,
+          "testo": "(Solo pistole e coppia di pistole) Il personaggio può effettuare un'azione di movimento."
+        },
+        {
+          "nome": "Ricarica veloce",
+          "esuberi": 1,
+          "testo": "Il personaggio ricarica l'arma istantaneamente."
+        },
+        {
+          "nome": "Rimuovere oggetto",
+          "esuberi": 1,
+          "testo": "Il bersaglio perde un oggetto che indossa o che tiene appeso alla cintola (a scelta dell'attaccante)"
+        },
+        {
+          "nome": "Movimento",
+          "esuberi": 2,
+          "testo": "Il personaggio può effettuare un'azione di movimento."
+        },
+        {
+          "nome": "Stordire",
+          "esuberi": 2,
+          "testo": "Il bersaglio tira un dado in meno a tutte le pool di dadi fino al termine del suo prossimo turno."
+        },
+        {
+          "nome": "Distruttività",
+          "esuberi": 2,
+          "testo": "Il personaggio aggiunge ● in distruttività. Questo gli consente anche di demolire oggetti e pareti nella medesima azione."
+        },
+        {
+          "nome": "Danno extra",
+          "esuberi": 2,
+          "testo": "+ 1 al danno."
+        },
+        {
+          "nome": "Movimento",
+          "esuberi": 3,
+          "testo": "(Solo carabine, arco e fucili a pallettoni) Il personaggio può effettuare un'azione di movimento."
+        },
+        {
+          "nome": "Disarmare",
+          "esuberi": 3,
+          "testo": "Il bersaglio perde una delle armi (a scelta dell'attaccante)."
+        },
+        {
+          "nome": "Danno extra",
+          "esuberi": 4,
+          "testo": "Il personaggio raddoppia il danno dell’arma o potere."
+        }
+      ]
+    },
+    {
+      "id": "demoralizzare",
+      "nome": "Demoralizzare",
+      "tipo": "combattimento",
+      "caratteristiche": [
+        "astuzia"
+      ],
+      "costi_px": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "descrizione": [
+        "Questa abilità viene usata per demotivare il nemico, riducendo, per quanto possibile, la sua combattività.",
+        "Usare questa abilità su un bersaglio funziona a tutti gli effetti come un attacco che infligge danni non letali, ma a differenza degli attacchi fisici, questo ha bisogno di qualche requisito, primo tra tutti, il bersaglio deve essere in grado di comprendere le parole usate dal personaggio, le cose dette devono avere un senso (es. “Non è questo quello che la tua amata Rosalinda avrebbe voluto” ).",
+        "Questo attacco viene eseguito con astuzia + demoralizzare contrapposto alla potenza + difesa del bersaglio. Se l’attaccante ha successo, il bersaglio prende un danno non letale."
+      ],
+      "opportunita": [
+        {
+          "nome": "Stordire",
+          "esuberi": 1,
+          "testo": "Il bersaglio tira un dado in meno a tutte le pool di dadi fino al termine del suo prossimo turno."
+        },
+        {
+          "nome": "Danno extra",
+          "esuberi": 1,
+          "testo": "+ 1 al danno."
+        },
+        {
+          "nome": "Movimento",
+          "esuberi": 1,
+          "testo": "Il personaggio può effettuare un'azione di movimento."
+        },
+        {
+          "nome": "Creare esitazione",
+          "esuberi": 2,
+          "testo": "L’iniziativa del bersaglio si riduce di 1."
+        },
+        {
+          "nome": "Colpo critico",
+          "esuberi": 3,
+          "testo": "Il personaggio infligge una seconda volta il danno del potere."
+        }
+      ]
+    },
+    {
+      "id": "difesa",
+      "nome": "Difesa",
+      "tipo": "combattimento",
+      "caratteristiche": [
+        "agilita"
+      ],
+      "costi_px": [
+        3,
+        5,
+        7,
+        9,
+        11
+      ],
+      "descrizione": [
+        "Questa abilità viene usata per difendersi da attacchi e poteri. Se non specificato diversamente, va associato alla caratteristica di agilità."
+      ],
+      "opportunita": [
+        {
+          "nome": "Riposizionarsi",
+          "esuberi": 1,
+          "testo": "Il personaggio può effettuare un'azione di movimento."
+        },
+        {
+          "nome": "Ridurre distruttività",
+          "esuberi": 2,
+          "testo": "Riduce di 1 la distruttività dell'attaccante."
+        },
+        {
+          "nome": "Contrattacco",
+          "esuberi": 4,
+          "testo": "Il personaggio che si difende può immediatamente attaccare il suo attaccante. Questo attacco non produce a sua volta un contrattacco."
+        }
+      ]
+    }
+  ]
+}

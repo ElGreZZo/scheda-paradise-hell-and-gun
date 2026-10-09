@@ -1,0 +1,1280 @@
+{
+  "$schema": "schemi/poteri.schema.json",
+  "fonte": {
+    "manuale": "Pad 1.5",
+    "capitolo": "10 - Poteri"
+  },
+  "generato_da": "strumenti/estrai_dati.mjs",
+  "voci": [
+    {
+      "id": "addestratore",
+      "nome": "Addestratore",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Tante bestie",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Zampette dannose",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Compagni di battaglia",
+          "costo_px": 12
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "aggressore_provetto",
+      "nome": "Aggressore provetto",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "costo_px": 6
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "aiutanti",
+      "nome": "Aiutanti",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Assistente",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Aiutanti sparsi",
+          "costo_px": 6
+        },
+        {
+          "livello": 3,
+          "nome": "Amicizie importanti",
+          "costo_px": 8
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": true
+    },
+    {
+      "id": "alchimista",
+      "nome": "Alchimista",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "costo_px": 12
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": true
+    },
+    {
+      "id": "cecchino_provetto",
+      "nome": "Cecchino provetto",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "costo_px": 6
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "entrate_costanti",
+      "nome": "Entrate costanti",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "costo_px": 6
+        },
+        {
+          "livello": 4,
+          "costo_px": 8
+        },
+        {
+          "livello": 5,
+          "costo_px": 10
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "leader_di_sgherri",
+      "nome": "Leader di Sgherri",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Combattenti fedeli",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Ben equipaggiati",
+          "costo_px": 6
+        },
+        {
+          "livello": 3,
+          "nome": "Reclute esperte",
+          "costo_px": 8
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": true
+    },
+    {
+      "id": "persona_influente",
+      "nome": "Persona influente",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "costo_px": 6
+        },
+        {
+          "livello": 4,
+          "costo_px": 8
+        },
+        {
+          "livello": 5,
+          "costo_px": 10
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "pistolero_provetto",
+      "nome": "Pistolero provetto",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "costo_px": 6
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "reti_di_informatori",
+      "nome": "Reti di informatori",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Raccolta di informazioni",
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "nome": "Traffico di informazioni",
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "nome": "Infiltrazione",
+          "costo_px": 6
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "rituali",
+      "nome": "Rituali",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "costo_px": 12
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "sfruttare_l_ambiente",
+      "nome": "Sfruttare l'ambiente",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Azione astuta",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Attacco astuto",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Difesa astuta",
+          "costo_px": 12
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "spirito_di_iniziativa",
+      "nome": "Spirito di iniziativa",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "costo_px": 6
+        },
+        {
+          "livello": 4,
+          "costo_px": 8
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "volonta_di_ferro",
+      "nome": "Volontà di ferro",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "costo_px": 6
+        },
+        {
+          "livello": 4,
+          "costo_px": 8
+        },
+        {
+          "livello": 5,
+          "costo_px": 10
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "tecnico",
+      "nome": "Tecnico",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "costo_px": 6
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "ali",
+      "nome": "Ali",
+      "categoria": "passivo",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Ali deboli",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Ali forti",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Multiple ali",
+          "costo_px": 12
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "aspetto_alieno",
+      "nome": "Aspetto alieno",
+      "categoria": "passivo",
+      "solo": "bianco",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Corpo bizzarro",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Sensi bizzarri",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Aspetto della follia",
+          "costo_px": 12
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "aura_nascosta",
+      "nome": "Aura nascosta",
+      "categoria": "passivo",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Aura soffocata",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Falsa traccia",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Mimetizzazione totale",
+          "costo_px": 12
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "breccia_dell_aura",
+      "nome": "Breccia dell’aura",
+      "categoria": "passivo",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "costo_px": 12
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "cacciatore_di_immortali",
+      "nome": "Cacciatore di immortali",
+      "categoria": "passivo",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "costo_px": 12
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "compagno_innaturale",
+      "nome": "Compagno innaturale",
+      "categoria": "passivo",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "costo_px": 6
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "corpo_pesante",
+      "nome": "Corpo pesante",
+      "categoria": "passivo",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Corpo massiccio",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Resistenza del colosso",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Atlante",
+          "costo_px": 12
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "munizioni_celesti",
+      "nome": "Munizioni celesti",
+      "categoria": "passivo",
+      "solo": "bianco",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "costo_px": 6
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "munizioni_infernali",
+      "nome": "Munizioni infernali",
+      "categoria": "passivo",
+      "solo": "nero",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "costo_px": 6
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "pelle_a_scaglie",
+      "nome": "Pelle a scaglie",
+      "categoria": "passivo",
+      "solo": "nero",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "costo_px": 12
+        },
+        {
+          "livello": 4,
+          "costo_px": 16
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "pelle_di_mercurio",
+      "nome": "Pelle di mercurio",
+      "categoria": "passivo",
+      "solo": "bianco",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "costo_px": 12
+        },
+        {
+          "livello": 4,
+          "costo_px": 16
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "animalita",
+      "nome": "Animalità",
+      "categoria": "attivo",
+      "solo": "bianco",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Sensi animali",
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "nome": "Parlare con gli animali",
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "nome": "Sgherri animali",
+          "costo_px": 6
+        },
+        {
+          "livello": 4,
+          "nome": "Movimento animale",
+          "costo_px": 8
+        },
+        {
+          "livello": 5,
+          "nome": "Forma animale",
+          "costo_px": 20
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": true
+    },
+    {
+      "id": "bestialita",
+      "nome": "Bestialità",
+      "categoria": "attivo",
+      "solo": "nero",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Sensi bestiali",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Armi bestiali",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Movimento bestiale",
+          "costo_px": 12
+        },
+        {
+          "livello": 4,
+          "nome": "Rigenerazione bestiale",
+          "costo_px": 16
+        },
+        {
+          "livello": 5,
+          "nome": "Predatore bestiale",
+          "costo_px": 20
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": true
+    },
+    {
+      "id": "dementia",
+      "nome": "Dementia",
+      "categoria": "attivo",
+      "solo": "nero",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Follia",
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "nome": "Rete di pazzia",
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "nome": "Demone della paralisi",
+          "costo_px": 6
+        },
+        {
+          "livello": 4,
+          "nome": "Orinofobia",
+          "costo_px": 8
+        },
+        {
+          "livello": 5,
+          "nome": "Tra le fauci della follia",
+          "costo_px": 10
+        }
+      ],
+      "reazione": true,
+      "effetto_combo": true
+    },
+    {
+      "id": "empatia",
+      "nome": "Empatia",
+      "categoria": "attivo",
+      "solo": "bianco",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Percepire emozioni",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Mutare emozione",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Percezione emozionale estesa",
+          "costo_px": 12
+        },
+        {
+          "livello": 4,
+          "nome": "Esacerbare emozione",
+          "costo_px": 16
+        },
+        {
+          "livello": 5,
+          "nome": "Vento di passione",
+          "costo_px": 20
+        }
+      ],
+      "reazione": true,
+      "effetto_combo": false
+    },
+    {
+      "id": "evocazione",
+      "nome": "Evocazione",
+      "categoria": "attivo",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Evocare attacco",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Evocare intervento",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Evocare avatar",
+          "costo_px": 12
+        },
+        {
+          "livello": 4,
+          "nome": "Evocare alleato",
+          "costo_px": 16
+        },
+        {
+          "livello": 5,
+          "nome": "Evocare la devastazione",
+          "costo_px": 20
+        }
+      ],
+      "reazione": true,
+      "effetto_combo": false
+    },
+    {
+      "id": "fuoco_purificatore",
+      "nome": "Fuoco purificatore",
+      "categoria": "attivo",
+      "solo": "bianco",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Piromanzia",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Maestro delle fiamme",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Fiamma del castigo",
+          "costo_px": 12
+        },
+        {
+          "livello": 4,
+          "nome": "Corpo di fiamme",
+          "costo_px": 16
+        },
+        {
+          "livello": 5,
+          "nome": "Tempesta di fuoco",
+          "costo_px": 20
+        }
+      ],
+      "reazione": true,
+      "effetto_combo": true
+    },
+    {
+      "id": "geomanzia",
+      "nome": "Geomanzia",
+      "categoria": "attivo",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Percezione della terra",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Muovere la terra",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Scudo della terra",
+          "costo_px": 12
+        },
+        {
+          "livello": 4,
+          "nome": "Attacco della terra",
+          "costo_px": 16
+        },
+        {
+          "livello": 5,
+          "nome": "Terremoto",
+          "costo_px": 20
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "illusione",
+      "nome": "Illusione",
+      "categoria": "attivo",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Illusione minore",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Copie illusorie",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Illusione maggiore",
+          "costo_px": 12
+        },
+        {
+          "livello": 4,
+          "nome": "Illusione tangibile",
+          "costo_px": 16
+        },
+        {
+          "livello": 5,
+          "nome": "Dio dell'inganno",
+          "costo_px": 20
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": true
+    },
+    {
+      "id": "lux",
+      "nome": "Lux",
+      "categoria": "attivo",
+      "solo": "bianco",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Luce degli occhi",
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "nome": "Manipolare luce",
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "nome": "Sfere di luce",
+          "costo_px": 6
+        },
+        {
+          "livello": 4,
+          "nome": "Irradiazione",
+          "costo_px": 8
+        },
+        {
+          "livello": 5,
+          "nome": "Purezza irradiante",
+          "costo_px": 10
+        }
+      ],
+      "reazione": true,
+      "effetto_combo": true
+    },
+    {
+      "id": "possessione",
+      "nome": "Possessione",
+      "categoria": "attivo",
+      "solo": "nero",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Influenzare",
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "nome": "Possessione dei sensi",
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "nome": "Possessione del corpo",
+          "costo_px": 6
+        },
+        {
+          "livello": 4,
+          "nome": "Possessione complice",
+          "costo_px": 8
+        },
+        {
+          "livello": 5,
+          "nome": "Possessione dell'anima",
+          "costo_px": 10
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": true
+    },
+    {
+      "id": "potere_del_sangue",
+      "nome": "Potere del sangue",
+      "categoria": "attivo",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Bevitore di sangue",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Modellatore di sangue",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Strappare via il sangue",
+          "costo_px": 12
+        },
+        {
+          "livello": 4,
+          "nome": "Sangue in vita",
+          "costo_px": 16
+        },
+        {
+          "livello": 5,
+          "nome": "Forma del sangue",
+          "costo_px": 20
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "potere_della_cenere",
+      "nome": "Potere della cenere",
+      "categoria": "attivo",
+      "solo": "nero",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Fuoco corrotto",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Maestro della cenere",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Cenere alla cenere",
+          "costo_px": 12
+        },
+        {
+          "livello": 4,
+          "nome": "Schiavo della cenere",
+          "costo_px": 16
+        },
+        {
+          "livello": 5,
+          "nome": "Tempesta di cenere",
+          "costo_px": 20
+        }
+      ],
+      "reazione": true,
+      "effetto_combo": true
+    },
+    {
+      "id": "putrescenza",
+      "nome": "Putrescenza",
+      "categoria": "attivo",
+      "solo": "nero",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Percezione cadaverica",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Aura di marcescenza",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Sgherri putridi",
+          "costo_px": 12
+        },
+        {
+          "livello": 4,
+          "nome": "Miasma",
+          "costo_px": 16
+        },
+        {
+          "livello": 5,
+          "nome": "Signore delle mosche",
+          "costo_px": 20
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": true
+    },
+    {
+      "id": "signore_della_tempesta",
+      "nome": "Signore della tempesta",
+      "categoria": "attivo",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Scariche elettriche",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Elettrizzato",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Controllo meteo",
+          "costo_px": 12
+        },
+        {
+          "livello": 4,
+          "nome": "Attacco elettrico",
+          "costo_px": 16
+        },
+        {
+          "livello": 5,
+          "nome": "Tempesta",
+          "costo_px": 20
+        }
+      ],
+      "reazione": true,
+      "effetto_combo": false
+    },
+    {
+      "id": "telepatia",
+      "nome": "Telepatia",
+      "categoria": "attivo",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Messaggio mentale",
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "nome": "Percezioni delle menti",
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "nome": "Leggere menti",
+          "costo_px": 6
+        },
+        {
+          "livello": 4,
+          "nome": "Collegare menti",
+          "costo_px": 8
+        },
+        {
+          "livello": 5,
+          "nome": "Duello mentale",
+          "costo_px": 10
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": true
+    },
+    {
+      "id": "umbra",
+      "nome": "Umbra",
+      "categoria": "attivo",
+      "solo": "nero",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Ombra",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Ombre solide",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Attacchi d'ombra",
+          "costo_px": 12
+        },
+        {
+          "livello": 4,
+          "nome": "Movimento nell’ombra",
+          "costo_px": 16
+        },
+        {
+          "livello": 5,
+          "nome": "Aspetto dell’ombra",
+          "costo_px": 20
+        }
+      ],
+      "reazione": true,
+      "effetto_combo": true
+    },
+    {
+      "id": "maestro_della_forgia",
+      "nome": "Maestro della forgia",
+      "categoria": "superiore",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Magnetite empia",
+          "costo_px": 5
+        },
+        {
+          "livello": 2,
+          "nome": "Arsenale inciso",
+          "costo_px": 10
+        },
+        {
+          "livello": 3,
+          "nome": "Possessione della macchina",
+          "costo_px": 15
+        },
+        {
+          "livello": 4,
+          "nome": "Potenziare gli ingranaggi",
+          "costo_px": 20
+        },
+        {
+          "livello": 5,
+          "nome": "Macchina di distruzione",
+          "costo_px": 25
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "morte",
+      "nome": "Morte",
+      "categoria": "superiore",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Occhio della morte",
+          "costo_px": 5
+        },
+        {
+          "livello": 2,
+          "nome": "Memento mori",
+          "costo_px": 10
+        },
+        {
+          "livello": 3,
+          "nome": "I morti vedono",
+          "costo_px": 15
+        },
+        {
+          "livello": 4,
+          "nome": "Condanna",
+          "costo_px": 20
+        },
+        {
+          "livello": 5,
+          "nome": "Vita o morte",
+          "costo_px": 25
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "signore_della_guerra",
+      "nome": "Signore della guerra",
+      "categoria": "superiore",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Mente bellica",
+          "costo_px": 5
+        },
+        {
+          "livello": 2,
+          "nome": "Arsenale potenziato",
+          "costo_px": 10
+        },
+        {
+          "livello": 3,
+          "nome": "Colpo mortale",
+          "costo_px": 15
+        },
+        {
+          "livello": 4,
+          "nome": "Arsenale",
+          "costo_px": 20
+        },
+        {
+          "livello": 5,
+          "nome": "Avatar della guerra",
+          "costo_px": 25
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    }
+  ]
+}

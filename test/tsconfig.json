@@ -1,0 +1,9 @@
+{
+  // Controllo dei tipi dei test: come lo script, più i tipi di Node (node:test, node:assert).
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "allowImportingTsExtensions": true
+  },
+  "include": ["./**/*.ts", "../src/worker/**/*.ts"]
+}

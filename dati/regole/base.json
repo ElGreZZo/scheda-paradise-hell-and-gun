@@ -1,0 +1,164 @@
+{
+  "$schema": "../schemi/regole.schema.json",
+  "fonte": {
+    "manuale": "Pad 1.5",
+    "capitolo": "2 - Regole base; 3 - Azioni e abilità; 5 - Regole avanzate; 6 - Anime ed investimento; 9 - Creazione dei personaggi; 11 - Armi ed oggettistica"
+  },
+  "voci": [
+    {
+      "id": "prova",
+      "valori": { "dado": 6, "successo_da": 4, "vantaggio_da": 3, "svantaggio_da": 5, "soglia_minima": 2, "soglia_massima": 6, "difficolta_minima": 1, "difficolta_massima": 4 },
+      "citazioni": [
+        "Con ogni 4+ il personaggio ha ottenuto un successo.",
+        "nella maggior parte dei casi questo numero è la somma dei ● presenti nella caratteristica interessata più ● della abilità.",
+        "Vantaggio: Un personaggio in vantaggio ottiene un successo con un 3+ invece del solito 4+.",
+        "Svantaggio: Un personaggio che è in svantaggio ottiene un successo con un 5+ invece del solito 4+.",
+        "basta applicare la regola che un vantaggio annulla uno svantaggio.",
+        "I vantaggi e svantaggi si possono accumulare, arrivando a poter avere successi fino ad un massimo di 2+ (in caso dei vantaggi) e 6+ (in caso degli svantaggi).",
+        "normalmente può applicare difficoltà da 1 a 4, ma andare anche oltre se lo ritiene necessario."
+      ]
+    },
+    {
+      "id": "esuberi",
+      "valori": {},
+      "citazioni": [
+        "Per superare una prova, un giocatore deve ottenere lo stesso numero di successi richiesti per superarla, tutti i successi extra diventano esuberi.",
+        "Se non specificato altrimenti, nessun personaggio può eseguire un opportunità più volte nella medesima azione."
+      ]
+    },
+    {
+      "id": "tiri_contrapposti",
+      "valori": {},
+      "citazioni": [
+        "entrambi tirano le pool di dadi e i vari successi dell’uno annullano i successi dell’avversario e trionfa colui che resta con almeno un successo"
+      ]
+    },
+    {
+      "id": "caratteristiche",
+      "valori": { "iniziale": 2, "massimo": 6, "costo_px_per_pallino_posseduto": 2 },
+      "citazioni": [
+        "tenendo conto che tutte le caratteristiche di partenza sono  ●●.",
+        "deve spendere un numero di punti esperienza pari al doppio dei ● posseduti in quella caratteristica.",
+        "Ogni caratteristica può essere incrementata fino ad un massimo di ●●●●●●, anche se, grazie all’incremento di caratteristica dato dagli archetipi, possono andare oltre a questo valore massimo.",
+        "(le caratteristiche in Inc non vengono mai contate ai fini della spesa dei punti esperienza)"
+      ]
+    },
+    {
+      "id": "abilita",
+      "valori": { "minimo": 0, "massimo": 5 },
+      "citazioni": [
+        "questo è rappresentato dai ● posseduti che possono variare da 0 a 5.",
+        "Bisogna sempre andare in ordine e passare da ○ a ●, da ● a ●● ecc."
+      ]
+    },
+    {
+      "id": "punti_ferita",
+      "valori": { "base": 2, "per_pallino_di_possanza": 1, "temporanei_persi_per_turno": 1 },
+      "citazioni": [
+        "Un personaggio possiede di base due punti ferita e ne aggiunge un numero pari al numero di ● alla sua possanza.",
+        "Un immortale guarisce 1 punto ferita all’ora in completa autonomia, mentre un mortale impiega circa una settimana per guarire una singola ferita.",
+        "Se non specificato diversamente, questi punti ferita scalano di 1 per turno.",
+        "Se i danni subiti sono pari o superiori ai punti ferita totali, il bersaglio giace a terra morto (o nel caso di un immortale, in attesa del colpo di grazia).",
+        "Se tali danni sono pari o superiori ai punti ferita totali, il bersaglio sviene per il resto della sessione."
+      ]
+    },
+    {
+      "id": "mana",
+      "valori": { "per_pallino_di_potenza": 2, "ritiro_dado_costo": 1, "ritiri_per_azione": 1 },
+      "citazioni": [
+        "Un personaggio possiede un numero massimo di punti mana pari al doppio dei ● nella sua caratteristica di potenza e li rigenera completamente con un adeguato riposo di circa 2 o 4 ore.",
+        "Una volta per azione, i personaggi possono consumare un punto mana per ritirare un singolo dado."
+      ]
+    },
+    {
+      "id": "iniziativa",
+      "valori": { "dado": "1d6", "caratteristica": "agilita" },
+      "citazioni": [
+        "si effettua un tiro di iniziativa, cioè si tira 1D6 + Agilità.",
+        "Iniziativa. Si aggiunge questa caratteristica al tiro per l’iniziativa."
+      ],
+      "nota": "La seconda frase è sotto Astuzia: il manuale dice due caratteristiche diverse (docs/domande-per-il-master.md)."
+    },
+    {
+      "id": "difesa",
+      "valori": { "caratteristica": "agilita" },
+      "citazioni": [
+        "Schivare. aggiungi un dado alla pool di dadi per ogni ● presente in questa caratteristica quando si compie un'azione di difesa.",
+        "Se non specificato diversamente, va associato alla caratteristica di agilità."
+      ]
+    },
+    {
+      "id": "movimento",
+      "valori": { "distanza": 2 },
+      "citazioni": [
+        "Quando ciò accade, esso ha percorso una distanza 2 (vedi distanze)."
+      ]
+    },
+    {
+      "id": "munizioni",
+      "valori": { "cartucciera_massimo": 40, "uni_per_inceppare": 2 },
+      "citazioni": [
+        "Un’arma si scarica o si inceppa se, dopo aver lanciato una pool di dadi, usando un'arma da fuoco si ottengono due o più 1 di dado.",
+        "Ricaricare durante un combattimento è un'azione scomoda e occupa un intero turno (in cui il personaggio si può muovere).",
+        "Le cartucciere in dotazione dei personaggi consentono di trasportare fino ad un massimo di 40 ●."
+      ]
+    },
+    {
+      "id": "anime",
+      "valori": { "scheda_massimo": 30, "iniziali": 1, "consumo_massimo_per_turno": "potenza" },
+      "citazioni": [
+        "Nella scheda, ogni personaggio ha una sezione di anime, fino ad un massimo di 30, rappresentati con dei ● ○",
+        "può consumare un numero massimo di anime per turno pari al suo valore di potenza.",
+        "Il personaggio inizia la campagna con un'anima e tutte le munizioni al massimo."
+      ]
+    },
+    {
+      "id": "ricchezza",
+      "valori": { "spesa_per_settimana": 1 },
+      "citazioni": [
+        "Tale valore si riduce sempre di ● a settimana per indicare le spese effettuate dal personaggio ed eventuale mantenimento di strutture e altri beni"
+      ]
+    },
+    {
+      "id": "forma_mortale",
+      "valori": { "malus_caratteristiche": 2 },
+      "citazioni": [
+        "Perde due ● a tutte le caratteristiche e può utilizzare solo poteri base.",
+        "Se per qualche motivo un immortale camuffato da mortale perde metà dei punti ferita (quindi la metà dei suoi punti ferita totali), immediatamente gli viene forzata la trasformazione e assume il suo aspetto immortale."
+      ]
+    },
+    {
+      "id": "seguaci",
+      "valori": { "massimo": "metà dell'astuzia" },
+      "citazioni": [
+        "Un personaggio può possedere un numero di seguaci pari alla metà della sua caratteristica di astuzia."
+      ]
+    },
+    {
+      "id": "dimensioni",
+      "valori": { "danno_per_taglia": 1 },
+      "citazioni": [
+        "Se per qualche motivo un personaggio cresce di dimensioni, aumenta i suoi danni di +1 per ogni aumento, mentre un personaggio che si rimpicciolisce (o è di taglia piccola) ha un -1 ai danni."
+      ]
+    },
+    {
+      "id": "creazione",
+      "valori": { "px_carriera": 20, "px_liberi": 30 },
+      "citazioni": [
+        "Dopo aver speso i punti esperienza iniziali dati dalle abilità lavorative, il personaggio ha altri 30 punti esperienza iniziali da spendere a proprio piacimento.",
+        "Se avanzano dei punti esperienza iniziali, quelli avanzati diventano punti esperienza.",
+        "Segnare il numero di punti ferita pari al valore di possanza + 2. Segnare il mana, pari al doppio del valore di potenza.",
+        "Ora il giocatore ha a disposizione altri 20 punti esperienza iniziali da investire come vuole, senza restrizioni della carriera."
+      ],
+      "nota": "Il testo dice 30 punti liberi, l'esempio di creazione 20 (docs/domande-per-il-master.md)."
+    },
+    {
+      "id": "poteri_archetipo",
+      "valori": { "costo_innati_e_affini": "metà" },
+      "citazioni": [
+        "Questi poteri sono innati per la creatura e li possiede già un ● alla creazione del personaggio. In più questi poteri costano la metà dei punti esperienza per questa creatura.",
+        "Questi poteri sono particolarmente affini alla creatura, costano la metà dei punti esperienza."
+      ]
+    }
+  ]
+}

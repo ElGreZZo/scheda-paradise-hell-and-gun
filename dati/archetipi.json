@@ -1,0 +1,462 @@
+{
+  "$schema": "schemi/archetipi.schema.json",
+  "fonte": {
+    "manuale": "Pad 1.5",
+    "capitolo": "7 - Archetipi di immortali"
+  },
+  "generato_da": "strumenti/estrai_dati.mjs",
+  "voci": [
+    {
+      "id": "arcangelo",
+      "nome": "Arcangelo",
+      "colore": "bianco",
+      "descrizione": [
+        "Questi angeli sono gli unici che per natura sono facilitati a scendere nel regno dei mortali e ciò si estende anche al livello legislativo.",
+        "Questi robusti angeli, hanno l'innato dono di essere piuttosto al loro agio nel mondo dei mortali, mantenendo buona parte della potenza del loro fisico anche in forma mortale. Spesso sono rappresentanti della legge celeste inviati per effettuare operazioni governative.",
+        "Di norma, il loro aspetto è quello di umanoide molto, forse troppo, simile ad uno splendido essere umano, ben piazzato con delle meravigliose ali piumate."
+      ],
+      "incrementi": {
+        "possanza": 2,
+        "agilita": 2
+      },
+      "poteri_innati": [
+        {
+          "potere": "cacciatore_di_immortali",
+          "livello": 1
+        },
+        {
+          "potere": "ali",
+          "livello": 1
+        }
+      ],
+      "poteri_affini": [
+        "corpo_pesante",
+        "cacciatore_di_immortali",
+        "ali",
+        "animalita",
+        "orgoglio"
+      ],
+      "natura": [
+        {
+          "nome": "Annunciare la forza",
+          "testo": [
+            "Una volta per sessione. Riceve automaticamente un'anima la prima volta che prende la sua forma originale davanti a dei mortali per risolvere un problema di una certa rilevanza."
+          ]
+        },
+        {
+          "nome": "Perfezionato per la terra",
+          "testo": [
+            "Ogni volta che il personaggio compie un'azione, compresa un tiro su difesa, può istantaneamente trasformarsi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caduto",
+      "nome": "Caduto",
+      "colore": "nero",
+      "descrizione": [
+        "I caduti sono la tipologia più comune di demoni che si possono trovare. Nessuno di loro è nativo dell'inferno, ma sono o sopravvissuti della vecchia ribellione, oppure angeli che di “recente” hanno cambiato bandiera.",
+        "Sono caratteristici per le loro ali membranose o con piume nere, tratti estetici piuttosto umane come i cherubini e gli arcangeli, però più cupi, con occhi che brillano come braci."
+      ],
+      "incrementi": {
+        "possanza": 1,
+        "agilita": 1,
+        "astuzia": 1,
+        "potenza": 1
+      },
+      "poteri_innati": [
+        {
+          "potere": "potere_della_cenere",
+          "livello": 1
+        },
+        {
+          "potere": "ali",
+          "livello": 1
+        }
+      ],
+      "poteri_affini": [
+        "umbra",
+        "potere_della_cenere",
+        "ali",
+        "pelle_a_scaglie",
+        "potere_del_sangue"
+      ],
+      "natura": [
+        {
+          "nome": "Angelo ribelle",
+          "testo": [
+            "Una volta per sessione. Riceve automaticamente un'anima la prima volta che entra in conflitto serio con un immortale bianco. Non per forza si deve arrivare alle mani, ma dev'essere sempre per qualcosa a cui il personaggio tiene e che ha qualcosa da perdere in caso di sconfitta."
+          ]
+        },
+        {
+          "nome": "Il peso della sconfitta",
+          "testo": [
+            "Ogni volta che effettua un tiro su furtività, ottiene sempre un punto in esubero, anche se fallisce il tiro."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cherubino",
+      "nome": "Cherubino",
+      "colore": "bianco",
+      "descrizione": [
+        "L'angelo più comune nel paradiso …. e del mondo materiale. I cherubini sono tanti, troppi, nonostante la metà di essi abbia tradito durante la ribellione che ha dato vita ai demoni, nonostante abbiano subito tantissime perdite nella guerra.",
+        "Un cherubino è un angelo dall'aspetto molto umano, con due splendide ali piumate, splendidi capelli che tendono a colori chiari e splendidi occhi che tendono al dorato luminoso."
+      ],
+      "incrementi": {
+        "possanza": 1,
+        "agilita": 1,
+        "astuzia": 1,
+        "potenza": 1
+      },
+      "poteri_innati": [
+        {
+          "potere": "fuoco_purificatore",
+          "livello": 1
+        },
+        {
+          "potere": "ali",
+          "livello": 1
+        }
+      ],
+      "poteri_affini": [
+        "fuoco_purificatore",
+        "lux",
+        "ali",
+        "pelle_d_argento",
+        "telepatia"
+      ],
+      "natura": [
+        {
+          "nome": "Le schiere",
+          "testo": [
+            "Una volta per sessione. Riceve automaticamente un'anima la prima volta che si ritrova a cooperare con immortale bianco in una qualche azione pericolosa."
+          ]
+        },
+        {
+          "nome": "Uno dei troppi",
+          "testo": [
+            "Da svantaggio a tutti i tiri portati per individuare che tipo di immortale è o quale sia la sua identità originale. Anche i tiri usati per attivare i poteri che hanno questa finalità vengono tirati in svantaggio."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "demone_possessore",
+      "nome": "Demone possessore",
+      "colore": "nero",
+      "descrizione": [
+        "Questi sono i demoni considerati più viscidi e malefici nel regno infernale, per questo motivo sono considerati i più degni, al livello legale, di salire nel piano materiale.",
+        "A differenza della controparte angelica, cioè gli arcangeli, questi demoni non vantano una grande potenza fisica, ma piuttosto una grande potenza magica e di astuzia.",
+        "Questi immortali riescono entrare di nascosto nei corpi dei mortali, che si tratti per nascondersi o per corrompere, manovrandoli come marionette per le loro macchinazioni.",
+        "Solitamente hanno l'aspetto di umanoidi non particolarmente robusti, con degli intensi occhi luminosi,"
+      ],
+      "incrementi": {
+        "astuzia": 3,
+        "potenza": 1
+      },
+      "poteri_innati": [
+        {
+          "potere": "possessione",
+          "livello": 2
+        }
+      ],
+      "poteri_affini": [
+        "possessione",
+        "umbra",
+        "telepatia",
+        "empatia",
+        "invidia"
+      ],
+      "natura": [
+        {
+          "nome": "Marionettista",
+          "testo": [
+            "Una volta per sessione. Riceve automaticamente un'anima la prima volta che riesce ad effettuare una possessione del corpo."
+          ]
+        },
+        {
+          "nome": "Legame subdolo",
+          "testo": [
+            "Una volta che riesce ad usare un qualsiasi effetto del potere di possessione con un mortale, ottiene un dado in più per ogni tiro fatto per interagire con quel mortale, che si tratti di attacchi, intimidazioni, movimenti furtivi ecc."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jinn",
+      "nome": "Jinn",
+      "colore": "grigio",
+      "descrizione": [
+        "I jinn sono immortali piuttosto anomali, hanno smesso di dedicarsi alle cofecchie di paradiso ed inferno millenni fa, da allora dedicano se stessi all'interazione con la razza umana. C'è chi lo fa per torturare gli umani facendo leva della loro avidità, altri per guidare con saggezza, altri per mero sollazzo.",
+        "I jinn hanno un aspetto piuttosto differente sia dagli angeli che dai demoni, sembrando più a eccentriche creature, spesso con colori della pelle particolarmente accesi come rosso, blu, celeste e giallo.",
+        "Una loro caratteristica, soprattutto per quelli legati al fuoco, le loro fiamme, corporee o generate dai loro poteri, non generano fumo."
+      ],
+      "incrementi": {
+        "astuzia": 2,
+        "potenza": 2
+      },
+      "poteri_innati": [
+        {
+          "potere": "telepatia",
+          "livello": 1
+        },
+        {
+          "potere": "empatia",
+          "livello": 1
+        }
+      ],
+      "poteri_affini": [
+        "telepatia",
+        "geomanzia",
+        "empatia",
+        "fuoco_purificatore",
+        "manipolare_energia"
+      ],
+      "natura": [
+        {
+          "nome": "Esprimere un desiderio",
+          "testo": [
+            "Una volta per sessione. Riceve automaticamente un'anima la prima volta che riesce a chiudere un patto con un mortale senza scopo di lucro (al massimo, ad un prezzo irrisorio)."
+          ]
+        },
+        {
+          "nome": "Esperti nel trattare",
+          "testo": [
+            "Ogni volta che effettua un tiro su socialità, ottiene sempre un punto in esubero, anche se fallisce il tiro."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oni",
+      "nome": "Oni",
+      "colore": "nero",
+      "descrizione": [
+        "Questi catastrofici demoni sono considerati una piaga per via della loro natura distruttiva.",
+        "Spesso hanno l'aspetto di grossi umanoidi con una o due corna, denti appuntiti e occhi feroci.",
+        "Tendono ad essere di indole bellicosa, sempre pronti ad entrare in azione, cercando di risolvere le cose in maniera molto fisica e pratica."
+      ],
+      "incrementi": {
+        "possanza": 3,
+        "agilita": 1
+      },
+      "poteri_innati": [
+        {
+          "potere": "corpo_pesante",
+          "livello": 1
+        },
+        {
+          "potere": "umbra",
+          "livello": 1
+        }
+      ],
+      "poteri_affini": [
+        "corpo_pesante",
+        "umbra",
+        "pelle_a_scaglie",
+        "putrescenza",
+        "aura_nascosta"
+      ],
+      "natura": [
+        {
+          "nome": "Portatore della distruzione",
+          "testo": [
+            "Una volta per sessione. Riceve automaticamente un'anima la prima volta che riesce a causare distruzione gratuita di proprietà di un certo valore."
+          ]
+        },
+        {
+          "nome": "La tempesta in arrivo",
+          "testo": [
+            "Una volta per scenario, può aumentare la sua distruttività di un ● per un azione."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "puttino",
+      "nome": "Puttino",
+      "colore": "bianco",
+      "descrizione": [
+        "Questi piccoli immortali, che hanno l'aspetto di bambini paffutelli con piccole ali, simboleggiano l’innocenza, l’allegria e l’amore.",
+        "A causa del loro aspetto un po 'fuori luogo in un ambiente violento come il selvaggio west, sono considerati la barzelletta degli immortali angelici.",
+        "E’ raro trovare un puttino nel mondo dei mortali, ma quelli che si trovano spesso hanno un carattere estremamente audace, rafforzato dalle angherie e prepotenze subite dagli altri immortali."
+      ],
+      "incrementi": {
+        "agilita": 3,
+        "astuzia": 1
+      },
+      "poteri_innati": [
+        {
+          "potere": "ali",
+          "livello": 1
+        },
+        {
+          "potere": "empatia",
+          "livello": 1
+        }
+      ],
+      "poteri_affini": [
+        "ali",
+        "empatia",
+        "compagno_innaturale",
+        "illusione",
+        "aura_nascosta"
+      ],
+      "natura": [
+        {
+          "nome": "Rafforzare lo spirito",
+          "testo": [
+            "Una volta per sessione. Riceve automaticamente un'anima la prima volta che riesce a migliorare una situazione triste o drammatica. Che sia portare felicità ad una famiglia in lutto, riappacificare due amici in lite o consolare un orfano che ha appena perso i genitori."
+          ]
+        },
+        {
+          "nome": "Eternamente sottovalutato",
+          "testo": [
+            "Il personaggio è piccolo nella sua forma originale. In combattimento, finchè ci sono bersagli palesemente più appetibili di lui (come altri immortali), i suoi avversari hanno svantaggio a tutti i tiri per attaccarlo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serafino",
+      "nome": "Serafino",
+      "colore": "bianco",
+      "descrizione": [
+        "Considerati degli angeli tanto arroganti, quanto bizzarri (perfino per gli standard degli immortali). I serafini sono angeli con sei ali e con il crescere del loro potere, le loro forme umanoidi diventano sempre più bizzarre, con numerose presenze di occhi, cerchi, arti ecc.",
+        "Nel regno del Paradiso, la maggior parte delle cariche di comando sono ricoperte dai serafini, motivo per cui, di norma, tendono ad essere arroganti e tendenti al comando."
+      ],
+      "incrementi": {
+        "potenza": 3,
+        "astuzia": 1
+      },
+      "poteri_innati": [
+        {
+          "potere": "ali",
+          "livello": 1
+        },
+        {
+          "potere": "aspetto_alieno",
+          "livello": 1
+        }
+      ],
+      "poteri_affini": [
+        "ali",
+        "aspetto_alieno",
+        "lux",
+        "evocazione",
+        "aura_distruttiva"
+      ],
+      "natura": [
+        {
+          "nome": "Nato per il comando",
+          "testo": [
+            "Una volta per sessione. Riceve automaticamente un'anima la prima volta che riesce a prendere il comando di altri immortali in una situazione di pericolo."
+          ]
+        },
+        {
+          "nome": "Potere assoluto",
+          "testo": [
+            "Una volta per sessione, prima di effettuare i tiri per attivare un potere, può scegliere di spendere un'anima (oltre al normale costo per il potere) e ottiene automaticamente +2 punti esubero."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wendingo",
+      "nome": "Wendingo",
+      "colore": "nero",
+      "descrizione": [
+        "Gli immortali si nascondono nel mondo dei mortali da quando è avvenuta la creazione di quest'ultimo, creando nel tempo delle problematiche. Un wendingo è uno di questi immortali che ha passato troppo tempo nel mondo dei mortali e ha iniziato ad essere influenzato da alcuni aspetti di questa realtà, nello specifico la fame.",
+        "I wendingo hanno un aspetto e modi molto bestiali, causato dal loro isolamento nelle terre selvagge. Alti, snelli, nella maggior parte dei casi con peli folti e un teschio di animale come testa. Altri casi, un po più rari, hanno un aspetto pallido, emaciato e quasi scheletrico.",
+        "I wendingo, nonostante la loro natura da immortali, hanno sempre fame e quel che è peggio, è che non riescono mai ad essere realmente sazi, se non per vie traverse.",
+        "Questi demoni sono così disperati che tendono a tormentare mortali isolati e condividere con loro la loro disperazione, portando queste vittime a situazioni così esasperate da effettuare cannibalismo."
+      ],
+      "incrementi": {
+        "possanza": 2,
+        "astuzia": 1,
+        "agilita": 1
+      },
+      "poteri_innati": [
+        {
+          "potere": "bestialita",
+          "livello": 1
+        },
+        {
+          "potere": "possessione",
+          "livello": 1
+        }
+      ],
+      "poteri_affini": [
+        "bestialita",
+        "possessione",
+        "dementia",
+        "corpo_possente",
+        "gola"
+      ],
+      "natura": [
+        {
+          "nome": "Possessione famelica",
+          "testo": [
+            "Una volta per sessione, se il wendingo riesce a creare una situazione (quindi dev'essere responsabile) per cui uno o più mortali effettuano cannibalismo, guadagna immediatamente un'anima."
+          ]
+        },
+        {
+          "nome": "Fame insaziabile",
+          "testo": [
+            "I wendingo, spesso associati a demoni della gola, sono relativamente facili da trovare e riconoscere, principalmente perché si lasciano dietro orrendi banchetti, come stalle con rimasugli di cavalli mangiucchiati, pile di cadaveri umani spolpati oppure scenari ancora più strani.",
+            "Se riesce a divorare completamente una creatura soprannaturale (di dimensioni più o meno umane) o un immortale, ottiene 2 punti ferita temporanei fino alla fine dello scenario. Può essere avvenuto anche in un flashback che rappresenta un evento di poco precedente lo scenario.",
+            "Se un personaggio vuole divorare un bersaglio dalle dimensioni umane durante un combattimento, l’azione richiede un turno oppure 3 esuberi spesi a seguito di un attacco."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dullahan",
+      "nome": "Dullahan",
+      "colore": "grigio",
+      "descrizione": [
+        "Angeli e demoni che hanno passato troppo tempo con i mortali ed hanno tentato di portare un loro ordine e giustizia, sono nel tempo degenerati in una sorta di cavaliere tetro e portatore di castigo.",
+        "Con passare degli anni, tra i mortali sono nate le leggende di cavalieri senza testa, impegnati a girare di notte a giudicare e sentenziare morte sui mortali, realtà dovuta in parte dalla loro anatomia anomala, in parte per la loro affinità con i loro equini soprannaturali."
+      ],
+      "incrementi": {
+        "possanza": 2,
+        "agilita": 2
+      },
+      "poteri_innati": [
+        {
+          "potere": "aspetto_alieno",
+          "livello": 1
+        },
+        {
+          "potere": "compagno_innaturale",
+          "livello": 1
+        }
+      ],
+      "poteri_affini": [
+        "pelle_di_mercurio",
+        "compagno_innaturale",
+        "umbra",
+        "magia",
+        "aura_nascosta"
+      ],
+      "natura": [
+        {
+          "nome": "Caccia selvaggia",
+          "testo": [
+            "Una volta per sessione, il dullahan può nominare un mortale che condanna a morte, nome, cognome e accusa. Se riesce ad uccidere questo mortale e a prendere la testa, guadagna un'anima."
+          ]
+        },
+        {
+          "nome": "Presenza fatata",
+          "testo": [
+            "I dullahan, nei loro secoli di permanenza sulla terra, hanno sviluppato una curiosa resistenza alle energie usate contro di lui.",
+            "Spendendo un punto mana mentre effettua un tiro per schivare o resistere ad un potere, ottiene vantaggio in tale tiro."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+/* Switch di pagina: l'attributo nascosto attr_pagina decide quale div si vede. */
+.sheet-uno,
+.sheet-due {
+  display: none;
+}
+.sheet-pagina[value="uno"] ~ .sheet-uno,
+.sheet-pagina[value="due"] ~ .sheet-due {
+  display: block;
+}
+
+/* Campo mostrato o nascosto: la checkbox deve precedere il div, allo stesso livello. */
+.sheet-note {
+  display: none;
+}
+.sheet-mostra:checked ~ .sheet-note {
+  display: block;
+}
+
+label {
+  display: block;
+  margin: 6px 0;
+}
+
+.sheet-rolltemplate-prova .sheet-tiro {
+  border: 1px solid #000;
+  padding: 4px 8px;
+}

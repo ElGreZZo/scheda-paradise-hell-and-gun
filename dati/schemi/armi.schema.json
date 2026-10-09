@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Armi",
+  "$ref": "comune.schema.json#/$defs/file",
+  "unevaluatedProperties": false,
+  "properties": {
+    "voci": {
+      "items": {
+        "$ref": "#/$defs/voce"
+      }
+    }
+  },
+  "$defs": {
+    "voce": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "nome",
+        "abilita",
+        "descrizione",
+        "danno",
+        "distanza",
+        "distruttivita",
+        "statistiche",
+        "note"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "comune.schema.json#/$defs/id"
+        },
+        "nome": {
+          "$ref": "comune.schema.json#/$defs/testo"
+        },
+        "abilita": {
+          "description": "Abilità di combattimento con cui si usa (dedotta: il manuale non lo scrive arma per arma).",
+          "enum": [
+            "mischia",
+            "mira"
+          ]
+        },
+        "descrizione": {
+          "$ref": "comune.schema.json#/$defs/testi"
+        },
+        "danno": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "distanza": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "munizioni": {
+          "description": "Pallini di munizioni consumati per ricaricare.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "distruttivita": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "statistiche": {
+          "$ref": "comune.schema.json#/$defs/testo"
+        },
+        "note": {
+          "$ref": "comune.schema.json#/$defs/testi"
+        },
+        "opportunita": {
+          "type": "array",
+          "items": {
+            "$ref": "comune.schema.json#/$defs/opportunita"
+          }
+        },
+        "tabella": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

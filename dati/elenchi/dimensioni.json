@@ -1,0 +1,35 @@
+{
+  "$schema": "../schemi/dimensioni.schema.json",
+  "fonte": {
+    "manuale": "Pad 1.5",
+    "capitolo": "5 - Regole avanzate"
+  },
+  "generato_da": "strumenti/estrai_dati.mjs",
+  "voci": [
+    {
+      "id": "piccolo",
+      "nome": "Piccolo",
+      "testo": "Cane. Vantaggio a tutti i tiri per nascondersi."
+    },
+    {
+      "id": "medio",
+      "nome": "Medio",
+      "testo": "Umano."
+    },
+    {
+      "id": "grande",
+      "nome": "Grande",
+      "testo": "Cavallo. Svantaggio a tutti i tiri per nascondersi."
+    },
+    {
+      "id": "molto_grande",
+      "nome": "Molto grande",
+      "testo": "Carro. Svantaggio a tutti i tiri per nascondersi."
+    },
+    {
+      "id": "enorme",
+      "nome": "Enorme",
+      "testo": "Locomotiva di un treno. Non ci deve nemmeno provare a nascondersi."
+    }
+  ]
+}

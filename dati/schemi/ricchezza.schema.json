@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Livelli di ricchezza",
+  "$ref": "comune.schema.json#/$defs/file",
+  "unevaluatedProperties": false,
+  "properties": {
+    "voci": {
+      "items": {
+        "$ref": "#/$defs/voce"
+      }
+    }
+  },
+  "$defs": {
+    "voce": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "valore",
+        "testo",
+        "munizioni_settimana",
+        "armi",
+        "animali"
+      ],
+      "properties": {
+        "valore": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "testo": {
+          "$ref": "comune.schema.json#/$defs/testo"
+        },
+        "munizioni_settimana": {
+          "description": "Pallini di munizioni ricaricati a settimana, o il testo del manuale.",
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "armi": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "animali": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

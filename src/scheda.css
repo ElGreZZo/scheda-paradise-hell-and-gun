@@ -1,0 +1,5 @@
+/* Indice del CSS della scheda: la build (strumenti/build.mjs) mette al posto di ogni import locale il suo file.
+   Niente lettere accentate o "·" nel CSS, nemmeno nei commenti senza asterisco: il filtro di sicurezza di
+   Roll20 scarterebbe tutto il foglio (la build si ferma prima). Mai la parola import con la chiocciola in un
+   commento: l'emulatore sposta ogni import fino al primo punto e virgola e il foglio si rompe. */
+@import "stili/base.css";

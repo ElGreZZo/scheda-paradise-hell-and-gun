@@ -1,0 +1,59 @@
+{
+  "$schema": "../schemi/ricchezza.schema.json",
+  "fonte": {
+    "manuale": "Pad 1.5",
+    "capitolo": "11 - Armi ed oggettistica"
+  },
+  "generato_da": "strumenti/estrai_dati.mjs",
+  "voci": [
+    {
+      "valore": 0,
+      "testo": "Il personaggio non ha entrate passive e non si può nemmeno permettere più di una birra al giorno al saloon. Di per se non si può permettere nulla.",
+      "munizioni_settimana": 1,
+      "armi": 1,
+      "animali": 1
+    },
+    {
+      "valore": 1,
+      "testo": "Il personaggio ha un tenore di vita molto basso, potendosi permettere del cibo scadente, di dormire nelle stalle al posto di una camera in taverna ecc. Si può permettere almeno un arma.",
+      "munizioni_settimana": 3,
+      "armi": 1,
+      "animali": 1
+    },
+    {
+      "valore": 2,
+      "testo": "Il personaggio ha un tenore di vita basso, ma può permettersi cibo, notti dentro delle taverne scadenti, il mantenimento di un'arma. Può accedere a servizi comuni come le poste, un medico oppure di mantenere una piccola casa. Si può permettere un paio di armi e lo stretto necessario per un avventura.",
+      "munizioni_settimana": 4,
+      "armi": 2,
+      "animali": 1
+    },
+    {
+      "valore": 3,
+      "testo": "Il personaggio ha un tenore di vita decente, si può permettere buon cibo, notti in una taverna decente, un equino, una casa decente, servizi relativamente costosi come sarti su misura e biglietti dei treni. Il personaggio ha risorse necessarie per permettersi 3 o 4 armi, oltre a tutti gli strumenti del suo mestiere.",
+      "munizioni_settimana": 6,
+      "armi": 3,
+      "animali": 2
+    },
+    {
+      "valore": 4,
+      "testo": "Il personaggio si può definire un borghese benestante. Si può permettere vitto e alloggio sfarzoso, un fiero equino, una bella casa, un buon avvocato, perfino una carrozza.",
+      "munizioni_settimana": 10,
+      "armi": 4,
+      "animali": 4
+    },
+    {
+      "valore": 5,
+      "testo": "Il personaggio è ricco, si può permettere il meglio del meglio, come una grossa villa circondata da campi (se non addirittura un treno!), carrozze, della servitù.",
+      "munizioni_settimana": 15,
+      "armi": 5,
+      "animali": 6
+    },
+    {
+      "valore": 6,
+      "testo": "Il personaggio è così ricco che potrebbe benissimo permettersi il mantenimento di una decente città.",
+      "munizioni_settimana": "Tutte le munizioni che vuole.",
+      "armi": "tutte le armi che vuole.",
+      "animali": "Mandrie di animali."
+    }
+  ]
+}

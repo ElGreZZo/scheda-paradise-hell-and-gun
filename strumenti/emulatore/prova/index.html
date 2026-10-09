@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scheda di prova · emulatore Roll20</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../emulatore.css">
+</head>
+<body>
+  <p style="padding:16px">Caricamento della scheda… Se resta così, apri la pagina da un server (npm start) e non come file.</p>
+  <script type="module">
+    import { avviaEmulatore } from "../emulatore.js";
+
+    // Una scheda custom arriva a Roll20 come un solo HTML e un solo CSS:
+    // con schedaCompleta l'emulatore li divide come fa Roll20 (worker e roll template).
+    avviaEmulatore({
+      id: "prova",
+      titolo: "Scheda di prova",
+      cartella: "./",
+      schedaCompleta: "sheet.html",
+      css: "sheet.css",
+      personaggi: [{ id: "vuoto", etichetta: "Nuovo personaggio" }],
+    }).catch((e) => {
+      document.body.innerHTML = `<pre style="padding:16px;color:#b31515;white-space:pre-wrap">${e.stack || e}</pre>`;
+    });
+  </script>
+</body>
+</html>

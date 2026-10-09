@@ -1,0 +1,40 @@
+{
+  "$schema": "../schemi/distruttivita.schema.json",
+  "fonte": {
+    "manuale": "Pad 1.5",
+    "capitolo": "5 - Regole avanzate"
+  },
+  "generato_da": "strumenti/estrai_dati.mjs",
+  "voci": [
+    {
+      "valore": 1,
+      "nome": "Bassa distruttività",
+      "testo": "● Bassa distruttività, imprime una forza sufficiente a spaccare bottiglie di vetro o buttare a terra un tavolo."
+    },
+    {
+      "valore": 2,
+      "nome": "Discreta distruttività",
+      "testo": "●● Discreta distruttività, crea grossi fori nei muri di legno, se colpisce un mobile leggero come un tavolo, questo si ribalta, buttare giù una persona da cavallo."
+    },
+    {
+      "valore": 3,
+      "nome": "Buona distruttività",
+      "testo": "●●● Buona distruttività, sufficiente a buttare giù porte, aprire squarci sui muri, buttare giù un cavallo e scansare un carro."
+    },
+    {
+      "valore": 4,
+      "nome": "Poderosa distruttività",
+      "testo": "●●●● Poderosa distruttività, sufficiente a buttare giù intere pareti, anche se robuste come quelle di una solida casa o aprire squarci sulle pareti rinforzate di un fortino. Un carro abbastanza sfortunato da essere colpito da tale distruttività tende a polverizzarsi."
+    },
+    {
+      "valore": 5,
+      "nome": "Estrema distruttività",
+      "testo": "●●●●● Estrema distruttività, normalmente associata ad un treno in corsa. Case, manzi, fortini, tutto viene rimosso da tale potenza."
+    },
+    {
+      "valore": 6,
+      "nome": "Apocalittica distruttività",
+      "testo": "●●●●●● Apocalittica distruttività, è la potenza necessaria per rimuovere colline in un istante."
+    }
+  ]
+}

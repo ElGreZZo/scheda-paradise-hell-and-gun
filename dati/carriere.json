@@ -1,0 +1,352 @@
+{
+  "$schema": "schemi/carriere.schema.json",
+  "fonte": {
+    "manuale": "Pad 1.5",
+    "capitolo": "8 - Carriere"
+  },
+  "generato_da": "strumenti/estrai_dati.mjs",
+  "voci": [
+    {
+      "id": "artista",
+      "nome": "Artista",
+      "descrizione": [
+        "Gli artisti sono tutti quegli immortali che sono scesi nel mondo dei mortali per godere dei piaceri terreni o per trarre ispirazione dalle filosofie ed opere d'arte umana."
+      ],
+      "ferri_del_mestiere": "Strumenti musicali, pennelli, vestiti eccentrici, una boccetta di profumo con la pompetta.",
+      "abilita_lavorative": {
+        "px": 20,
+        "abilita": [
+          "socialita",
+          "percezione",
+          "difesa"
+        ],
+        "caratteristiche": [
+          "astuzia"
+        ],
+        "poteri": [
+          {
+            "a_seconda_del_colore": [
+              "dementia",
+              "empatia"
+            ]
+          }
+        ],
+        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) socialità, percezione, difesa, (caratteristica) astuzia, (poteri) Dementia o Empatico (a seconda del colore)."
+      },
+      "attivita": "Il personaggio ha vantaggio a tutti i discorsi e attività che riguardano arte, filosofia, bon ton, intrattenimento.",
+      "opportunita": {
+        "nome": "Artista",
+        "esuberi": 1,
+        "testo": [
+          "Il personaggio aggiunge un affascinate nota artistica all'azione che compie, capace di impressionare mortali ed immortali."
+        ]
+      },
+      "speciale": {
+        "nome": "Che strana cosa sono il piacere e il dolore",
+        "testo": [
+          "Se il personaggio riesce ad indugiare in una qualche forma artistica o di piacere terreno in compagnia di diversi mortali, recupera tutti i punti ferita e punti mana persi."
+        ]
+      }
+    },
+    {
+      "id": "avventuriero",
+      "nome": "Avventuriero",
+      "descrizione": [
+        "Non tutti gli immortali giungono nel mondo materiale per sfuggire alla legge o per uno scopo ben preciso, alcuni lo fanno per semplice spirito di avventura o capriccio. Curiosi nel vedere un'altro mondo, esplorare anfratti misteriosi e interagire con creature differenti. Ciò che fanno è illegale sotto molti punti di vista, ma non lo fanno a scopo di lucro il che fa solo imbestialire i giustizieri che gli corrono dietro."
+      ],
+      "ferri_del_mestiere": "Attrezzi da scalata, corde, attrezzi per scassinare, vestiti robusti, un binocolo, pistola, coltello, attrezzatura per accamparsi all'aperto.",
+      "abilita_lavorative": {
+        "px": 20,
+        "abilita": [
+          "sopravvivenza",
+          "percezione",
+          "mischia"
+        ],
+        "caratteristiche": [
+          "possanza"
+        ],
+        "poteri": [
+          {
+            "potere": "spirito_di_iniziativa"
+          }
+        ],
+        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) sopravvivenza, percezione, mischia, (caratteristica) possanza, (poteri) Spirito di iniziativa."
+      },
+      "attivita": "Il personaggio ha vantaggio a tutti i tiri legati all'esplorazione, conoscenze di nuove culture e utilizzo di macchinari.",
+      "opportunita": {
+        "nome": "Cogliere l'occasione",
+        "esuberi": 2,
+        "testo": [
+          "Il personaggio può tentare immediatamente un'azione di percezione o furtività (per rubare un oggetto)."
+        ],
+        "uso": "Il personaggio può usare la seguente opportunità nei tiri di atletica."
+      },
+      "speciale": {
+        "nome": "Sempre in movimento",
+        "testo": [
+          "Quando effettua tiri di atletica, il personaggio ottiene sempre +1 esubero, indipendentemente dal risultato dei dadi."
+        ]
+      }
+    },
+    {
+      "id": "banchiere",
+      "nome": "Banchiere",
+      "descrizione": [
+        "I banchieri sono immortali che sono scesi nel mondo dei mortali per valutare, soppesare e recuperare le anime dei mortali, puntando ovviamente alle anime di quelli più quotati."
+      ],
+      "ferri_del_mestiere": "Documenti bancari, bilancino portatile, penna con inchiostro, fogli per contratti, orologio da taschino, documento che ne autorizza la permanenza sul mondo dei mortali, pistola.",
+      "abilita_lavorative": {
+        "px": 20,
+        "abilita": [
+          "socialita",
+          "ingannare",
+          "difesa"
+        ],
+        "caratteristiche": [
+          "astuzia"
+        ],
+        "poteri": [
+          {
+            "potere": "persona_influente"
+          }
+        ],
+        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) socialità, ingannare, difesa, (caratteristica) astuzia, (poteri) Persona influente."
+      },
+      "attivita": "Il personaggio ha vantaggio a tutti i tiri per contrattare, commerciare, valutare (oggetti o persone).",
+      "opportunita": {
+        "nome": "Fiutare l’affare",
+        "esuberi": 2,
+        "testo": [
+          "Il personaggio può usare questa opportunità per evidenziare un eventuale falla su cui può capitalizzare, già valutando le leggi mortali, immortali e della banca delle anime."
+        ],
+        "uso": "Opportunità usabile in tutti i tiri di contrattare."
+      },
+      "speciale": {
+        "nome": "Accesso alla Banca delle anime",
+        "testo": [
+          "Un banchiere può accedere, tramite ad un rituale che richiede una mezz'oretta (e la spesa di un mana), alla Banca delle anime, un semipiano accessibile da un portale momentaneamente aperto dal rituale stesso.",
+          "Il banchiere ha sempre un conto aperto e assicurato, indipendentemente dalla sua situazione legale."
+        ]
+      }
+    },
+    {
+      "id": "cacciatore_di_taglie",
+      "nome": "Cacciatore di taglie",
+      "descrizione": [
+        "Gran parte degli immortali giunti sulla terra hanno lasciato alle loro spalle dei conti in sospeso o si sono fatti nuovi nemici direttamente sul posto, questo fa sì che c'è una taglia (normalmente pagata in anime) sulle loro teste. I cacciatori di taglie sono angeli o demoni che si guadagnano da vivere dando la caccia a questi ricercati."
+      ],
+      "ferri_del_mestiere": "Attrezzi per accamparsi all'aperto, fogli dei ricercati, pistola, coltello, fucile a scelta.",
+      "abilita_lavorative": {
+        "px": 20,
+        "abilita": [
+          "sopravvivenza",
+          "percezione",
+          "mira"
+        ],
+        "caratteristiche": [
+          "agilita"
+        ],
+        "poteri": [
+          {
+            "potere": "cacciatore_di_immortali"
+          }
+        ],
+        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) sopravvivenza, percezione, mira, (caratteristica) agilità, (poteri) cacciatore di immortali."
+      },
+      "attivita": "Il personaggio ha vantaggio a tutti i tiri legati al cercare e individuare un ricercato.",
+      "opportunita": {
+        "nome": "Stanare il ricercato",
+        "esuberi": 2,
+        "testo": [
+          "Il personaggio, per deformazione professionale, ha l'opportunità di notare dettagli o indizi caratteristici lasciati da qualche ricercato, come ad esempio assi di carte bucate, descrizioni di bizzarri rumori prima di un incidente, riconoscere le impronte di un particolare individuo ecc.",
+          "Insomma, se un qualche noto criminale è passato in zona, lo viene a sapere."
+        ],
+        "uso": "La seguente opportunità può essere applicata a tutti i tiri di percezione e per raccogliere informazioni."
+      },
+      "speciale": {
+        "nome": "Caccia in esclusiva",
+        "testo": [
+          "Oltre a cercare le prede nelle bacheche con le taglie, i cacciatori ricevono le periodiche visite di piccoli imp messaggeri che gli consegnano le taglie dei ricercati più appetitosi o di bersagli ricercati da precedenti clienti del cacciatore stesso.",
+          "Se riesce a catturare o uccidere uno di questi bersagli, riceve ●●●● anime in più, oltre al pagamento normalmente pattuito."
+        ]
+      }
+    },
+    {
+      "id": "criminale",
+      "nome": "Criminale",
+      "descrizione": [
+        "La maggior parte degli immortali presenti nel mondo dei mortali sono criminali in fuga dalla legge del proprio regno, nella speranza di non essere trovati fa giustizieri e cacciatori di taglie, cosa difficile dato che, per esigenza o noia, si ritrovano a compiere attività criminali tra i mortali."
+      ],
+      "ferri_del_mestiere": "Pistola, coltello, attrezzi da scasso, piede di porco, un fucile a scelta, fiammiferi, tabacco.",
+      "abilita_lavorative": {
+        "px": 20,
+        "abilita": [
+          "pianificare",
+          "intimidire",
+          "mira"
+        ],
+        "caratteristiche": [
+          "possanza"
+        ],
+        "poteri": [
+          {
+            "a_seconda_del_colore": [
+              "munizioni_infernali",
+              "munizioni_celesti"
+            ]
+          }
+        ],
+        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) pianificare, intimidire, mira, (caratteristica) possanza, (poteri) munizioni infernali o celesti (a seconda del colore)."
+      },
+      "attivita": "Il personaggio ha vantaggio a tutti i tiri legati pianificare evasioni, minacciare, estorcere e fare furti in generale.",
+      "opportunita": {
+        "nome": "Mani in alto!",
+        "esuberi": 2,
+        "testo": [
+          "Il personaggio è così rumoroso e minaccioso che nel resto del round tutti i mortali comuni (es. sgherri), a distanza 3 o meno, sono scioccati e non possono agire se non per mettersi al riparo."
+        ]
+      },
+      "speciale": {
+        "nome": "Fama da criminale",
+        "testo": [
+          "Il personaggio, volente o dolente, ha una pessima fama che scuote gli animi delle sue vittime. Ogni volta che riesce a portare con successo un furto di ricchezze terrene di un certo valore, come una rapina in banca, ottiene un ● anima."
+        ]
+      }
+    },
+    {
+      "id": "demagogo",
+      "nome": "Demagogo",
+      "descrizione": [
+        "Molti immortali scendono nel mondo materiale per poter comandare i suoi abitanti, spesso come capi di bande criminali oppure come leader di sette religiose (in cui spesso si spacciano come profeti o incarnazioni divine)"
+      ],
+      "ferri_del_mestiere": "Libri di legge e religiosi, pergamene, coltello, pistola, vesti di diverse religioni, penna ed inchiostro.",
+      "abilita_lavorative": {
+        "px": 20,
+        "abilita": [
+          "ingannare",
+          "socialita",
+          "mischia"
+        ],
+        "caratteristiche": [
+          "potenza"
+        ],
+        "poteri": [
+          {
+            "a_seconda_del_colore": [
+              "possessione",
+              "empatia"
+            ]
+          }
+        ],
+        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) ingannare, socialità, mischia, (caratteristica) potenza, (poteri) Possessione o Empatia (a seconda del colore)."
+      },
+      "attivita": "Il personaggio ha vantaggio a tutti i tiri legati al convincere, infervorare masse e conoscenze religioni.",
+      "opportunita": {
+        "nome": "Fomentare le masse",
+        "esuberi": 3,
+        "testo": [
+          "Il personaggio riesce a raccontare una sua versione della verità, abbellita con citazioni e buoni propositi, riuscendo immediatamente a generare 5 banditi comuni come suoi sgherri fino alla fine dello scenario."
+        ],
+        "uso": "Il personaggio può tentare questa opportunità nei suoi tiri di socialità rivolta alle masse di mortali."
+      },
+      "speciale": {
+        "nome": "Un gregge numeroso",
+        "testo": [
+          "Questo potere migliora tutti i poteri che garantiscono degli sgherri. Aggiunge un numero di sgherri pari alla sua caratteristica di potenza."
+        ]
+      }
+    },
+    {
+      "id": "giustiziere",
+      "nome": "Giustiziere",
+      "descrizione": [
+        "I giustizieri sono gli unici immortali autorizzati a scendere nel mondo dei mortali per dare la caccia agli immortali illegali. Normalmente hanno il complicato compito di scovarli e riportarli nel rispettivo regno con le manette ai polsi, ma dato che il West rende tutto particolarmente complicato, delle volte devono fare delle eccezioni, valutare con cura e scendere a compromessi, arrivando addirittura ad allearsi a degli immortali non autorizzati, pur di prendere un pesce più grande."
+      ],
+      "ferri_del_mestiere": "Taccuino con pennino ed inchiostro, documenti con leggi, distintivo, pistola, coltello, fucile a scelta.",
+      "abilita_lavorative": {
+        "px": 20,
+        "abilita": [
+          "percezione",
+          "socialita",
+          "mira"
+        ],
+        "caratteristiche": [
+          "agilita"
+        ],
+        "poteri": [
+          {
+            "a_seconda_del_colore": [
+              "fuoco_purificatore",
+              "potere_della_cenere"
+            ]
+          }
+        ],
+        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) percezione, socialità, mira, (caratteristica) agilità, (poteri) Fuoco purificatore o Potere della cenere (a seconda del colore)."
+      },
+      "attivita": "Il personaggio ha vantaggio a tutti i tiri legati ad indagini, interrogare, citare leggi.",
+      "opportunita": {
+        "nome": "Interpretare la legge",
+        "esuberi": 2,
+        "testo": [
+          "Il personaggio aggiunge al discorso un qualche precedente giuridico o postilla dimenticata, per dimostrare di avere ragione, secondo la legge."
+        ],
+        "uso": "Il personaggio può tentare questa opportunità nei suoi tiri di socialità, intimidire, ingannare o contrattare."
+      },
+      "speciale": {
+        "nome": "Rappresentante della legge",
+        "testo": [
+          "I giustizieri iniziano la campagna con un distintivo (di magnifica fattura) e sono autorizzati a essere presenti nel mondo dei mortali, almeno finché rispettano le seguenti leggi.",
+          "Art 1. Non influenzare le decisioni dei mortali con la propria presenza.",
+          "Art 2. Non manifestare la propria forma originale o attraverso manifestazioni di potere non comprensibili ai mortali.",
+          "Art 3. Impedire agli immortali e creature paranormali di interferire con i mortali.",
+          "Art 4. Un Agente deve prima mostrare il distintivo identificativo e dichiarare le sue intenzioni di arresto, prima di procedere con il recupero forzato del trasgressore.",
+          "Art 5. È autorizzato l'uso della forza contro i trasgressori che si oppongono all'arresto.",
+          "Art 6. Un Agente non può intralciare l'operato di un'altro agente, finché quest'ultimo non è in violazione con uno dei precedenti articoli."
+        ]
+      }
+    },
+    {
+      "id": "soldato",
+      "nome": "Soldato",
+      "descrizione": [
+        "I demoni sono angeli che si sono ribellati ai sovrani del paradiso e hanno iniziato la guerra civile. Per la maggior parte di essi, la guerra è finita con una vittoria parziale del paradiso, che non è stato sconfitto dai ribelli, ma che si accontenta di aver solo scacciato i traditori al posto di eliminarli tutti.",
+        "I soldati sono angeli e demoni che continuano la guerra anche senza il permesso delle autorità, in loro la guerra civile è tuttora in atto e continuano a cercare i loro nemici con zelo."
+      ],
+      "ferri_del_mestiere": "Armi da mischia a scelta, coltelli, attrezzatura per accamparsi all'aperto, pistola, attrezzi per riparare armi, pistola.",
+      "abilita_lavorative": {
+        "px": 20,
+        "abilita": [
+          "sopravvivenza",
+          "percezione",
+          "mischia"
+        ],
+        "caratteristiche": [
+          "possanza"
+        ],
+        "poteri": [
+          {
+            "a_seconda_del_colore": [
+              "pelle_a_scaglie",
+              "pelle_di_mercurio"
+            ]
+          }
+        ],
+        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) sopravvivenza, percezione, mischia, (caratteristica) possanza, (poteri) Pelle a scaglie o pelle di mercurio (a seconda del colore)."
+      },
+      "attivita": "Il personaggio ha vantaggio a tutti i tiri legati a strategie militari e riconoscere armi ed i loro effetti.",
+      "opportunita": {
+        "nome": "Ancora!",
+        "esuberi": 3,
+        "testo": [
+          "Il personaggio può usare questa opportunità ogni volta che infligge danno ad un individuo di colore diverso dal suo. Il personaggio raddoppia il danno dell’arma."
+        ]
+      },
+      "speciale": {
+        "nome": "Una guerra infinita",
+        "testo": [
+          "Il personaggio, quando combatte contro altri immortali, aggiunge +1 punti in esubero in tutte le azioni di attacco, indipendentemente dal risultato."
+        ]
+      }
+    }
+  ]
+}

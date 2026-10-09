@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Carriere",
+  "$ref": "comune.schema.json#/$defs/file",
+  "unevaluatedProperties": false,
+  "properties": {
+    "voci": {
+      "items": {
+        "$ref": "#/$defs/voce"
+      }
+    }
+  },
+  "$defs": {
+    "voce": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "nome",
+        "descrizione",
+        "ferri_del_mestiere",
+        "abilita_lavorative",
+        "attivita",
+        "opportunita",
+        "speciale"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "comune.schema.json#/$defs/id"
+        },
+        "nome": {
+          "$ref": "comune.schema.json#/$defs/testo"
+        },
+        "descrizione": {
+          "$ref": "comune.schema.json#/$defs/testi"
+        },
+        "ferri_del_mestiere": {
+          "$ref": "comune.schema.json#/$defs/testo"
+        },
+        "abilita_lavorative": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "px",
+            "abilita",
+            "caratteristiche",
+            "poteri",
+            "testo"
+          ],
+          "properties": {
+            "px": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "abilita": {
+              "$ref": "comune.schema.json#/$defs/ids"
+            },
+            "caratteristiche": {
+              "type": "array",
+              "items": {
+                "$ref": "comune.schema.json#/$defs/caratteristica"
+              }
+            },
+            "poteri": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "potere"
+                    ],
+                    "properties": {
+                      "potere": {
+                        "$ref": "comune.schema.json#/$defs/id"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "a_seconda_del_colore"
+                    ],
+                    "properties": {
+                      "a_seconda_del_colore": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "comune.schema.json#/$defs/id"
+                        },
+                        "minItems": 2,
+                        "maxItems": 2
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "testo": {
+              "$ref": "comune.schema.json#/$defs/testo"
+            }
+          }
+        },
+        "attivita": {
+          "$ref": "comune.schema.json#/$defs/testo"
+        },
+        "opportunita": {
+          "$ref": "comune.schema.json#/$defs/opportunita"
+        },
+        "speciale": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "nome",
+            "testo"
+          ],
+          "properties": {
+            "nome": {
+              "$ref": "comune.schema.json#/$defs/testo"
+            },
+            "testo": {
+              "$ref": "comune.schema.json#/$defs/testi"
+            }
+          }
+        }
+      }
+    }
+  }
+}

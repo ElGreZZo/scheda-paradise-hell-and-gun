@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Distanze",
+  "$ref": "comune.schema.json#/$defs/file",
+  "unevaluatedProperties": false,
+  "properties": {
+    "voci": {
+      "items": {
+        "$ref": "#/$defs/voce"
+      }
+    }
+  },
+  "$defs": {
+    "voce": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "valore",
+        "nome",
+        "testo"
+      ],
+      "properties": {
+        "valore": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "nome": {
+          "$ref": "comune.schema.json#/$defs/testo"
+        },
+        "testo": {
+          "$ref": "comune.schema.json#/$defs/testo"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "scheda-paradise-hell-and-guns",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Scheda custom di Paradise, Hell and Guns per Roll20",
+  "type": "module",
+  "scripts": {
+    "start": "node strumenti/server.mjs",
+    "build": "node strumenti/build.mjs",
+    "dev": "node strumenti/build.mjs --watch --serve",
+    "test": "node --import tsx --import ./test/roll20.ts --test \"test/**/*.test.ts\"",
+    "tipi": "tsc -p . && tsc -p test",
+    "estrai-testo": "python strumenti/estrai_testo.py",
+    "estrai-dati": "node strumenti/estrai_dati.mjs",
+    "controlla": "node strumenti/controlla.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "ajv": "^8.20.0",
+    "esbuild": "^0.28.2",
+    "nunjucks": "^3.2.4",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

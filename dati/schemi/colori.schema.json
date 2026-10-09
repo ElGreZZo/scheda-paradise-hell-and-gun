@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Colori",
+  "$ref": "comune.schema.json#/$defs/file",
+  "unevaluatedProperties": false,
+  "properties": {
+    "voci": {
+      "items": {
+        "$ref": "#/$defs/voce"
+      }
+    }
+  },
+  "$defs": {
+    "voce": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "nome",
+        "testo"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "comune.schema.json#/$defs/colore"
+        },
+        "nome": {
+          "$ref": "comune.schema.json#/$defs/testo"
+        },
+        "testo": {
+          "$ref": "comune.schema.json#/$defs/testo"
+        }
+      }
+    }
+  }
+}

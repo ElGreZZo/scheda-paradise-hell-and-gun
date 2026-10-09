@@ -1,0 +1,167 @@
+/* Pagina dell'emulatore: barra dei comandi, scheda a sinistra, pannelli a destra. */
+
+:root {
+  --sfondo: #1f2126;
+  --pannello: #2a2d33;
+  --bordo: #3b3f47;
+  --testo: #e6e6e6;
+  --tenue: #9aa0a8;
+  --accento: #e8a33d;
+  --errore: #ff6b6b;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: var(--sfondo);
+  color: var(--testo);
+  font: 14px/1.4 "Segoe UI", system-ui, sans-serif;
+}
+
+.barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  padding: 8px 16px;
+  background: var(--pannello);
+  border-bottom: 1px solid var(--bordo);
+}
+.barra h1 { margin: 0; font-size: 16px; font-weight: 600; }
+.barra .sottotitolo { color: var(--tenue); }
+.barra .spazio { flex: 1; }
+.barra button, .barra select, .barra label.file {
+  font: inherit;
+  color: var(--testo);
+  background: #353941;
+  border: 1px solid var(--bordo);
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.barra button:hover, .barra label.file:hover { border-color: var(--accento); }
+.barra label.file input { display: none; }
+
+.area {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  min-height: 0;
+}
+.scheda-scorrimento {
+  display: flex;
+  min-height: 0;
+  overflow-x: auto;
+  padding: 12px 16px;
+}
+/* Come la finestra di Roll20: bianca, con lo scorrimento dentro. La scheda Farsight chiede almeno 980 px. */
+#scheda-iframe {
+  flex: 0 0 1060px;
+  height: 100%;
+  border: 0;
+  border-radius: 4px;
+  background: #fff;
+}
+.strumenti .spazio { flex: 1; }
+
+aside {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 0;
+  background: var(--pannello);
+  border-left: 1px solid var(--bordo);
+}
+.linguette { display: flex; border-bottom: 1px solid var(--bordo); }
+.linguette button {
+  flex: 1;
+  padding: 8px;
+  font: inherit;
+  color: var(--tenue);
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+.linguette button.attiva { color: var(--testo); border-bottom-color: var(--accento); }
+.linguette button.con-errori::after { content: " ●"; color: var(--errore); }
+
+.pannello { display: grid; grid-template-rows: auto 1fr; min-height: 0; }
+.pannello[hidden] { display: none; }
+.strumenti { display: flex; gap: 8px; align-items: center; padding: 6px 10px; border-bottom: 1px solid var(--bordo); color: var(--tenue); font-size: 12px; }
+.strumenti input { flex: 1; font: inherit; padding: 3px 6px; color: var(--testo); background: #1f2126; border: 1px solid var(--bordo); border-radius: 3px; }
+.strumenti button { font: inherit; color: var(--testo); background: #353941; border: 1px solid var(--bordo); border-radius: 3px; padding: 2px 8px; cursor: pointer; }
+
+/* Chat: sfondo chiaro come quella di Roll20, così i roll template si leggono come là. */
+.textchatcontainer { overflow: auto; padding: 8px; background: #fff; color: #333; font: 13px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.textchatcontainer .message { padding: 6px 4px; border-bottom: 1px solid #eee; }
+.textchatcontainer .message .by { display: block; font-weight: bold; margin-bottom: 4px; }
+.textchatcontainer .message.error { color: #b31515; font-style: italic; }
+
+.tabella-attributi { overflow: auto; }
+.tabella-attributi table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.tabella-attributi td { padding: 2px 6px; border-bottom: 1px solid var(--bordo); }
+.tabella-attributi td.nome { max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--tenue); }
+.tabella-attributi input { width: 100%; font: inherit; color: var(--testo); background: transparent; border: 1px solid transparent; padding: 1px 3px; }
+.tabella-attributi input:focus { border-color: var(--accento); outline: none; background: #1f2126; }
+
+#registro-elenco { overflow: auto; margin: 0; padding: 0; list-style: none; font: 12px/1.35 Consolas, "Cascadia Mono", monospace; }
+#registro-elenco li { padding: 3px 10px; border-bottom: 1px solid #30343b; word-break: break-word; }
+#registro-elenco .ora { color: #6c727b; }
+#registro-elenco .tipo { display: inline-block; min-width: 62px; color: var(--accento); }
+#registro-elenco .registro-evento .tipo { color: #7cc4ff; }
+#registro-elenco .registro-setAttrs .tipo { color: #8be38b; }
+#registro-elenco .registro-console .tipo { color: #d6a8ff; }
+#registro-elenco .registro-errore { background: rgba(255, 107, 107, 0.12); }
+#registro-elenco .registro-errore .tipo { color: var(--errore); }
+
+.distintivo { margin-left: 8px; padding: 1px 8px; border-radius: 10px; background: var(--accento); color: #1f2126; font-size: 12px; }
+.linguette button[hidden] { display: none; }
+.textchatcontainer .message.private { background: #f4ecff; }
+
+.compendio-corpo { display: grid; grid-template-rows: minmax(120px, 45%) 1fr; min-height: 0; }
+#compendio-elenco { overflow: auto; margin: 0; padding: 0; list-style: none; border-bottom: 1px solid var(--bordo); }
+#compendio-elenco li { padding: 3px 10px; cursor: grab; border-bottom: 1px solid #30343b; }
+#compendio-elenco li:hover { background: #353941; }
+#compendio-elenco li small { color: var(--tenue); }
+#compendio-elenco li.altri { color: var(--tenue); cursor: default; }
+#compendio-anteprima { overflow: auto; padding: 8px 12px; background: #fff; color: #333; font: 13px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+#compendio-anteprima .rif { color: #888; font-size: 11px; margin-top: -8px; }
+#compendio-anteprima .suggerimento { color: #888; }
+#compendio-anteprima pre { white-space: pre-wrap; font-size: 11px; }
+#wizard-dati { overflow: auto; margin: 0; padding: 8px 12px; font: 11px/1.4 Consolas, "Cascadia Mono", monospace; white-space: pre-wrap; }
+
+#dialogo-domanda { border: 1px solid var(--bordo); border-radius: 6px; background: var(--pannello); color: var(--testo); min-width: 320px; }
+#dialogo-domanda::backdrop { background: rgba(0, 0, 0, 0.45); }
+#dialogo-domanda select, #dialogo-domanda input { width: 100%; font: inherit; padding: 4px; }
+#dialogo-domanda menu { display: flex; justify-content: flex-end; gap: 8px; padding: 0; margin: 14px 0 0; }
+#dialogo-domanda button { font: inherit; padding: 4px 12px; color: var(--testo); background: #353941; border: 1px solid var(--bordo); border-radius: 4px; }
+#dialogo-domanda button.principale { border-color: var(--accento); }
+
+@media (max-width: 1100px) {
+  .area { grid-template-columns: 1fr; grid-template-rows: 1fr 45vh; }
+  aside { border-left: 0; border-top: 1px solid var(--bordo); }
+}
+
+/* Pulsanti nei messaggi della chat ([testo](~bersaglio)): li disegna il roll template della scheda. */
+.textchatcontainer a.emu-azione-chat { cursor: pointer; }
+
+/* Suggerimento dei tiri in linea, come quello di Roll20: "Rolling 1d10 + 1[PER] = (7)+1", con i dadi in
+   grassetto, il massimo verde, l'1 rosso e i dadi scartati barrati. */
+.emu-suggerimento {
+  position: fixed;
+  z-index: 1000;
+  max-width: 360px;
+  padding: 5px 8px;
+  font: 12px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  background: #111;
+  border-radius: 4px;
+  pointer-events: none;
+}
+.emu-suggerimento[hidden] { display: none; }
+.emu-suggerimento .basicdiceroll { font-weight: bold; }
+.emu-suggerimento .basicdiceroll.critsuccess { color: #6fdc4b; }
+.emu-suggerimento .basicdiceroll.critfail { color: #ff6b6b; }
+.emu-suggerimento .basicdiceroll.dropped { color: #999; text-decoration: line-through; }

@@ -1,0 +1,42 @@
+{
+  "$schema": "../schemi/seguaci.schema.json",
+  "fonte": {
+    "manuale": "Pad 1.5",
+    "capitolo": "11 - Armi ed oggettistica"
+  },
+  "generato_da": "strumenti/estrai_dati.mjs",
+  "voci": [
+    {
+      "id": "cavallo",
+      "nome": "Cavallo",
+      "testo": [
+        "Il miglior amico dell’uomo (almeno finché non viene inventata l’automobile) che consente di trasportare il padrone per chilometri e chilometri senza mai fermarsi, trasportando grossi carichi o trainando carrozze.",
+        "Se un personaggio è in sella ad un cavallo può usare per una seconda volta l’opportunità di movimento per turno arrivando, di fatto, a poter fare ben 3 volte il movimento se ottiene il sufficiente numero di esuberi. Un personaggio a piedi che prova ad inseguire un personaggio a cavallo, fallirà automaticamente."
+      ]
+    },
+    {
+      "id": "cane_falco",
+      "nome": "Cane/Falco",
+      "testo": [
+        "Questi animali, ottimi per stanare nemici o prede sulle lunghe distanze, aiutano il personaggio sulle battute di caccia o ad individuare pericoli con un certo anticipo.",
+        "Il personaggio guadagna 2D6 a tutti i tiri di percezione per individuare tracce e creature di ogni genere, anche sulle lunghe distanze."
+      ]
+    },
+    {
+      "id": "procione_scimmia",
+      "nome": "Procione/Scimmia",
+      "testo": [
+        "Questi animali aiutano il padrone grazie alla loro capacità di toccare tutto con le loro zampette veloci.",
+        "Il personaggio guadagna 2D6 a tutti i tiri per rubare o spostare cose di nascosto, anche ad una certa distanza da lui."
+      ]
+    },
+    {
+      "id": "pappagallo_lontra",
+      "nome": "Pappagallo/Lontra",
+      "testo": [
+        "Questi simpatici animali aiutano il padrone a dare spettacolo grazie alle loro capacità di intrattenimento.",
+        "Il personaggio guadagna 2D6 a tutti i tiri per intrattenere o distrarre qualcuno."
+      ]
+    }
+  ]
+}

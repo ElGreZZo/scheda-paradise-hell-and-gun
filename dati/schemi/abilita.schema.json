@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Abilità comuni e di combattimento",
+  "$ref": "comune.schema.json#/$defs/file",
+  "unevaluatedProperties": false,
+  "properties": {
+    "voci": {
+      "items": {
+        "$ref": "#/$defs/voce"
+      }
+    }
+  },
+  "$defs": {
+    "voce": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "nome",
+        "tipo",
+        "caratteristiche",
+        "costi_px",
+        "descrizione",
+        "opportunita"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "comune.schema.json#/$defs/id"
+        },
+        "nome": {
+          "$ref": "comune.schema.json#/$defs/testo"
+        },
+        "tipo": {
+          "enum": [
+            "comune",
+            "combattimento"
+          ]
+        },
+        "caratteristiche": {
+          "description": "Caratteristiche a cui è normalmente associata, la prima è la predefinita; vuoto se il manuale non lo dice.",
+          "type": "array",
+          "items": {
+            "$ref": "comune.schema.json#/$defs/caratteristica"
+          }
+        },
+        "costi_px": {
+          "description": "Punti esperienza per arrivare a 1, 2, 3, 4 e 5 pallini.",
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "descrizione": {
+          "$ref": "comune.schema.json#/$defs/testi"
+        },
+        "opportunita": {
+          "type": "array",
+          "items": {
+            "$ref": "comune.schema.json#/$defs/opportunita"
+          }
+        }
+      }
+    }
+  }
+}

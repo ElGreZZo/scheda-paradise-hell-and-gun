@@ -1,0 +1,78 @@
+{
+  "$schema": "../schemi/caratteristiche.schema.json",
+  "fonte": {
+    "manuale": "Pad 1.5",
+    "capitolo": "2 - Regole base"
+  },
+  "generato_da": "strumenti/estrai_dati.mjs",
+  "voci": [
+    {
+      "id": "possanza",
+      "nome": "Possanza",
+      "descrizione": [
+        "Rappresenta la forza fisica del personaggio. Usata per tutte le azioni che richiedono forza e resistenza, oltre ad aumentare i punti ferita del soggetto."
+      ],
+      "effetti": [
+        {
+          "nome": "Abilità",
+          "testo": "aggiungi un dado alla pool di dadi per ogni ● presente in questa caratteristica quando si compie azioni che richiedono forza fisica, utilizzo di armi da mischia."
+        },
+        {
+          "nome": "Punti ferita",
+          "testo": "Aggiungi X punti ferita al tuo valore base di punti ferita, dove X è pari al numero di ● sulla caratteristica."
+        }
+      ]
+    },
+    {
+      "id": "agilita",
+      "nome": "Agilità",
+      "descrizione": [
+        "Rappresenta la velocità e i riflessi del soggetto. Usata per tutte quelle azioni che richiedono movimento e velocità, oltre per ridurre i danni in arrivo."
+      ],
+      "effetti": [
+        {
+          "nome": "Abilità",
+          "testo": "aggiungi un dado alla pool di dadi per ogni ● presente in questa caratteristica quando si compie azioni che richiedono velocità, utilizzare armi a distanza."
+        },
+        {
+          "nome": "Schivare",
+          "testo": "aggiungi un dado alla pool di dadi per ogni ● presente in questa caratteristica quando si compie un'azione di difesa."
+        }
+      ]
+    },
+    {
+      "id": "astuzia",
+      "nome": "Astuzia",
+      "descrizione": [
+        "Determina la furbizia del personaggio. Usata per pianificare, risolvere enigmi, ingannare e simili."
+      ],
+      "effetti": [
+        {
+          "nome": "Abilità",
+          "testo": "aggiungi un dado alla pool di dadi per ogni ● presente in questa caratteristica quando si compie azioni intellettuali o sociali."
+        },
+        {
+          "nome": "Iniziativa",
+          "testo": "Si aggiunge questa caratteristica al tiro per l’iniziativa."
+        }
+      ]
+    },
+    {
+      "id": "potenza",
+      "nome": "Potenza",
+      "descrizione": [
+        "Determina la potenza del personaggio. Usata soprattutto per i poteri e il mana del personaggio."
+      ],
+      "effetti": [
+        {
+          "nome": "Abilità",
+          "testo": "aggiungi un dado alla pool di dadi per ogni ● presente in questa caratteristica quando si utilizzano determinati poteri."
+        },
+        {
+          "nome": "Mana",
+          "testo": "Aggiungi X al tuo valore base di mana, dove X è pari al doppio dei ● sulla caratteristica."
+        }
+      ]
+    }
+  ]
+}

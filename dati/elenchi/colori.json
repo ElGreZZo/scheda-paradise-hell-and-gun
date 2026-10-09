@@ -1,0 +1,25 @@
+{
+  "$schema": "../schemi/colori.schema.json",
+  "fonte": {
+    "manuale": "Pad 1.5",
+    "capitolo": "5 - Regole avanzate"
+  },
+  "generato_da": "strumenti/estrai_dati.mjs",
+  "voci": [
+    {
+      "id": "nero",
+      "nome": "Nero",
+      "testo": "Nero è un personaggio che tende alla malvagità (normalmente i demoni), egoismo, determinazione pericolosa, avidità ecc. Non per forza un personaggio nero deve andare in giro a torturare gli altri o infliggere angosce a chi lo circonda, ma comunque tende a degli estremi più negativi. Un comodo riferimento per ruolare uno di questi personaggi e appioppargli uno dei sette peccati capitali come perno centrale."
+    },
+    {
+      "id": "bianco",
+      "nome": "Bianco",
+      "testo": "Bianco è un personaggio tendente alla bontà (normalmente gli angeli), gentili, altruisti, eroici."
+    },
+    {
+      "id": "grigio",
+      "nome": "Grigio",
+      "testo": "Grigio è un personaggio moderato, che non tende né alla malvagità né alla bontà (la maggior parte dei mortali che tira avanti con difficoltà nella loro breve e pericolosa vita). Questi personaggi possono prendere anime sia corrompendo che salvando le persone e possono prendere anime sia bianche che nere, ma sono tagliati fuori da numerosi poteri che hanno come requisito un determinato colore."
+    }
+  ]
+}

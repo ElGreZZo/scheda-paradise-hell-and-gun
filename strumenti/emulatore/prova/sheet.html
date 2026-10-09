@@ -1,0 +1,34 @@
+<!-- Scheda di prova dell'emulatore: non è la scheda di Farsight.
+     Serve a verificare i tre meccanismi di base: switch di pagina, campo mostrato o nascosto, tiro. -->
+
+<input type="hidden" class="sheet-pagina" name="attr_pagina" value="uno">
+<div class="sheet-menu">
+  <button type="action" name="act_uno">Pagina uno</button>
+  <button type="action" name="act_due">Pagina due</button>
+</div>
+
+<div class="sheet-uno">
+  <h2>Pagina uno</h2>
+  <label>Nome <input type="text" name="attr_nome" maxlength="40"></label>
+  <label>Valore <input type="number" name="attr_valore" value="0" min="0" max="10"></label>
+  <button type="roll" name="roll_prova" value="&{template:prova} {{nome=@{nome}}} {{tiro=[[1d6 + @{valore}]]}}">Tira 1d6 + valore</button>
+</div>
+
+<div class="sheet-due">
+  <h2>Pagina due</h2>
+  <input type="checkbox" class="sheet-mostra" name="attr_mostra_note" value="1"> Mostra le note
+  <div class="sheet-note">
+    <textarea name="attr_note" maxlength="500"></textarea>
+  </div>
+</div>
+
+<rolltemplate class="sheet-rolltemplate-prova">
+  <div class="sheet-tiro">
+    <strong>{{nome}}</strong>
+    <span>{{tiro}}</span>
+  </div>
+</rolltemplate>
+
+<script type="text/worker">
+  ["uno", "due"].forEach((pagina) => on(`clicked:${pagina}`, () => setAttrs({ pagina })));
+</script>

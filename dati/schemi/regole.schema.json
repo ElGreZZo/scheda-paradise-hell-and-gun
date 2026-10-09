@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Regole: i numeri della scheda con le frasi del manuale",
+  "$ref": "comune.schema.json#/$defs/file",
+  "unevaluatedProperties": false,
+  "properties": {
+    "voci": {
+      "items": {
+        "$ref": "#/$defs/voce"
+      }
+    }
+  },
+  "$defs": {
+    "voce": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "valori",
+        "citazioni"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "comune.schema.json#/$defs/id"
+        },
+        "valori": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          }
+        },
+        "citazioni": {
+          "description": "Frasi del manuale da cui vengono i valori.",
+          "$ref": "comune.schema.json#/$defs/testi"
+        },
+        "nota": {
+          "description": "Nota nostra, non del manuale: di solito un dubbio da chiarire.",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

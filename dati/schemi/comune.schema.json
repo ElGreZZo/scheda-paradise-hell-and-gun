@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Definizioni comuni della base dati",
+  "$defs": {
+    "id": {
+      "description": "Identificativo stabile: minuscole ASCII, cifre e underscore singoli.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$"
+    },
+    "ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/id"
+      },
+      "uniqueItems": true
+    },
+    "testo": {
+      "description": "Copiato parola per parola dal manuale (npm run controlla).",
+      "type": "string",
+      "minLength": 1
+    },
+    "testi": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/testo"
+      }
+    },
+    "caratteristica": {
+      "enum": [
+        "possanza",
+        "agilita",
+        "astuzia",
+        "potenza"
+      ]
+    },
+    "colore": {
+      "enum": [
+        "nero",
+        "bianco",
+        "grigio"
+      ]
+    },
+    "fonte": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manuale",
+        "capitolo"
+      ],
+      "properties": {
+        "manuale": {
+          "description": "Versione del manuale (il docx in manuali/).",
+          "type": "string"
+        },
+        "capitolo": {
+          "description": "Titoli dei capitoli da cui vengono le voci.",
+          "type": "string"
+        }
+      }
+    },
+    "opportunita": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nome",
+        "esuberi",
+        "testo"
+      ],
+      "properties": {
+        "nome": {
+          "$ref": "#/$defs/testo"
+        },
+        "esuberi": {
+          "description": "Esuberi da spendere (il numero fra parentesi).",
+          "type": "integer",
+          "minimum": 1
+        },
+        "testo": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/testo"
+            },
+            {
+              "$ref": "#/$defs/testi"
+            }
+          ]
+        },
+        "uso": {
+          "description": "A quali tiri si applica, quando il manuale lo dice a parte.",
+          "$ref": "#/$defs/testo"
+        }
+      }
+    },
+    "file": {
+      "description": "Struttura di ogni file di dati/: le voci stanno in voci.",
+      "type": "object",
+      "required": [
+        "$schema",
+        "fonte",
+        "voci"
+      ],
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "fonte": {
+          "$ref": "#/$defs/fonte"
+        },
+        "generato_da": {
+          "description": "Il file lo scrive lo strumento indicato: non modificarlo a mano.",
+          "type": "string"
+        },
+        "voci": {
+          "type": "array",
+          "minItems": 1
+        }
+      }
+    }
+  }
+}
