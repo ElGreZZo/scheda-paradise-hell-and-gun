@@ -15,3 +15,6 @@ strumenti/emulatore/salvataggi/
 *.tsbuildinfo
 .env
 .env.*
+
+# File di lavoro di Playwright (screenshot, file da caricare su Roll20, script di prova)
+.playwright-mcp/

@@ -24,9 +24,16 @@ strumenti/
 ├── controlla.mjs      schemi, riferimenti e testi di dati/ confrontati con il manuale
 ├── traduzioni.mjs     traduzioni: da it.json a translation.json, testi nell'HTML
 ├── server.mjs         server locale dell'emulatore (porta 8030)
+├── avvia-chrome.ps1   Chrome di debug (porta 9222) per Playwright, per le prove su Roll20
 └── emulatore/         emulatore di Roll20 (README.md)
 test/                  test (node --test)
-docs/                  domande per il master sul manuale
+docs/
+├── domande-per-il-master.md   dubbi sul manuale
+└── roll20.md                  cosa sappiamo di Roll20: vincoli, Sandbox, script, pubblicazione
+.claude/
+├── CLAUDE.md          contesto e regole per Claude (stato del progetto, come lavorare)
+└── skills/prova-roll20/       procedura per provare la scheda su Roll20
+.mcp.json              server Playwright collegato al Chrome di debug
 ```
 
 ## Comandi
@@ -43,6 +50,10 @@ npm run tipi           # controllo dei tipi di TypeScript
 ```
 
 Il server dell'emulatore usa la porta 8030, così può girare insieme a quello della scheda di Farsight (8020).
+
+## Prove su Roll20
+
+Le schede custom richiedono il Pro: le prove si fanno nello Sheet Sandbox dell'utente. Con Claude Code si usa la skill `prova-roll20`. Lo strumento è Playwright (`.mcp.json`), collegato al Chrome di debug lanciato da `strumenti/avvia-chrome.ps1`. La prima volta, Claude Code chiede di abilitare il server `playwright` del progetto. I vincoli di Roll20 che conosciamo sono in [docs/roll20.md](docs/roll20.md).
 
 ## Il manuale e la base dati
 
