@@ -2,12 +2,23 @@
     in dist/scheda.html: include le parti di pagine/ e mette lo script di src/worker/ dentro
     <script type="text/worker">. I percorsi di include partono da questa cartella (src/scheda/).
     Delimitatori di Nunjucks cambiati (le graffe doppie sono di Roll20): vedi l'intestazione di build.mjs.
-    In pagine/: una parte per pagina o pannello, rolltemplate/ per i messaggi in chat. -#}
+    In pagine/: una parte per pagina o pannello, rolltemplate/ per i messaggi in chat.
+    Stile «Frontiera» (docs/mockup/a-frontiera.html), scelto dal master il 23/10/2026. -#}
 <!-- Scheda del personaggio di Paradise, Hell and Guns per Roll20, generata da src/scheda/ (non modificare dist/). -->
 
 <div class="scheda">
-  {% include "pagine/in-costruzione.njk" %}
+  {#- Pagina mostrata: il valore di attr_pagina, che le linguette cambiano (personaggio/linguette.ts). Sta prima di
+      tutto perché il CSS la confronta con le pagine che seguono. -#}
+  <input type="hidden" class="pagina-scelta" name="attr_pagina" value="personaggio">
+  {% include "pagine/intestazione.njk" %}
+  {% include "pagine/linguette.njk" %}
+  {% include "pagine/barra-tiri.njk" %}
+  {% include "pagine/personaggio.njk" %}
+  {% include "pagine/in-arrivo.njk" %}
 </div>
+
+{% include "pagine/rolltemplate/prova.njk" %}
+{% include "pagine/rolltemplate/iniziativa.njk" %}
 
 <script type="text/worker">
 {$ worker $}

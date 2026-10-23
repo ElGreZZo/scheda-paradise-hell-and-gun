@@ -1,0 +1,84 @@
+/* Intestazione e linguette */
+.scheda .testa {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px 20px;
+  padding: 18px 20px 14px;
+  background: linear-gradient(180deg, #f6efe1, var(--carta));
+  border-bottom: 1px solid var(--bordo);
+}
+.scheda .logo {
+  font: 22px/1 "Rye", serif;
+  letter-spacing: 0.02em;
+  color: var(--ruggine);
+}
+.scheda .logo small {
+  display: block;
+  font: 700 11px/1.6 "Alegreya Sans SC", sans-serif;
+  letter-spacing: 0.14em;
+  color: var(--tenue);
+}
+.scheda .testa input.nome[name] {
+  margin-top: 6px;
+  padding: 0;
+  font: 700 26px/1.2 "Alegreya Sans", sans-serif;
+  border-bottom-color: transparent;
+}
+.scheda .testa .forma {
+  align-self: start;
+  border-radius: 99px;
+}
+.scheda .testa .forma .segmento input[type="radio"]:checked + span {
+  background: var(--inchiostro);
+}
+.scheda .campi {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.scheda .campo {
+  flex: 1 1 110px;
+  min-width: 110px;
+  margin: 0;
+  padding: 4px 10px 5px;
+  background: var(--riquadro);
+  border: 1px solid var(--bordo);
+  border-radius: 8px;
+}
+.scheda .campo-largo {
+  flex: 2 1 150px;
+}
+.scheda .campo input[type="text"],
+.scheda .campo select {
+  padding: 0;
+  border: 0;
+}
+.scheda .campo .px {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.scheda .linguette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 0 20px;
+  background: var(--carta);
+  border-bottom: 1px solid var(--bordo);
+}
+.scheda button.linguetta[name] {
+  padding: 12px 14px 11px;
+  font: 700 13px/1 "Alegreya Sans SC", sans-serif;
+  letter-spacing: 0.08em;
+  color: var(--tenue);
+  border-bottom: 3px solid transparent;
+}
+.pagina-scelta[value="personaggio"] ~ .linguette button.linguetta-personaggio[name],
+.pagina-scelta[value="poteri"] ~ .linguette button.linguetta-poteri[name],
+.pagina-scelta[value="equipaggiamento"] ~ .linguette button.linguetta-equipaggiamento[name],
+.pagina-scelta[value="origini"] ~ .linguette button.linguetta-origini[name] {
+  color: var(--ruggine);
+  border-bottom-color: var(--ruggine);
+}

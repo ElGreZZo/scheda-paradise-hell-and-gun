@@ -1,0 +1,47 @@
+{#- Intestazione: logo, nome (il nome del personaggio di Roll20), forma immortale o mortale, poi i campi del
+    personaggio. Scegliendo l'archetipo lo script scrive il colore e gli incrementi di caratteristica
+    (personaggio/archetipo.ts); si possono sempre cambiare a mano. -#}
+<header class="testa">
+  <div class="testa-logo">
+    <div class="logo"><span data-i18n="sheet.title"></span><small data-i18n="sheet.subtitle"></small></div>
+    <input type="text" class="nome" name="attr_character_name" data-i18n-placeholder="header.name">
+  </div>
+  <div class="forma" data-i18n-title="header.form.tooltip">
+    <label class="segmento"><input type="radio" name="attr_forma" value="immortale" checked><span data-i18n="header.form.immortal"></span></label>
+    <label class="segmento"><input type="radio" name="attr_forma" value="mortale"><span data-i18n="header.form.mortal"></span></label>
+  </div>
+  <div class="campi">
+    <label class="campo campo-largo"><span class="etichetta" data-i18n="header.player"></span><input type="text" name="attr_giocatore"></label>
+    <label class="campo campo-largo"><span class="etichetta" data-i18n="header.archetype"></span>
+      <select name="attr_archetipo">
+        <option value="">—</option>
+        {% for a in dati.archetipi %}
+        <option value="{$ a.id $}">{$ a.nome $}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label class="campo"><span class="etichetta" data-i18n="header.colour"></span>
+      <select name="attr_colore">
+        <option value="">—</option>
+        <option value="bianco" data-i18n="header.colours.bianco"></option>
+        <option value="nero" data-i18n="header.colours.nero"></option>
+        <option value="grigio" data-i18n="header.colours.grigio"></option>
+      </select>
+    </label>
+    <label class="campo campo-largo"><span class="etichetta" data-i18n="header.career"></span>
+      <select name="attr_carriera">
+        <option value="">—</option>
+        {% for c in dati.carriere %}
+        <option value="{$ c.id $}">{$ c.nome $}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <div class="campo"><span class="etichetta" data-i18n="header.xp"></span>
+      <span class="px">
+        <input type="number" name="attr_px_posseduti" value="0" min="0" data-i18n-title="header.xp_owned">
+        <span>/</span>
+        <input type="number" name="attr_px_usati" value="0" min="0" data-i18n-title="header.xp_spent">
+      </span>
+    </div>
+  </div>
+</header>

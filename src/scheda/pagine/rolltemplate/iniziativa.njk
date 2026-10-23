@@ -1,0 +1,11 @@
+{#- Roll template dell'iniziativa: 2D6 + Astuzia (manuale 1.6, cap. 2, Tempo). Il tiro va anche nell'ordine dei turni
+    di Roll20 (&{tracker} nel comando, tiri/prove.ts). -#}
+<rolltemplate class="sheet-rolltemplate-iniziativa">
+  <div class="sheet-tiro">
+    <div class="sheet-tiro-testa">
+      <div class="sheet-tiro-titolo" data-i18n="chat.initiative"></div>
+      {{#personaggio}}<div class="sheet-tiro-personaggio">{{personaggio}}</div>{{/personaggio}}
+    </div>
+    <div class="sheet-tiro-corpo sheet-iniziativa">{{tiro}}</div>
+  </div>
+</rolltemplate>

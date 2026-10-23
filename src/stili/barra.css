@@ -1,0 +1,63 @@
+/* Barra dei tiri, sotto le linguette. Si colora quando qualcosa non e normale (attr_tiro_attivo = 1). */
+.scheda .barra-tiri {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px 20px;
+  padding: 10px 20px 12px;
+  background: var(--carta-2);
+  border-bottom: 1px solid var(--bordo);
+}
+.scheda .barra-tiri:has(.barra-attiva[value="1"]) {
+  background: #f5dccd;
+}
+.scheda .barra-tiri .etichetta {
+  margin-bottom: 5px;
+}
+.scheda .nome-soglia {
+  display: none;
+  margin-left: 4px;
+  letter-spacing: 0.04em;
+  color: var(--ruggine);
+}
+.soglia-scelta[value="2"] ~ .nome-soglia-2,
+.soglia-scelta[value="3"] ~ .nome-soglia-3,
+.soglia-scelta[value="4"] ~ .nome-soglia-4,
+.soglia-scelta[value="5"] ~ .nome-soglia-5,
+.soglia-scelta[value="6"] ~ .nome-soglia-6 {
+  display: inline;
+}
+.scheda .spunte {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.scheda .spunta {
+  position: relative;
+  display: inline-flex;
+  margin: 0;
+  cursor: pointer;
+}
+.scheda .spunta input[type="checkbox"] {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.scheda .spunta span {
+  padding: 5px 10px;
+  font: 500 13px/1.2 "Alegreya Sans", sans-serif;
+  color: var(--tenue);
+  background: var(--riquadro);
+  border: 1px solid var(--bordo);
+  border-radius: 99px;
+}
+.scheda .spunta input[type="checkbox"]:checked + span {
+  color: #fff;
+  background: var(--inchiostro);
+  border-color: var(--inchiostro);
+}

@@ -1,8 +1,107 @@
 {
   "sheet": {
-    "title": "Paradise, Hell and Guns",
-    "under_construction": "Scheda in costruzione: i dati del manuale sono pronti, il disegno no.",
-    "archetypes": "Archetipi",
-    "careers": "Carriere"
+    "title": "Paradise, Hell & Guns",
+    "subtitle": "Scheda dell'immortale",
+    "coming_soon": "In arrivo nelle prossime versioni della scheda."
+  },
+  "header": {
+    "name": "Nome",
+    "player": "Giocatore",
+    "archetype": "Archetipo",
+    "career": "Carriera",
+    "colour": "Colore",
+    "colours": {
+      "bianco": "Bianco",
+      "nero": "Nero",
+      "grigio": "Grigio"
+    },
+    "form": {
+      "immortal": "Immortale",
+      "mortal": "Forma mortale",
+      "tooltip": "In forma mortale perde due ● a tutte le caratteristiche e può usare solo i poteri comuni"
+    },
+    "xp": "Punti esperienza",
+    "xp_owned": "posseduti",
+    "xp_spent": "usati"
+  },
+  "tabs": {
+    "character": "Personaggio",
+    "powers": "Poteri",
+    "equipment": "Equipaggiamento",
+    "origins": "Archetipo e carriera"
+  },
+  "roll": {
+    "rolls": "Tiri",
+    "public": "Pubblico",
+    "gm": "Solo GM",
+    "threshold": "Soglia",
+    "thresholds": {
+      "2": "due vantaggi",
+      "3": "vantaggio",
+      "4": "normale",
+      "5": "svantaggio",
+      "6": "due svantaggi"
+    },
+    "difficulty": "Difficoltà",
+    "difficulty_tooltip": "La difficoltà la dice il narratore: il numero di successi per superare la prova",
+    "dice": "Dadi ±",
+    "dice_tooltip": "Dadi in più o in meno per un bonus di una volta sola",
+    "modifiers": "Modificatori",
+    "stunned": "Stordito −1",
+    "stunned_tooltip": "Stordire: un dado in meno a tutte le pool di dadi fino al termine del suo prossimo turno",
+    "shaken": "Scosso −1",
+    "shaken_tooltip": "Un dado in meno a qualsiasi azione per lo scenario",
+    "less": "Uno in meno",
+    "more": "Uno in più"
+  },
+  "characteristics": {
+    "title": "Caratteristiche",
+    "inc": "Inc",
+    "inc_tooltip": "Incremento di caratteristica dell'archetipo",
+    "total_tooltip": "Totale: ● + Inc (−2 in forma mortale)",
+    "roll_tooltip": "Clic per tirare solo la caratteristica",
+    "effects": {
+      "possanza": "Punti ferita",
+      "agilita": "Schivare",
+      "astuzia": "Iniziativa",
+      "potenza": "Mana"
+    }
+  },
+  "skills": {
+    "title": "Abilità",
+    "hint": "clic sul nome per tirare",
+    "combat": "Attacco e difesa",
+    "combat_hint": "riserva = caratteristica + abilità"
+  },
+  "resources": {
+    "hp": "Punti ferita",
+    "hp_hint": "2 + Possanza",
+    "damage": "danni",
+    "nonlethal": "Non letali",
+    "nonlethal_tooltip": "Danni non letali: se arrivano ai punti ferita totali, sviene per il resto della sessione",
+    "temporary": "Temporanei",
+    "temporary_tooltip": "Si perdono per primi quando si subiscono danni e calano di 1 a turno",
+    "mana": "Mana",
+    "mana_hint": "2 × Potenza",
+    "mana_reroll": "1 mana: ritira un dado, una volta per azione",
+    "souls": "Anime",
+    "inspiration": "Ispirazione",
+    "inspiration_hint": "0 a inizio sessione",
+    "initiative": "Iniziativa",
+    "initiative_roll": "Tira"
+  },
+  "chat": {
+    "successes": "Successi",
+    "overruns": "Esuberi",
+    "success": "Riuscito",
+    "failure": "Fallito",
+    "difficulty": "difficoltà",
+    "threshold": "successo",
+    "opportunities": "Opportunità",
+    "no_dice": "nessun dado",
+    "initiative": "Iniziativa",
+    "stunned": "Stordito",
+    "shaken": "Scosso",
+    "extra_dice": "dadi"
   }
 }

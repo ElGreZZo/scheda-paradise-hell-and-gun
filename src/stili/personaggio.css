@@ -1,0 +1,179 @@
+/* Pagina Personaggio: due colonne (caratteristiche e abilita, risorse e attacco e difesa), una sola se la
+   finestra e stretta. La finestra di Roll20 si allarga e si stacca: le misure seguono il contenitore (.scheda). */
+.scheda .griglia {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 14px;
+}
+.scheda .colonna {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+@container (max-width: 700px) {
+  .scheda .griglia {
+    grid-template-columns: 1fr;
+  }
+}
+@container (min-width: 1100px) {
+  .scheda .griglia {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+/* Nome che tira: si colora e si sottolinea passando il mouse. */
+.scheda button.nome-tiro[name] {
+  font-weight: 700;
+}
+.scheda button.nome-tiro[name]:hover {
+  color: var(--ruggine);
+  text-decoration: underline dotted;
+}
+.scheda .nome-tiro small {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--tenue);
+}
+
+/* Caratteristiche */
+.scheda .caratteristica {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "nome totale" "valori totale" "effetto totale";
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--bordo);
+}
+.scheda .caratteristica:last-child {
+  border-bottom: 0;
+}
+.scheda .caratteristica .nome-tiro {
+  grid-area: nome;
+  font-size: 16px;
+}
+.scheda .caratteristica .valori {
+  grid-area: valori;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+}
+.scheda .caratteristica .inc {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--tenue);
+}
+.scheda .caratteristica .effetto {
+  grid-area: effetto;
+  font-size: 12px;
+  color: var(--tenue);
+}
+.scheda .caratteristica .totale {
+  grid-area: totale;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  font: 700 24px/1 "Alegreya Sans", sans-serif;
+  background: var(--carta-2);
+  border-radius: 12px;
+}
+
+/* Abilita */
+.scheda .abilita {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 4px;
+  border-radius: 6px;
+}
+.scheda .abilita:hover {
+  background: var(--ruggine-chiaro);
+}
+.scheda .abilita button.nome-tiro[name] {
+  font-weight: 500;
+}
+.scheda .abilita button.pallino[name] {
+  width: 11px;
+  height: 11px;
+}
+
+/* Risorse */
+.scheda .risorse {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+}
+.scheda .risorsa-pf,
+.scheda .risorsa-mana {
+  grid-column: span 2;
+}
+.scheda .risorse .riquadro {
+  padding: 10px 12px;
+}
+.scheda .risorsa .numero {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font: 700 22px/1.2 "Alegreya Sans", sans-serif;
+}
+.scheda .risorsa .numero input[type="number"][name] {
+  width: 48px;
+  padding: 0;
+  font: 700 26px/1.1 "Alegreya Sans", sans-serif;
+  text-align: left;
+  border: 0;
+}
+.scheda .risorsa .numero small {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--tenue);
+}
+.scheda .riga-tracciato {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+.scheda .riga-tracciato > small {
+  flex: none;
+  width: 62px;
+  font-size: 11px;
+  color: var(--tenue);
+}
+.scheda button.tira[name] {
+  margin-top: 6px;
+  padding: 5px 12px;
+  font: 700 13px "Alegreya Sans", sans-serif;
+  color: #fff;
+  background: var(--ruggine);
+  border-radius: 8px;
+}
+
+/* Attacco e difesa */
+.scheda .combattimento {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+.scheda .combattimento .cella {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  background: var(--carta);
+  border: 1px solid var(--bordo);
+  border-radius: 10px;
+}
+.scheda .combattimento .cella small {
+  font-size: 11px;
+  color: var(--tenue);
+}
+.scheda .risorsa .numero small {
+  flex: none;
+  text-align: left;
+}

@@ -1,5 +1,15 @@
 /* Indice del CSS della scheda: la build (strumenti/build.mjs) mette al posto di ogni import locale il suo file.
-   Niente lettere accentate o "·" nel CSS, nemmeno nei commenti senza asterisco: il filtro di sicurezza di
-   Roll20 scarterebbe tutto il foglio (la build si ferma prima). Mai la parola import con la chiocciola in un
-   commento: l'emulatore sposta ogni import fino al primo punto e virgola e il foglio si rompe. */
+   Niente lettere accentate o "punto in mezzo" nel CSS, nemmeno nei commenti senza asterisco: il filtro di sicurezza
+   di Roll20 scarterebbe tutto il foglio (la build si ferma prima). Mai la parola import con la chiocciola in un
+   commento: l emulatore sposta ogni import fino al primo punto e virgola e il foglio si rompe.
+   Stile Frontiera (docs/mockup/a-frontiera.html): carta calda, inchiostro e ruggine. I font li carica Google Fonts,
+   con l indirizzo vecchio (css?family=), l unico che il filtro di Roll20 lascia passare. */
+
+@import url('https://fonts.googleapis.com/css?family=Rye|Alegreya+Sans:400,500,700,400i|Alegreya+Sans+SC:500,700&display=swap');
+
 @import "stili/base.css";
+@import "stili/contatori.css";
+@import "stili/testa.css";
+@import "stili/barra.css";
+@import "stili/personaggio.css";
+@import "stili/rolltemplate.css";

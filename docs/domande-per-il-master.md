@@ -28,6 +28,10 @@ Le risposte del master sono riportate nel manuale (`manuali/PHaG 1.6.docx`): il 
 - Nell'esempio di combattimento contro gli sgherri il Vagabondo d'argento tira l'iniziativa con la vecchia regola: «3 di dado, totale 5». Il risultato non è stato toccato.
 - Mich Barnaby: «Ha come valore di iniziativa totale 1D6+12.» Con la nuova regola quanto fa?
 
+## Forma mortale
+
+- In forma mortale l'immortale «perde due ● a tutte le caratteristiche». Calano anche i punti ferita massimi (2 + Possanza) e il mana massimo (2 × Potenza)? Per ora la scheda abbassa le caratteristiche e i tiri, ma non PF e mana massimi.
+
 ## Esempi di creazione nel manuale 1.6
 
 - **Susan (Avventuriero)**: l'esempio dice che l'Avventuriero ha come abilità lavorative «sopravvivenza, percezione, mischia, (caratteristica) possanza, (poteri) Spirito di iniziativa». Nel capitolo 8 l'Avventuriero ha «percezione, atletica, mischia, (caratteristica) possanza, (poteri) animalità o bestialità». Quale vale?

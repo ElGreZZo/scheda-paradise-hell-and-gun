@@ -1,0 +1,80 @@
+{#- Pagina Personaggio: caratteristiche e abilità a sinistra, risorse e attacco e difesa a destra (mock Frontiera).
+    Un clic sul nome di una caratteristica o di un'abilità tira la riserva (tiri/prove.ts).
+    Le caratteristiche partono da ●● (manuale, cap. 9: «tutte le caratteristiche di partenza sono ●●»). -#}
+{% import "macro.njk" as m %}
+{% set sigla = { possanza: "Pos", agilita: "Agi", astuzia: "Ast", potenza: "Pot" } %}
+<section class="pagina pagina-personaggio">
+  <div class="griglia">
+    <div class="colonna">
+      <div class="riquadro">
+        <h3 data-i18n="characteristics.title"></h3>
+        {% for c in dati.caratteristiche %}
+        <div class="caratteristica">
+          <button type="action" class="nome-tiro" name="act_tiro{$ c.id $}" data-i18n-title="characteristics.roll_tooltip">{$ c.nome $}</button>
+          <span class="totale" data-i18n-title="characteristics.total_tooltip"><span name="attr_{$ c.id $}_totale"></span></span>
+          <span class="valori">
+            {$ m.pallini(c.id, c.id, 6, 2) $}
+            <span class="inc" data-i18n-title="characteristics.inc_tooltip"><span data-i18n="characteristics.inc"></span>{$ m.pallini(c.id + "_inc", c.id + "inc", 4, 0, "pallini-inc") $}</span>
+          </span>
+          <span class="effetto" data-i18n="characteristics.effects.{$ c.id $}"></span>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="riquadro">
+        <h3><span data-i18n="skills.title"></span><small data-i18n="skills.hint"></small></h3>
+        {% for a in dati.abilita %}{% if a.tipo == "comune" %}
+        <div class="abilita">
+          <button type="action" class="nome-tiro" name="act_tiro{$ a.id $}">{$ a.nome $} <small>{% for c in a.caratteristiche %}{$ sigla[c] $}{% if not loop.last %}/{% endif %}{% endfor %}</small></button>
+          {$ m.pallini(a.id, a.id, 5) $}
+        </div>
+        {% endif %}{% endfor %}
+      </div>
+    </div>
+
+    <div class="colonna">
+      <div class="risorse">
+        <div class="riquadro risorsa risorsa-pf">
+          <span class="etichetta" data-i18n="resources.hp"></span>
+          <div class="numero"><input type="number" name="attr_pf" value="0" min="0"><small>/ <span name="attr_pf_max"></span></small></div>
+          <div class="riga-tracciato"><small data-i18n="resources.damage"></small>{$ m.tracciato("pf_max", "pf_danni", "danno", 20) $}</div>
+          <div class="riga-tracciato" data-i18n-title="resources.nonlethal_tooltip"><small data-i18n="resources.nonlethal"></small>{$ m.tracciato("pf_max", "pf_non_letali", "nonletale", 20, "non-letali") $}</div>
+          <div class="riga-tracciato" data-i18n-title="resources.temporary_tooltip"><small data-i18n="resources.temporary"></small>{$ m.passi("pf_temporanei", "temporanei", 0, 0, 30) $}</div>
+          <small class="nota" data-i18n="resources.hp_hint"></small>
+        </div>
+        <div class="riquadro risorsa risorsa-mana">
+          <span class="etichetta" data-i18n="resources.mana"></span>
+          <div class="numero"><input type="number" name="attr_mana" value="0" min="0"><small>/ <span name="attr_mana_max"></span></small></div>
+          <div class="riga-tracciato">{$ m.tracciato("mana_max", "mana_usato", "mana", 24, "mana") $}</div>
+          <small class="nota"><span data-i18n="resources.mana_hint"></span> · <span data-i18n="resources.mana_reroll"></span></small>
+        </div>
+        <div class="riquadro risorsa">
+          <span class="etichetta" data-i18n="resources.souls"></span>
+          {$ m.passi("anime", "anime", 1, 0, 30) $}
+        </div>
+        <div class="riquadro risorsa">
+          <span class="etichetta" data-i18n="resources.inspiration"></span>
+          {$ m.passi("ispirazione", "ispirazione", 0, 0, 30) $}
+          <small class="nota" data-i18n="resources.inspiration_hint"></small>
+        </div>
+        <div class="riquadro risorsa">
+          <span class="etichetta" data-i18n="resources.initiative"></span>
+          <div class="numero">2D6 + <span name="attr_astuzia_totale"></span></div>
+          <button type="action" class="tira" name="act_tiroiniziativa" data-i18n="resources.initiative_roll"></button>
+        </div>
+      </div>
+
+      <div class="riquadro">
+        <h3><span data-i18n="skills.combat"></span><small data-i18n="skills.combat_hint"></small></h3>
+        <div class="combattimento">
+          {% for a in dati.abilita %}{% if a.tipo == "combattimento" %}
+          <div class="cella">
+            <button type="action" class="nome-tiro" name="act_tiro{$ a.id $}">{$ a.nome $}</button>
+            {$ m.pallini(a.id, a.id, 5) $}
+            <small>{% for c in a.caratteristiche %}{$ sigla[c] $}{% endfor %}</small>
+          </div>
+          {% endif %}{% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

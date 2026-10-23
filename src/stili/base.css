@@ -1,24 +1,270 @@
-/* Base della scheda: Roll20 mette il CSS della scheda dopo il suo, quindi i selettori partono da .scheda. */
+/* Base della scheda: palette, campi e pulsanti senza lo stile di Roll20. Roll20 mette il CSS della scheda dopo il
+   suo, quindi i selettori partono da .scheda; dove Roll20 pesa di piu (charsheet.css) si aggiunge [name]. */
 .scheda {
-  font-family: Georgia, "Times New Roman", serif;
-  color: #2b2118;
-  background: #f4ead8;
-  padding: 16px;
+  --carta: #faf6ee;
+  --carta-2: #f1eadc;
+  --riquadro: #fffdf8;
+  --inchiostro: #2b2420;
+  --tenue: #7a6e62;
+  --bordo: #e2d7c3;
+  --ruggine: #a9472a;
+  --ruggine-chiaro: #f3dfd3;
+  --oro: #b8892e;
+  --verde: #4f7a4a;
+  --blu: #4a6a9a;
+  --ombra: 0 1px 2px rgba(60, 40, 20, 0.06), 0 4px 14px rgba(60, 40, 20, 0.06);
+
+  container-type: inline-size;
+  min-width: 0;
+  padding: 0 0 18px;
+  font: 15px/1.4 "Alegreya Sans", sans-serif;
+  color: var(--inchiostro);
+  background: var(--carta);
+}
+.scheda,
+.scheda *,
+.scheda *::before,
+.scheda *::after {
+  box-sizing: border-box;
 }
 
-.scheda h1 {
-  margin: 0 0 4px;
-  font-size: 24px;
+/* Pagine: si vede quella scritta in attr_pagina (personaggio/interfaccia.ts). */
+.scheda .pagina {
+  display: none;
+  padding: 16px 20px 0;
+}
+.pagina-scelta[value="personaggio"] ~ .pagina-personaggio,
+.pagina-scelta[value="poteri"] ~ .pagina-poteri,
+.pagina-scelta[value="equipaggiamento"] ~ .pagina-equipaggiamento,
+.pagina-scelta[value="origini"] ~ .pagina-origini {
+  display: block;
 }
 
-.scheda h2 {
-  margin: 16px 0 4px;
-  font-size: 16px;
+/* Campi */
+.scheda input[type="text"],
+.scheda input[type="number"],
+.scheda select {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 2px 4px;
+  font: 500 15px/1.3 "Alegreya Sans", sans-serif;
+  color: var(--inchiostro);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--bordo);
+  border-radius: 0;
+  box-shadow: none;
+}
+.scheda input[type="number"][name] {
+  width: 100%;
+}
+.scheda input[type="number"] {
+  text-align: center;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+.scheda input[type="number"]::-webkit-inner-spin-button,
+.scheda input[type="number"]::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+.scheda input:focus,
+.scheda select:focus {
+  outline: 1px dotted var(--tenue);
+  background-color: rgba(169, 71, 42, 0.04);
 }
 
-.scheda .colore {
-  font-size: 12px;
-  padding: 0 6px;
+/* Pulsanti d azione senza lo stile di Roll20 (sfondo, bordo, ombra, padding). */
+.scheda button[type="action"][name],
+.scheda button[type="roll"][name] {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-align: left;
+  text-shadow: none;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+/* Riquadri */
+.scheda .riquadro {
+  padding: 12px 14px;
+  background: var(--riquadro);
+  border: 1px solid var(--bordo);
+  border-radius: 12px;
+  box-shadow: var(--ombra);
+}
+.scheda .riquadro h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 8px;
+  font: 700 12px/1.2 "Alegreya Sans SC", sans-serif;
+  letter-spacing: 0.16em;
+  color: var(--ruggine);
+}
+.scheda .riquadro h3 small {
+  font: 400 12px "Alegreya Sans", sans-serif;
+  letter-spacing: 0;
+  color: var(--tenue);
+}
+.scheda .etichetta {
+  display: block;
+  font: 700 10px/1.4 "Alegreya Sans SC", sans-serif;
+  letter-spacing: 0.12em;
+  color: var(--tenue);
+}
+.scheda .nota {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  line-height: 1.25;
+  color: var(--tenue);
+}
+.scheda .in-arrivo {
+  color: var(--tenue);
+  font-style: italic;
+}
+
+/* Selettore a segmenti (forma, pubblico o GM, soglia): la radio vera e trasparente sopra la sua etichetta. */
+.scheda .segmenti,
+.scheda .forma {
+  display: inline-flex;
+  overflow: hidden;
+  background: var(--riquadro);
+  border: 1px solid var(--bordo);
   border-radius: 8px;
-  border: 1px solid currentColor;
+}
+.scheda .segmento {
+  position: relative;
+  display: flex;
+  margin: 0;
+  cursor: pointer;
+}
+.scheda .segmento input[type="radio"] {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.scheda .segmento span {
+  padding: 6px 10px;
+  font: 700 12px/1 "Alegreya Sans SC", sans-serif;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  color: var(--tenue);
+}
+.scheda .segmento input[type="radio"]:checked + span {
+  color: #fff;
+  background: var(--ruggine);
+}
+
+/* Numero con meno e piu (macro passi) */
+.scheda .passi {
+  display: inline-flex;
+  align-items: center;
+  background: var(--riquadro);
+  border: 1px solid var(--bordo);
+  border-radius: 8px;
+}
+.scheda .passi button.passo[name] {
+  width: 26px;
+  height: 28px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--ruggine);
+}
+.scheda .passi input[type="number"][name] {
+  width: 38px;
+  padding: 0;
+  font-weight: 700;
+  border: 0;
+}
+
+/* Pallini: un cerchio vuoto, pieno con --pieno (contatori.css). */
+.scheda .pallini {
+  display: inline-flex;
+  gap: 3px;
+  vertical-align: middle;
+}
+.scheda button.pallino[name] {
+  width: 13px;
+  height: 13px;
+}
+.scheda .pallino span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid var(--inchiostro);
+  border-radius: 50%;
+  background: rgba(43, 36, 32, var(--pieno, 0));
+}
+.scheda .pallini-inc button.pallino[name] {
+  width: 11px;
+  height: 11px;
+}
+.scheda .pallini-inc .pallino span {
+  border-color: var(--oro);
+  background: rgba(184, 137, 46, var(--pieno, 0));
+}
+
+/* Caselle dei tracciati: quadrati, pieni in ruggine (danni), a righe (non letali), blu (mana). */
+.scheda .tracciato {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+.scheda button.casella[name] {
+  width: 15px;
+  height: 15px;
+}
+.scheda .casella span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid var(--verde);
+  border-radius: 3px;
+  background: linear-gradient(var(--ruggine), var(--ruggine)) no-repeat, #e1ecdc;
+  background-size: calc(var(--pieno, 0) * 100%) 100%, auto;
+}
+.scheda .non-letali .casella span {
+  background: repeating-linear-gradient(45deg, var(--ruggine) 0 2px, var(--ruggine-chiaro) 2px 4px) no-repeat, #e1ecdc;
+  background-size: calc(var(--pieno, 0) * 100%) 100%, auto;
+}
+.scheda .mana .casella span {
+  border-color: var(--blu);
+  background: linear-gradient(#fff, #fff) no-repeat, #b7cbe8;
+  background-size: calc(var(--pieno, 0) * 100%) 100%, auto;
+}
+
+/* Etichette: Roll20 le fa larghe quanto la finestra (.largedialog label { width: 100% }), con margine e padding. */
+.scheda label {
+  width: auto;
+  margin-bottom: 0;
+  padding-right: 0;
+  float: none;
+  font-weight: inherit;
+}
+/* Testi piccoli: Roll20 li fa blocchi larghi quanto la finestra e allineati a destra (.largedialog small). */
+.scheda small {
+  display: inline;
+  width: auto;
+  font-size: inherit;
+  color: inherit;
+  text-align: inherit;
 }

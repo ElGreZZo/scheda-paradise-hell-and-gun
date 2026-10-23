@@ -1,0 +1,42 @@
+{#- Barra dei tiri, valida per tutti i tiri della scheda (decisa con l'utente il 23/10/2026): pubblico o solo GM,
+    soglia da 2+ a 6+ (vantaggi e svantaggi già sommati), difficoltà detta dal narratore, dadi in più o in meno,
+    modificatori pronti. Niente si azzera dopo il tiro: la scheda fa da riferimento, non gioca al posto del giocatore.
+    .barra-attiva: un input nascosto che lo script tiene a 1 quando qualcosa non è normale (barra colorata). -#}
+{% import "macro.njk" as m %}
+<div class="barra-tiri">
+  <input type="hidden" class="barra-attiva" name="attr_tiro_attivo" value="0">
+  <div class="gruppo">
+    <span class="etichetta" data-i18n="roll.rolls"></span>
+    <div class="segmenti">
+      <label class="segmento"><input type="radio" name="attr_tiro_gm" value="0" checked><span data-i18n="roll.public"></span></label>
+      <label class="segmento"><input type="radio" name="attr_tiro_gm" value="1"><span data-i18n="roll.gm"></span></label>
+    </div>
+  </div>
+  <div class="gruppo">
+    <span class="etichetta"><span data-i18n="roll.threshold"></span>
+      {#- Il nome della soglia (normale, vantaggio…): uno per valore, il CSS mostra quello della radio scelta. -#}
+      <input type="hidden" class="soglia-scelta" name="attr_tiro_soglia" value="4">
+      {% for s in [2, 3, 4, 5, 6] %}<span class="nome-soglia nome-soglia-{$ s $}" data-i18n="roll.thresholds.{$ s $}"></span>{% endfor %}
+    </span>
+    <div class="segmenti">
+      {% for s in [2, 3, 4, 5, 6] %}
+      <label class="segmento"><input type="radio" name="attr_tiro_soglia" value="{$ s $}"{% if s == 4 %} checked{% endif %}><span>{$ s $}+</span></label>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="gruppo" data-i18n-title="roll.difficulty_tooltip">
+    <span class="etichetta" data-i18n="roll.difficulty"></span>
+    {$ m.passi("tiro_difficolta", "difficolta", 1, 1, 20) $}
+  </div>
+  <div class="gruppo" data-i18n-title="roll.dice_tooltip">
+    <span class="etichetta" data-i18n="roll.dice"></span>
+    {$ m.passi("tiro_dadi", "dadi", 0, -20, 20) $}
+  </div>
+  <div class="gruppo">
+    <span class="etichetta" data-i18n="roll.modifiers"></span>
+    <div class="spunte">
+      <label class="spunta" data-i18n-title="roll.stunned_tooltip"><input type="checkbox" name="attr_mod_stordito" value="1"><span data-i18n="roll.stunned"></span></label>
+      <label class="spunta" data-i18n-title="roll.shaken_tooltip"><input type="checkbox" name="attr_mod_scosso" value="1"><span data-i18n="roll.shaken"></span></label>
+    </div>
+  </div>
+</div>

@@ -8,13 +8,14 @@ Scheda custom per Roll20 di **Paradise, Hell and Guns** (PHaG, a volte PHeG): gi
 - **L'utente** (Carmine, «GreZZo» su Roll20) scrive in italiano e vuole risposte in italiano. Ha il Pro di Roll20; il master no, quindi le prove su Roll20 si fanno nelle partite dell'utente.
 - **Progetto gemello**: la scheda di Farsight, in `F:/Lavoro/Test/Farsight custom sheet`. Da lì vengono build, emulatore, controlli e quasi tutto quello che sappiamo di Roll20 ([docs/roll20.md](../docs/roll20.md)). Se serve un esempio di come si è risolto qualcosa (modali, roll template con Custom Roll Parsing, sezioni ripetibili, traduzioni), si guarda lì, ma il codice non si copia senza chiedere.
 
-## Stato (09/10/2026)
+## Stato (23/10/2026)
 
 - ✅ **Scheletro**: build (`npm run build`, `npm run dev`), emulatore sulla porta 8030, test, `tsc`, traduzioni da `src/traduzioni/it.json`.
 - ✅ **Base dati** in `dati/`, estratta dal manuale: caratteristiche, 23 abilità con opportunità, 10 archetipi, 8 carriere, 45 poteri (livelli e costi), 13 armi, elenchi, regole. Vedi [dati/README.md](../dati/README.md).
 - ⏳ **Domande per il master** in [docs/domande-per-il-master.md](../docs/domande-per-il-master.md): da girargli. Le risposte possono cambiare dati e regole.
-- ⏳ **Disegno della scheda**: quattro mockup in `docs/mockup/` (online su https://elgrezzo.github.io/scheda-paradise-hell-and-gun/mockup/). Il master ha scelto lo **stile «Frontiera»** (mock A, 23/10/2026); l'organizzazione dei dati è ancora da decidere. La barra dei tiri è decisa (memoria `decisioni-tiri`). Oggi la build produce solo una pagina provvisoria, senza campi `attr_`.
-- ⬜ Poi la scheda base (caratteristiche, abilità, attacco e difesa, PF e mana, risorse, armi, oggetti, poteri), i tiri (riserva, soglia con vantaggio e svantaggio, difficoltà, esuberi, inceppamento, opportunità in chat), i dati «Dal manuale», forse una scheda PNG per gli sgherri.
+- ⏳ **Disegno della scheda**: quattro mockup in `docs/mockup/` (online su https://elgrezzo.github.io/scheda-paradise-hell-and-gun/mockup/). Il master ha scelto lo **stile «Frontiera»** (mock A, 23/10/2026); la barra dei tiri è decisa (memoria `decisioni-tiri`). Scheda stampabile A4 in `docs/stampa/` (v0.0.3: due proposte per la pagina dei poteri, il master sceglie).
+- ✅ **Scheda Roll20 0.0.1** (23/10/2026): pagina Personaggio in stile Frontiera (caratteristiche con Inc, abilità, PF con danni, non letali e temporanei, mana, anime, ispirazione, attacco e difesa), barra dei tiri, tiri con Custom Roll Parsing (successi, esuberi, opportunità) e iniziativa. Nomi degli attributi decisi con l'utente: non si rinominano più. Provata nell'emulatore e nella partita di prova «PHaG - Prova scheda» (22140561).
+- ⬜ Poi: poteri (aspetta la scelta B o C del master), armi e munizioni (inceppamento), equipaggiamento e risorse, archetipo e carriera con i testi del manuale, usi limitati e «Nuova sessione», forse una scheda PNG per gli sgherri.
 - Scheletro e base dati nel commit `a0dc210` su `main`; poi la skill `prova-roll20`, `docs/roll20.md` e questo file.
 
 ## Come lavora l'utente

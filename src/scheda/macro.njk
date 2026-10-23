@@ -1,0 +1,37 @@
+{#- Macro dei template della scheda. Si importano con {% import "macro.njk" as m %}. -#}
+
+{#- Pallini che si riempiono in ordine (caratteristiche, Inc, abilità). Il numero sta nell'input nascosto
+    .contatore (attr_<attributo>), che precede i pulsanti: il CSS riempie i primi N. Ogni pallino è un pulsante
+    act_<pulsante><n>: un clic porta il valore a n, un clic sull'ultimo pallino pieno lo toglie
+    (personaggio/pallini.ts). I nomi dei pulsanti non hanno underscore: su Roll20 clicked: altrimenti non scatta. -#}
+{% macro pallini(attributo, pulsante, quanti, iniziale = 0, classe = "") %}
+<span class="pallini {$ classe $}">
+  <input type="hidden" class="contatore" name="attr_{$ attributo $}" value="{$ iniziale $}">
+  {% for n in range(1, quanti + 1) %}
+  <button type="action" class="pallino" name="act_{$ pulsante $}{$ n $}"><span></span></button>
+  {% endfor %}
+</span>
+{% endmacro %}
+
+{#- Caselle di un tracciato con un massimo (danni dei punti ferita, mana usato). attributo_massimo è il massimo
+    (attr_<...>_max): le caselle oltre il massimo si nascondono. attributo_pieni è il numero di caselle piene,
+    calcolato dallo script. Un clic su una casella porta i pieni a n, sull'ultima piena li porta a n - 1. -#}
+{% macro tracciato(attributo_massimo, attributo_pieni, pulsante, quante, classe = "") %}
+<span class="tracciato {$ classe $}">
+  <input type="hidden" class="massimo" name="attr_{$ attributo_massimo $}" value="0">
+  <input type="hidden" class="contatore" name="attr_{$ attributo_pieni $}" value="0">
+  {% for n in range(1, quante + 1) %}
+  <button type="action" class="casella" name="act_{$ pulsante $}{$ n $}"><span></span></button>
+  {% endfor %}
+</span>
+{% endmacro %}
+
+{#- Numero con − e + (anime, ispirazione, temporanei, dadi della barra): i pulsanti act_<pulsante>meno e
+    act_<pulsante>piu li gestisce personaggio/risorse.ts. -#}
+{% macro passi(attributo, pulsante, iniziale = 0, minimo = 0, massimo = 99) %}
+<span class="passi">
+  <button type="action" class="passo" name="act_{$ pulsante $}meno" data-i18n-title="roll.less">−</button>
+  <input type="number" name="attr_{$ attributo $}" value="{$ iniziale $}" min="{$ minimo $}" max="{$ massimo $}">
+  <button type="action" class="passo" name="act_{$ pulsante $}piu" data-i18n-title="roll.more">+</button>
+</span>
+{% endmacro %}

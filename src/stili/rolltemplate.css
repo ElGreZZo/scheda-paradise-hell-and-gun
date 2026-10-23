@@ -1,0 +1,109 @@
+/* Card in chat, stile Frontiera. In chat la scheda non c'e: i colori sono scritti qui. Roll20 applica in chat solo
+   le regole che iniziano con .sheet-rolltemplate-NOME: il segnaposto ogni la build lo espande in ogni template
+   (espandiRollTemplate in strumenti/build.mjs). */
+.sheet-rolltemplate-ogni .sheet-tiro {
+  overflow: hidden;
+  font: 14px/1.35 "Alegreya Sans", sans-serif;
+  color: #2b2420;
+  background: #faf6ee;
+  border: 1px solid #e2d7c3;
+  border-radius: 10px;
+}
+.sheet-rolltemplate-ogni .sheet-tiro-testa {
+  padding: 8px 10px;
+  color: #fff;
+  background: #a9472a;
+}
+.sheet-rolltemplate-ogni .sheet-tiro-titolo {
+  font-weight: 700;
+  font-size: 15px;
+}
+.sheet-rolltemplate-ogni .sheet-tiro-personaggio,
+.sheet-rolltemplate-ogni .sheet-tiro-formula {
+  font-size: 12px;
+  opacity: 0.9;
+}
+.sheet-rolltemplate-ogni .sheet-tiro-corpo {
+  padding: 10px;
+}
+.sheet-rolltemplate-ogni .sheet-dadi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.sheet-rolltemplate-ogni .sheet-dado {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  font-weight: 700;
+  color: #7a6e62;
+  background: #fff;
+  border: 1.5px solid #e2d7c3;
+  border-radius: 7px;
+}
+.sheet-rolltemplate-ogni .sheet-successo {
+  color: #2f5a2a;
+  background: #e3efdf;
+  border-color: #4f7a4a;
+}
+.sheet-rolltemplate-ogni .sheet-uno {
+  color: #a9472a;
+}
+.sheet-rolltemplate-ogni .sheet-nessun-dado {
+  font-style: italic;
+  color: #7a6e62;
+}
+.sheet-rolltemplate-ogni .sheet-esito {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin: 10px 0 4px;
+}
+.sheet-rolltemplate-ogni .sheet-esito b {
+  font-size: 19px;
+}
+.sheet-rolltemplate-ogni .sheet-riuscito {
+  font-weight: 700;
+  color: #2f5a2a;
+}
+.sheet-rolltemplate-ogni .sheet-fallito {
+  font-weight: 700;
+  color: #a9472a;
+}
+.sheet-rolltemplate-ogni .sheet-opportunita-titolo {
+  margin-top: 6px;
+  font: 700 11px/1.4 "Alegreya Sans SC", sans-serif;
+  letter-spacing: 0.12em;
+  color: #a9472a;
+}
+.sheet-rolltemplate-ogni .sheet-opp {
+  padding: 3px 0;
+  font-size: 13px;
+  color: #b9ad9c;
+  border-top: 1px dashed #e2d7c3;
+}
+.sheet-rolltemplate-ogni .sheet-opp-si {
+  color: #2b2420;
+}
+.sheet-rolltemplate-ogni .sheet-iniziativa {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+.sheet-rolltemplate-ogni .sheet-iniziativa .inlinerollresult {
+  color: #2b2420;
+  background: none;
+  border: 0;
+}
+
+/* I valori calcolati (computed::) Roll20 li mette in span.inlinerollresult colorati: dentro la card prendono lo
+   stile della card. */
+.sheet-rolltemplate-ogni .sheet-tiro .inlinerollresult {
+  padding: 0;
+  font-weight: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+}
