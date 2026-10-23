@@ -1,36 +1,48 @@
-# Domande sul manuale (Pad 1.5)
+# Domande sul manuale (PHaG 1.6)
 
 Dubbi trovati estraendo i dati per la scheda. Riguardano valori che la scheda dovrebbe calcolare o mostrare. Finché non sono chiariti, nella base dati vale quello che dice il testo.
 
-Le risposte del master sono riportate nel manuale (`manuali/Pad 1.5.docx`): il testo sbagliato è barrato e la correzione segue in corsivo. L'originale è in `manuali/originali/`. `npm run estrai-testo` salta il testo barrato.
+Le risposte del master sono riportate nel manuale (`manuali/PHaG 1.6.docx`): il testo sbagliato è barrato e la correzione segue in corsivo. Gli originali sono in `manuali/originali/`. `npm run estrai-testo` salta il testo barrato.
 
-## Regole che la scheda calcola (risposte del master, 23/10/2026)
+## Risposte del master (23/10/2026, sul manuale 1.5)
 
-1. **Iniziativa.** In «Caratteristiche» l'iniziativa è sotto l'Astuzia («Si aggiunge questa caratteristica al tiro per l'iniziativa»). In «Tempo» invece è «1D6 + Agilità», e l'esempio di combattimento usa l'Agilità. Quale delle due?
+1. **Iniziativa**: 2D6 + Astuzia.
    > l'iniziativa attuale è cambiata. È 2D6+ Astuzia.
 
-   Corretti nel manuale «Tempo» e l'esempio di combattimento contro gli sgherri.
-2. **Punti esperienza liberi alla creazione.** Il testo dice «altri 30 punti esperienza iniziali». L'esempio di Susan ne usa 20. Quanti sono?
+   Il manuale 1.6 la riporta già in «Tempo». Corretto a mano l'esempio di combattimento contro gli sgherri, che usava ancora 1D6 + agilità.
+2. **Punti esperienza liberi alla creazione**: 30.
    > i punti esperienza liberi sono 30.
 
-   Corretto nel manuale l'esempio di Susan: 30 punti, e i 10 che avanzano diventano punti esperienza.
-3. **Mana e incrementi dell'archetipo.**
-   - Ezekiel (Serafino) ha Potenza ●● con Inc ●●●, ma nella scheda dell'esempio ha 2 di mana; con gli incrementi sarebbero 10.
-   - Lamia ha Potenza ●●● con Inc ● e ha 8 di mana, quindi lì gli incrementi contano.
-   
-   Gli incrementi contano per mana e punti ferita?
+   Il manuale 1.6 ha ancora 20 nell'esempio di Susan: corretto a mano (30 punti, e i 10 che avanzano diventano punti esperienza).
+3. **Incrementi dell'archetipo**: contano per mana e punti ferita.
    > gli Incrementi contano ai fini del mana e dei punti ferita. L'esempio di Ezekiel nel manuale è sbagliato.
 
-   Corretto nel manuale il mana di Ezekiel: 10.
-4. **Pianificare.** È l'unica abilità comune senza «Normalmente associata a…». Con quale caratteristica si tira?
+   Il manuale 1.6 ha ancora il mana di Ezekiel a 2: corretto a mano a 10.
+4. **Pianificare**: astuzia.
    > Pianificare è associato ad astuzia.
 
-   Aggiunto nel manuale «Normalmente associata alla caratteristica di astuzia.», come per le altre abilità.
+   Il manuale 1.6 lo riporta già.
 
-### Ancora da chiarire
+## Iniziativa negli esempi
 
 - Nell'esempio di combattimento contro gli sgherri il Vagabondo d'argento tira l'iniziativa con la vecchia regola: «3 di dado, totale 5». Il risultato non è stato toccato.
 - Mich Barnaby: «Ha come valore di iniziativa totale 1D6+12.» Con la nuova regola quanto fa?
+
+## Esempi di creazione nel manuale 1.6
+
+- **Susan (Avventuriero)**: l'esempio dice che l'Avventuriero ha come abilità lavorative «sopravvivenza, percezione, mischia, (caratteristica) possanza, (poteri) Spirito di iniziativa». Nel capitolo 8 l'Avventuriero ha «percezione, atletica, mischia, (caratteristica) possanza, (poteri) animalità o bestialità». Quale vale?
+- **Lamia**: la carriera è «Demagogo», che nel manuale 1.6 non c'è più.
+
+## Carriere (nuove nel manuale 1.6)
+
+- **Dottore, Ricercatore**: «Resistenza chimica ●●● (4)» e «Tossine ●●● (6)». Il primo è ●●?
+- **Dottore, «Non nuocere»**: nel docx la parola «Non» è barrata, quindi l'estrazione legge il titolo come «nuocere». È voluto?
+- **Punto intuizione**: in «Esasperata perfezione» (Artista) e in «Tossine» (Dottore) si spende «un punto intuizione». È l'ispirazione?
+- **Avventuriero, Lottatore spericolato**: la descrizione dice «La pala è il più noto strumento del becchino e ha imparato ad usarla con estrema efficienza.», la stessa dello Scavafosse del Becchino. I livelli parlano di lazzo e frusta.
+- **Messaggero, Schivare gli ostacoli**: aggiunge «un numero di D6 pari ai ● in la consegna della lettera». Il potere si chiama «A prova di ostacolo»: sono i suoi ●?
+- **Messaggero, Risolvere il contrattempo** e **Licenza da avventuriero** hanno lo stesso testo (chiedere al narratore se la banda sta affrontando un luogo; il luogo perde una ferita). È voluto che il messaggero lo abbia come potere ●●● e l'avventuriero nella licenza?
+- **Poteri «a seconda del colore»** (Artista, Avventuriero, Dottore): uno è per i bianchi, l'altro per i neri. Un personaggio grigio (Jinn, Dullahan) quale prende? Può scegliere?
+- **Empatico**: nelle abilità lavorative dell'Artista c'è «Dementia o Empatico». Nella base dati è il potere Empatia.
 
 ## Poteri citati ma non descritti
 
@@ -39,30 +51,23 @@ Negli archetipi compaiono fra i poteri affini, ma il capitolo 10 non li descrive
 | Potere | Archetipo | Nota |
 |---|---|---|
 | Orgoglio | Arcangelo | |
-| Pelle d'argento | Cherubino | forse Pelle di mercurio? |
-| Invidia | Demone possessore | citato anche nei poteri superiori («non li può ottenere tramite il potere Invidia») |
+| Invidia | Demone possessore | |
 | Manipolare energia | Jinn | |
 | Aura distruttiva | Serafino | |
-| Corpo possente | Wendingo | forse Corpo pesante? |
 | Gola | Wendingo | |
 | Magia | Dullahan | |
 
-Altri nomi diversi fra un capitolo e l'altro, che nella base dati ho già fatto coincidere:
-- «Pelle a scaglia» (Oni) e «Pelle a scaglie»;
-- «Empatico» (Artista) ed «Empatia»;
-- «Ritualista» (effetti combo di Lux e Potere della cenere) e «Rituali».
+Risolti nel manuale 1.6: Pelle d'argento (ora Pelle di mercurio, Cherubino) e Corpo possente (ora Corpo pesante, Wendingo).
 
-## Costi dei poteri
+## Poteri
 
-- **Animalità ●●●●● costa 20.** Gli altri livelli costano 2, 4, 6, 8, come Lux, Possessione e Dementia, che arrivano a 10. È 10?
+- **Animalità ●●●●● costa 16.** Gli altri livelli costano 2, 4, 6, 8, come Lux, Possessione e Dementia, che arrivano a 10. È 10? (Nel manuale 1.5 costava 20.)
 - **Aiutanti e Leader di Sgherri costano 4, 6, 8.** Gli altri poteri crescono di un multiplo fisso (2, 4, 6 oppure 4, 8, 12). È voluto?
-
-## Carriere
-
-- **Poteri «a seconda del colore»** (Artista, Criminale, Demagogo, Giustiziere, Soldato): uno è per i bianchi, l'altro per i neri. Un personaggio grigio (Jinn, Dullahan) quale prende? Può scegliere?
+- **Evocazione, Reazione**: «Un personaggio con il potere Empatia può, spendendo un'anima, provare a contrastare i poteri Evocazione». È il potere Evocazione?
 
 ## Armi
 
-- **Fucile a pallettoni** e **Fucile di Myrra**: «Richiede due armi per essere usato». Sono due mani?
+- **Fucile a pallettoni**: «Richiede due armi per essere usato». Due mani, come la carabina e il Fucile di Myrra?
 - **Coltello lanciato** (distanza 2): si tira con Mira, come le armi da lancio?
-- Nella base dati ogni arma si usa con **Mischia** (pugni, armi improvvisate, coltello, armi da mischia, ad asta, grandi) o con **Mira** (lazzo, pistole, arco, carabina, fucile). Il manuale lo dice per categoria, non arma per arma: è giusto così?
+- **Lazzo/Frusta**: si tira con Mira (come il lazzo del manuale 1.5) o con Mischia?
+- Nella base dati ogni arma si usa con **Mischia** (pugni, armi improvvisate, coltello, armi da mischia, ad asta, grandi) o con **Mira** (lazzo/frusta, pistole, arco, carabina, fucile). Il manuale lo dice per categoria, non arma per arma: è giusto così?
