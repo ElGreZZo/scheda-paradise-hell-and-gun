@@ -22,7 +22,7 @@ Obiettivo: verificare su Roll20 quello che l'emulatore non può dire. Dove l'emu
 | Uso | Nome | Id | Note |
 |---|---|---|---|
 | Sheet Sandbox | *(da creare)* | — | da creare col via dell'utente: `https://app.roll20.net/sheetsandbox` → «Crea nuova sandbox» |
-| Partita di prova (per mostrare la scheda) | *(nessuna)* | — | scheda Custom nelle impostazioni della partita; solo se l'utente la chiede |
+| Partita di prova (per mostrare la scheda) | PHaG - Prova scheda | 22140561 | creata il 23/10/2026 col via dell'utente; scheda Custom da `/campaigns/campaignsettings/22140561` |
 
 Quando ne crei una, scrivi qui nome, id e data.
 
@@ -72,7 +72,7 @@ async (page) => {
 
 Ogni file ricarica e salva subito. Carica prima il CSS: se carichi solo l'HTML, le schede si ricaricano con il CSS vecchio. Se sono cambiate le traduzioni, **ricarica la partita** (`/editor/setcampaign/<id>`): lo script le riceve solo al caricamento.
 
-Per una **partita di prova** con scheda Custom, si carica dalle impostazioni (`/campaigns/campaignsettings/<id>`): editor Ace più textarea e il link `#save-changes-button`, come descritto in [docs/roll20.md](../../../docs/roll20.md).
+Per una **partita di prova** con scheda Custom, si carica dalle impostazioni (`/campaigns/campaignsettings/<id>`): editor Ace più textarea e il link `#save-changes-button`, come descritto in [docs/roll20.md](../../../docs/roll20.md). In `browser_run_code_unsafe` non c'è `fs`: per leggere i file si aggiunge alla pagina un `<input type="file">` nascosto, lo si riempie con `page.setInputFiles` e si leggono i file con `file.text()` (provato il 23/10/2026). Il menu `select[name="charsheettype"]` è nascosto: si cambia con `jQuery(sel).val("custom").trigger("change")`.
 
 ### 5. Personaggio di prova
 
@@ -110,4 +110,4 @@ Togli righe e attributi aggiunti (`attr.destroy()` sugli id che non erano in `pr
 
 | Data | Partita | Build | Cosa | Esito |
 |---|---|---|---|---|
-| — | — | — | nessuna prova ancora | — |
+| 23/10/2026 | PHaG - Prova scheda (22140561) | 0.0.1, `npm run build` | creata la partita con scheda Custom; caricata tre volte (correzioni di `label` e `small` di Roll20); personaggio «Prova scheda»: archetipo Serafino, pallini, danni, mana, tiro di Mischia (Custom Roll Parsing), iniziativa | ok: nessuna violazione del CSS, nessuna `[chiave]`, 19 attributi senza doppi; «Prova scheda» lasciato nella partita come esempio |

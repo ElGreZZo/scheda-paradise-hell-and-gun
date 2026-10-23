@@ -29,6 +29,13 @@ Raccolto lavorando alla scheda di Farsight (repo `Farsight custom sheet`, settem
 - **Pulsanti di tiro**: un `@{campo}` senza un input (anche nascosto) con valore iniziale dà «No attribute was found» in chat. Uno `<span name="attr_…">` non basta.
 - **Immagini**: la scheda è solo HTML e CSS incollati, quindi un'immagine va presa da un indirizzo `https://` pubblico. Per esempio `files.d20.io`: si carica dalla «Biblioteca grafiche» di una partita e Roll20 la converte in WebP. Tutto passa dal proxy `imgsrv.roll20.net`.
 - **Larghezza**: la finestra della scheda parte da 900px, cioè circa 830px utili. Roll20 ricorda la misura per ogni personaggio.
+- **Stili di Roll20 da annullare** (visti il 23/10/2026 nella partita di prova, l'emulatore non li ha):
+  - `.largedialog label { width: 100%; display: block; padding-right: 10px }`: ogni `label` va a capo da solo;
+  - `.largedialog small { display: block; width: 100%; text-align: right }`: ogni `small` diventa un blocco allineato a destra;
+  - `.ui-dialog .charsheet input[type="number"] { width: 3.5em }`, che pesa (0,3,1).
+  
+  La scheda li annulla in `src/stili/base.css` (`.scheda label`, `.scheda small`, `[name]` sui campi numerici).
+- **Pulsanti d'azione**: il reset `.scheda button[type="action"][name]` pesa (0,3,1); le regole di un pulsante con una classe devono pesare uguale e venire dopo (`.scheda button.pallino[name]`), altrimenti larghezza e altezza tornano `auto`.
 
 ## Script della scheda (sheet worker)
 
