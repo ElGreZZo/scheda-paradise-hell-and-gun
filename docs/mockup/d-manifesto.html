@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup D · Manifesto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  /* Mockup D: una pagina sola che scorre, barra delle risorse fissa, sezioni richiudibili, abilita sotto la caratteristica. */
+  :root {
+    --carta: #f3ead6; --carta-2: #e9dcc0; --nero: #1d1a16; --tenue: #6d6253; --rosso: #9c2f22; --linea: #cbb994; --bianco: #fbf6ea;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px 16px 60px; background: #2a2622; color: var(--nero); font: 14px/1.45 "Libre Baskerville", Georgia, serif; }
+  .nota-mock { margin: 0 0 14px; color: #b8ab95; font: 13px system-ui, sans-serif; }
+  .nota-mock a { color: #e2a07a; }
+  .banco { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+  .os { font-family: "Oswald", sans-serif; }
+
+  .scheda { flex: 1 1 640px; min-width: 0; container-type: inline-size; background: var(--carta); border-radius: 6px; box-shadow: 0 20px 60px rgba(0,0,0,.5); position: relative; }
+
+  .manifesto { text-align: center; padding: 22px 30px 16px; border-bottom: 3px double var(--nero); margin: 0 18px; }
+  .manifesto .sopra { font: 500 12px "Oswald"; letter-spacing: .5em; color: var(--rosso); }
+  .manifesto h1 { margin: 4px 0 0; font: 700 54px/1 "Oswald", sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+  .manifesto .alias { font-style: italic; color: var(--tenue); }
+  .manifesto .riga { display: flex; justify-content: center; gap: 22px; margin-top: 10px; font: 500 13px "Oswald"; letter-spacing: .14em; text-transform: uppercase; }
+  .manifesto .riga span b { color: var(--rosso); font-weight: 600; }
+
+  /* Barra fissa */
+  .barra { position: sticky; top: 0; z-index: 2; background: var(--nero); color: var(--bianco); display: grid; grid-template-columns: repeat(5, 1fr) auto; margin: 0; }
+  .barra > div { padding: 8px 12px; border-right: 1px solid #3a352e; }
+  .barra .lbl { font: 500 10px "Oswald"; letter-spacing: .2em; color: #b8ab95; text-transform: uppercase; }
+  .barra .v { font: 600 20px "Oswald"; }
+  .barra .v small { font-size: 13px; color: #b8ab95; font-weight: 400; }
+  .barra .v button { float: right; margin-left: 2px; width: 20px; height: 20px; border: 1px solid #5a5248; background: none; color: var(--bianco); border-radius: 4px; cursor: pointer; line-height: 1; margin-top: 4px; }
+  .barra .forma { display: flex; align-items: center; padding: 0 12px; gap: 6px; font: 500 12px "Oswald"; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+  .barra .forma i { width: 30px; height: 16px; border-radius: 99px; border: 1px solid #b8ab95; position: relative; }
+  .barra .forma i::after { content: ""; position: absolute; top: 2px; left: 2px; width: 10px; height: 10px; border-radius: 50%; background: var(--bianco); }
+  .indice { position: sticky; top: 52px; z-index: 1; background: var(--carta-2); border-bottom: 1px solid var(--linea); display: flex; gap: 2px; padding: 0 18px; font: 500 12px "Oswald"; letter-spacing: .12em; text-transform: uppercase; }
+  .indice a { padding: 7px 10px; color: var(--tenue); text-decoration: none; }
+  .indice a:hover { color: var(--rosso); }
+  .indice .op { margin-left: auto; display: flex; gap: 6px; align-items: center; }
+  .indice .op span { padding: 2px 8px; border: 1px solid var(--linea); border-radius: 3px; cursor: pointer; }
+  .indice .op span.on { background: var(--nero); color: var(--bianco); border-color: var(--nero); }
+
+  details { margin: 0 18px; border-bottom: 1px solid var(--linea); }
+  summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 14px 0 10px; }
+  summary::-webkit-details-marker { display: none; }
+  summary h2 { margin: 0; font: 600 20px "Oswald"; letter-spacing: .14em; text-transform: uppercase; }
+  summary::before { content: "★"; color: var(--rosso); }
+  summary::after { content: "▾"; margin-left: auto; color: var(--tenue); transition: transform .15s; }
+  details:not([open]) summary::after { transform: rotate(-90deg); }
+  summary small { font: italic 13px "Libre Baskerville"; color: var(--tenue); }
+  .dentro { padding: 2px 0 18px; }
+
+  .p { display: inline-flex; gap: 3px; vertical-align: middle; }
+  .p span { width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid var(--nero); }
+  .p span.f { background: var(--nero); }
+  .p.inc span { border-color: var(--rosso); }
+  .p.inc span.f { background: var(--rosso); }
+
+  /* Caratteristiche con le abilita */
+  .gruppi { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .gruppi .col { display: flex; flex-direction: column; gap: 14px; }
+  .gruppo { background: var(--bianco); border: 1px solid var(--linea); }
+  .gruppo .h { display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 8px 12px; background: var(--nero); color: var(--bianco); }
+  .gruppo .h b { font: 600 17px "Oswald"; letter-spacing: .14em; text-transform: uppercase; }
+  .gruppo .h .tot { font: 700 26px/1 "Oswald"; color: #f0c9a5; grid-row: span 2; grid-column: 2; }
+  .gruppo .h .det { font: 12px "Oswald"; letter-spacing: .06em; color: #b8ab95; display: flex; gap: 8px; align-items: center; }
+  .gruppo .h .p span { border-color: var(--bianco); }
+  .gruppo .h .p span.f { background: var(--bianco); }
+  .gruppo .h .p.inc span { border-color: #f0c9a5; }
+  .gruppo .h .p.inc span.f { background: #f0c9a5; }
+  .ab { display: grid; grid-template-columns: 1fr auto 46px; gap: 8px; align-items: center; padding: 5px 12px; border-top: 1px dotted var(--linea); cursor: pointer; }
+  .ab:hover { background: var(--carta); }
+  .ab.zero { color: #9d917f; }
+  .ab .pool { font: 600 13px "Oswald"; text-align: right; color: var(--rosso); }
+  .ab.comb .n::after { content: " ⚔"; color: var(--rosso); font-size: 11px; }
+  .ab .n small { font-size: 11px; color: var(--tenue); font-style: italic; }
+
+  /* Tabelle */
+  table { width: 100%; border-collapse: collapse; background: var(--bianco); border: 1px solid var(--linea); }
+  th { font: 500 11px "Oswald"; letter-spacing: .14em; text-transform: uppercase; text-align: left; padding: 7px 10px; background: var(--carta-2); border-bottom: 1px solid var(--linea); }
+  td { padding: 8px 10px; border-bottom: 1px dotted var(--linea); }
+  td.c, th.c { text-align: center; }
+  .tira { font: 600 12px "Oswald"; letter-spacing: .08em; border: 1.5px solid var(--nero); background: none; padding: 3px 9px; cursor: pointer; }
+  .tira:hover { background: var(--nero); color: var(--bianco); }
+  .comb4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--linea); background: var(--bianco); margin-bottom: 12px; }
+  .comb4 > div { padding: 10px 12px; border-right: 1px solid var(--linea); text-align: center; }
+  .comb4 > div:last-child { border-right: 0; }
+  .comb4 .n { font: 600 14px "Oswald"; letter-spacing: .12em; text-transform: uppercase; }
+  .comb4 .pool { font: 700 28px/1.2 "Oswald"; color: var(--rosso); }
+  .comb4 small { display: block; font-size: 11px; color: var(--tenue); font-style: italic; }
+
+  .pot { display: grid; grid-template-columns: 170px 1fr auto; gap: 14px; padding: 10px 12px; background: var(--bianco); border: 1px solid var(--linea); margin-bottom: 8px; }
+  .pot h3 { margin: 0; font: 600 17px "Oswald"; letter-spacing: .08em; text-transform: uppercase; }
+  .pot .tipo { font-size: 12px; font-style: italic; color: var(--tenue); }
+  .pot .livelli { font-size: 13px; }
+  .pot .livelli div { display: flex; gap: 10px; }
+  .pot .livelli div.no { color: #a99c88; }
+  .pot .livelli span:first-child { width: 58px; flex: none; letter-spacing: 1px; }
+  .dove { display: inline-flex; gap: 2px; }
+  .dove i { font: 500 11px/19px "Oswald"; width: 19px; text-align: center; border: 1px solid var(--linea); font-style: normal; color: var(--tenue); }
+  .dove i.on { background: var(--nero); color: var(--bianco); border-color: var(--nero); }
+  .testo { columns: 2; column-gap: 24px; font-size: 13px; }
+  .testo h4 { margin: 0 0 2px; font: 600 14px "Oswald"; letter-spacing: .08em; text-transform: uppercase; break-after: avoid; }
+  .testo p { margin: 0 0 10px; }
+  .mini { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+  .mini > div { background: var(--bianco); border: 1px solid var(--linea); padding: 8px 12px; }
+  .mini .lbl { font: 500 11px "Oswald"; letter-spacing: .14em; text-transform: uppercase; color: var(--tenue); }
+  .fondo { text-align: center; padding: 16px; font: 500 12px "Oswald"; letter-spacing: .4em; color: var(--tenue); }
+
+  /* Chat */
+  .chat { flex: 1 1 260px; max-width: 340px; background: var(--carta); border-radius: 6px; padding: 12px; position: sticky; top: 16px; }
+  .chat > small { color: var(--tenue); font: 12px system-ui, sans-serif; }
+  .tpl { margin-top: 8px; border: 2px solid var(--nero); background: var(--bianco); }
+  .tpl .t { background: var(--nero); color: var(--bianco); padding: 8px 10px; text-align: center; }
+  .tpl .t b { font: 600 17px "Oswald"; letter-spacing: .14em; text-transform: uppercase; display: block; }
+  .tpl .t small { font-style: italic; color: #b8ab95; font-size: 12px; }
+  .tpl .c { padding: 10px; }
+  .dadi { display: flex; gap: 5px; justify-content: center; }
+  .dadi b { width: 28px; height: 28px; border: 1.5px solid var(--nero); display: grid; place-items: center; font: 600 15px "Oswald"; }
+  .dadi b.s { background: var(--nero); color: var(--bianco); }
+  .tot3 { display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; margin: 10px 0; border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea); }
+  .tot3 div { padding: 6px 0; }
+  .tot3 b { display: block; font: 700 22px "Oswald"; color: var(--rosso); }
+  .tot3 small { font: 500 10px "Oswald"; letter-spacing: .14em; text-transform: uppercase; }
+  .opp div { display: flex; justify-content: space-between; font-size: 13px; padding: 3px 0; border-bottom: 1px dotted var(--linea); }
+  .opp div b { font-family: "Oswald"; color: var(--rosso); }
+
+  /* Finestra stretta o larga */
+  @container (max-width: 680px) {
+    .gruppi { grid-template-columns: 1fr; }
+    .comb4 { grid-template-columns: 1fr 1fr; }
+    .barra { grid-template-columns: repeat(3, 1fr); }
+    .testo { columns: 1; }
+    .pot { grid-template-columns: 1fr; }
+    .indice { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<p class="nota-mock">Mockup D · Manifesto — statico, i dati sono di Ezekiel (esempio del manuale). La barra delle risorse resta in alto mentre scorri. <a href="index.html">Torna all'indice</a></p>
+<div class="banco">
+<div class="scheda">
+  <div class="barra">
+    <div><div class="lbl">Punti ferita</div><div class="v">5 <small>/ 5</small><button>+</button><button>−</button></div></div>
+    <div><div class="lbl">Mana</div><div class="v">8 <small>/ 10</small><button>+</button><button>−</button></div></div>
+    <div><div class="lbl">Anime</div><div class="v">1<button>+</button><button>−</button></div></div>
+    <div><div class="lbl">Cartucciera</div><div class="v">12 <small>/ 40</small></div></div>
+    <div><div class="lbl">Iniziativa</div><div class="v">2D6+3 <small>🎲</small></div></div>
+    <div class="forma"><i></i>Mortale</div>
+  </div>
+  <nav class="indice"><a href="#s1">Abilità</a><a href="#s2">Combattimento</a><a href="#s3">Poteri</a><a href="#s4">Equipaggiamento</a><a href="#s5">Origini</a>
+    <span class="op"><span class="on">Pubblico</span><span>GM</span><span>Successo 4+ ±</span></span></nav>
+
+  <header class="manifesto">
+    <div class="sopra">★ Paradise · Hell · Guns ★</div>
+    <h1>Ezekiel</h1>
+    <div class="alias">detto il vagabondo d'argento</div>
+    <div class="riga"><span>Serafino <b>· bianco</b></span><span>Soldato</span><span>Giocatore <b>GreZZo</b></span><span>PX <b>0</b> / 50</span></div>
+  </header>
+
+  <details open id="s1"><summary><h2>Caratteristiche e abilità</h2><small>le abilità stanno sotto la caratteristica con cui si tirano di solito</small></summary>
+    <div class="dentro gruppi">
+      <div class="col">
+        <div class="gruppo"><div class="h"><b>Possanza</b><span class="tot">3</span><span class="det"><i class="p" data-v="3" data-m="6"></i> PF</span></div>
+          <div class="ab"><span class="n">Atletica</span><i class="p" data-v="1" data-m="5"></i><span class="pool">4D6</span></div>
+          <div class="ab comb"><span class="n">Mischia</span><i class="p" data-v="2" data-m="5"></i><span class="pool">5D6</span></div>
+          <div class="ab zero"><span class="n">Gioco <small>per gli sport</small></span><i class="p" data-v="0" data-m="5"></i><span class="pool">3D6</span></div></div>
+        <div class="gruppo"><div class="h"><b>Agilità</b><span class="tot">2</span><span class="det"><i class="p" data-v="2" data-m="6"></i> Schivare</span></div>
+          <div class="ab zero"><span class="n">Cavalcare</span><i class="p" data-v="0" data-m="5"></i><span class="pool">2D6</span></div>
+          <div class="ab comb"><span class="n">Difesa <small>+1D6 aspetto alieno</small></span><i class="p" data-v="2" data-m="5"></i><span class="pool">5D6</span></div>
+          <div class="ab zero"><span class="n">Furtività</span><i class="p" data-v="0" data-m="5"></i><span class="pool">2D6</span></div>
+          <div class="ab zero"><span class="n">Grazia</span><i class="p" data-v="0" data-m="5"></i><span class="pool">2D6</span></div>
+          <div class="ab zero comb"><span class="n">Mira</span><i class="p" data-v="0" data-m="5"></i><span class="pool">2D6</span></div></div>
+        <div class="gruppo"><div class="h"><b>Potenza</b><span class="tot">5</span><span class="det"><i class="p" data-v="2" data-m="6"></i><i class="p inc" data-v="3" data-m="4"></i> Mana</span></div>
+          <div class="ab zero"><span class="n">Consapevolezza</span><i class="p" data-v="0" data-m="5"></i><span class="pool">5D6</span></div></div>
+      </div>
+      <div class="col">
+        <div class="gruppo" id="astuzia"><div class="h"><b>Astuzia</b><span class="tot">3</span><span class="det"><i class="p" data-v="2" data-m="6"></i><i class="p inc" data-v="1" data-m="4"></i> Iniziativa</span></div></div>
+      </div>
+    </div>
+  </details>
+
+  <details open id="s2"><summary><h2>Combattimento</h2></summary>
+    <div class="dentro">
+      <div class="comb4">
+        <div><div class="n">Mischia</div><div class="pool">5D6</div><small>Possanza + ●●</small></div>
+        <div><div class="n">Mira</div><div class="pool">2D6</div><small>Agilità + ○</small></div>
+        <div><div class="n">Difesa</div><div class="pool">5D6</div><small>Agilità + ●● + aspetto alieno</small></div>
+        <div><div class="n">Demoralizzare</div><div class="pool">3D6</div><small>Astuzia + ○</small></div>
+      </div>
+      <table>
+        <tr><th>Arma</th><th class="c">Danno</th><th>Distanza</th><th class="c">Distrutt.</th><th class="c">Colpi</th><th>Note</th><th></th></tr>
+        <tr><td><b>Spadone medievale</b><br><small style="color:var(--tenue);font-style:italic">Armi da mischia grandi</small></td><td class="c">3</td><td>1 · Contatto</td><td class="c">●●</td><td class="c">—</td><td style="font-size:12px">Distruttività: un esubero in meno</td><td><button class="tira">5D6</button></td></tr>
+        <tr><td><b>Pistola</b><br><small style="color:var(--tenue);font-style:italic">Pistola</small></td><td class="c">1</td><td>3 · Distante</td><td class="c">●</td><td class="c">1/1</td><td style="font-size:12px">+1 danno a distanza 2</td><td><button class="tira">2D6</button></td></tr>
+      </table>
+    </div>
+  </details>
+
+  <details open id="s3"><summary><h2>Poteri</h2><small>3 poteri · 1 attivo</small></summary>
+    <div class="dentro">
+      <div class="pot"><div><h3>Evocazione</h3><div class="tipo">attivo · reazione · affine</div></div>
+        <div class="livelli"><div><span>●</span><span>Evocare attacco — 1 anima: attacco a distanza 3, danno 5</span></div><div><span>●●</span><span>Evocare intervento — 1 anima: +2D6 ad una azione</span></div><div class="no"><span>●●●</span><span>Evocare avatar</span></div></div>
+        <div><button class="tira">Usa</button></div></div>
+      <div class="pot"><div><h3>Ali</h3><div class="tipo">passivo · innato</div></div>
+        <div class="livelli"><div><span>●</span><span>Ali deboli</span></div><div><span>●●</span><span>Ali forti</span></div><div class="no"><span>●●●</span><span>Multiple ali</span></div></div><div></div></div>
+      <div class="pot"><div><h3>Aspetto alieno</h3><div class="tipo">passivo · innato · solo bianchi</div></div>
+        <div class="livelli"><div><span>●</span><span>Corpo bizzarro — +1D6 in difesa per ogni pallino</span></div><div class="no"><span>●●</span><span>Sensi bizzarri</span></div></div><div></div></div>
+    </div>
+  </details>
+
+  <details open id="s4"><summary><h2>Equipaggiamento</h2></summary>
+    <div class="dentro">
+      <table>
+        <tr><th>Oggetto</th><th>Dove · I A B C N</th><th>Note</th></tr>
+        <tr><td>Attrezzatura per accamparsi</td><td><span class="dove"><i>I</i><i class="on">A</i><i>B</i><i>C</i><i>N</i></span></td><td>ferri del mestiere</td></tr>
+        <tr><td>Attrezzi per riparare armi</td><td><span class="dove"><i>I</i><i class="on">A</i><i>B</i><i>C</i><i>N</i></span></td><td>ferri del mestiere</td></tr>
+        <tr><td>Coltello</td><td><span class="dove"><i class="on">I</i><i>A</i><i>B</i><i>C</i><i>N</i></span></td><td></td></tr>
+      </table>
+      <div class="mini">
+        <div><div class="lbl">Ricchezza</div><i class="p" data-v="2" data-m="6"></i></div>
+        <div><div class="lbl">Anime depositate</div>0 · dove: —</div>
+        <div><div class="lbl">Ricchezza depositata</div>○ · dove: —</div>
+      </div>
+    </div>
+  </details>
+
+  <details id="s5"><summary><h2>Archetipo e carriera</h2><small>testi del manuale</small></summary>
+    <div class="dentro testo">
+      <h4>Serafino · Nato per il comando</h4><p>Una volta per sessione. Riceve automaticamente un'anima la prima volta che riesce a prendere il comando di altri immortali in una situazione di pericolo.</p>
+      <h4>Serafino · Potere assoluto</h4><p>Una volta per sessione, prima di effettuare i tiri per attivare un potere, può scegliere di spendere un'anima (oltre al normale costo per il potere) e ottiene automaticamente +2 punti esubero.</p>
+      <h4>Soldato · Attività</h4><p>Il personaggio ha vantaggio a tutti i tiri legati a strategie militari e riconoscere armi ed i loro effetti.</p>
+      <h4>Soldato · Ancora! (3)</h4><p>Il personaggio può usare questa opportunità ogni volta che infligge danno ad un individuo di colore diverso dal suo. Il personaggio raddoppia il danno dell'arma.</p>
+      <h4>Soldato · Una guerra infinita</h4><p>Il personaggio, quando combatte contro altri immortali, aggiunge +1 punti in esubero in tutte le azioni di attacco, indipendentemente dal risultato.</p>
+    </div>
+  </details>
+  <details><summary><h2>Storia e note</h2></summary><div class="dentro"><p>Ezekiel è un veterano della guerra civile che non ha apprezzato molto la decisione di fare una tregua…</p></div></details>
+  <div class="fondo">★ ★ ★</div>
+</div>
+
+<aside class="chat">
+  <small>Chat · esempio di tiro</small>
+  <div class="tpl">
+    <div class="t"><b>Mischia</b><small>Ezekiel con lo spadone · 5D6 · 4+</small></div>
+    <div class="c">
+      <div class="dadi"><b class="s">6</b><b class="s">5</b><b class="s">4</b><b>2</b><b>1</b></div>
+      <div class="tot3"><div><b>3</b><small>successi</small></div><div><b>2</b><small>esuberi</small></div><div><b>3</b><small>danno</small></div></div>
+      <div class="opp"><div>Non letale<b>1</b></div><div>Rimuovere oggetto<b>1</b></div><div>Movimento<b>1</b></div><div>Distruttività (spadone)<b>1</b></div><div>Stordire<b>2</b></div><div>Danno extra<b>2</b></div></div>
+    </div>
+  </div>
+</aside>
+</div>
+
+<script>
+  // Solo per il mockup.
+  const astuzia = [["Carpenteria",0],["Contrattare",0],["Demoralizzare",0,1],["Forgiare",0],["Gioco",0],["Ingannare",0],["Intimidire",0],["Istruzione",0],["Legge",0],["Meccanica",0],["Medicina",0],["Percezione",2],["Pianificare",0],["Socialità",0],["Sopravvivenza",2]];
+  document.getElementById("astuzia").insertAdjacentHTML("beforeend", astuzia.map(([n, v, c]) =>
+    `<div class="ab ${v ? "" : "zero"} ${c ? "comb" : ""}"><span class="n">${n}</span><i class="p" data-v="${v}" data-m="5"></i><span class="pool">${3 + v}D6</span></div>`).join(""));
+  document.querySelectorAll(".p").forEach(el => {
+    const v = +el.dataset.v, m = +el.dataset.m;
+    el.innerHTML = Array.from({ length: m }, (_, i) => `<span class="${i < v ? "f" : ""}"></span>`).join("");
+  });
+  document.querySelectorAll(".indice .op span").forEach(b => b.onclick = () => { if (b.textContent.length < 9) b.parentElement.querySelectorAll("span").forEach(x => x.classList.toggle("on", x === b)); });
+</script>
+</body>
+</html>

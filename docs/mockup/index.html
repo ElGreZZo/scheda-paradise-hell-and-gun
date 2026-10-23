@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup scheda PHaG</title>
+<style>
+  :root { --sfondo: #f4f1ea; --testo: #1e1b18; --tenue: #6b645b; --carta: #fff; --bordo: #ddd5c6; --accento: #a4492a; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --sfondo: #161514; --testo: #eee8df; --tenue: #a39b90; --carta: #201e1c; --bordo: #3a3632; --accento: #e0835f; }
+  }
+  :root[data-theme="dark"] { --sfondo: #161514; --testo: #eee8df; --tenue: #a39b90; --carta: #201e1c; --bordo: #3a3632; --accento: #e0835f; }
+  body { margin: 0; padding: 40px 16px; background: var(--sfondo); color: var(--testo); font: 16px/1.55 system-ui, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; }
+  h1 { margin: 0 0 4px; font-size: 24px; letter-spacing: .02em; }
+  p { color: var(--tenue); margin: 0 0 20px; }
+  a.mock { display: grid; grid-template-columns: 44px 1fr; gap: 4px 16px; margin: 12px 0; padding: 16px 18px; background: var(--carta); border: 1px solid var(--bordo); border-left: 4px solid var(--accento); border-radius: 10px; color: inherit; text-decoration: none; }
+  a.mock:hover { border-color: var(--accento); }
+  a.mock b { font-size: 18px; }
+  a.mock span.l { grid-row: span 2; font: 700 28px/1 Georgia, serif; color: var(--accento); }
+  a.mock span.d { color: var(--tenue); font-size: 15px; }
+  ul { color: var(--tenue); font-size: 14px; padding-left: 20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Paradise, Hell and Guns · mockup della scheda</h1>
+  <p>Quattro proposte statiche, senza logica, per scegliere stile e organizzazione dei dati. Il personaggio è Ezekiel, il Serafino soldato dell'esempio di creazione del manuale (mana corretto dal master).</p>
+
+  <a class="mock" href="a-frontiera.html"><span class="l">A</span><b>Frontiera</b><span class="d">Chiaro, carta calda e ruggine. Cruscotto a tre colonne come la scheda di D&amp;D, quattro linguette. Il più vicino a una scheda classica, ripulita.</span></a>
+  <a class="mock" href="b-immortali.html"><span class="l">B</span><b>Immortali</b><span class="d">Scuro, l'accento cambia col colore del personaggio (bianco oro, nero cremisi, grigio argento). Barra laterale, anelli per PF, mana e anime, abilità a tessere.</span></a>
+  <a class="mock" href="c-taccuino.html"><span class="l">C</span><b>Taccuino</b><span class="d">Minimale, da app moderna. Organizzato per uso: «In gioco» con il costruttore del tiro (caratteristica + abilità, vantaggi e svantaggi che si sommano), poi «Personaggio», «Poteri», «Zaino», «Origini».</span></a>
+  <a class="mock" href="d-manifesto.html"><span class="l">D</span><b>Manifesto</b><span class="d">Una sola pagina che scorre, senza linguette. Barra delle risorse fissa in alto, sezioni che si chiudono, abilità raggruppate sotto la caratteristica come in Farsight. Tipografia da manifesto western.</span></a>
+
+  <ul>
+    <li>La scheda occupa tutta la larghezza della finestra e si ricompone quando la stringi, come la finestra di Roll20, che si ridimensiona e si stacca.</li>
+    <li>Accanto a ogni scheda (sotto, se la finestra è stretta) c'è un esempio di tiro in chat, con gli esuberi e le opportunità.</li>
+    <li>Linguette, pallini e interruttori si possono cliccare, ma non salvano niente.</li>
+  </ul>
+</main>
+</body>
+</html>

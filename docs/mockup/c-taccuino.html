@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup C · Taccuino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Serif:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+  /* Mockup C: minimale, da app. Organizzato per uso: In gioco (costruttore del tiro), Personaggio, Poteri, Zaino, Origini. */
+  :root {
+    --fondo: #f7f7f5; --carta: #fff; --linea: #e6e5e1; --linea-2: #efeeea; --testo: #1c1c1a; --tenue: #75736d; --molto-tenue: #a6a49d;
+    --accento: #b0452c; --accento-chiaro: #fbeee9; --ok: #2f7a4b; --ok-chiaro: #e8f3ec; --blu: #2f5fa8;
+    --r: 10px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px 16px 60px; background: #ebeae6; color: var(--testo); font: 14px/1.45 "IBM Plex Sans", system-ui, sans-serif; }
+  .nota-mock { margin: 0 0 14px; color: var(--tenue); font-size: 13px; }
+  .nota-mock a { color: var(--accento); }
+  .banco { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+  .mono { font-family: "IBM Plex Mono", monospace; }
+
+  .scheda { flex: 1 1 640px; min-width: 0; container-type: inline-size; background: var(--fondo); border: 1px solid var(--linea); border-radius: 14px; overflow: clip; box-shadow: 0 8px 30px rgba(0,0,0,.08); }
+
+  .testa { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: var(--carta); border-bottom: 1px solid var(--linea); }
+  .avatar { width: 40px; height: 40px; border-radius: 10px; background: #f0e6c8; display: grid; place-items: center; font-weight: 700; color: #8a6a1d; }
+  .testa h1 { margin: 0; font-size: 18px; font-weight: 700; }
+  .testa .sub { color: var(--tenue); font-size: 13px; }
+  .testa .sub b { color: var(--testo); font-weight: 500; }
+  .pallino-colore { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #fff; border: 1.5px solid #c9a646; margin: 0 2px 1px 6px; vertical-align: middle; }
+  .testa .dx { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+  .switch { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--tenue); cursor: pointer; }
+  .switch i { width: 30px; height: 18px; border-radius: 99px; background: var(--linea); position: relative; }
+  .switch i::after { content: ""; position: absolute; left: 2px; top: 2px; width: 14px; height: 14px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.2); transition: left .15s; }
+  .switch.on i { background: var(--testo); }
+  .switch.on i::after { left: 14px; }
+  .icona { width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--linea); background: var(--carta); display: grid; place-items: center; color: var(--tenue); cursor: pointer; }
+
+  .tabs { display: flex; gap: 4px; padding: 8px 14px; background: var(--carta); border-bottom: 1px solid var(--linea); }
+  .tabs button { border: 0; background: none; padding: 6px 12px; border-radius: 8px; font: 500 13px "IBM Plex Sans", sans-serif; color: var(--tenue); cursor: pointer; }
+  .tabs button:hover { background: var(--linea-2); }
+  .tabs button.on { background: var(--testo); color: #fff; }
+
+  /* Barra delle risorse */
+  .stato { display: grid; grid-template-columns: repeat(4, 1fr) auto; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--linea); background: var(--fondo); position: sticky; top: 0; }
+  .r { background: var(--carta); border: 1px solid var(--linea); border-radius: var(--r); padding: 8px 10px; display: grid; grid-template-columns: 1fr auto; align-items: center; }
+  .r .lbl { font-size: 11px; color: var(--tenue); font-weight: 500; }
+  .r .v { font: 600 18px "IBM Plex Mono", monospace; }
+  .r .v small { font-size: 12px; color: var(--molto-tenue); }
+  .r .barra { grid-column: 1 / -1; height: 4px; border-radius: 99px; background: var(--linea-2); margin-top: 6px; overflow: hidden; }
+  .r .barra div { height: 100%; }
+  .step { display: inline-flex; border: 1px solid var(--linea); border-radius: 7px; overflow: hidden; }
+  .step button { width: 24px; height: 24px; border: 0; background: var(--carta); cursor: pointer; color: var(--tenue); font-size: 14px; }
+  .step button + button { border-left: 1px solid var(--linea); }
+  .iniz { border: 0; border-radius: var(--r); background: var(--testo); color: #fff; padding: 0 14px; font: 600 13px "IBM Plex Sans"; cursor: pointer; }
+  .iniz span { display: block; font: 500 11px "IBM Plex Mono"; opacity: .7; }
+
+  .pag { display: none; padding: 14px; }
+  .pag.on { display: block; }
+  .due { display: grid; grid-template-columns: 1.1fr 1fr; gap: 12px; }
+  .card { background: var(--carta); border: 1px solid var(--linea); border-radius: 12px; padding: 14px; }
+  .card h3 { margin: 0 0 10px; font-size: 13px; font-weight: 600; display: flex; justify-content: space-between; align-items: baseline; }
+  .card h3 small { font-weight: 400; color: var(--tenue); font-size: 12px; }
+  .stack { display: flex; flex-direction: column; gap: 12px; }
+
+  /* Costruttore del tiro */
+  .campo { margin-bottom: 12px; }
+  .campo > label { display: block; font-size: 11px; color: var(--tenue); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 5px; }
+  .seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; background: var(--linea-2); border-radius: 9px; padding: 3px; gap: 3px; }
+  .seg button { border: 0; border-radius: 7px; background: none; padding: 6px 4px; font: 500 13px "IBM Plex Sans"; color: var(--tenue); cursor: pointer; }
+  .seg button b { font-family: "IBM Plex Mono"; margin-left: 4px; color: var(--molto-tenue); }
+  .seg button.on { background: var(--carta); color: var(--testo); box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+  .seg button.on b { color: var(--accento); }
+  .select { display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--linea); border-radius: 9px; padding: 7px 10px; background: var(--carta); }
+  .select span:last-child { color: var(--molto-tenue); }
+  .mods { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .mod { border: 1px solid var(--linea); border-radius: 9px; padding: 6px 8px; }
+  .mod > span { display: block; font-size: 11px; color: var(--tenue); margin-bottom: 2px; }
+  .mod > div { display: flex; justify-content: space-between; align-items: center; }
+  .mod b { font: 600 17px "IBM Plex Mono"; }
+  .anteprima { margin-top: 14px; border-radius: 12px; background: var(--accento-chiaro); padding: 12px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 12px; }
+  .anteprima .pool { font: 600 26px "IBM Plex Mono"; color: var(--accento); }
+  .anteprima .det { font-size: 12px; color: var(--tenue); grid-column: 1; }
+  .anteprima button { grid-row: 1 / span 2; grid-column: 2; border: 0; border-radius: 10px; background: var(--accento); color: #fff; font: 600 14px "IBM Plex Sans"; padding: 12px 18px; cursor: pointer; }
+  .promemoria { margin-top: 10px; font-size: 12px; color: var(--tenue); display: flex; flex-direction: column; gap: 4px; }
+  .promemoria div::before { content: "• "; color: var(--accento); }
+
+  /* Azioni */
+  .azione { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; padding: 9px 0; border-top: 1px solid var(--linea-2); align-items: center; }
+  .azione:first-of-type { border-top: 0; padding-top: 0; }
+  .azione .n { font-weight: 600; }
+  .azione .d { font-size: 12px; color: var(--tenue); }
+  .bt { border: 1px solid var(--linea); border-radius: 8px; background: var(--carta); padding: 5px 10px; font: 600 12px "IBM Plex Mono"; cursor: pointer; grid-row: span 2; }
+  .bt:hover { border-color: var(--accento); color: var(--accento); }
+  .bt.costo { color: #6b4fb0; }
+  .etichetta { display: inline-block; font-size: 11px; padding: 0 6px; border-radius: 5px; background: var(--linea-2); color: var(--tenue); margin-left: 4px; font-weight: 500; }
+
+  /* Pallini */
+  .p { display: inline-flex; gap: 3px; vertical-align: middle; }
+  .p span { width: 9px; height: 9px; border-radius: 50%; background: var(--linea); }
+  .p span.f { background: var(--testo); }
+  .p.inc span.f { background: #c9a646; }
+
+  /* Tabella */
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: 11px; color: var(--tenue); font-weight: 600; padding: 0 8px 8px; border-bottom: 1px solid var(--linea); text-transform: uppercase; letter-spacing: .05em; }
+  td { padding: 7px 8px; border-bottom: 1px solid var(--linea-2); }
+  tr.zero td { color: var(--molto-tenue); }
+  td.num { font-family: "IBM Plex Mono"; text-align: right; }
+  .cars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 12px; }
+  .cars .card { padding: 12px; }
+  .cars .lbl { font-size: 12px; color: var(--tenue); }
+  .cars .v { font: 600 28px "IBM Plex Mono"; }
+  .cars .v small { font-size: 12px; color: #a8872c; }
+  .cars .eff { font-size: 11px; color: var(--molto-tenue); margin-top: 4px; }
+
+  details { border-top: 1px solid var(--linea-2); padding: 10px 0; }
+  details:first-of-type { border-top: 0; padding-top: 0; }
+  summary { list-style: none; display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: center; cursor: pointer; }
+  summary::-webkit-details-marker { display: none; }
+  summary .n { font-weight: 600; }
+  summary .n small { color: var(--tenue); font-weight: 400; margin-left: 6px; }
+  details ol { margin: 10px 0 0; padding: 0; list-style: none; }
+  details li { display: grid; grid-template-columns: 56px 1fr auto; gap: 8px; padding: 4px 0; font-size: 13px; }
+  details li.no { color: var(--molto-tenue); }
+  details .nota { font-family: "IBM Plex Serif"; font-style: italic; color: var(--tenue); font-size: 13px; margin-top: 6px; }
+  .dove { display: inline-flex; gap: 2px; }
+  .dove i { font: 500 11px/20px "IBM Plex Mono"; width: 20px; text-align: center; border-radius: 5px; color: var(--molto-tenue); font-style: normal; }
+  .dove i.on { background: var(--testo); color: #fff; }
+  .testo p { margin: 0 0 8px; font-size: 13px; }
+  .testo h4 { margin: 12px 0 2px; font-size: 13px; }
+
+  /* Chat */
+  .chat { flex: 1 1 260px; max-width: 340px; background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 12px; position: sticky; top: 16px; }
+  .chat > small { color: var(--tenue); font-size: 12px; }
+  .tpl { margin-top: 8px; border: 1px solid var(--linea); border-radius: 12px; overflow: hidden; }
+  .tpl .t { padding: 10px 12px; border-bottom: 1px solid var(--linea); }
+  .tpl .t b { display: block; }
+  .tpl .t small { color: var(--tenue); font-family: "IBM Plex Mono"; font-size: 11px; }
+  .tpl .c { padding: 10px 12px; }
+  .dadi { display: flex; gap: 5px; }
+  .dadi b { width: 28px; height: 28px; border-radius: 7px; display: grid; place-items: center; font: 600 14px "IBM Plex Mono"; background: var(--linea-2); color: var(--molto-tenue); }
+  .dadi b.s { background: var(--ok-chiaro); color: var(--ok); }
+  .riass { display: flex; align-items: baseline; gap: 6px; margin: 10px 0; }
+  .riass b { font: 600 24px "IBM Plex Mono"; color: var(--ok); }
+  .riass span { color: var(--tenue); font-size: 13px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chips span { font-size: 12px; border: 1px solid var(--linea); border-radius: 99px; padding: 2px 8px; }
+  .chips span i { font-style: normal; font-family: "IBM Plex Mono"; color: var(--accento); margin-left: 4px; }
+
+  /* Finestra stretta o larga */
+  @container (max-width: 720px) {
+    .due { grid-template-columns: 1fr; }
+    .stato { grid-template-columns: 1fr 1fr; }
+    .cars { grid-template-columns: 1fr 1fr; }
+    .testa { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<p class="nota-mock">Mockup C · Taccuino — statico, i dati sono di Ezekiel (esempio del manuale). <a href="index.html">Torna all'indice</a></p>
+<div class="banco">
+<div class="scheda">
+  <header class="testa">
+    <div class="avatar">EZ</div>
+    <div>
+      <h1>Ezekiel</h1>
+      <div class="sub"><b>Serafino</b><span class="pallino-colore"></span>bianco · <b>Soldato</b> · GreZZo · <span class="mono">0 PX</span></div>
+    </div>
+    <div class="dx">
+      <span class="switch" id="mortale"><i></i>Forma mortale</span>
+      <span class="icona" title="Tiri solo al GM">👁</span>
+      <span class="icona" title="Modifica">✎</span>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="on" data-p="1">In gioco</button><button data-p="2">Personaggio</button><button data-p="3">Poteri</button><button data-p="4">Zaino</button><button data-p="5">Origini</button>
+  </nav>
+
+  <div class="stato">
+    <div class="r"><div><div class="lbl">Punti ferita</div><div class="v">5<small>/5</small></div></div><div class="step"><button>−</button><button>+</button></div><div class="barra"><div style="width:100%;background:var(--ok)"></div></div></div>
+    <div class="r"><div><div class="lbl">Mana</div><div class="v">8<small>/10</small></div></div><div class="step"><button>−</button><button>+</button></div><div class="barra"><div style="width:80%;background:var(--blu)"></div></div></div>
+    <div class="r"><div><div class="lbl">Anime</div><div class="v">1</div></div><div class="step"><button>−</button><button>+</button></div><div class="barra"><div style="width:3%;background:#6b4fb0"></div></div></div>
+    <div class="r"><div><div class="lbl">Cartucciera</div><div class="v">12<small>/40</small></div></div><div class="step"><button>−</button><button>+</button></div><div class="barra"><div style="width:30%;background:#c9a646"></div></div></div>
+    <button class="iniz">Iniziativa<span>2D6+3</span></button>
+  </div>
+
+  <!-- In gioco -->
+  <section class="pag on" data-p="1">
+    <div class="due">
+      <div class="card">
+        <h3>Tira <small>riserva = caratteristica + abilità</small></h3>
+        <div class="campo"><label>Caratteristica</label>
+          <div class="seg" id="car"><button class="on">Possanza<b>3</b></button><button>Agilità<b>2</b></button><button>Astuzia<b>3</b></button><button>Potenza<b>5</b></button></div></div>
+        <div class="campo"><label>Abilità</label><div class="select"><span>Mischia <i class="p" data-v="2" data-m="5"></i></span><span>▾</span></div></div>
+        <div class="campo"><label>Modificatori</label>
+          <div class="mods">
+            <div class="mod"><span>Vantaggi</span><div><b>0</b><span class="step"><button>−</button><button>+</button></span></div></div>
+            <div class="mod"><span>Svantaggi</span><div><b>0</b><span class="step"><button>−</button><button>+</button></span></div></div>
+            <div class="mod"><span>Difficoltà</span><div><b>1</b><span class="step"><button>−</button><button>+</button></span></div></div>
+          </div></div>
+        <div class="anteprima"><div class="pool">5D6 · 4+</div><div class="det">un vantaggio annulla uno svantaggio · da 2+ a 6+</div><button>Tira</button></div>
+        <div class="promemoria">
+          <div>Mana: 1 punto per ritirare un dado, una volta per azione</div>
+          <div>Contro un immortale: +1 esubero negli attacchi (Una guerra infinita)</div>
+          <div>Vantaggio su strategie militari e riconoscere armi (Soldato)</div>
+        </div>
+      </div>
+
+      <div class="stack">
+        <div class="card">
+          <h3>Attacchi</h3>
+          <div class="azione"><span class="n">Spadone medievale <span class="etichetta">Mischia</span></span><button class="bt">5D6</button><span class="d">danno 3 · distanza 1 · distruttività ●●</span></div>
+          <div class="azione"><span class="n">Pistola <span class="etichetta">Mira</span></span><button class="bt">2D6</button><span class="d">danno 1 · distanza 3 · ● · 1/1 colpi</span></div>
+        </div>
+        <div class="card">
+          <h3>Reazioni e difesa</h3>
+          <div class="azione"><span class="n">Difesa</span><button class="bt">5D6</button><span class="d">Agilità 2 + Difesa 2 + Aspetto alieno 1</span></div>
+          <div class="azione"><span class="n">Demoralizzare</span><button class="bt">3D6</button><span class="d">Astuzia + Demoralizzare</span></div>
+        </div>
+        <div class="card">
+          <h3>Poteri attivi</h3>
+          <div class="azione"><span class="n">Evocazione ●● <span class="etichetta">reazione</span></span><button class="bt costo">1 anima</button><span class="d">Evocare intervento · +2D6 ad una azione</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personaggio -->
+  <section class="pag" data-p="2">
+    <div class="cars">
+      <div class="card"><div class="lbl">Possanza</div><div class="v">3</div><i class="p" data-v="3" data-m="6"></i><div class="eff">PF = 2 + Possanza</div></div>
+      <div class="card"><div class="lbl">Agilità</div><div class="v">2</div><i class="p" data-v="2" data-m="6"></i><div class="eff">Schivare</div></div>
+      <div class="card"><div class="lbl">Astuzia</div><div class="v">3 <small>+1</small></div><i class="p" data-v="2" data-m="6"></i> <i class="p inc" data-v="1" data-m="4"></i><div class="eff">Iniziativa</div></div>
+      <div class="card"><div class="lbl">Potenza</div><div class="v">5 <small>+3</small></div><i class="p" data-v="2" data-m="6"></i> <i class="p inc" data-v="3" data-m="4"></i><div class="eff">Mana = 2 × Potenza</div></div>
+    </div>
+    <div class="card">
+      <h3>Abilità <small>ordinate per nome · clic sulla riserva per tirare</small></h3>
+      <table id="tab-abilita"><tr><th>Abilità</th><th>Caratteristica</th><th>Livello</th><th style="text-align:right">Riserva</th></tr></table>
+    </div>
+  </section>
+
+  <!-- Poteri -->
+  <section class="pag" data-p="3">
+    <div class="card">
+      <h3>Poteri <small>+ aggiungi dal manuale</small></h3>
+      <details open><summary><span class="n">Evocazione<small>attivo · reazione · affine</small></span><i class="p" data-v="2" data-m="5"></i><button class="bt costo">1 anima</button></summary>
+        <ol><li><i class="p" data-v="1" data-m="1"></i><span>Evocare attacco</span><span class="mono">4 PX</span></li><li><i class="p" data-v="2" data-m="2"></i><span>Evocare intervento</span><span class="mono">8 PX</span></li><li class="no"><i class="p" data-v="0" data-m="3"></i><span>Evocare avatar</span><span class="mono">12 PX</span></li><li class="no"><i class="p" data-v="0" data-m="4"></i><span>Evocare alleato</span><span class="mono">16 PX</span></li><li class="no"><i class="p" data-v="0" data-m="5"></i><span>Evocare la devastazione</span><span class="mono">20 PX</span></li></ol>
+        <div class="nota">● 1 anima: attacco a distanza 3, danno 5 · ●● 1 anima: +2D6 ad una azione</div></details>
+      <details><summary><span class="n">Ali<small>passivo · innato</small></span><i class="p" data-v="2" data-m="3"></i><span></span></summary></details>
+      <details><summary><span class="n">Aspetto alieno<small>passivo · innato · solo bianchi</small></span><i class="p" data-v="1" data-m="3"></i><span></span></summary></details>
+    </div>
+  </section>
+
+  <!-- Zaino -->
+  <section class="pag" data-p="4">
+    <div class="due">
+      <div class="card"><h3>Oggetti <small>I · A · B · C · N</small></h3>
+        <table><tr><th>Oggetto</th><th>Dove</th></tr>
+          <tr><td>Attrezzatura per accamparsi</td><td><span class="dove"><i>I</i><i class="on">A</i><i>B</i><i>C</i><i>N</i></span></td></tr>
+          <tr><td>Attrezzi per riparare armi</td><td><span class="dove"><i>I</i><i class="on">A</i><i>B</i><i>C</i><i>N</i></span></td></tr>
+          <tr><td>Coltello</td><td><span class="dove"><i class="on">I</i><i>A</i><i>B</i><i>C</i><i>N</i></span></td></tr></table></div>
+      <div class="stack">
+        <div class="card"><h3>Ricchezza <small>−● a settimana</small></h3><i class="p" data-v="2" data-m="6"></i></div>
+        <div class="card"><h3>Depositi</h3><table><tr><td>Anime</td><td class="num">0</td></tr><tr><td>Ricchezza</td><td class="num">○</td></tr></table></div>
+        <div class="card"><h3>Esperienza</h3><table><tr><td>Disponibili</td><td class="num">0</td></tr><tr><td>Spesi</td><td class="num">50</td></tr></table></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Origini -->
+  <section class="pag" data-p="5">
+    <div class="due">
+      <div class="card testo"><h3>Serafino <small>archetipo · bianco</small></h3>
+        <p>Incrementi: Potenza ●●●, Astuzia ●. Innati: Ali ●, Aspetto alieno ●. Affini: Ali, Aspetto alieno, Lux, Evocazione, Aura distruttiva.</p>
+        <h4>Nato per il comando</h4><p>Una volta per sessione. Riceve automaticamente un'anima la prima volta che riesce a prendere il comando di altri immortali in una situazione di pericolo.</p>
+        <h4>Potere assoluto</h4><p>Una volta per sessione, prima di effettuare i tiri per attivare un potere, può scegliere di spendere un'anima (oltre al normale costo per il potere) e ottiene automaticamente +2 punti esubero.</p></div>
+      <div class="card testo"><h3>Soldato <small>carriera</small></h3>
+        <h4>Attività</h4><p>Il personaggio ha vantaggio a tutti i tiri legati a strategie militari e riconoscere armi ed i loro effetti.</p>
+        <h4>Ancora! · 3 esuberi</h4><p>Il personaggio può usare questa opportunità ogni volta che infligge danno ad un individuo di colore diverso dal suo. Il personaggio raddoppia il danno dell'arma.</p>
+        <h4>Una guerra infinita</h4><p>Il personaggio, quando combatte contro altri immortali, aggiunge +1 punti in esubero in tutte le azioni di attacco, indipendentemente dal risultato.</p></div>
+    </div>
+  </section>
+</div>
+
+<aside class="chat">
+  <small>Chat · esempio di tiro</small>
+  <div class="tpl">
+    <div class="t"><b>Ezekiel attacca con lo spadone</b><small>Possanza 3 + Mischia 2 = 5D6 · 4+ · diff. 1</small></div>
+    <div class="c">
+      <div class="dadi"><b class="s">6</b><b class="s">5</b><b class="s">4</b><b>2</b><b>1</b></div>
+      <div class="riass"><b>2</b><span>esuberi · 3 successi · danno 3</span></div>
+      <div class="chips"><span>Non letale<i>1</i></span><span>Rimuovere oggetto<i>1</i></span><span>Movimento<i>1</i></span><span>Distruttività<i>1</i></span><span>Stordire<i>2</i></span><span>Danno extra<i>2</i></span></div>
+    </div>
+  </div>
+</aside>
+</div>
+
+<script>
+  // Solo per il mockup.
+  const abilita = [["Atletica","Possanza",1,4],["Carpenteria","Astuzia",0,3],["Cavalcare","Agilità",0,2],["Consapevolezza","Potenza",0,5],["Contrattare","Astuzia",0,3],["Demoralizzare","Astuzia",0,3],["Difesa","Agilità",2,5],["Forgiare","Astuzia",0,3],["Furtività","Agilità",0,2],["Gioco","Astuzia o Possanza",0,3],["Grazia","Agilità",0,2],["Ingannare","Astuzia",0,3],["Intimidire","Astuzia",0,3],["Istruzione","Astuzia",0,3],["Legge","Astuzia",0,3],["Meccanica","Astuzia",0,3],["Medicina","Astuzia",0,3],["Mira","Agilità",0,2],["Mischia","Possanza",2,5],["Percezione","Astuzia",2,5],["Pianificare","Astuzia",0,3],["Socialità","Astuzia",0,3],["Sopravvivenza","Astuzia",2,5]];
+  document.getElementById("tab-abilita").insertAdjacentHTML("beforeend", abilita.map(([n, c, v, p]) =>
+    `<tr class="${v ? "" : "zero"}"><td>${n}</td><td>${c}</td><td><i class="p" data-v="${v}" data-m="5"></i></td><td class="num"><button class="bt">${p}D6</button></td></tr>`).join(""));
+  document.querySelectorAll(".p").forEach(el => {
+    const v = +el.dataset.v, m = +el.dataset.m;
+    el.innerHTML = Array.from({ length: m }, (_, i) => `<span class="${i < v ? "f" : ""}"></span>`).join("");
+  });
+  document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => {
+    document.querySelectorAll(".tabs button").forEach(x => x.classList.toggle("on", x === b));
+    document.querySelectorAll(".pag").forEach(p => p.classList.toggle("on", p.dataset.p === b.dataset.p));
+  });
+  document.querySelectorAll(".seg button").forEach(b => b.onclick = () => b.parentElement.querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b)));
+  document.getElementById("mortale").onclick = e => e.currentTarget.classList.toggle("on");
+</script>
+</body>
+</html>

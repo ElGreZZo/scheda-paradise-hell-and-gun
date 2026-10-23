@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup B · Immortali</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Mockup B: scuro, accento dal colore del personaggio. Barra laterale, anelli delle risorse, abilita a tessere. */
+  :root {
+    --fondo: #0f0f12; --pannello: #17171c; --pannello-2: #1e1e25; --linea: #2a2a33; --testo: #ecebf0; --tenue: #8d8b99;
+    --accento: #e3c26f; --accento-tenue: rgba(227,194,111,.14); --alone: rgba(227,194,111,.35);
+    --pf: #e05d5d; --mana: #6f9cf0; --anime: #c9b6ff;
+  }
+  .scheda[data-colore="nero"] { --accento: #e0484f; --accento-tenue: rgba(224,72,79,.14); --alone: rgba(224,72,79,.35); }
+  .scheda[data-colore="grigio"] { --accento: #b8c1cc; --accento-tenue: rgba(184,193,204,.14); --alone: rgba(184,193,204,.3); }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px 16px 60px; background: #08080a; color: var(--testo); font: 14px/1.45 "Inter", system-ui, sans-serif; }
+  .nota-mock { margin: 0 0 14px; color: var(--tenue); font-size: 13px; }
+  .nota-mock a { color: #e3c26f; }
+  .banco { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+
+  .scheda { flex: 1 1 640px; min-width: 0; container-type: inline-size; display: grid; grid-template-columns: 76px 1fr; background: var(--fondo); border: 1px solid var(--linea); border-radius: 16px; overflow: clip; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+
+  /* Barra laterale */
+  .rail { background: var(--pannello); border-right: 1px solid var(--linea); display: flex; flex-direction: column; align-items: center; padding: 16px 0; gap: 6px; }
+  .sigillo { width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid var(--accento); display: grid; place-items: center; font: 700 15px "Cinzel", serif; color: var(--accento); margin-bottom: 14px; box-shadow: 0 0 18px var(--alone); }
+  .rail button { width: 60px; padding: 9px 0 7px; border: 0; border-radius: 10px; background: none; color: var(--tenue); cursor: pointer; font: 600 10px/1.2 "Inter", sans-serif; letter-spacing: .04em; }
+  .rail button span { display: block; font-size: 19px; margin-bottom: 3px; filter: grayscale(1); }
+  .rail button.on { background: var(--accento-tenue); color: var(--accento); }
+  .rail button.on span { filter: none; }
+  .rail .spazio { flex: 1; }
+  .rail .opt { font-size: 10px; color: var(--tenue); text-align: center; }
+  .rail .opt b { display: block; color: var(--testo); font-size: 12px; margin-top: 2px; }
+
+  .corpo { padding: 18px 20px 22px; min-width: 0; }
+
+  /* Testata */
+  .eroe { display: grid; grid-template-columns: 74px 1fr auto; gap: 16px; align-items: center; padding-bottom: 16px; border-bottom: 1px solid var(--linea); }
+  .ritratto { width: 74px; height: 74px; border-radius: 50%; background: radial-gradient(circle at 50% 38%, #3a3a46, #1b1b22 70%); border: 2px solid var(--accento); box-shadow: 0 0 0 4px var(--fondo), 0 0 24px var(--alone); display: grid; place-items: center; font-size: 30px; }
+  .eroe h1 { margin: 0; font: 700 26px/1.1 "Cinzel", serif; letter-spacing: .03em; }
+  .eroe h1 small { font: 400 14px "Inter", sans-serif; color: var(--tenue); letter-spacing: 0; margin-left: 6px; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .chip { padding: 3px 10px; border-radius: 99px; background: var(--pannello-2); border: 1px solid var(--linea); font-size: 12px; color: var(--tenue); }
+  .chip b { color: var(--testo); font-weight: 600; }
+  .chip.acc { border-color: var(--accento); color: var(--accento); background: var(--accento-tenue); }
+  .interruttori { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+  .seg { display: inline-flex; background: var(--pannello-2); border: 1px solid var(--linea); border-radius: 10px; padding: 3px; }
+  .seg button { border: 0; background: none; color: var(--tenue); padding: 5px 10px; border-radius: 7px; font: 600 11px "Inter", sans-serif; cursor: pointer; }
+  .seg button.on { background: var(--accento); color: #111; }
+
+  /* Anelli */
+  .anelli { display: grid; grid-template-columns: repeat(3, 1fr) 1.15fr; gap: 12px; margin: 16px 0; }
+  .anello { background: var(--pannello); border: 1px solid var(--linea); border-radius: 14px; padding: 12px; display: grid; grid-template-columns: 62px 1fr; gap: 10px; align-items: center; }
+  .anello svg { width: 62px; height: 62px; transform: rotate(-90deg); }
+  .anello circle { fill: none; stroke-width: 7; }
+  .anello .bg { stroke: var(--linea); }
+  .anello .lbl { font-size: 11px; color: var(--tenue); text-transform: uppercase; letter-spacing: .1em; }
+  .anello .v { font: 700 22px/1.1 "Inter", sans-serif; }
+  .anello .v small { font-size: 13px; color: var(--tenue); font-weight: 500; }
+  .pm { display: flex; gap: 4px; margin-top: 4px; }
+  .pm button { width: 24px; height: 22px; border-radius: 6px; border: 1px solid var(--linea); background: var(--pannello-2); color: var(--testo); cursor: pointer; }
+  .iniz { background: linear-gradient(135deg, var(--accento-tenue), transparent), var(--pannello); border: 1px solid var(--accento); border-radius: 14px; padding: 12px 14px; cursor: pointer; }
+  .iniz .lbl { font-size: 11px; color: var(--accento); text-transform: uppercase; letter-spacing: .1em; }
+  .iniz .v { font: 700 24px/1.2 "Cinzel", serif; }
+  .iniz small { color: var(--tenue); font-size: 11px; }
+
+  h2 { font: 600 11px/1 "Inter", sans-serif; letter-spacing: .16em; text-transform: uppercase; color: var(--tenue); margin: 18px 0 10px; display: flex; align-items: center; gap: 10px; }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--linea); }
+
+  /* Pallini */
+  .p { display: inline-flex; gap: 4px; vertical-align: middle; }
+  .p span { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid #4a4a57; }
+  .p span.f { background: var(--testo); border-color: var(--testo); }
+  .p.inc span { transform: rotate(45deg); border-radius: 2px; width: 8px; height: 8px; border-color: var(--accento); }
+  .p.inc span.f { background: var(--accento); }
+
+  /* Caratteristiche */
+  .car { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .c { background: var(--pannello); border: 1px solid var(--linea); border-radius: 14px; padding: 12px 12px 10px; position: relative; overflow: hidden; }
+  .c .n { font-size: 12px; color: var(--tenue); text-transform: uppercase; letter-spacing: .12em; }
+  .c .tot { font: 700 40px/1 "Cinzel", serif; margin: 6px 0 8px; }
+  .c .tot small { font: 500 12px "Inter", sans-serif; color: var(--accento); margin-left: 4px; vertical-align: top; }
+  .c .eff { position: absolute; right: 10px; top: 12px; font-size: 11px; color: var(--tenue); }
+  .c .righe { display: flex; flex-direction: column; gap: 5px; }
+
+  /* Tessere */
+  .tessere { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .t { background: var(--pannello); border: 1px solid var(--linea); border-radius: 11px; padding: 8px 10px; display: grid; grid-template-columns: 1fr auto; gap: 2px 6px; cursor: pointer; transition: border-color .15s, transform .15s; }
+  .t:hover { border-color: var(--accento); transform: translateY(-1px); }
+  .t .n { font-weight: 600; font-size: 13px; }
+  .t .k { font-size: 11px; color: var(--tenue); }
+  .t .pool { grid-row: span 2; align-self: center; font: 700 13px "Inter", sans-serif; color: var(--accento); background: var(--accento-tenue); padding: 3px 7px; border-radius: 7px; }
+  .t.zero { opacity: .55; }
+  .t.comb { background: var(--pannello-2); }
+  .filtri { display: flex; gap: 6px; margin-bottom: 10px; }
+  .filtri span { font-size: 12px; padding: 3px 10px; border-radius: 99px; border: 1px solid var(--linea); color: var(--tenue); cursor: pointer; }
+  .filtri span.on { color: var(--testo); border-color: var(--testo); }
+
+  /* Armi */
+  .armi { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .arma { background: var(--pannello); border: 1px solid var(--linea); border-radius: 14px; padding: 12px 14px; }
+  .arma .top { display: flex; justify-content: space-between; align-items: start; }
+  .arma b { font-size: 15px; }
+  .arma .tipo { font-size: 12px; color: var(--tenue); }
+  .stat { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 10px; }
+  .stat div { background: var(--pannello-2); border-radius: 8px; padding: 5px 6px; text-align: center; }
+  .stat small { display: block; font-size: 10px; color: var(--tenue); text-transform: uppercase; letter-spacing: .08em; }
+  .stat span { font-weight: 700; }
+  .btn { border: 0; border-radius: 9px; background: var(--accento); color: #111; font: 700 12px "Inter", sans-serif; padding: 6px 12px; cursor: pointer; }
+  .btn.ghost { background: none; color: var(--accento); border: 1px solid var(--accento); }
+
+  .pag { display: none; }
+  .pag.on { display: block; }
+
+  /* Poteri */
+  .pot { background: var(--pannello); border: 1px solid var(--linea); border-radius: 14px; padding: 14px; margin-bottom: 10px; }
+  .pot .top { display: flex; justify-content: space-between; align-items: center; }
+  .pot h3 { margin: 0; font: 700 18px "Cinzel", serif; }
+  .scala { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 12px; }
+  .gr { border-radius: 10px; padding: 8px; background: var(--pannello-2); border: 1px solid var(--linea); font-size: 12px; min-height: 64px; }
+  .gr.on { border-color: var(--accento); background: var(--accento-tenue); }
+  .gr .l { color: var(--accento); letter-spacing: 2px; font-size: 11px; }
+  .gr.off { opacity: .4; }
+  .gr.vuoto { visibility: hidden; }
+  .pot .nota { color: var(--tenue); font-size: 12px; margin-top: 10px; }
+
+  /* Zaino */
+  .lista { background: var(--pannello); border: 1px solid var(--linea); border-radius: 14px; overflow: hidden; }
+  .riga { display: grid; grid-template-columns: 1fr 150px 1fr; gap: 10px; align-items: center; padding: 10px 14px; border-top: 1px solid var(--linea); }
+  .riga:first-child { border-top: 0; font-size: 11px; color: var(--tenue); text-transform: uppercase; letter-spacing: .1em; }
+  .dove { display: inline-flex; gap: 3px; }
+  .dove i { font: 600 11px/20px "Inter"; width: 20px; text-align: center; border-radius: 6px; background: var(--pannello-2); color: var(--tenue); font-style: normal; }
+  .dove i.on { background: var(--accento); color: #111; }
+  .mini { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+  .mini > div { background: var(--pannello); border: 1px solid var(--linea); border-radius: 14px; padding: 12px; }
+  .mini .lbl { font-size: 11px; color: var(--tenue); text-transform: uppercase; letter-spacing: .1em; }
+  .mini .v { font: 700 22px "Inter"; }
+  .barra { height: 8px; border-radius: 99px; background: var(--pannello-2); overflow: hidden; margin-top: 6px; }
+  .barra div { height: 100%; background: var(--accento); }
+
+  .origine { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .origine > div { background: var(--pannello); border: 1px solid var(--linea); border-radius: 14px; padding: 14px; }
+  .origine h3 { margin: 0 0 6px; font: 700 17px "Cinzel", serif; color: var(--accento); }
+  .origine h4 { margin: 10px 0 2px; font-size: 13px; }
+  .origine p { margin: 0; color: #c4c2cc; font-size: 13px; }
+
+  /* Chat */
+  .chat { flex: 1 1 260px; max-width: 340px; background: #121216; border: 1px solid var(--linea); border-radius: 14px; padding: 12px; position: sticky; top: 16px; }
+  .chat > small { color: var(--tenue); font-size: 12px; }
+  .tpl { margin-top: 8px; border: 1px solid #e3c26f; border-radius: 12px; overflow: hidden; background: #17171c; }
+  .tpl .t2 { padding: 10px 12px; background: linear-gradient(135deg, rgba(227,194,111,.22), transparent); }
+  .tpl .t2 b { font: 700 15px "Cinzel", serif; display: block; }
+  .tpl .t2 small { color: var(--tenue); }
+  .tpl .c2 { padding: 10px 12px; }
+  .dadi { display: flex; gap: 6px; }
+  .dadi b { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; background: #24242c; border: 1px solid #34343f; }
+  .dadi b.s { background: #e3c26f; color: #111; border-color: #e3c26f; }
+  .grandi { display: flex; gap: 8px; margin: 12px 0; }
+  .grandi div { flex: 1; text-align: center; background: #1e1e25; border-radius: 10px; padding: 6px; }
+  .grandi b { display: block; font: 700 22px "Inter"; }
+  .grandi small { color: var(--tenue); font-size: 11px; }
+  .opp div { display: flex; justify-content: space-between; padding: 5px 0; border-top: 1px solid #2a2a33; font-size: 13px; }
+  .opp div i { font-style: normal; color: #e3c26f; font-weight: 700; }
+
+  /* Finestra stretta o larga */
+  .tessere { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+  @container (max-width: 720px) {
+    .anelli, .car { grid-template-columns: 1fr 1fr; }
+    .armi, .origine { grid-template-columns: 1fr; }
+    .eroe { grid-template-columns: 74px 1fr; }
+    .interruttori { grid-column: 1 / -1; flex-direction: row; align-items: center; }
+  }
+</style>
+</head>
+<body>
+<p class="nota-mock">Mockup B · Immortali — statico, i dati sono di Ezekiel (esempio del manuale). Prova i tre colori in alto a destra. <a href="index.html">Torna all'indice</a></p>
+<div class="banco">
+<div class="scheda" data-colore="bianco">
+  <nav class="rail">
+    <div class="sigillo">PH</div>
+    <button class="on" data-p="1"><span>⚔️</span>Scheda</button>
+    <button data-p="2"><span>✴️</span>Poteri</button>
+    <button data-p="3"><span>🎒</span>Zaino</button>
+    <button data-p="4"><span>📜</span>Origini</button>
+    <div class="spazio"></div>
+    <div class="opt">Tiri<b>Pubblici</b></div>
+  </nav>
+
+  <div class="corpo">
+    <header class="eroe">
+      <div class="ritratto">👁️</div>
+      <div>
+        <h1>Ezekiel<small>il vagabondo d'argento</small></h1>
+        <div class="chips">
+          <span class="chip acc">Serafino</span><span class="chip">Soldato</span><span class="chip">Giocatore <b>GreZZo</b></span><span class="chip">PX <b>0</b> · spesi 50</span>
+        </div>
+      </div>
+      <div class="interruttori">
+        <div class="seg" id="colore"><button class="on" data-c="bianco">Bianco</button><button data-c="nero">Nero</button><button data-c="grigio">Grigio</button></div>
+        <div class="seg forma"><button class="on">Immortale</button><button>Mortale</button></div>
+      </div>
+    </header>
+
+    <!-- Scheda -->
+    <section class="pag on" data-p="1">
+      <div class="anelli">
+        <div class="anello"><svg viewBox="0 0 62 62"><circle class="bg" cx="31" cy="31" r="26"/><circle cx="31" cy="31" r="26" stroke="var(--pf)" stroke-dasharray="163.4" stroke-dashoffset="0" stroke-linecap="round"/></svg><div><div class="lbl">Punti ferita</div><div class="v">5<small> / 5</small></div><div class="pm"><button>−</button><button>+</button></div></div></div>
+        <div class="anello"><svg viewBox="0 0 62 62"><circle class="bg" cx="31" cy="31" r="26"/><circle cx="31" cy="31" r="26" stroke="var(--mana)" stroke-dasharray="163.4" stroke-dashoffset="32.7" stroke-linecap="round"/></svg><div><div class="lbl">Mana</div><div class="v">8<small> / 10</small></div><div class="pm"><button>−</button><button>+</button></div></div></div>
+        <div class="anello"><svg viewBox="0 0 62 62"><circle class="bg" cx="31" cy="31" r="26"/><circle cx="31" cy="31" r="26" stroke="var(--anime)" stroke-dasharray="163.4" stroke-dashoffset="157.9" stroke-linecap="round"/></svg><div><div class="lbl">Anime</div><div class="v">1<small> / 30</small></div><div class="pm"><button>−</button><button>+</button></div></div></div>
+        <div class="iniz"><div class="lbl">Iniziativa</div><div class="v">2D6 + 3</div><small>clic per tirare · Astuzia con Inc</small></div>
+      </div>
+
+      <h2>Caratteristiche</h2>
+      <div class="car">
+        <div class="c"><div class="n">Possanza</div><div class="eff">PF</div><div class="tot">3</div><div class="righe"><i class="p" data-v="3" data-m="6"></i></div></div>
+        <div class="c"><div class="n">Agilità</div><div class="eff">Schivare</div><div class="tot">2</div><div class="righe"><i class="p" data-v="2" data-m="6"></i></div></div>
+        <div class="c"><div class="n">Astuzia</div><div class="eff">Iniziativa</div><div class="tot">3<small>+1 inc</small></div><div class="righe"><i class="p" data-v="2" data-m="6"></i><i class="p inc" data-v="1" data-m="4"></i></div></div>
+        <div class="c"><div class="n">Potenza</div><div class="eff">Mana</div><div class="tot">5<small>+3 inc</small></div><div class="righe"><i class="p" data-v="2" data-m="6"></i><i class="p inc" data-v="3" data-m="4"></i></div></div>
+      </div>
+
+      <h2>Abilità</h2>
+      <div class="filtri"><span class="on">Tutte</span><span>Solo con ●</span><span>Combattimento</span></div>
+      <div class="tessere" id="tessere"></div>
+
+      <h2>Armi</h2>
+      <div class="armi">
+        <div class="arma"><div class="top"><div><b>Spadone medievale</b><div class="tipo">Armi da mischia grandi · Mischia</div></div><button class="btn">⚔ 5D6</button></div>
+          <div class="stat"><div><small>Danno</small><span>3</span></div><div><small>Distanza</small><span>1</span></div><div><small>Distrutt.</small><span>●●</span></div><div><small>Munizioni</small><span>—</span></div></div></div>
+        <div class="arma"><div class="top"><div><b>Pistola</b><div class="tipo">Pistola · Mira</div></div><button class="btn">⚔ 2D6</button></div>
+          <div class="stat"><div><small>Danno</small><span>1</span></div><div><small>Distanza</small><span>3</span></div><div><small>Distrutt.</small><span>●</span></div><div><small>Munizioni</small><span>1/1</span></div></div></div>
+      </div>
+    </section>
+
+    <!-- Poteri -->
+    <section class="pag" data-p="2">
+      <h2>Poteri</h2>
+      <div class="pot"><div class="top"><div><h3>Evocazione</h3><div class="chips"><span class="chip">Attivo</span><span class="chip">Reazione</span><span class="chip acc">Affine</span></div></div><button class="btn">✴ Usa · 1 anima</button></div>
+        <div class="scala"><div class="gr on"><div class="l">●</div>Evocare attacco</div><div class="gr on"><div class="l">●●</div>Evocare intervento</div><div class="gr off"><div class="l">●●●</div>Evocare avatar</div><div class="gr off"><div class="l">●●●●</div>Evocare alleato</div><div class="gr off"><div class="l">●●●●●</div>Evocare la devastazione</div></div>
+        <div class="nota">● 1 anima: attacco a distanza 3, danno 5 · ●● 1 anima: +2D6 ad una azione</div></div>
+      <div class="pot"><div class="top"><div><h3>Ali</h3><div class="chips"><span class="chip">Passivo</span><span class="chip acc">Innato</span></div></div></div>
+        <div class="scala"><div class="gr on"><div class="l">●</div>Ali deboli</div><div class="gr on"><div class="l">●●</div>Ali forti</div><div class="gr off"><div class="l">●●●</div>Multiple ali</div><div class="gr vuoto"></div><div class="gr vuoto"></div></div></div>
+      <div class="pot"><div class="top"><div><h3>Aspetto alieno</h3><div class="chips"><span class="chip">Passivo</span><span class="chip acc">Innato</span><span class="chip">Solo bianchi</span></div></div></div>
+        <div class="scala"><div class="gr on"><div class="l">●</div>Corpo bizzarro</div><div class="gr off"><div class="l">●●</div>Sensi bizzarri</div><div class="gr off"><div class="l">●●●</div>Aspetto della follia</div><div class="gr vuoto"></div><div class="gr vuoto"></div></div>
+        <div class="nota">+1D6 in difesa per ogni pallino</div></div>
+      <button class="btn ghost">+ Aggiungi potere dal manuale</button>
+    </section>
+
+    <!-- Zaino -->
+    <section class="pag" data-p="3">
+      <h2>Oggetti e manufatti</h2>
+      <div class="lista">
+        <div class="riga"><span>Oggetto</span><span>Dove</span><span>Note</span></div>
+        <div class="riga"><span>Attrezzatura per accamparsi</span><span class="dove"><i>I</i><i class="on">A</i><i>B</i><i>C</i><i>N</i></span><span style="color:var(--tenue)">ferri del mestiere</span></div>
+        <div class="riga"><span>Attrezzi per riparare armi</span><span class="dove"><i>I</i><i class="on">A</i><i>B</i><i>C</i><i>N</i></span><span style="color:var(--tenue)">ferri del mestiere</span></div>
+        <div class="riga"><span>Coltello</span><span class="dove"><i class="on">I</i><i>A</i><i>B</i><i>C</i><i>N</i></span><span></span></div>
+      </div>
+      <div class="mini">
+        <div><div class="lbl">Cartucciera</div><div class="v">12 / 40</div><div class="barra"><div style="width:30%"></div></div></div>
+        <div><div class="lbl">Ricchezza</div><div class="v"><i class="p" data-v="2" data-m="6"></i></div><small style="color:var(--tenue)">−● a settimana</small></div>
+        <div><div class="lbl">Depositi</div><div style="font-size:13px">Anime <b>0</b> · Ricchezza <b>○</b></div><small style="color:var(--tenue)">dove: —</small></div>
+      </div>
+    </section>
+
+    <!-- Origini -->
+    <section class="pag" data-p="4">
+      <h2>Origini</h2>
+      <div class="origine">
+        <div><h3>Serafino</h3><p>Incrementi: Potenza ●●●, Astuzia ●. Innati: Ali ●, Aspetto alieno ●.</p>
+          <h4>Nato per il comando</h4><p>Una volta per sessione. Riceve automaticamente un'anima la prima volta che riesce a prendere il comando di altri immortali in una situazione di pericolo.</p>
+          <h4>Potere assoluto</h4><p>Una volta per sessione, prima di effettuare i tiri per attivare un potere, può scegliere di spendere un'anima (oltre al normale costo per il potere) e ottiene automaticamente +2 punti esubero.</p></div>
+        <div><h3>Soldato</h3>
+          <h4>Attività</h4><p>Il personaggio ha vantaggio a tutti i tiri legati a strategie militari e riconoscere armi ed i loro effetti.</p>
+          <h4>Ancora! · 3 esuberi</h4><p>Il personaggio può usare questa opportunità ogni volta che infligge danno ad un individuo di colore diverso dal suo. Il personaggio raddoppia il danno dell'arma.</p>
+          <h4>Una guerra infinita</h4><p>Il personaggio, quando combatte contro altri immortali, aggiunge +1 punti in esubero in tutte le azioni di attacco, indipendentemente dal risultato.</p></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<aside class="chat">
+  <small>Chat · esempio di tiro</small>
+  <div class="tpl">
+    <div class="t2"><b>Mischia · Spadone</b><small>Ezekiel · 5D6 · successo 4+ · difficoltà 1</small></div>
+    <div class="c2">
+      <div class="dadi"><b class="s">6</b><b class="s">5</b><b class="s">4</b><b>2</b><b>1</b></div>
+      <div class="grandi"><div><b>3</b><small>successi</small></div><div><b>2</b><small>esuberi</small></div><div><b>3</b><small>danno</small></div></div>
+      <div class="opp">
+        <div><span>Non letale</span><i>1</i></div><div><span>Rimuovere oggetto</span><i>1</i></div><div><span>Movimento</span><i>1</i></div><div><span>Distruttività (spadone)</span><i>1</i></div><div><span>Stordire</span><i>2</i></div><div><span>Danno extra</span><i>2</i></div>
+      </div>
+    </div>
+  </div>
+</aside>
+</div>
+
+<script>
+  // Solo per il mockup.
+  const pallini = () => document.querySelectorAll(".p").forEach(el => {
+    const v = +el.dataset.v, m = +el.dataset.m;
+    el.innerHTML = Array.from({ length: m }, (_, i) => `<span class="${i < v ? "f" : ""}"></span>`).join("");
+  });
+  const abilita = [["Mischia","Possanza",2,5,1],["Mira","Agilità",0,2,1],["Difesa","Agilità + aspetto alieno",2,5,1],["Demoralizzare","Astuzia",0,3,1],
+    ["Atletica","Possanza",1,4],["Percezione","Astuzia",2,5],["Sopravvivenza","Astuzia",2,5],["Carpenteria","Astuzia",0,3],["Cavalcare","Agilità",0,2],["Consapevolezza","Potenza",0,5],["Contrattare","Astuzia",0,3],["Forgiare","Astuzia",0,3],["Furtività","Agilità",0,2],["Gioco","Astuzia o Possanza",0,3],["Grazia","Agilità",0,2],["Legge","Astuzia",0,3],["Ingannare","Astuzia",0,3],["Intimidire","Astuzia",0,3],["Istruzione","Astuzia",0,3],["Meccanica","Astuzia",0,3],["Medicina","Astuzia",0,3],["Pianificare","Astuzia",0,3],["Socialità","Astuzia",0,3]];
+  document.getElementById("tessere").innerHTML = abilita.map(([n, k, v, pool, comb]) =>
+    `<div class="t ${v ? "" : "zero"} ${comb ? "comb" : ""}"><span class="n">${n}</span><span class="pool">${pool}D6</span><span class="k"><i class="p" data-v="${v}" data-m="5"></i> · ${k}</span></div>`).join("");
+  pallini();
+  document.querySelectorAll(".rail button").forEach(b => b.onclick = () => {
+    document.querySelectorAll(".rail button").forEach(x => x.classList.toggle("on", x === b));
+    document.querySelectorAll(".pag").forEach(p => p.classList.toggle("on", p.dataset.p === b.dataset.p));
+  });
+  document.querySelectorAll(".seg button").forEach(b => b.onclick = () => {
+    b.parentElement.querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b));
+    if (b.dataset.c) document.querySelector(".scheda").dataset.colore = b.dataset.c;
+  });
+</script>
+</body>
+</html>
