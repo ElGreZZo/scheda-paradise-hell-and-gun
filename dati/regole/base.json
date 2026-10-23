@@ -40,8 +40,10 @@
         "tenendo conto che tutte le caratteristiche di partenza sono  ●●.",
         "deve spendere un numero di punti esperienza pari al doppio dei ● posseduti in quella caratteristica.",
         "Ogni caratteristica può essere incrementata fino ad un massimo di ●●●●●●, anche se, grazie all’incremento di caratteristica dato dagli archetipi, possono andare oltre a questo valore massimo.",
-        "(le caratteristiche in Inc non vengono mai contate ai fini della spesa dei punti esperienza)"
-      ]
+        "(le caratteristiche in Inc non vengono mai contate ai fini della spesa dei punti esperienza)",
+        "Aggiunge alle caratteristiche il numero di ● qui descritti che tuttavia vanno segnati separatamente dalle caratteristiche normali, dato che, grazie a questi bonus fissi, la caratteristica in questione può andare oltre il valore di ●●●●●●."
+      ],
+      "nota": "Il valore di una caratteristica è la somma dei ● e dell'incremento dell'archetipo (Inc). Vale anche per punti ferita e mana: risposta del master del 23/10/2026 (docs/domande-per-il-master.md)."
     },
     {
       "id": "abilita",
@@ -60,7 +62,8 @@
         "Se non specificato diversamente, questi punti ferita scalano di 1 per turno.",
         "Se i danni subiti sono pari o superiori ai punti ferita totali, il bersaglio giace a terra morto (o nel caso di un immortale, in attesa del colpo di grazia).",
         "Se tali danni sono pari o superiori ai punti ferita totali, il bersaglio sviene per il resto della sessione."
-      ]
+      ],
+      "nota": "La possanza comprende l'incremento dell'archetipo (risposta del master del 23/10/2026)."
     },
     {
       "id": "mana",
@@ -68,16 +71,17 @@
       "citazioni": [
         "Un personaggio possiede un numero massimo di punti mana pari al doppio dei ● nella sua caratteristica di potenza e li rigenera completamente con un adeguato riposo di circa 2 o 4 ore.",
         "Una volta per azione, i personaggi possono consumare un punto mana per ritirare un singolo dado."
-      ]
+      ],
+      "nota": "La potenza comprende l'incremento dell'archetipo (risposta del master del 23/10/2026): nell'esempio di Ezekiel il mana era sbagliato."
     },
     {
       "id": "iniziativa",
-      "valori": { "dado": "1d6", "caratteristica": "agilita" },
+      "valori": { "dado": "2d6", "caratteristica": "astuzia" },
       "citazioni": [
-        "si effettua un tiro di iniziativa, cioè si tira 1D6 + Agilità.",
+        "si effettua un tiro di iniziativa, cioè si tira 2D6 + Astuzia.",
         "Iniziativa. Si aggiunge questa caratteristica al tiro per l’iniziativa."
       ],
-      "nota": "La seconda frase è sotto Astuzia: il manuale dice due caratteristiche diverse (docs/domande-per-il-master.md)."
+      "nota": "Regola cambiata dal master il 23/10/2026: prima era 1D6 + Agilità (docs/domande-per-il-master.md). La seconda frase è sotto Astuzia."
     },
     {
       "id": "difesa",
@@ -148,9 +152,9 @@
         "Dopo aver speso i punti esperienza iniziali dati dalle abilità lavorative, il personaggio ha altri 30 punti esperienza iniziali da spendere a proprio piacimento.",
         "Se avanzano dei punti esperienza iniziali, quelli avanzati diventano punti esperienza.",
         "Segnare il numero di punti ferita pari al valore di possanza + 2. Segnare il mana, pari al doppio del valore di potenza.",
-        "Ora il giocatore ha a disposizione altri 20 punti esperienza iniziali da investire come vuole, senza restrizioni della carriera."
+        "Ora il giocatore ha a disposizione altri 30 punti esperienza iniziali da investire come vuole, senza restrizioni della carriera."
       ],
-      "nota": "Il testo dice 30 punti liberi, l'esempio di creazione 20 (docs/domande-per-il-master.md)."
+      "nota": "Il master ha confermato 30 punti liberi il 23/10/2026: l'esempio di creazione, che ne usava 20, è corretto nel manuale (docs/domande-per-il-master.md)."
     },
     {
       "id": "poteri_archetipo",

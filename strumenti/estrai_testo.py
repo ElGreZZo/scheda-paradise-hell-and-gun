@@ -3,6 +3,8 @@
 
 Un paragrafo per riga; titoli come "## 3 - Azioni e abilita'" (dagli stili Titolo/Heading), elenchi con "- ",
 tabelle fra <TABELLA> e </TABELLA> con le celle separate da " | ", immagini come [IMMAGINE media/imageN.png].
+Il testo barrato non si estrae: nel manuale sono le regole corrette dal master, seguite dalla correzione in corsivo
+(l'originale e' in manuali/originali/).
 Le cartelle manuali/ e .cache/ sono escluse da git: il manuale non e' pubblicato, serve solo come base per
 estrarre e verificare i dati (npm run controlla).
 
@@ -27,9 +29,19 @@ W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 R = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"
 
 
+def barrato(run):
+    rpr = run.find(W + "rPr")
+    s = rpr.find(W + "strike") if rpr is not None else None
+    return s is not None and s.get(W + "val", "true") not in ("0", "false")
+
+
 def testo_paragrafo(p):
+    # Il testo barrato e' una regola corretta dal master (la correzione segue in corsivo): non si estrae.
+    saltati = {t for r in p.iter(W + "r") if barrato(r) for t in r.iter(W + "t")}
     pezzi = []
     for el in p.iter():
+        if el in saltati:
+            continue
         if el.tag == W + "t" and el.text:
             pezzi.append(el.text)
         elif el.tag == W + "tab":

@@ -2,16 +2,35 @@
 
 Dubbi trovati estraendo i dati per la scheda. Riguardano valori che la scheda dovrebbe calcolare o mostrare. Finché non sono chiariti, nella base dati vale quello che dice il testo.
 
-## Regole che la scheda calcola
+Le risposte del master sono riportate nel manuale (`manuali/Pad 1.5.docx`): il testo sbagliato è barrato e la correzione segue in corsivo. L'originale è in `manuali/originali/`. `npm run estrai-testo` salta il testo barrato.
+
+## Regole che la scheda calcola (risposte del master, 23/10/2026)
 
 1. **Iniziativa.** In «Caratteristiche» l'iniziativa è sotto l'Astuzia («Si aggiunge questa caratteristica al tiro per l'iniziativa»). In «Tempo» invece è «1D6 + Agilità», e l'esempio di combattimento usa l'Agilità. Quale delle due?
+   > l'iniziativa attuale è cambiata. È 2D6+ Astuzia.
+
+   Corretti nel manuale «Tempo» e l'esempio di combattimento contro gli sgherri.
 2. **Punti esperienza liberi alla creazione.** Il testo dice «altri 30 punti esperienza iniziali». L'esempio di Susan ne usa 20. Quanti sono?
+   > i punti esperienza liberi sono 30.
+
+   Corretto nel manuale l'esempio di Susan: 30 punti, e i 10 che avanzano diventano punti esperienza.
 3. **Mana e incrementi dell'archetipo.**
    - Ezekiel (Serafino) ha Potenza ●● con Inc ●●●, ma nella scheda dell'esempio ha 2 di mana; con gli incrementi sarebbero 10.
    - Lamia ha Potenza ●●● con Inc ● e ha 8 di mana, quindi lì gli incrementi contano.
    
    Gli incrementi contano per mana e punti ferita?
+   > gli Incrementi contano ai fini del mana e dei punti ferita. L'esempio di Ezekiel nel manuale è sbagliato.
+
+   Corretto nel manuale il mana di Ezekiel: 10.
 4. **Pianificare.** È l'unica abilità comune senza «Normalmente associata a…». Con quale caratteristica si tira?
+   > Pianificare è associato ad astuzia.
+
+   Aggiunto nel manuale «Normalmente associata alla caratteristica di astuzia.», come per le altre abilità.
+
+### Ancora da chiarire
+
+- Nell'esempio di combattimento contro gli sgherri il Vagabondo d'argento tira l'iniziativa con la vecchia regola: «3 di dado, totale 5». Il risultato non è stato toccato.
+- Mich Barnaby: «Ha come valore di iniziativa totale 1D6+12.» Con la nuova regola quanto fa?
 
 ## Poteri citati ma non descritti
 

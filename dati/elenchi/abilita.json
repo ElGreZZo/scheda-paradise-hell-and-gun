@@ -549,7 +549,9 @@
       "id": "pianificare",
       "nome": "Pianificare",
       "tipo": "comune",
-      "caratteristiche": [],
+      "caratteristiche": [
+        "astuzia"
+      ],
       "costi_px": [
         1,
         2,
@@ -558,7 +560,7 @@
         5
       ],
       "descrizione": [
-        "Il personaggio usa questa abilità per pianificare in generale, che si tratti di una rapina in banca, un'evasione, un imboscata, un allalto al treno ecc."
+        "Il personaggio usa questa abilità per pianificare in generale, che si tratti di una rapina in banca, un'evasione, un imboscata, un allalto al treno ecc. Normalmente associata alla caratteristica di astuzia."
       ],
       "opportunita": [
         {
