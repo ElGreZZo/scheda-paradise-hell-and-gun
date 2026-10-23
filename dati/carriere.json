@@ -1,7 +1,7 @@
 {
   "$schema": "schemi/carriere.schema.json",
   "fonte": {
-    "manuale": "Pad 1.5",
+    "manuale": "PHaG 1.6",
     "capitolo": "8 - Carriere"
   },
   "generato_da": "strumenti/estrai_dati.mjs",
@@ -9,8 +9,9 @@
     {
       "id": "artista",
       "nome": "Artista",
+      "motto": "Qui tutto è sporco e crudele, non è necessario che sia anche brutto",
       "descrizione": [
-        "Gli artisti sono tutti quegli immortali che sono scesi nel mondo dei mortali per godere dei piaceri terreni o per trarre ispirazione dalle filosofie ed opere d'arte umana."
+        "Gli artisti sono tutti quegli immortali che sono scesi nel mondo dei mortali per godere dei piaceri terreni o per trarre ispirazione dalle filosofie ed opere d'arte umana. Il loro desiderio di esprimersi è tale che preferiscono piegarsi ad una vita di stenti che gli consente di realizzare la loro arte, piuttosto che vivere una vita monotona nei loro reami di origine."
       ],
       "ferri_del_mestiere": "Strumenti musicali, pennelli, vestiti eccentrici, una boccetta di profumo con la pompetta.",
       "abilita_lavorative": {
@@ -33,33 +34,123 @@
         ],
         "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) socialità, percezione, difesa, (caratteristica) astuzia, (poteri) Dementia o Empatico (a seconda del colore)."
       },
-      "attivita": "Il personaggio ha vantaggio a tutti i discorsi e attività che riguardano arte, filosofia, bon ton, intrattenimento.",
-      "opportunita": {
-        "nome": "Artista",
-        "esuberi": 1,
-        "testo": [
-          "Il personaggio aggiunge un affascinate nota artistica all'azione che compie, capace di impressionare mortali ed immortali."
-        ]
-      },
-      "speciale": {
-        "nome": "Che strana cosa sono il piacere e il dolore",
-        "testo": [
-          "Se il personaggio riesce ad indugiare in una qualche forma artistica o di piacere terreno in compagnia di diversi mortali, recupera tutti i punti ferita e punti mana persi."
-        ]
-      }
+      "ispirazione": "Il personaggio ottiene ispirazione ogni volta che riesce ad esprimere la sua arte con dei testimoni a guardarlo.",
+      "poteri": [
+        {
+          "id": "teatrante",
+          "nome": "Teatrante",
+          "testo": [
+            "Gli artisti immortali sono particolarmente difficili da sopportare. Sono alla perenne ricerca della perfezione, ma nel contempo tendono ad annoiarsi facilmente e a cambiare il focus del loro interesse cangiante. Questo dualismo contrastante ha un pregio, applicano una buona dose di impegno in ogni cosa che fanno.",
+            "Questi poteri sono perennemente attivi, anche in forma mortale.",
+            "Eclettici ● (2): L'artista tira in vantaggio tutti i tiri per intrattenere.",
+            "Il dramma ●● (4): In ogni azione che compie, l’artista può sceglie di esprimere la sua personalità e senso estetico, rendendo ogni suo gesto unico e suggestivo.",
+            "Una volta per scenario, se ha compiuto un'azione in maniera artistica o scenografica, ottiene un punto ispirazione.",
+            "Capolavoro in atto ●●● (8): Quando un artista immortale decide che si deve mettere in mostra, non può essere di certo ignorato.",
+            "Ogni volta che il personaggio effettua con successo un'azione ottenendo almeno 2 esuberi, ottiene un punto ispirazione."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "nome": "Eclettici",
+              "costo_px": 2
+            },
+            {
+              "livello": 2,
+              "nome": "Il dramma",
+              "costo_px": 4
+            },
+            {
+              "livello": 3,
+              "nome": "Capolavoro in atto",
+              "costo_px": 8
+            }
+          ]
+        },
+        {
+          "id": "esasperata_perfezione",
+          "nome": "Esasperata perfezione",
+          "testo": [
+            "Ogni movimento, ogni suono, ogni luce è in perfetta armonia con l'artista. Davanti a cotanta perfezione molti restano estasiati o demoralizzati.",
+            "● (4)",
+            "Se l'immortale riesce ad avere successo in una qualsiasi azione, non importa se si tratta di un balletto, di una poesia, di una minaccia, di un attacco o difesa, se riesce ad accompagnarla a qualche plateale effetto speciale, può spendere un punto intuizione per effettuare immediatamente un'azione di demoralizzare in vantaggio contro un bersaglio che lo ha visto o sentito.",
+            "Se gli effetti che accompagnano la scena sono particolarmente vistosi e ben riusciti, può spendere un'anima per ottenere la seguente opportunità:",
+            "Sotto l'occhio di tutti (1): Un bersaglio in più può essere colpito dall'effetto di demoralizzare. Questa opportunità può essere usata più volte nella medesima azione."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "costo_px": 4
+            }
+          ]
+        },
+        {
+          "id": "il_tormentato",
+          "nome": "Il tormentato",
+          "testo": [
+            "Molti immortali artisti sono dei fannulloni, dei perdigiorno edonisti giusti sulla Terra per crogiolarsi nel lusso dei mortali. I tormentati, d'altro canto, sono considerati tanto pericolosi quanto deliziosi artisti intraprendenti che vedono l'arte in cose più pericolose.",
+            "Un tormentato crea la sua arte dando forme strane alle manifestazioni del suo potere, manipolando le vite dei mortali dando vita a storie drammatiche, nell’omicidio.",
+            "Sensi sovrastimolati ● (4):  Questo potere è perennemente attivo, anche in forma mortale.",
+            "L'artista tormentato è così abituato ad avere i suoi sensi sovrastimolati che le distrazioni comuni non lo distraggono più.",
+            "Il personaggio non subisce alcuna penalità ai tiri dovuti a fuochi d'artificio, presenza di una folla rumorosa e altre fonti di distrazione che possano disturbare i suoi sensi.",
+            "L'arte è dolore ●● (8): Questo potere è perennemente attivo, anche in forma mortale.",
+            "Finché riesce ad esprimere al meglio il suo inquietante e meraviglioso estro, l'artista aggiunge a tutti i tiri di socialità, ingannare, trattare, pianificare, carpenteria, forgiare, intimidire e demoralizzare un numero di D6 pari ai ● in il tormentato.",
+            "Opera ammaliante ●●● (12): L'artista usa le sue performance per creare uno stato di shock nei suoi avversari. Poesie taglienti, l'utilizzo della musica perfetta, una cascata di petali che prendono fuoco all'ultimo momento, sono i classici metodi utilizzati da un tormentato per assicurarsi che la disfatta della sua vittima sia memorabile.",
+            "L'artista consuma un punto ispirazione mentre compie un'azione per dare vantaggio ai tiri contrapposti del suo bersaglio.",
+            "Questo potere può essere usato anche come reazione per dare svantaggio a suo bersaglio durante il turno di un'altro personaggio."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "nome": "Sensi sovrastimolati",
+              "costo_px": 4
+            },
+            {
+              "livello": 2,
+              "nome": "L'arte è dolore",
+              "costo_px": 8
+            },
+            {
+              "livello": 3,
+              "nome": "Opera ammaliante",
+              "costo_px": 12
+            }
+          ]
+        },
+        {
+          "id": "licenza_da_artista",
+          "nome": "Licenza da artista",
+          "testo": [
+            "L'artista ha una licenza che lo autorizza a professare la sua professione nel mondo dei mortali. Questo magico foglio di carta, scritto e verificato da avvocati e notai, appare magicamente nelle mani del possessore per essere sventolato in faccia ad ogni autorità immortale che ha l'ardire che non può sostare sulla Terra.",
+            "● (4)",
+            "Spendendo un anima, il personaggio può richiamare la licenza e, SE sta svolgendo il suo mestiere, dimostrare che è autorizzato a stare nel mondo materiale.",
+            "L'artista può creare un'opera d'arte che riguarda un altro immortale denominato il rappresentato, che si tratti di una statua, una poesia, una canzone, una mostra ambientale etc. Nel momento in cui questa opera viene creata, i due possono fare un patto che lega l'opera rappresentato.",
+            "In qualsiasi momento, l'opera può essere usata in uno dei seguenti modi dall'artista o dal rappresentato, distruggendo l'opera stessa e terminando il patto:",
+            "- L'opera genera un avatar del rappresentato.",
+            "- Il rappresentato si teletrasporto lì dove si trova l'opera.",
+            "- In caso di morte del rappresentato, esso tornerà in vita lì dove si trova l'opera (o quando viene eseguito il balletto o poesia) per morire nuovamente di morte “naturale” dopo 7 giorni."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "costo_px": 4
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "avventuriero",
       "nome": "Avventuriero",
+      "motto": "Non sono qui per i soldi, sono qui per il brivido",
       "descrizione": [
-        "Non tutti gli immortali giungono nel mondo materiale per sfuggire alla legge o per uno scopo ben preciso, alcuni lo fanno per semplice spirito di avventura o capriccio. Curiosi nel vedere un'altro mondo, esplorare anfratti misteriosi e interagire con creature differenti. Ciò che fanno è illegale sotto molti punti di vista, ma non lo fanno a scopo di lucro il che fa solo imbestialire i giustizieri che gli corrono dietro."
+        "Gli immortali avventurieri non ricoprono un vero e proprio lavoro, ma fungono da esploratori, scorte armate, esplorano antiche rovine e in generale accettano ogni genere di lavoretto che li porta ad esplorare."
       ],
-      "ferri_del_mestiere": "Attrezzi da scalata, corde, attrezzi per scassinare, vestiti robusti, un binocolo, pistola, coltello, attrezzatura per accamparsi all'aperto.",
+      "ferri_del_mestiere": "Vestiti da viaggio, piede di porco, attrezzatura da viaggio, machete, pistola, fiaccole, mappa del territorio.",
       "abilita_lavorative": {
         "px": 20,
         "abilita": [
-          "sopravvivenza",
           "percezione",
+          "atletica",
           "mischia"
         ],
         "caratteristiche": [
@@ -67,80 +158,245 @@
         ],
         "poteri": [
           {
-            "potere": "spirito_di_iniziativa"
+            "a_seconda_del_colore": [
+              "animalita",
+              "bestialita"
+            ]
           }
         ],
-        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) sopravvivenza, percezione, mischia, (caratteristica) possanza, (poteri) Spirito di iniziativa."
+        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) percezione, atletica, mischia, (caratteristica) possanza, (poteri) animalità o bestialità (a seconda del colore)."
       },
-      "attivita": "Il personaggio ha vantaggio a tutti i tiri legati all'esplorazione, conoscenze di nuove culture e utilizzo di macchinari.",
-      "opportunita": {
-        "nome": "Cogliere l'occasione",
-        "esuberi": 2,
-        "testo": [
-          "Il personaggio può tentare immediatamente un'azione di percezione o furtività (per rubare un oggetto)."
-        ],
-        "uso": "Il personaggio può usare la seguente opportunità nei tiri di atletica."
-      },
-      "speciale": {
-        "nome": "Sempre in movimento",
-        "testo": [
-          "Quando effettua tiri di atletica, il personaggio ottiene sempre +1 esubero, indipendentemente dal risultato dei dadi."
-        ]
-      }
+      "ispirazione": "Il personaggio ottiene ispirazione ogni volta che scopre un nuovo luogo, che sopravvive ad un incontro violento e fa qualcosa di pericolosamente spericolato.",
+      "poteri": [
+        {
+          "id": "lottatore_spericolato",
+          "nome": "Lottatore spericolato",
+          "testo": [
+            "La pala è il più noto strumento del becchino e ha imparato ad usarla con estrema efficienza.",
+            "Questi poteri sono perennemente attivi, anche in forma mortale.",
+            "Esperto con il lazzo ● (2): L’avventuriero è particolarmente abile nell’uso di corde, lazzi e fruste. Quando usa una di queste armi aggiunge un numero di D6 pari ai ● in lottatore spericolato.",
+            "Appeso al filo ●● (4): L’avventuriero si aiuta con il lazzo/frusta per muoversi più velocemente. Ottiene vantaggio a tutti i tiri per muoversi o spostare oggetti finché usa il lazzo/frusta.",
+            "Colpo di frusta ●●● (8): Quando il personaggio utilizza il lazzo o la frusta aggiunge +1 danno e +1D6 nei tiri di difesa."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "nome": "Esperto con il lazzo",
+              "costo_px": 2
+            },
+            {
+              "livello": 2,
+              "nome": "Appeso al filo",
+              "costo_px": 4
+            },
+            {
+              "livello": 3,
+              "nome": "Colpo di frusta",
+              "costo_px": 8
+            }
+          ]
+        },
+        {
+          "id": "conoscere_una_scorciatoia",
+          "nome": "Conoscere una scorciatoia",
+          "testo": [
+            "Gli avventurieri sono esperti viaggiatori e conoscono sempre delle scorciatoie.",
+            "Questo potere può essere usato anche in forma mortale.",
+            "● (4).",
+            "Consumando un punto ispirazione, l’avventuriero e la sua banda impiegano la metà del tempo per viaggiare da un posto all'altro."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "costo_px": 4
+            }
+          ]
+        },
+        {
+          "id": "vagabondo",
+          "nome": "Vagabondo",
+          "testo": [
+            "Un avventuriero è sempre in viaggio e ha imparato in fretta su come sopravvivere ad ogni genere di viaggio.",
+            "Questi poteri sono perennemente attivi, anche in forma mortale.",
+            "Pratica ● (2): Gli avventurieri si ritrovano a fare tanti diversi tipi di lavori, dallo sparare, saccheggiare tombe e scalare montagne, tutte esperienze utili.",
+            "Il personaggio aggiunge un numero D6 pari al numero di ● in vagabondo a tutti i tiri per di atletica, grazia, gioco e contrattare . Se sta esplorando antiche rovine o caverne inesplorate, il bonus raddoppia.",
+            "Arrivato per primo ●● (4): Ogni volta che scopre i resti di un’antica civiltà, riesce a scappare dal pericolo o rimuove una ferita da un luogo, ottiene un punto ispirazione in più.",
+            "Esperto di cose ●●● (6): Una volta per scenario, il personaggio può spendere un punto ispirazione per 3D6 a un qualsiasi tiro non ti attacco o difesa."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "nome": "Pratica",
+              "costo_px": 2
+            },
+            {
+              "livello": 2,
+              "nome": "Arrivato per primo",
+              "costo_px": 4
+            },
+            {
+              "livello": 3,
+              "nome": "Esperto di cose",
+              "costo_px": 6
+            }
+          ]
+        },
+        {
+          "id": "licenza_da_avventuriero",
+          "nome": "Licenza da avventuriero",
+          "testo": [
+            "L’avventuriero ha una licenza che lo autorizza a professare la sua professione nel mondo dei mortali. Questo magico foglio di carta, scritto e verificato da avvocati e notai, appare magicamente nelle mani del possessore per essere sventolato in faccia ad ogni autorità immortale che ha l'ardire che non può sostare sulla Terra.",
+            "● (4)",
+            "Spendendo un anima, il personaggio può richiamare la licenza e, SE sta svolgendo il suo mestiere, dimostrare che è autorizzato a stare nel mondo materiale.",
+            "Una volta per sessione, il giocatore può chiedere al narratore se la banda sta affrontando un luogo (vedi nemici) ricevendo una risposta sincera e solo un sì o un no e di conseguenza il personaggio (avventuriero) avrà  tale consapevolezza.",
+            "Una volta al giorno, spendendo un punto ispirazione e un paio di ore, il luogo perderà automaticamente una ferita."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "costo_px": 4
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "banchiere",
-      "nome": "Banchiere",
+      "id": "becchino",
+      "nome": "Becchino",
+      "motto": "Nel selvaggio west, il becchino non fa mai la fame",
       "descrizione": [
-        "I banchieri sono immortali che sono scesi nel mondo dei mortali per valutare, soppesare e recuperare le anime dei mortali, puntando ovviamente alle anime di quelli più quotati."
+        "I becchini sono figure estremamente tetre sia per i mortali che per gli immortali. Questi macabri lavoratori sono estremamente ligi nel loro lavoro, tanto da aver sviluppato una strana affinità non solo con la morte stessa, anche con tutti i metodi di sistemare una salma, con la terra e con il fuoco."
       ],
-      "ferri_del_mestiere": "Documenti bancari, bilancino portatile, penna con inchiostro, fogli per contratti, orologio da taschino, documento che ne autorizza la permanenza sul mondo dei mortali, pistola.",
+      "ferri_del_mestiere": "Vestiti tetri, strumenti per le misure, pala, strumenti per preparare le salme, strumenti per preparare bare.",
       "abilita_lavorative": {
         "px": 20,
         "abilita": [
-          "socialita",
-          "ingannare",
-          "difesa"
+          "carpenteria",
+          "medicina",
+          "demoralizzare"
         ],
         "caratteristiche": [
-          "astuzia"
+          "potenza"
         ],
         "poteri": [
           {
-            "potere": "persona_influente"
+            "potere": "morte"
           }
         ],
-        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) socialità, ingannare, difesa, (caratteristica) astuzia, (poteri) Persona influente."
+        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) carpenteria, medicina, demoralizzare, (caratteristica) potenza, (poteri) morte."
       },
-      "attivita": "Il personaggio ha vantaggio a tutti i tiri per contrattare, commerciare, valutare (oggetti o persone).",
-      "opportunita": {
-        "nome": "Fiutare l’affare",
-        "esuberi": 2,
-        "testo": [
-          "Il personaggio può usare questa opportunità per evidenziare un eventuale falla su cui può capitalizzare, già valutando le leggi mortali, immortali e della banca delle anime."
-        ],
-        "uso": "Opportunità usabile in tutti i tiri di contrattare."
-      },
-      "speciale": {
-        "nome": "Accesso alla Banca delle anime",
-        "testo": [
-          "Un banchiere può accedere, tramite ad un rituale che richiede una mezz'oretta (e la spesa di un mana), alla Banca delle anime, un semipiano accessibile da un portale momentaneamente aperto dal rituale stesso.",
-          "Il banchiere ha sempre un conto aperto e assicurato, indipendentemente dalla sua situazione legale."
-        ]
-      }
+      "ispirazione": "Il personaggio ottiene ispirazione ogni volta che seppellisce un cadavere, sistema un cadavere, esegue un rito funebre in maniera rispettosa.",
+      "poteri": [
+        {
+          "id": "scavafosse",
+          "nome": "Scavafosse",
+          "testo": [
+            "La pala è il più noto strumento del becchino e ha imparato ad usarla con estrema efficienza.",
+            "Questi poteri sono perennemente attivi, anche in forma mortale.",
+            "Lavoro di pala ● (2): Il personaggio può usare la sua pala come un arma. La pala conta come un'arma improvvisata che non si rompe dopo l’utilizzo.",
+            "Quando usa una pala aggiunge un numero di D6 pari ai ● in scavafosse.",
+            "Scavare una fossa ●● (4): Se utilizza la pala, può scavare fosse in un solo turno. Normalmente usato per seppellire i corpi, ma i becchini più fantasiosi trovano altri usi per tale capacità.",
+            "Colpo di pala ●●● (8): Quando utilizza una pala, il personaggio aggiunge +1 danno e +1D6 nei tiri di difesa."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "nome": "Lavoro di pala",
+              "costo_px": 2
+            },
+            {
+              "livello": 2,
+              "nome": "Scavare una fossa",
+              "costo_px": 4
+            },
+            {
+              "livello": 3,
+              "nome": "Colpo di pala",
+              "costo_px": 8
+            }
+          ]
+        },
+        {
+          "id": "occhio_del_becchino",
+          "nome": "Occhio del becchino",
+          "testo": [
+            "Il becchino ha imparato a collaborare con la morte per portarsi avanti con il lavoro. I suoi occhi riescono a vedere oltre il velo e a vedere chi li circonda con gli occhi della morte stessa.",
+            "● (4): Questo potere può essere usato anche in forma mortale.",
+            "Al costo di un ispirazione, il personaggio può guardare un personaggio mortale e vedere se esso morirà entro 7 giorni. Non può vedere la causa della morte, ma può tentare di evitarla, anche se questo è considerato poco professionale, come lo è anticiparla.",
+            "In caso usa questo potere guardando un non morto o un immortale camuffato, esso non darà alcun segnale di morte imminente.",
+            "Se è lui a preparare e/o seppellire questa salma, ottiene un ispirazione in più."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "costo_px": 4
+            }
+          ]
+        },
+        {
+          "id": "i_becchi_del_becchino",
+          "nome": "I becchi del becchino",
+          "testo": [
+            "Il becchino ha sviluppato una certa affinità con tutti gli uccelli saprofagi del mondo materiale. Queste bestie seguono il becchino, quasi ad essere un sinistro monito che preannuncia il suo arrivo.",
+            "Cercatori di cadaveri ● (4): Questo potere è perennemente attivo, anche in forma mortale.",
+            "I corvi e avvoltoi tendono a sorvolare il cielo al disopra del becchino, iniziando a volteggiare attorno ad eventuali cadavere o mortali in un pessimo stato, come persone ferite, malnutrite o malate. Quando ciò accade, il becchino sa in che direzione c'è il lavoro.",
+            "Compagni inquietanti ●● (8): Questo potere può essere usato anche in forma mortale.",
+            "I volatili che circondano il becchino smettono di comportarsi in maniera naturale, iniziando ad osservare in maniera sinistra gli interlocutori del becchino.",
+            "Quando il becchino fa un tiro di intimidire o demoralizzare, può decidere di spendere un ispirazione e aggiunge un numero di dadi pari ai ● in i becchi del becchino. In caso demoralizzare viene usato contro degli sgherri, questi subiscono un numero di danni in più pari ai ● in i becchi del becchino.",
+            "È l'ora della pappa ●●● (12): L'immortale usa la sua affinità per scatenare gli affamati volatili contro i suoi nemici.",
+            "Il personaggio spende un punto ispirazione per evocare un branco di 5 predatori medi e resteranno fino alla fine dello scenario."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "nome": "Cercatori di cadaveri",
+              "costo_px": 4
+            },
+            {
+              "livello": 2,
+              "nome": "Compagni inquietanti",
+              "costo_px": 8
+            },
+            {
+              "livello": 3,
+              "nome": "È l'ora della pappa",
+              "costo_px": 12
+            }
+          ]
+        },
+        {
+          "id": "licenza_da_becchino",
+          "nome": "Licenza da becchino",
+          "testo": [
+            "Il becchino ha una licenza che lo autorizza a professare la sua professione nel mondo dei mortali. Questo magico foglio di carta, scritto e verificato da avvocati e notai, appare magicamente nelle mani del possessore per essere sventolato in faccia ad ogni autorità immortale che ha l'ardire che non può sostare sulla Terra.",
+            "● (4)",
+            "Spendendo un anima, il personaggio può richiamare la licenza e, SE sta svolgendo il suo mestiere, dimostrare che è autorizzato a stare nel mondo materiale.",
+            "Se il becchino sconfigge un immortale o questo è collaborativo, può seppellire quest'ultimo in una sorta di funerale rituale. Un immortale seppellito in tale modo è in una sorta di stasi, tutti i suoi poteri si bloccano come anche la sua coscienza. Ai fini di tutti i rituali, poteri, contratti magici e il Lex Immortalis, il seppellito è morto.",
+            "Non è possibile trovare né spostare il “cadavere” con metodo magici, bisogna trovare la tomba e estrarlo dal terreno scavando.",
+            "Nel momento preciso in cui questo viene riesumato, tutti i vecchi vincoli magici, contratti ecc hanno nuovamente valenza e mantengono la medesima priorità cronologica."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "costo_px": 4
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "cacciatore_di_taglie",
       "nome": "Cacciatore di taglie",
+      "motto": "Se la taglia dice vivo o morto, perché mai devo rendere il mio lavoro più difficile?",
       "descrizione": [
-        "Gran parte degli immortali giunti sulla terra hanno lasciato alle loro spalle dei conti in sospeso o si sono fatti nuovi nemici direttamente sul posto, questo fa sì che c'è una taglia (normalmente pagata in anime) sulle loro teste. I cacciatori di taglie sono angeli o demoni che si guadagnano da vivere dando la caccia a questi ricercati."
+        "I cacciatori di taglie sono tra i professionisti più ricercati del mondo materiale. A differenza di quello che si pensa, la maggior parte delle taglie a cui dà la caccia non sono criminali ricercati dal Paradiso o Inferno, ma sono commissioni di privati. Leader di organizzazioni criminali e nobili che vogliono un regolamento di contro questi immortali in fuga sulla Terra."
       ],
-      "ferri_del_mestiere": "Attrezzi per accamparsi all'aperto, fogli dei ricercati, pistola, coltello, fucile a scelta.",
+      "ferri_del_mestiere": "Indumenti da viaggio, pistola, coltello, kit da viaggio, corde, fogli dei ricercati, lazzo.",
       "abilita_lavorative": {
         "px": 20,
         "abilita": [
+          "intimidire",
           "sopravvivenza",
-          "percezione",
           "mira"
         ],
         "caratteristiche": [
@@ -151,173 +407,365 @@
             "potere": "cacciatore_di_immortali"
           }
         ],
-        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) sopravvivenza, percezione, mira, (caratteristica) agilità, (poteri) cacciatore di immortali."
+        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) intimidire, sopravvivenza, mira, (caratteristica) agilità, (poteri) cacciatore di immortali."
       },
-      "attivita": "Il personaggio ha vantaggio a tutti i tiri legati al cercare e individuare un ricercato.",
-      "opportunita": {
-        "nome": "Stanare il ricercato",
-        "esuberi": 2,
-        "testo": [
-          "Il personaggio, per deformazione professionale, ha l'opportunità di notare dettagli o indizi caratteristici lasciati da qualche ricercato, come ad esempio assi di carte bucate, descrizioni di bizzarri rumori prima di un incidente, riconoscere le impronte di un particolare individuo ecc.",
-          "Insomma, se un qualche noto criminale è passato in zona, lo viene a sapere."
-        ],
-        "uso": "La seguente opportunità può essere applicata a tutti i tiri di percezione e per raccogliere informazioni."
-      },
-      "speciale": {
-        "nome": "Caccia in esclusiva",
-        "testo": [
-          "Oltre a cercare le prede nelle bacheche con le taglie, i cacciatori ricevono le periodiche visite di piccoli imp messaggeri che gli consegnano le taglie dei ricercati più appetitosi o di bersagli ricercati da precedenti clienti del cacciatore stesso.",
-          "Se riesce a catturare o uccidere uno di questi bersagli, riceve ●●●● anime in più, oltre al pagamento normalmente pattuito."
-        ]
-      }
+      "ispirazione": "Il personaggio ottiene ispirazione ogni volta che riesce a trovare un nuovo indizio su un ricercato, vince un duello con la pistola, quando trova un ricercato e quando lo sconfigge.",
+      "poteri": [
+        {
+          "id": "pistolero_al_soldo",
+          "nome": "Pistolero al soldo",
+          "testo": [
+            "Combattere è una parte fondamentale del lavoro di un cacciatore di taglie, quindi non c’è da sorprendersi dei suoi molteplici talenti.",
+            "Armaiolo ● (4): Può trasportare un numero di munizioni massime di 40, invece del consueto 30.",
+            "Arma nascosta ●● (8): Questo potere può essere attivato anche in forma mortale.",
+            "Spendendo un punto ispirazione il personaggio estrae una pistola o un'arma da mischia nascosta. L’arma estratta in questo modo può essere stata nascosta in precedenza in zona, messa in una tasca nascosta etc.",
+            "Stallo alla messicana ●●● (12): Questo potere può essere usato solo nel primo round di combattimento. Spendendo un punto ispirazione, può usare la reazione per attaccare in svantaggio un avversario."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "nome": "Armaiolo",
+              "costo_px": 4
+            },
+            {
+              "livello": 2,
+              "nome": "Arma nascosta",
+              "costo_px": 8
+            },
+            {
+              "livello": 3,
+              "nome": "Stallo alla messicana",
+              "costo_px": 12
+            }
+          ]
+        },
+        {
+          "id": "bersaglio",
+          "nome": "Bersaglio",
+          "testo": [
+            "Alcuni cacciatori di taglie sono predatori opportunisti e se gli capitano a tiro dei ricercati iniziano a cacciare, ma la maggior parte di essi ne fa una questione personale.",
+            "● (4): Questo potere può essere usato anche in forma mortale.",
+            "Quando fa un duello con la pistola contro un suo ricercato, inizia lo scontro con 3 punti ferita temporanei."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "costo_px": 4
+            }
+          ]
+        },
+        {
+          "id": "cacciatore_di_uomini",
+          "nome": "Cacciatore di uomini",
+          "testo": [
+            "Per un cacciatore di taglie è indispensabile saper trovare tracce dei suoi ricercati.",
+            "Questi poteri sono perennemente attivi, anche in forma mortale.",
+            "Chiacchiere da saloon ● (2): I primi punti dove iniziare la caccia è semplicemente chiedere in giro notizie sul ricercato.",
+            "Il personaggio aggiunge un numero D6 pari al numero di ● in cacciatore di uomini a tutti i tiri per intimidire, cercare qualcuno, pedinare e anche per notare prove del suo passaggio come impronte caratteristiche cicche di sigari particolari. Se sta cercando uno ricercato di cui ha la taglia, il bonus raddoppia.",
+            "Consegna con tutti gli stivali ●● (4): Ogni volta che sconfigge o consegna un ricercato e i suoi sgherri ottiene un punto ispirazione in più.",
+            "Fine della caccia ●●● (6): Quando il cacciatore di taglie fa un inseguimento, la velocità di movimento sua e di un eventuale sua cavalcatura aumenta di 1."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "nome": "Chiacchiere da saloon",
+              "costo_px": 2
+            },
+            {
+              "livello": 2,
+              "nome": "Consegna con tutti gli stivali",
+              "costo_px": 4
+            },
+            {
+              "livello": 3,
+              "nome": "Fine della caccia",
+              "costo_px": 6
+            }
+          ]
+        },
+        {
+          "id": "licenza_da_cacciatore_di_taglie",
+          "nome": "Licenza da cacciatore di taglie",
+          "testo": [
+            "Il cacciatore di taglie ha una licenza che lo autorizza a professare la sua professione nel mondo dei mortali. Questo magico foglio di carta, scritto e verificato da avvocati e notai, appare magicamente nelle mani del possessore per essere sventolato in faccia ad ogni autorità immortale che ha l'ardire che non può sostare sulla Terra.",
+            "● (4)",
+            "Spendendo un anima, il personaggio può richiamare la licenza e, SE sta svolgendo il suo mestiere, dimostrare che è autorizzato a stare nel mondo materiale.",
+            "Oltre a cercare le prede nelle bacheche delle taglie, i cacciatori ricevono le periodiche visite di imp messaggeri che gli consegnano le taglie dei ricercati più appetitosi o di bersagli ricercati da precedenti clienti del cacciatore stesso.",
+            "Se riesce a catturare o uccidere uno di questi bersagli, riceve ●●●● anime in più, oltre al pagamento normalmente pattuito."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "costo_px": 4
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "criminale",
-      "nome": "Criminale",
+      "id": "dottore",
+      "nome": "Dottore",
+      "motto": "Tutti amano il dottore solo nel momento del dolore",
       "descrizione": [
-        "La maggior parte degli immortali presenti nel mondo dei mortali sono criminali in fuga dalla legge del proprio regno, nella speranza di non essere trovati fa giustizieri e cacciatori di taglie, cosa difficile dato che, per esigenza o noia, si ritrovano a compiere attività criminali tra i mortali."
+        "I corpi degli immortali sono noti per l’immunità alle malattie e alla rigenerazione sorprendente, per questo non esistono medici nel Paradiso e Inferno. Nel mondo materiale questi individui si reputano dei filantropi, pronti ad aiutare i mortali a sopravvivere alle difficoltà date dal loro fragile corpo, provando una certa soddisfazione nel risolvere gli enigmi del corpo umano. Alcuni di questi dottori invece non hanno il minimo interesse nel curare le malattie, ma bensì sono solo interessati nello studio di composti chimici, malattie e veleni."
       ],
-      "ferri_del_mestiere": "Pistola, coltello, attrezzi da scasso, piede di porco, un fucile a scelta, fiammiferi, tabacco.",
+      "ferri_del_mestiere": "Guanti in materiale idrorepellente, bosa medica, taccuino, penna e inchiostro, bisturi, maschera protettiva a forma di becco, siringhe, kit alchemico.",
       "abilita_lavorative": {
         "px": 20,
         "abilita": [
-          "pianificare",
-          "intimidire",
-          "mira"
+          "istruzione",
+          "medicina",
+          "demoralizzare"
         ],
         "caratteristiche": [
-          "possanza"
+          "astuzia"
         ],
         "poteri": [
           {
             "a_seconda_del_colore": [
-              "munizioni_infernali",
-              "munizioni_celesti"
-            ]
-          }
-        ],
-        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) pianificare, intimidire, mira, (caratteristica) possanza, (poteri) munizioni infernali o celesti (a seconda del colore)."
-      },
-      "attivita": "Il personaggio ha vantaggio a tutti i tiri legati pianificare evasioni, minacciare, estorcere e fare furti in generale.",
-      "opportunita": {
-        "nome": "Mani in alto!",
-        "esuberi": 2,
-        "testo": [
-          "Il personaggio è così rumoroso e minaccioso che nel resto del round tutti i mortali comuni (es. sgherri), a distanza 3 o meno, sono scioccati e non possono agire se non per mettersi al riparo."
-        ]
-      },
-      "speciale": {
-        "nome": "Fama da criminale",
-        "testo": [
-          "Il personaggio, volente o dolente, ha una pessima fama che scuote gli animi delle sue vittime. Ogni volta che riesce a portare con successo un furto di ricchezze terrene di un certo valore, come una rapina in banca, ottiene un ● anima."
-        ]
-      }
-    },
-    {
-      "id": "demagogo",
-      "nome": "Demagogo",
-      "descrizione": [
-        "Molti immortali scendono nel mondo materiale per poter comandare i suoi abitanti, spesso come capi di bande criminali oppure come leader di sette religiose (in cui spesso si spacciano come profeti o incarnazioni divine)"
-      ],
-      "ferri_del_mestiere": "Libri di legge e religiosi, pergamene, coltello, pistola, vesti di diverse religioni, penna ed inchiostro.",
-      "abilita_lavorative": {
-        "px": 20,
-        "abilita": [
-          "ingannare",
-          "socialita",
-          "mischia"
-        ],
-        "caratteristiche": [
-          "potenza"
-        ],
-        "poteri": [
-          {
-            "a_seconda_del_colore": [
-              "possessione",
+              "putrescenza",
               "empatia"
             ]
           }
         ],
-        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) ingannare, socialità, mischia, (caratteristica) potenza, (poteri) Possessione o Empatia (a seconda del colore)."
+        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) istruzione, medicina, demoralizzare, (caratteristica) astuzia, (poteri) putrescenza o empatia (a seconda del colore)."
       },
-      "attivita": "Il personaggio ha vantaggio a tutti i tiri legati al convincere, infervorare masse e conoscenze religioni.",
-      "opportunita": {
-        "nome": "Fomentare le masse",
-        "esuberi": 3,
-        "testo": [
-          "Il personaggio riesce a raccontare una sua versione della verità, abbellita con citazioni e buoni propositi, riuscendo immediatamente a generare 5 banditi comuni come suoi sgherri fino alla fine dello scenario."
-        ],
-        "uso": "Il personaggio può tentare questa opportunità nei suoi tiri di socialità rivolta alle masse di mortali."
-      },
-      "speciale": {
-        "nome": "Un gregge numeroso",
-        "testo": [
-          "Questo potere migliora tutti i poteri che garantiscono degli sgherri. Aggiunge un numero di sgherri pari alla sua caratteristica di potenza."
-        ]
-      }
+      "ispirazione": "Il personaggio ottiene ispirazione ogni volta che comprende la patologia che affligge un paziente, quando riconosce la causa di un malessere che affligge una comunità, quando riconosce un prodotto chimico o tossico, quando crea prodotti chimici potenzialmente dannosi.",
+      "poteri": [
+        {
+          "id": "medico",
+          "nome": "Medico",
+          "testo": [
+            "Il dottore ha consultato molti testi di medicina e forse ha anche conseguito una laurea in qualche università. I dottori che intraprendono questa via si sentono sempre molto appagati dal loro lavoro, tanto che molti hanno trovato pure un modo per dare beneficio ai propri compagni di avventure.",
+            "Questi poteri sono perennemente attivi, anche in forma mortale.",
+            "Studioso di medicina ● (2): Il personaggio tira in vantaggio tutti i tiri di medicina e alchimia.",
+            "Trattamento di favore ●● (4): Questo potere è attivo finché è in forma mortale.",
+            "Finché si presenta come un medico e non ha una pessima nomea, il personaggio riceve sempre un trattamento speciale. Viene ospitato dalle persone, ricche e povere, protetto dalle autorità e i giudici potrebbero chiudere un occhio su qualche sua piccola malefatta.",
+            "Una mela al giorno ●●● (6): Usando intrugli ignobili, sieri dalla dubbia utilità e delle dolorosissime manovre da chiropratico, il medico può rimuovere una malattia/effetto o curare immediatamente 3 punti ferita.",
+            "Per curare un paziente in questo modo deve spendere un punto ispirazione. Ogni personaggio può essere curato così solo una volta per sessione."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "nome": "Studioso di medicina",
+              "costo_px": 2
+            },
+            {
+              "livello": 2,
+              "nome": "Trattamento di favore",
+              "costo_px": 4
+            },
+            {
+              "livello": 3,
+              "nome": "Una mela al giorno",
+              "costo_px": 6
+            }
+          ]
+        },
+        {
+          "id": "ricercatore",
+          "nome": "Ricercatore",
+          "testo": [
+            "Il dottore ha intrapreso la via del ricercatore, pronto a scoprire i segreti della chimica e biologia del mondo materiale. Questi avidi studiosi spesso fanno scelte discutibili quando si tratta di soddisfare la loro curiosità.",
+            "Questi poteri sono perennemente attivi, anche in forma mortale.",
+            "Studioso chimica ● (2): Il personaggio aggiunge un numero di D6 pari ai ● in ricercatore quando deve riconoscere, neutralizzare o inventare prodotti chimici, biologici e simili.",
+            "Resistenza chimica ●●● (4): Il personaggio tira in vantaggio tutti i tiri di difesa contro agenti chimici come gas, esalazioni, acidi (magici e non).",
+            "Tossine ●●● (6): Il ricercatore mette in campo i risultati delle sue ricerche. Lanciando siringhe piene di veleno, versando tossine sopra le lame e proiettili dei compagni oppure aggiungendo del gas mostarda ai candelotti di dinamite lanciati contro il nemico.",
+            "Il dottore usa uno dei suoi prodotti chimici per potenziare un attacco fisico (quindi non attacchi dei poteri). Un attacco potenziato in questo modo, oltre ai suoi normali effetti, debilita il bersaglio dandogli svantaggio a tutti i tiri per un numero di turni pari di ● in astuzia del dottore.",
+            "Attivare questo potere costa un punto intuizione e può essere usato come azione o reazione per potenziare un'arma sua o di un suo compagno entro distanza 1."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "nome": "Studioso chimica",
+              "costo_px": 2
+            },
+            {
+              "livello": 3,
+              "nome": "Resistenza chimica",
+              "costo_px": 4
+            },
+            {
+              "livello": 3,
+              "nome": "Tossine",
+              "costo_px": 6
+            }
+          ]
+        },
+        {
+          "id": "nuocere",
+          "nome": "nuocere",
+          "testo": [
+            "I dottori fanno una professione che li porta ad aiutare il prossimo, ma ciò non li rende degli sprovveduti e hanno imparato a difendersi in maniera egregia con i loro strumenti di medicina.",
+            "● (4).",
+            "Quando utilizza un bisturi come arma, questa conta come un’arma improvvisata che non si distrugge al suo utilizzo e tutti i suoi attacchi sono in vantaggio.",
+            "Se con tale arma riesce a dare un colpo di grazia ad un personaggio o riesce a stendere 5 sgherri in un solo combattimento, guadagna un punto ispirazione."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "costo_px": 4
+            }
+          ]
+        },
+        {
+          "id": "licenza_da_medico",
+          "nome": "Licenza da medico",
+          "testo": [
+            "Il medico ha una licenza che lo autorizza a professare la sua professione nel mondo dei mortali. Questo magico foglio di carta, scritto e verificato da avvocati e notai, appare magicamente nelle mani del possessore per essere sventolato in faccia ad ogni autorità immortale che ha l'ardire che non può sostare sulla Terra.",
+            "● (4)",
+            "Spendendo un anima, il personaggio può richiamare la licenza e, SE sta svolgendo il suo mestiere, dimostrare che è autorizzato a stare nel mondo materiale.",
+            "Se riesce a guarire da qualche grave malattia un mortale che è vincolato ad un immortale per via di un patto o altri mezzi magici, riceve automaticamente un’anima."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "costo_px": 4
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "giustiziere",
-      "nome": "Giustiziere",
+      "id": "messaggero",
+      "nome": "Messaggero",
+      "motto": "Né pioggia, né neve, né il buio della notte possono trattenerci dal compiere il nostro dovere.",
       "descrizione": [
-        "I giustizieri sono gli unici immortali autorizzati a scendere nel mondo dei mortali per dare la caccia agli immortali illegali. Normalmente hanno il complicato compito di scovarli e riportarli nel rispettivo regno con le manette ai polsi, ma dato che il West rende tutto particolarmente complicato, delle volte devono fare delle eccezioni, valutare con cura e scendere a compromessi, arrivando addirittura ad allearsi a degli immortali non autorizzati, pur di prendere un pesce più grande."
+        "I portalettere hanno un gran dafare nelle immense terre del west. Scarse indicazioni stradali, pericoli lungo il tragitto e l'estrema difficoltà nel trovare il destinatario del messaggio. Nonostante tutte queste difficoltà, gli immortali che fanno questo lavoro non si scoraggiano davanti a nulla, alla peggio, perdono la pazienza, ma cascasse il mondo, la lettera dovrà raggiungere il suo destinatario."
       ],
-      "ferri_del_mestiere": "Taccuino con pennino ed inchiostro, documenti con leggi, distintivo, pistola, coltello, fucile a scelta.",
+      "ferri_del_mestiere": "Borsa contenente lettere e pacchi, mappe dei territori che sta attraversando, pistola, taccuino, penna ed inchiostro.",
       "abilita_lavorative": {
         "px": 20,
         "abilita": [
-          "percezione",
-          "socialita",
-          "mira"
+          "sopravvivenza",
+          "cavalcare",
+          "difesa"
         ],
         "caratteristiche": [
           "agilita"
         ],
         "poteri": [
           {
-            "a_seconda_del_colore": [
-              "fuoco_purificatore",
-              "potere_della_cenere"
-            ]
+            "potere": "compagno_innaturale"
           }
         ],
-        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) percezione, socialità, mira, (caratteristica) agilità, (poteri) Fuoco purificatore o Potere della cenere (a seconda del colore)."
+        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) sopravvivenza, cavalcare, difesa, (caratteristica) agilità, (poteri) compagno innaturale."
       },
-      "attivita": "Il personaggio ha vantaggio a tutti i tiri legati ad indagini, interrogare, citare leggi.",
-      "opportunita": {
-        "nome": "Interpretare la legge",
-        "esuberi": 2,
-        "testo": [
-          "Il personaggio aggiunge al discorso un qualche precedente giuridico o postilla dimenticata, per dimostrare di avere ragione, secondo la legge."
-        ],
-        "uso": "Il personaggio può tentare questa opportunità nei suoi tiri di socialità, intimidire, ingannare o contrattare."
-      },
-      "speciale": {
-        "nome": "Rappresentante della legge",
-        "testo": [
-          "I giustizieri iniziano la campagna con un distintivo (di magnifica fattura) e sono autorizzati a essere presenti nel mondo dei mortali, almeno finché rispettano le seguenti leggi.",
-          "Art 1. Non influenzare le decisioni dei mortali con la propria presenza.",
-          "Art 2. Non manifestare la propria forma originale o attraverso manifestazioni di potere non comprensibili ai mortali.",
-          "Art 3. Impedire agli immortali e creature paranormali di interferire con i mortali.",
-          "Art 4. Un Agente deve prima mostrare il distintivo identificativo e dichiarare le sue intenzioni di arresto, prima di procedere con il recupero forzato del trasgressore.",
-          "Art 5. È autorizzato l'uso della forza contro i trasgressori che si oppongono all'arresto.",
-          "Art 6. Un Agente non può intralciare l'operato di un'altro agente, finché quest'ultimo non è in violazione con uno dei precedenti articoli."
-        ]
-      }
+      "ispirazione": "Il personaggio ottiene ispirazione ogni volta che consegna una lettera o un pacco, aiuta un altro messaggero, quando supera un ostacolo tra lui e la persona a cui consegnare la lettera.",
+      "regole_poteri": [
+        "I poteri del messaggero non possono essere usati per aiutarlo a consegnare lettere scritte di suo pugno a persone che lui stesso sta cercando per motivi personali. Non si mischia lavoro e vita privata."
+      ],
+      "poteri": [
+        {
+          "id": "portalettere",
+          "nome": "Portalettere",
+          "testo": [
+            "Consegnare una lettera può essere considerato un lavoro degradante per gli immortali, ma un messaggero sa che non trasporta solo un pezzo di carta, ma un messaggio importante, che sia una lettera d'amore, di speranza o più probabilmente, una minaccia di morte.",
+            "Trovare il ricevente ● (2): Questo potere è perennemente attivo, anche in forma mortale.",
+            "Ogni qualvolta il messaggero effettua dei tiri per raccogliere informazioni e trovare il ricevente di una lettera, aggiunge un numero di D6 pari ai ● in portalettere.",
+            "Supporto dei postini ●● (4): Questo potere è perennemente attivo, solo in forma mortale.",
+            "Finché è in forma mortale, il messaggero è considerato un rispettabile postino del governo degli stati uniti, di conseguenza ha sempre libero accesso a treni, carovane, vitto e alloggio presso gli uffici di posta, dagli sceriffi e nelle banche, oltre a poter usufruire dei loro servizi e accedere ad aree normalmente vietate ai civili. Le autorità locali supportano sempre un messaggero in servizio.",
+            "Trasporto sicuro ●●● (6): Questo potere è  perennemente attivo, anche in forma mortale.",
+            "Il messaggero è abituato a trasportare materiali delicati senza correre il rischio di perderli o romperli.",
+            "Ogni volta che il personaggio dovrebbe perdere, far cadere (vedi opportunità) o rompere un oggetto che sta trasportando tira un D6, con un 2+ l'oggetto in questione non viene rotto o perduto."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "nome": "Trovare il ricevente",
+              "costo_px": 2
+            },
+            {
+              "livello": 2,
+              "nome": "Supporto dei postini",
+              "costo_px": 4
+            },
+            {
+              "livello": 3,
+              "nome": "Trasporto sicuro",
+              "costo_px": 6
+            }
+          ]
+        },
+        {
+          "id": "conoscere_una_scorciatoia",
+          "nome": "Conoscere una scorciatoia",
+          "testo": [
+            "I messaggeri sono esperti viaggiatori e conoscono sempre delle scorciatoie.",
+            "Questo potere può essere usato anche in forma mortale.",
+            "● (4).",
+            "Consumando un punto ispirazione, un messaggero e la sua banda impiegano la metà del tempo per viaggiare da un posto all'altro."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "costo_px": 4
+            }
+          ]
+        },
+        {
+          "id": "a_prova_di_ostacolo",
+          "nome": "A prova di ostacolo",
+          "testo": [
+            "I messaggeri mortali, come i pony espresse, si fanno un vanto di consegnare le lettere contro molte avversità; pioggia, neve, bufere. Nel caso degli immortali, non li ferma nemmeno le orde di non morti, piogge di meteoriti o peggio ancora cani.",
+            "Schivare gli ostacoli ● (4): Questo potere può essere utilizzato anche in forma mortale.",
+            "Spendendo un punto ispirazione, può aggiungere ai suoi tiri di difesa un numero di D6 pari ai ● in la consegna della lettera.",
+            "Sgusciare via dai guai ●● (8): Questo potere può essere usato anche in forma mortale.",
+            "Quando deve effettuare il tiro per l'iniziativa, il personaggio può spendere un punto ispirazione e tirare solo 1D6 e aggiungendo un +6 alla somma totale.",
+            "Risolvere il contrattempo ●●● (12): Questo potere è perennemente attivo, anche in forma mortale.",
+            "Tante volte i messaggeri si sono ritrovati nei guai durante il loro servizio e hanno sviluppato un sesto senso per capire quando si trovano davanti ad un contrattempo e una volta capito, l'esperienza gli dice come risolverlo.",
+            "Una volta per sessione, il giocatore può chiedere al narratore se la banda sta affrontando un luogo (vedi nemici) ricevendo una risposta sincera e solo un sì o un no e di conseguenza il personaggio (messaggero) avrà  tale consapevolezza.",
+            "Una volta al giorno, spendendo un punto ispirazione e un paio di ore, il luogo perderà automaticamente una ferita."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "nome": "Schivare gli ostacoli",
+              "costo_px": 4
+            },
+            {
+              "livello": 2,
+              "nome": "Sgusciare via dai guai",
+              "costo_px": 8
+            },
+            {
+              "livello": 3,
+              "nome": "Risolvere il contrattempo",
+              "costo_px": 12
+            }
+          ]
+        },
+        {
+          "id": "licenza_da_messaggero",
+          "nome": "Licenza da messaggero",
+          "testo": [
+            "Il messaggero ha una licenza che lo autorizza a professare la sua professione nel mondo dei mortali. Questo magico foglio di carta, scritto e verificato da avvocati e notai, appare magicamente nelle mani del possessore per essere sventolato in faccia ad ogni autorità immortale che ha l'ardire che non può sostare sulla Terra.",
+            "● (4)",
+            "Spendendo un anima, il personaggio può richiamare la licenza e, SE sta svolgendo il suo mestiere, dimostrare che è autorizzato a stare nel mondo materiale.",
+            "Se il ricevente della comunicazione è un immortale, il messaggero è autorizzato a ad eseguire la consegna anche tramite messaggio telepatico, incisione magica o altri sistemi magici, fintanto che viene svolto con chiarezza."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "costo_px": 4
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "soldato",
       "nome": "Soldato",
+      "motto": "La guerra non cambia mai, non si ferma mai",
       "descrizione": [
-        "I demoni sono angeli che si sono ribellati ai sovrani del paradiso e hanno iniziato la guerra civile. Per la maggior parte di essi, la guerra è finita con una vittoria parziale del paradiso, che non è stato sconfitto dai ribelli, ma che si accontenta di aver solo scacciato i traditori al posto di eliminarli tutti.",
-        "I soldati sono angeli e demoni che continuano la guerra anche senza il permesso delle autorità, in loro la guerra civile è tuttora in atto e continuano a cercare i loro nemici con zelo."
+        "Sia il Paradiso che l’Inferno hanno smantellato buona parte delle loro forze armate come atto di buona volontà a favore di una tregua più duratura. Molti di questi non hanno accettato l’idea della tregua o non sono riusciti a trovare altro scopo al di fuori del combattimento. Questi veterani di guerra hanno deciso di riversarsi sul mondo materiale per continuare la guerra per il Paradiso o cercarne un’altra degna della loro esperienza."
       ],
-      "ferri_del_mestiere": "Armi da mischia a scelta, coltelli, attrezzatura per accamparsi all'aperto, pistola, attrezzi per riparare armi, pistola.",
+      "ferri_del_mestiere": "Vecchia uniforme da ufficiale, arma da mischia, attrezzi da viaggio, attrezzi per riparare armi.",
       "abilita_lavorative": {
         "px": 20,
         "abilita": [
           "sopravvivenza",
-          "percezione",
+          "intimidire",
           "mischia"
         ],
         "caratteristiche": [
@@ -325,28 +773,104 @@
         ],
         "poteri": [
           {
-            "a_seconda_del_colore": [
-              "pelle_a_scaglie",
-              "pelle_di_mercurio"
-            ]
+            "potere": "guerra"
           }
         ],
-        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) sopravvivenza, percezione, mischia, (caratteristica) possanza, (poteri) Pelle a scaglie o pelle di mercurio (a seconda del colore)."
+        "testo": "Il personaggio può investire 20 punti esperienza iniziali nelle seguenti: (abilità) sopravvivenza, intimidire, mischia, (caratteristica) possanza, (poteri) Guerra."
       },
-      "attivita": "Il personaggio ha vantaggio a tutti i tiri legati a strategie militari e riconoscere armi ed i loro effetti.",
-      "opportunita": {
-        "nome": "Ancora!",
-        "esuberi": 3,
-        "testo": [
-          "Il personaggio può usare questa opportunità ogni volta che infligge danno ad un individuo di colore diverso dal suo. Il personaggio raddoppia il danno dell’arma."
-        ]
-      },
-      "speciale": {
-        "nome": "Una guerra infinita",
-        "testo": [
-          "Il personaggio, quando combatte contro altri immortali, aggiunge +1 punti in esubero in tutte le azioni di attacco, indipendentemente dal risultato."
-        ]
-      }
+      "ispirazione": "Il personaggio ottiene ispirazione ogni volta che vince un duello con la pistola, inizia un combattimento, sconfigge o mette in fuga una squadra di sgherri.",
+      "poteri": [
+        {
+          "id": "abile_nelle_armi",
+          "nome": "Abile nelle armi",
+          "testo": [
+            "Gli ammaestramenti ricevuti dai soldati sono molto ricercati dalle bande nascoste nel mondo materiale, fa sempre comodo avere la forza bruta dalla propria parte.",
+            "Sfollagente ● (4): Il personaggio ottiene la seguente opportunità che puo essere usata ogni volta che attacca degli sgherri.",
+            "Ancora! (3): Il personaggio raddoppia il danno dell’arma.",
+            "Nella breccia ●● (8): Nel primo turno di combattimento, il soldato può spendere fino a 3 punti mana per ritirare tre dadi, ignorando il normale massimale di 1 mana per un dado ritirato.",
+            "Guerra eterna ●●● (12): Questo potere è perennemente attivo, anche in forma mortale.",
+            "Quando attacca o si difende da un immortale, mostro o un'entità superiore, aggiunge +2 esuberi."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "nome": "Sfollagente",
+              "costo_px": 4
+            },
+            {
+              "livello": 2,
+              "nome": "Nella breccia",
+              "costo_px": 8
+            },
+            {
+              "livello": 3,
+              "nome": "Guerra eterna",
+              "costo_px": 12
+            }
+          ]
+        },
+        {
+          "id": "cicatrici_di_guerra",
+          "nome": "Cicatrici di guerra",
+          "testo": [
+            "I soldati sono abituati a buttarsi nei campi di battaglia del Paradiso ed Inferno, dove combattono migliaia di micidiali angeli e demoni. Uscire vivo da un tale teatro bellico lascia delle cicatrici significative e una tempra notevole.",
+            "● (4): Questo potere può essere usato anche in forma mortale.",
+            "Al costo di un ispirazione, il personaggio può ridurre di uno i danni in arrivo fino ad un minimo di 1."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "costo_px": 4
+            }
+          ]
+        },
+        {
+          "id": "veterano_di_guerra",
+          "nome": "Veterano di guerra",
+          "testo": [
+            "I soldati hanno dedicato millenni della loro vita a combattere e non hanno nessuna intenzione di voler cambiare il loro stile di vita e i loro modi cinici e rudi.",
+            "Questi poteri sono sempre attivi, anche in forma mortale.",
+            "Rispetto per i veterani ● (4): Perché indossa parti di un'uniforme, o qualcosa nello sguardo, rende chiaro a tutti che l’immortale è un ex militare e che merita il giusto rispetto.",
+            "Quando possibile i militari, mortali e non, hanno un occhio di riguardo per un veterano, aiutandolo come possono.",
+            "Tosto tosto ●● (8): Quando il soldato fa un tiro di intimidire, pianificare operazioni militari, riparare armi o demoralizzare, aggiunge un numero di dadi pari ai ● in veterano di guerra.",
+            "In caso demoralizzare viene usato contro degli sgherri, può usare un ispirazione per usare il suo valore di possanza al posto dell’astuzia.",
+            "Supremazia ●●● (12): Ogni volta che il soldato riesce ad infliggere almeno 3 danni contro un nemico oppure a stendere un avversario o una squadra di sgherri, come azione gratuita può fare un tiro di demoralizzare ad un qualsiasi avversario a distanza 3."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "nome": "Rispetto per i veterani",
+              "costo_px": 4
+            },
+            {
+              "livello": 2,
+              "nome": "Tosto tosto",
+              "costo_px": 8
+            },
+            {
+              "livello": 3,
+              "nome": "Supremazia",
+              "costo_px": 12
+            }
+          ]
+        },
+        {
+          "id": "licenza_da_soldato",
+          "nome": "Licenza da soldato",
+          "testo": [
+            "Il soldato ha una licenza che lo autorizza a professare la sua professione nel mondo dei mortali. Questo magico foglio di carta, scritto e verificato da avvocati e notai, appare magicamente nelle mani del possessore per essere sventolato in faccia ad ogni autorità immortale che ha l'ardire che non può sostare sulla Terra.",
+            "● (4)",
+            "Spendendo un anima, il personaggio può richiamare la licenza e, SE sta svolgendo il suo mestiere, dimostrare che è autorizzato a stare nel mondo materiale.",
+            "Il soldato è tuttora in servizio, richiamato per una specifica missione. Il personaggio è in guerra con la nemesi e ogni volta che lui o la sua banda riescono a togliergli uno o più punti nemesi, ne eliminano un’altro in più."
+          ],
+          "livelli": [
+            {
+              "livello": 1,
+              "costo_px": 4
+            }
+          ]
+        }
+      ]
     }
   ]
 }

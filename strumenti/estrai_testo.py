@@ -20,7 +20,7 @@ from pathlib import Path
 
 RADICE = Path(__file__).resolve().parents[1]
 MANUALI = {
-    "manuale": RADICE / "manuali" / "Pad 1.5.docx",
+    "manuale": RADICE / "manuali" / "PHaG 1.6.docx",
     "scheda": RADICE / "manuali" / "PHeG scheda 2.docx",
 }
 USCITA = RADICE / ".cache" / "testo"

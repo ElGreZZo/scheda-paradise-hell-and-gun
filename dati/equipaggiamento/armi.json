@@ -1,7 +1,7 @@
 {
   "$schema": "../schemi/armi.schema.json",
   "fonte": {
-    "manuale": "Pad 1.5",
+    "manuale": "PHaG 1.6",
     "capitolo": "11 - Armi ed oggettistica"
   },
   "generato_da": "strumenti/estrai_dati.mjs",
@@ -29,9 +29,9 @@
         "Un attacco fatto usando un qualche arma improvvisata trovata nei paraggi, come uno sgabello, una pentola ecc."
       ],
       "danno": 2,
-      "distanza": 0,
+      "distanza": 1,
       "distruttivita": 1,
-      "statistiche": "Danno:2. Distanza: 0. Distruttività: ●.",
+      "statistiche": "Danno:2. Distanza: 1. Distruttività:●.",
       "note": [
         "Questi oggetti non sono fatti per un combattimento, quindi si distruggono immediatamente dopo il danno. Utilizzabile solo una volta per combattimento."
       ]
@@ -44,7 +44,7 @@
       "danno": 1,
       "distanza": 1,
       "distruttivita": 0,
-      "statistiche": "Danno:1. Distanza: 1.Distruttività: ○.",
+      "statistiche": "Danno:1. Distanza:1. Distruttività:○.",
       "note": [
         "In caso di necessità quest’arma può essere lanciata a distanza 2.",
         "Gli esuberi possono essere investiti nel seguente modo oltre che la lista comune:"
@@ -67,7 +67,7 @@
       "danno": 2,
       "distanza": 1,
       "distruttivita": 1,
-      "statistiche": "Danno:2. Distanza: 1.Distruttività: ●.",
+      "statistiche": "Danno:2. Distanza:1. Distruttività:●.",
       "note": [
         "Con quest'arma ottiene un esubero in più per le azioni di difesa."
       ]
@@ -82,7 +82,7 @@
       "danno": 3,
       "distanza": 1,
       "distruttivita": 1,
-      "statistiche": "Danno:3. Distanza: 1.Distruttività: ●.",
+      "statistiche": "Danno:3. Distanza:1. Distruttività:●.",
       "note": [
         "Con quest'arma ottiene un esubero in più per le azioni di difesa e può essere fatto per ben due volte."
       ]
@@ -92,15 +92,15 @@
       "nome": "Armi ad asta",
       "abilita": "mischia",
       "descrizione": [
-        "Si intende per arma ad asta tutte quelle armi che hanno un impugnatura lunga e che gli consente di colpire bersagli più distanti."
+        "Si intende per arma ad asta tutte quelle armi che hanno un’impugnatura lunga e che gli consente di colpire bersagli più distanti."
       ],
       "danno": 2,
       "distanza": 1,
       "distruttivita": 1,
-      "statistiche": "Danno: 2. Distanza: 1. Distruttività: ●",
+      "statistiche": "Danno:2. Distanza:1. Distruttività:●",
       "note": [
         "Le armi ad asta sono armi che possono effettuare una reazione contro una carica.",
-        "L’opportunità contrattacco (vedi difesa) costa 2 al posto di 3."
+        "L’opportunità contrattacco (vedi difesa) costa un esubero in meno (quindi 2)."
       ]
     },
     {
@@ -113,25 +113,30 @@
       "danno": 3,
       "distanza": 1,
       "distruttivita": 2,
-      "statistiche": "Danno: 3. Distanza: 1. Distruttività: ●●",
+      "statistiche": "Danno:3. Distanza:1. Distruttività:●●",
       "note": [
-        "L’opportunità Distruttività (vedi mischia) un esubero in meno."
+        "L’opportunità Distruttività (vedi mischia) costa due esuberi in meno (quindi 1)."
       ]
     },
     {
-      "id": "lazzo",
-      "nome": "Lazzo",
+      "id": "lazzo_frusta",
+      "nome": "Lazzo/Frusta",
       "abilita": "mira",
       "descrizione": [],
-      "danno": 0,
+      "danno": 1,
       "distanza": 2,
       "distruttivita": 0,
-      "statistiche": "Danno: 0. Distanza: 2. Distruttività: ○.",
+      "statistiche": "Danno:1 (opzionale). Distanza:2. Distruttività:○.",
       "note": [
-        "Quest’arma da lancio non causa danni, ma ha i seguenti effetti su bersagli umanoidi o grossi come manzi/equini.",
-        "Per ogni successo oltre i primi 3 può essere investito nel seguente modo."
+        "Quest’arma fa 1 danno se lo vuole il proprietario ed le seguenti opportunità su bersagli di dimensioni piccole, medio e grandi (nel caso di quest'ultime, le opportunità costano un esubero in più).",
+        "Gli esuberi possono essere spesi nelle seguenti opportunità (Contro i non sgherri)"
       ],
       "opportunita": [
+        {
+          "nome": "Afferrare",
+          "esuberi": 2,
+          "testo": "Il bersaglio ha svantaggio a tutti i tiri fino alla fine della sua prossima azione."
+        },
         {
           "nome": "Legare",
           "esuberi": 1,
@@ -139,21 +144,9 @@
         },
         {
           "nome": "Tirare",
-          "esuberi": 2,
+          "esuberi": 1,
           "testo": "L’attaccante e il bersaglio effettuano un tiro contrapposto di possanza, se l’attaccante ha almeno un successo, il bersaglio si trova a distanza 1."
         }
-      ],
-      "tabella": [
-        [
-          "1 successo",
-          "2 successi",
-          "3 successi"
-        ],
-        [
-          "Il bersaglio viene colpito ma il lazzo non causa alcun effetto.",
-          "Il bersaglio viene colpito, è intralciato e ottiene svantaggio fino alla fine del suo prossimo turno (o se viene liberato prima dai compagni)",
-          "Il bersaglio viene colpito e legato, immobilizzandolo  e ottiene svantaggio fino a quando non viene compiuta un'azione per liberarsi."
-        ]
       ]
     },
     {
@@ -167,9 +160,10 @@
       "distanza": 3,
       "munizioni": 1,
       "distruttivita": 1,
-      "statistiche": "Danno: 1. Distanza: 3. Munizioni: ● Distruttività: ●",
+      "statistiche": "Danno:1. Distanza:3. Munizioni:● Distruttività:●",
       "note": [
-        "In caso colpisce bersagli a distanza 2 aggiunge più 1 ai danni. Con quest'arma usare l’opportunità danno extra costa un esubero in meno."
+        "Per scaricare la pistola sono necessari tre 1 di dado nel tiro di attacco, invece dei consueti due. Con quest'arma usare l’opportunità danno extra costa un esubero in meno (quindi 2).",
+        "Può essere usata a distanza 1 inferiore senza avere svantaggio."
       ]
     },
     {
@@ -183,10 +177,10 @@
       "distanza": 3,
       "munizioni": 2,
       "distruttivita": 1,
-      "statistiche": "Danno: 2. Distanza: 3. Munizioni: ●● Distruttività: ●",
+      "statistiche": "Danno:2. Distanza:3. Munizioni:●● Distruttività:●",
       "note": [
         "Un personaggio che ha due pistole, può decidere di usarle con il seguente profilo.",
-        "In caso colpisce bersagli a distanza 2 aggiunge più 1 ai danni. Con quest'arma usare l’opportunità danno extra costa un esubero in meno e può essere fatto per ben due volte.",
+        "Con quest'arma usare l’opportunità danno extra costa un esubero in meno (quindi 2) e può essere fatto per ben due volte.",
         "Se si spara ad un bersaglio che non sia una squadra di sgherri, il personaggio ha svantaggio ad attaccare."
       ]
     },
@@ -201,9 +195,9 @@
       "distanza": 3,
       "munizioni": 1,
       "distruttivita": 1,
-      "statistiche": "Danno: 2. Distanza:3. Munizioni: ● Distruttività: ●",
+      "statistiche": "Danno:2. Distanza:3. Munizioni:● Distruttività:●",
       "note": [
-        "Il personaggio può impiegare un intero turno a tendere l’arco, se lo fa, nel seguente turno guadagna +1 al danno e la distanza aumenta a 4. ."
+        "Il personaggio può impiegare un intero turno a tendere l’arco, se lo fa, nel seguente turno guadagna +1 al danno e la distanza aumenta a 4."
       ]
     },
     {
@@ -217,9 +211,9 @@
       "distanza": 4,
       "munizioni": 2,
       "distruttivita": 2,
-      "statistiche": "Danno: 2. Distanza:4. Munizioni: ●● Distruttività: ●●",
+      "statistiche": "Danno:2. Distanza:4. Munizioni:●● Distruttività:●●",
       "note": [
-        "In caso colpisce bersagli a distanza 3 o meno aggiunge più 1 ai danni. Richiede due mani per essere usato."
+        "L’opportunità colpo critico costa un esubero in meno (quindi 3). Richiede due mani per essere usato."
       ]
     },
     {
@@ -233,9 +227,9 @@
       "distanza": 3,
       "munizioni": 3,
       "distruttivita": 3,
-      "statistiche": "Danno: 3. Distanza: 3. Munizioni: ●●● Distruttività: ●●●",
+      "statistiche": "Danno:3. Distanza:3. Munizioni:●●● Distruttività:●●●",
       "note": [
-        "In caso colpisce bersagli a distanza 2 o meno aggiunge più 1 ai danni. Per scaricare quest’arma è sufficiente ottenere un solo 1 di dado nella pool di dadi. Richiede due armi per essere usato."
+        "In caso colpisce bersagli a distanza 2 o meno aggiunge più 1 ai danni. Richiede due armi per essere usato."
       ]
     }
   ]

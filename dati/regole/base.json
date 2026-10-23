@@ -1,21 +1,23 @@
 {
   "$schema": "../schemi/regole.schema.json",
   "fonte": {
-    "manuale": "Pad 1.5",
-    "capitolo": "2 - Regole base; 3 - Azioni e abilità; 5 - Regole avanzate; 6 - Anime ed investimento; 9 - Creazione dei personaggi; 11 - Armi ed oggettistica"
+    "manuale": "PHaG 1.6",
+    "capitolo": "2 - Regole base; 3 - Azioni e abilità; 4 - Combattimento; 5 - Regole avanzate; 6 - Anime ed investimento; 7 - Archetipi di immortali; 8 - Carriere; 9 - Creazione dei personaggi; 11 - Armi ed oggettistica; 15 - Creare storie"
   },
   "voci": [
     {
       "id": "prova",
       "valori": { "dado": 6, "successo_da": 4, "vantaggio_da": 3, "svantaggio_da": 5, "soglia_minima": 2, "soglia_massima": 6, "difficolta_minima": 1, "difficolta_massima": 4 },
       "citazioni": [
-        "Con ogni 4+ il personaggio ha ottenuto un successo.",
-        "nella maggior parte dei casi questo numero è la somma dei ● presenti nella caratteristica interessata più ● della abilità.",
+        "nella maggior parte dei casi questo numero è la somma dei ● presenti nella caratteristica interessata più ● dell’abilità.",
+        "Per ogni dado che ottiene 4+ il personaggio ha ottenuto un successo.",
+        "normalmente può applicare difficoltà da 1 a 4, ma andare anche oltre se lo ritiene necessario.",
+        "È importante che il narratore dichiari al giocatore la difficoltà",
         "Vantaggio: Un personaggio in vantaggio ottiene un successo con un 3+ invece del solito 4+.",
         "Svantaggio: Un personaggio che è in svantaggio ottiene un successo con un 5+ invece del solito 4+.",
         "basta applicare la regola che un vantaggio annulla uno svantaggio.",
         "I vantaggi e svantaggi si possono accumulare, arrivando a poter avere successi fino ad un massimo di 2+ (in caso dei vantaggi) e 6+ (in caso degli svantaggi).",
-        "normalmente può applicare difficoltà da 1 a 4, ma andare anche oltre se lo ritiene necessario."
+        "Una comoda alternativa ai vantaggi e svantaggi è aggiungere o sottrarre dadi alla pool di dadi."
       ]
     },
     {
@@ -23,14 +25,15 @@
       "valori": {},
       "citazioni": [
         "Per superare una prova, un giocatore deve ottenere lo stesso numero di successi richiesti per superarla, tutti i successi extra diventano esuberi.",
-        "Se non specificato altrimenti, nessun personaggio può eseguire un opportunità più volte nella medesima azione."
+        "Se non specificato altrimenti, nessun personaggio può eseguire un’opportunità più volte nella medesima azione."
       ]
     },
     {
       "id": "tiri_contrapposti",
       "valori": {},
       "citazioni": [
-        "entrambi tirano le pool di dadi e i vari successi dell’uno annullano i successi dell’avversario e trionfa colui che resta con almeno un successo"
+        "entrambi tirano le pool di dadi e i vari successi dell’uno annullano i successi dell’avversario.",
+        "Trionfa colui che resta con almeno un successo e quest’ultimo trasforma i successi rimanenti in esuberi per arricchire la sua azione."
       ]
     },
     {
@@ -49,7 +52,7 @@
       "id": "abilita",
       "valori": { "minimo": 0, "massimo": 5 },
       "citazioni": [
-        "questo è rappresentato dai ● posseduti che possono variare da 0 a 5.",
+        "sono rappresentate dai ● posseduti che possono variare da 0 a 5.",
         "Bisogna sempre andare in ordine e passare da ○ a ●, da ● a ●● ecc."
       ]
     },
@@ -59,7 +62,10 @@
       "citazioni": [
         "Un personaggio possiede di base due punti ferita e ne aggiunge un numero pari al numero di ● alla sua possanza.",
         "Un immortale guarisce 1 punto ferita all’ora in completa autonomia, mentre un mortale impiega circa una settimana per guarire una singola ferita.",
+        "Punti ferita temporanei: Alcuni poteri hanno come effetto quello di dare punti ferita temporanei.",
+        "Questi punti ferita si aggiungono momentaneamente ai punti ferita del personaggio e sono i primi ad essere rimossi in caso di danni.",
         "Se non specificato diversamente, questi punti ferita scalano di 1 per turno.",
+        "Ogni personaggio che finisce a 0 punti ferita diventa inabile, finisce a terra alla completa mercé dei suoi avversari.",
         "Se i danni subiti sono pari o superiori ai punti ferita totali, il bersaglio giace a terra morto (o nel caso di un immortale, in attesa del colpo di grazia).",
         "Se tali danni sono pari o superiori ai punti ferita totali, il bersaglio sviene per il resto della sessione."
       ],
@@ -75,13 +81,25 @@
       "nota": "La potenza comprende l'incremento dell'archetipo (risposta del master del 23/10/2026): nell'esempio di Ezekiel il mana era sbagliato."
     },
     {
+      "id": "ispirazione",
+      "valori": { "iniziale_per_sessione": 0 },
+      "citazioni": [
+        "I poteri di carriera sono dei poteri che possono essere solo comprati da quella determinata carriera.",
+        "Molti di questi poteri hanno come costo di attivazione solo l'ispirazione.",
+        "L'ispirazione è una risorsa molto simile al mana con le seguenti eccezioni.",
+        "Un personaggio inizia la sessione con 0 ispirazione.",
+        "Un personaggio può spendere ispirazione solo per attivare i suoi poteri di carriera.",
+        "Ogni carriera ottiene ispirazione in maniera diversa, normalmente eseguendo il suo lavoro."
+      ]
+    },
+    {
       "id": "iniziativa",
       "valori": { "dado": "2d6", "caratteristica": "astuzia" },
       "citazioni": [
         "si effettua un tiro di iniziativa, cioè si tira 2D6 + Astuzia.",
         "Iniziativa. Si aggiunge questa caratteristica al tiro per l’iniziativa."
       ],
-      "nota": "Regola cambiata dal master il 23/10/2026: prima era 1D6 + Agilità (docs/domande-per-il-master.md). La seconda frase è sotto Astuzia."
+      "nota": "Regola cambiata dal master il 23/10/2026 (prima era 1D6 + Agilità): il manuale 1.6 la riporta già."
     },
     {
       "id": "difesa",
@@ -93,19 +111,21 @@
     },
     {
       "id": "movimento",
-      "valori": { "distanza": 2 },
+      "valori": { "distanza": 2, "velocita_personaggio": 1 },
       "citazioni": [
-        "Quando ciò accade, esso ha percorso una distanza 2 (vedi distanze)."
+        "Quando ciò accade, esso ha percorso una distanza 2 (vedi distanze).",
+        "Velocità 1. Tutte le creature umanoidi (personaggi compresi) o con delle zampette troppo corte."
       ]
     },
     {
       "id": "munizioni",
-      "valori": { "cartucciera_massimo": 40, "uni_per_inceppare": 2 },
+      "valori": { "cartucciera_massimo": 30, "uni_per_inceppare": 2 },
       "citazioni": [
         "Un’arma si scarica o si inceppa se, dopo aver lanciato una pool di dadi, usando un'arma da fuoco si ottengono due o più 1 di dado.",
-        "Ricaricare durante un combattimento è un'azione scomoda e occupa un intero turno (in cui il personaggio si può muovere).",
-        "Le cartucciere in dotazione dei personaggi consentono di trasportare fino ad un massimo di 40 ●."
-      ]
+        "Ricaricare consuma un certo numero di ● dalla propria riserva di munizioni, tale numero dipende dall’arma",
+        "Le cartucciere in dotazione dei personaggi consentono di trasportare fino ad un massimo di 30 ●."
+      ],
+      "nota": "Nel manuale 1.5 la cartucciera arrivava a 40 e ricaricare occupava un turno. Il potere di carriera Armaiolo (Cacciatore di taglie) la porta a 40."
     },
     {
       "id": "anime",
@@ -146,22 +166,47 @@
       ]
     },
     {
+      "id": "flashback",
+      "valori": { "per_arco_narrativo": 1 },
+      "citazioni": [
+        "Una volta per arco narrativo, un giocatore può dichiarare di voler fare un flashback."
+      ]
+    },
+    {
+      "id": "patto",
+      "valori": { "attivi_massimo": 1, "costo_anime": 1 },
+      "citazioni": [
+        "Un immortale può tenere attivo solo un patto alla volta, nel senso che può o dare o ricevere un patto alla volta.",
+        "Chi chiede il patto, deve consumare un ● anima per generare il vincolo."
+      ]
+    },
+    {
       "id": "creazione",
       "valori": { "px_carriera": 20, "px_liberi": 30 },
       "citazioni": [
         "Dopo aver speso i punti esperienza iniziali dati dalle abilità lavorative, il personaggio ha altri 30 punti esperienza iniziali da spendere a proprio piacimento.",
         "Se avanzano dei punti esperienza iniziali, quelli avanzati diventano punti esperienza.",
+        "Eventuali punti avanzati verranno dimezzati per eccesso e inseriti come punti esperienza normali.",
         "Segnare il numero di punti ferita pari al valore di possanza + 2. Segnare il mana, pari al doppio del valore di potenza.",
         "Ora il giocatore ha a disposizione altri 30 punti esperienza iniziali da investire come vuole, senza restrizioni della carriera."
       ],
-      "nota": "Il master ha confermato 30 punti liberi il 23/10/2026: l'esempio di creazione, che ne usava 20, è corretto nel manuale (docs/domande-per-il-master.md)."
+      "nota": "Il master ha confermato 30 punti liberi il 23/10/2026: l'esempio di Susan, che ne usava 20, è corretto nel manuale. La frase sui punti avanzati dimezzati è delle abilità lavorative (cap. 8)."
     },
     {
       "id": "poteri_archetipo",
       "valori": { "costo_innati_e_affini": "metà" },
       "citazioni": [
         "Questi poteri sono innati per la creatura e li possiede già un ● alla creazione del personaggio. In più questi poteri costano la metà dei punti esperienza per questa creatura.",
+        "Questi poteri sono in possesso del personaggio anche se non soddisfano i requisiti, come ad esempio le limitazioni del colore.",
         "Questi poteri sono particolarmente affini alla creatura, costano la metà dei punti esperienza."
+      ]
+    },
+    {
+      "id": "punti_esperienza",
+      "valori": { "per_sessione_campagna_breve": 6, "per_sessione_campagna_lunga": 3 },
+      "citazioni": [
+        "In caso di campagne brevi, dalle 2 alle 5 sessioni circa, i personaggi ricevono 6 punti esperienza a sessione.",
+        "Nel caso di campagne lunghe i personaggi ricevono 3 punti esperienza alla fine di ogni sessione."
       ]
     }
   ]

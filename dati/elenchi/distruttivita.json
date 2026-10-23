@@ -1,7 +1,7 @@
 {
   "$schema": "../schemi/distruttivita.schema.json",
   "fonte": {
-    "manuale": "Pad 1.5",
+    "manuale": "PHaG 1.6",
     "capitolo": "5 - Regole avanzate"
   },
   "generato_da": "strumenti/estrai_dati.mjs",

@@ -1,7 +1,7 @@
 {
   "$schema": "../schemi/distanze.schema.json",
   "fonte": {
-    "manuale": "Pad 1.5",
+    "manuale": "PHaG 1.6",
     "capitolo": "2 - Regole base"
   },
   "generato_da": "strumenti/estrai_dati.mjs",
@@ -24,7 +24,7 @@
     {
       "valore": 3,
       "nome": "Distante",
-      "testo": "Distanza 3 (Distante) è la distanza di un grosso spiazzale o di una struttura particolarmente grande ( dai 10 ai 40 metri). Normalmente un personaggio può percorrere questa distanza con due azioni di movimento, ovvero muovendosi per due turni di fila o attraverso le opportunità."
+      "testo": "Distanza 3 (Distante) è la distanza di un grosso spiazzale o di una struttura particolarmente grande (dai 10 ai 40 metri). Normalmente un personaggio può percorrere questa distanza con due azioni di movimento, ovvero muovendosi per due turni di fila o attraverso le opportunità."
     },
     {
       "valore": 4,
@@ -34,7 +34,7 @@
     {
       "valore": 5,
       "nome": "Lontano",
-      "testo": "Distanza 5 (Lontano) è una grossa città o una vallata ( dai 100 ai 2000 metri). In assenza di un cavallo, non ha senso considerare il numero di azioni necessarie per superare questa distanza."
+      "testo": "Distanza 5 (Lontano) è una grossa città o una vallata (dai 100 ai 2000 metri). In assenza di un cavallo, non ha senso considerare il numero di azioni necessarie per superare questa distanza."
     },
     {
       "valore": 6,

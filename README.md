@@ -57,7 +57,7 @@ Le schede custom richiedono il Pro: le prove si fanno nello Sheet Sandbox dell'u
 
 ## Il manuale e la base dati
 
-Il manuale (`manuali/Pad 1.5.docx`) non è nel repository. Per lavorare sui dati va copiato in `manuali/`. Poi si lancia `npm run estrai-testo`.
+Il manuale (`manuali/PHaG 1.6.docx`) non è nel repository. Per lavorare sui dati va copiato in `manuali/`. Poi si lancia `npm run estrai-testo`.
 
 I dati che vengono dal testo li scrive `npm run estrai-dati`. Nei file si riconoscono da `generato_da`: non vanno modificati a mano. I testi sono copiati parola per parola, e `npm run controlla` verifica che ognuno si trovi nel manuale. Quando arriva una versione nuova del manuale:
 

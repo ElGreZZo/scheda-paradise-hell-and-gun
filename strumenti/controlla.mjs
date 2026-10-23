@@ -22,7 +22,8 @@ const SCHEMI = path.join(DATI, "schemi");
 const MANUALE = path.join(RADICE, ".cache", "testo", "manuale.md");
 
 // Campi con testi copiati dal manuale; gli altri (id, numeri, nota) sono nostri.
-const CAMPI_TESTO = new Set(["nome", "testo", "descrizione", "citazioni", "statistiche", "ferri_del_mestiere", "attivita", "uso", "note"]);
+const CAMPI_TESTO = new Set(["nome", "testo", "descrizione", "citazioni", "statistiche", "ferri_del_mestiere", "uso", "note", "motto",
+  "ispirazione", "regole_poteri"]);
 
 // Apostrofi e virgolette tipografici come quelli dritti, spazi ridotti a uno.
 export const normalizza = (s) => s.replace(/[’‘]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, " ").trim();
@@ -90,15 +91,21 @@ export async function controlla({ stampa = console.log } = {}) {
   }
   for (const [id, dove] of poteriMancanti) avvisi.push(`potere "${id}" citato ma non descritto nel capitolo 10: ${dove.join(", ")}`);
 
-  // Avvisi sui poteri: livelli che mancano, costi fuori schema (livello × costo del primo livello).
-  for (const p of dati["poteri.json"]?.voci ?? []) {
-    const numeri = p.livelli.map((l) => l.livello);
+  // Avvisi sui poteri: livelli doppi o che mancano, costi fuori schema (livello × costo del primo livello). I poteri di
+  // carriera hanno costi propri (2, 4, 8 o 4, 8, 12): lì si guardano solo i livelli.
+  const livelli = (nome, lista, costi) => {
+    const numeri = lista.map((l) => l.livello);
+    const doppi = numeri.filter((n, i) => numeri.indexOf(n) !== i);
+    if (doppi.length) avvisi.push(`${nome}: livello ${[...new Set(doppi)].join(", ")} scritto due volte`);
     const mancano = [...Array(Math.max(...numeri)).keys()].map((i) => i + 1).filter((n) => !numeri.includes(n));
-    if (mancano.length) avvisi.push(`${p.nome}: mancano i livelli ${mancano.join(", ")}`);
-    const base = p.livelli.find((l) => l.livello === 1)?.costo_px;
-    const fuori = p.livelli.filter((l) => base && l.costo_px !== base * l.livello);
-    if (fuori.length) avvisi.push(`${p.nome}: costi ${p.livelli.map((l) => l.costo_px).join(", ")} (fuori schema il livello ${fuori.map((l) => l.livello).join(", ")})`);
-  }
+    if (mancano.length) avvisi.push(`${nome}: mancano i livelli ${mancano.join(", ")}`);
+    if (!costi) return;
+    const base = lista.find((l) => l.livello === 1)?.costo_px;
+    const fuori = lista.filter((l) => base && !l.costo_variabile && l.costo_px !== base * l.livello);
+    if (fuori.length) avvisi.push(`${nome}: costi ${lista.map((l) => l.costo_px).join(", ")} (fuori schema il livello ${fuori.map((l) => l.livello).join(", ")})`);
+  };
+  for (const p of dati["poteri.json"]?.voci ?? []) livelli(p.nome, p.livelli, true);
+  for (const c of dati["carriere.json"]?.voci ?? []) for (const p of c.poteri) livelli(`${c.nome}, ${p.nome}`, p.livelli, false);
   for (const a of dati["elenchi/abilita.json"]?.voci ?? []) if (!a.caratteristiche.length) avvisi.push(`abilità ${a.nome}: il manuale non dice a quale caratteristica è associata`);
 
   // 4. testi nel manuale

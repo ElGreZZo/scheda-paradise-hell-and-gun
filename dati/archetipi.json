@@ -1,7 +1,7 @@
 {
   "$schema": "schemi/archetipi.schema.json",
   "fonte": {
-    "manuale": "Pad 1.5",
+    "manuale": "PHaG 1.6",
     "capitolo": "7 - Archetipi di immortali"
   },
   "generato_da": "strumenti/estrai_dati.mjs",
@@ -56,7 +56,7 @@
       "nome": "Caduto",
       "colore": "nero",
       "descrizione": [
-        "I caduti sono la tipologia più comune di demoni che si possono trovare. Nessuno di loro è nativo dell'inferno, ma sono o sopravvissuti della vecchia ribellione, oppure angeli che di “recente” hanno cambiato bandiera.",
+        "I caduti sono la tipologia più comune di demoni che si possono trovare. Nessuno di loro è nativo dell'Inferno, ma sono o sopravvissuti della vecchia ribellione, oppure angeli che di “recente” hanno cambiato bandiera.",
         "Sono caratteristici per le loro ali membranose o con piume nere, tratti estetici piuttosto umane come i cherubini e gli arcangeli, però più cupi, con occhi che brillano come braci."
       ],
       "incrementi": {
@@ -102,7 +102,7 @@
       "nome": "Cherubino",
       "colore": "bianco",
       "descrizione": [
-        "L'angelo più comune nel paradiso …. e del mondo materiale. I cherubini sono tanti, troppi, nonostante la metà di essi abbia tradito durante la ribellione che ha dato vita ai demoni, nonostante abbiano subito tantissime perdite nella guerra.",
+        "L'angelo più comune nel Paradiso …. e del mondo materiale. I cherubini sono tanti, troppi, nonostante la metà di essi abbia tradito durante la ribellione che ha dato vita ai demoni, nonostante abbiano subito tantissime perdite nella guerra.",
         "Un cherubino è un angelo dall'aspetto molto umano, con due splendide ali piumate, splendidi capelli che tendono a colori chiari e splendidi occhi che tendono al dorato luminoso."
       ],
       "incrementi": {
@@ -125,7 +125,7 @@
         "fuoco_purificatore",
         "lux",
         "ali",
-        "pelle_d_argento",
+        "pelle_di_mercurio",
         "telepatia"
       ],
       "natura": [
@@ -190,7 +190,7 @@
       "nome": "Jinn",
       "colore": "grigio",
       "descrizione": [
-        "I jinn sono immortali piuttosto anomali, hanno smesso di dedicarsi alle cofecchie di paradiso ed inferno millenni fa, da allora dedicano se stessi all'interazione con la razza umana. C'è chi lo fa per torturare gli umani facendo leva della loro avidità, altri per guidare con saggezza, altri per mero sollazzo.",
+        "I jinn sono immortali piuttosto anomali, hanno smesso di dedicarsi alle cofecchie di Paradiso ed Inferno millenni fa, da allora dedicano se stessi all'interazione con la razza umana. C'è chi lo fa per torturare gli umani facendo leva della loro avidità, altri per guidare con saggezza, altri per mero sollazzo.",
         "I jinn hanno un aspetto piuttosto differente sia dagli angeli che dai demoni, sembrando più a eccentriche creature, spesso con colori della pelle particolarmente accesi come rosso, blu, celeste e giallo.",
         "Una loro caratteristica, soprattutto per quelli legati al fuoco, le loro fiamme, corporee o generate dai loro poteri, non generano fumo."
       ],
@@ -270,7 +270,7 @@
         {
           "nome": "La tempesta in arrivo",
           "testo": [
-            "Una volta per scenario, può aumentare la sua distruttività di un ● per un azione."
+            "Una volta per scenario, può aumentare la sua distruttività di un ● per un'azione."
           ]
         }
       ]
@@ -281,8 +281,8 @@
       "colore": "bianco",
       "descrizione": [
         "Questi piccoli immortali, che hanno l'aspetto di bambini paffutelli con piccole ali, simboleggiano l’innocenza, l’allegria e l’amore.",
-        "A causa del loro aspetto un po 'fuori luogo in un ambiente violento come il selvaggio west, sono considerati la barzelletta degli immortali angelici.",
-        "E’ raro trovare un puttino nel mondo dei mortali, ma quelli che si trovano spesso hanno un carattere estremamente audace, rafforzato dalle angherie e prepotenze subite dagli altri immortali."
+        "A causa del loro aspetto un po' fuori luogo in un ambiente violento come il selvaggio west, sono considerati la barzelletta degli immortali angelici.",
+        "È raro trovare un puttino nel mondo dei mortali, ma quelli che si trovano spesso hanno un carattere estremamente audace, rafforzato dalle angherie e prepotenze subite dagli altri immortali."
       ],
       "incrementi": {
         "agilita": 3,
@@ -370,7 +370,7 @@
       "colore": "nero",
       "descrizione": [
         "Gli immortali si nascondono nel mondo dei mortali da quando è avvenuta la creazione di quest'ultimo, creando nel tempo delle problematiche. Un wendingo è uno di questi immortali che ha passato troppo tempo nel mondo dei mortali e ha iniziato ad essere influenzato da alcuni aspetti di questa realtà, nello specifico la fame.",
-        "I wendingo hanno un aspetto e modi molto bestiali, causato dal loro isolamento nelle terre selvagge. Alti, snelli, nella maggior parte dei casi con peli folti e un teschio di animale come testa. Altri casi, un po più rari, hanno un aspetto pallido, emaciato e quasi scheletrico.",
+        "I wendingo hanno un aspetto e modi molto bestiali, causato dal loro isolamento nelle terre selvagge. Alti, snelli, nella maggior parte dei casi con peli folti e un teschio di animale come testa. Altri casi, un po’ più rari, hanno un aspetto pallido, emaciato e quasi scheletrico.",
         "I wendingo, nonostante la loro natura da immortali, hanno sempre fame e quel che è peggio, è che non riescono mai ad essere realmente sazi, se non per vie traverse.",
         "Questi demoni sono così disperati che tendono a tormentare mortali isolati e condividere con loro la loro disperazione, portando queste vittime a situazioni così esasperate da effettuare cannibalismo."
       ],
@@ -393,7 +393,7 @@
         "bestialita",
         "possessione",
         "dementia",
-        "corpo_possente",
+        "corpo_pesante",
         "gola"
       ],
       "natura": [

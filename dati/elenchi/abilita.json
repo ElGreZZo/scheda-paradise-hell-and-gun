@@ -1,7 +1,7 @@
 {
   "$schema": "../schemi/abilita.schema.json",
   "fonte": {
-    "manuale": "Pad 1.5",
+    "manuale": "PHaG 1.6",
     "capitolo": "3 - Azioni e abilità; 4 - Combattimento"
   },
   "generato_da": "strumenti/estrai_dati.mjs",
@@ -91,7 +91,7 @@
         5
       ],
       "descrizione": [
-        "Il personaggio usa questa abilità ogni volta che devono fare azioni complesse sopra una cavalcatura, come saltare da un cavallo all'altro, come far fare al cavallo manovre complicate come degli slalom tra gli alberi, restare appeso sul fianco di un cavallo.  Normalmente associato con agilità."
+        "Il personaggio usa questa abilità ogni volta che deve fare azioni complesse sopra una cavalcatura, come saltare da un cavallo all'altro, far fare al cavallo manovre complicate come degli slalom tra gli alberi, restare appeso sul fianco di un cavallo.  Normalmente associato con agilità."
       ],
       "opportunita": [
         {
@@ -121,7 +121,7 @@
         5
       ],
       "descrizione": [
-        "Il personaggio usa questa abilità per resistere agli effetti mentali o capire, in un secondo momento, se è stato in qualche modo manipolato da altri tramite psicologia o altri mezzi. Può essere usato pure per resistere agli effetti di intimidire. Normalmente associato con potenza."
+        "Il personaggio usa questa abilità per resistere agli effetti mentali o capire, in un secondo momento, se è stato in qualche modo manipolato da altri tramite psicologia o altri mezzi. Può essere usato anche per resistere agli effetti di intimidire. Normalmente associato con potenza."
       ],
       "opportunita": [
         {
@@ -146,7 +146,7 @@
         5
       ],
       "descrizione": [
-        "Il personaggio usa questa abilità per poter avere un acquisizione vantaggiosa in un affare, che si tratti di un patto, vendita o acquisto di merci, contratti lavorativi. Questo tiro viene fatto anche per cercare di creare un contratto scritto, preciso e senza fregatura. Normalmente associato con astuzia."
+        "Il personaggio usa questa abilità per poter avere un’acquisizione vantaggiosa in un affare, che si tratti di un patto, vendita o acquisto di merci, contratti lavorativi. Questo tiro viene fatto anche per cercare di creare un contratto scritto, preciso e senza fregatura. Normalmente associato con astuzia."
       ],
       "opportunita": [
         {
@@ -182,7 +182,7 @@
         {
           "nome": "Prodotto bello",
           "esuberi": 1,
-          "testo": "Il prodotto è oggettivamente ben raffinato e ne da un certo fascino."
+          "testo": "Il prodotto è oggettivamente ben raffinato e ne dà un certo fascino."
         },
         {
           "nome": "Oggetto magico",
@@ -227,7 +227,7 @@
         {
           "nome": "Spostare oggetto silenziosamente",
           "esuberi": 2,
-          "testo": "Il personaggio, spostandosi silenziosamente, porta con sé un oggetto relativamente scomodo, come una sedia, un appendiabiti e simili, facendo in modo che siano sempre visibili, ma che l’osservatore non ci fa caso dello spostamento."
+          "testo": "Il personaggio, spostandosi silenziosamente, porta con sé un oggetto relativamente scomodo, come una sedia, un appendiabiti e simili, facendo in modo che siano sempre visibili all’osservatore che non fa caso allo spostamento."
         }
       ]
     },
@@ -258,7 +258,7 @@
         {
           "nome": "Rubare oggetto",
           "esuberi": 2,
-          "testo": "Il personaggio ne approfitta per rubare un oggetto dal tavolo o dalle tasche di un'altro giocatore."
+          "testo": "Il personaggio ne approfitta per rubare un oggetto dal tavolo o dalle tasche di un altro giocatore."
         },
         {
           "nome": "Barare malissimo",
@@ -318,7 +318,7 @@
       ],
       "descrizione": [
         "Il personaggio usa questa abilità per citare a memoria le leggi o ricordare (o applicare) la legge giusta per la sua situazione.",
-        "Molti poteri e patti degli immortali sono vincolati dalle loro leggi, questo rende del tutto necessario saperle a memoria così da poterle manipolare al momento giusto.",
+        "Molti poteri e patti degli immortali sono vincolati dalle loro leggi, questo rende necessario saperle a memoria così da poterle manipolare al momento giusto.",
         "Normalmente associata alla caratteristica di astuzia."
       ],
       "opportunita": [
@@ -370,7 +370,7 @@
         {
           "nome": "Sostituire/Rubare oggetto",
           "esuberi": 3,
-          "testo": "Il personaggio riesce a rubare un oggetto o a sostituirlo con un’altro che si trova a distanza 0."
+          "testo": "Il personaggio riesce a rubare un oggetto o a sostituirlo con un altro che si trova a distanza 0."
         }
       ]
     },
@@ -405,7 +405,7 @@
         {
           "nome": "Spaventare",
           "esuberi": 2,
-          "testo": "Utilizzabile in combattimento o il turno prima di iniziare. Il personaggio spaventa il suo avversario in modo da tirare in svantaggio il tiro di iniziativa."
+          "testo": "Utilizzabile in combattimento o il turno prima di iniziare. Il personaggio spaventa il suo avversario in modo che quest'ultimo ottiene un -2 all'iniziativa."
         }
       ]
     },
@@ -430,7 +430,7 @@
         {
           "nome": "Informazioni manipolate",
           "esuberi": 2,
-          "testo": "Il personaggio, per avere ragione su un argomento, manipola leggermente determinate informazioni, omettendo o facendo percorsi logici un po atipici."
+          "testo": "Il personaggio, per avere ragione su un argomento, manipola leggermente determinate informazioni, omettendo o facendo percorsi logici un po’ atipici."
         },
         {
           "nome": "Insulto",
@@ -560,7 +560,7 @@
         5
       ],
       "descrizione": [
-        "Il personaggio usa questa abilità per pianificare in generale, che si tratti di una rapina in banca, un'evasione, un imboscata, un allalto al treno ecc. Normalmente associata alla caratteristica di astuzia."
+        "Il personaggio usa questa abilità per pianificare in generale, che si tratti di una rapina in banca, un'evasione, un’imboscata, un assalto al treno ecc. Normalmente associata alla caratteristica di astuzia."
       ],
       "opportunita": [
         {
@@ -802,7 +802,7 @@
       ],
       "descrizione": [
         "Questa abilità viene usata per demotivare il nemico, riducendo, per quanto possibile, la sua combattività.",
-        "Usare questa abilità su un bersaglio funziona a tutti gli effetti come un attacco che infligge danni non letali, ma a differenza degli attacchi fisici, questo ha bisogno di qualche requisito, primo tra tutti, il bersaglio deve essere in grado di comprendere le parole usate dal personaggio, le cose dette devono avere un senso (es. “Non è questo quello che la tua amata Rosalinda avrebbe voluto” ).",
+        "Usare questa abilità su un bersaglio funziona a tutti gli effetti come un attacco che infligge danni non letali, ma a differenza degli attacchi fisici, questo ha bisogno di qualche requisito, primo tra tutti, il bersaglio deve essere in grado di comprendere le parole usate dal personaggio, le cose dette devono avere un senso (es. “Non è questo quello che la tua amata Rosalinda avrebbe voluto”).",
         "Questo attacco viene eseguito con astuzia + demoralizzare contrapposto alla potenza + difesa del bersaglio. Se l’attaccante ha successo, il bersaglio prende un danno non letale."
       ],
       "opportunita": [

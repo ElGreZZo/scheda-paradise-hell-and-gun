@@ -1,7 +1,7 @@
 {
   "$schema": "../schemi/caratteristiche.schema.json",
   "fonte": {
-    "manuale": "Pad 1.5",
+    "manuale": "PHaG 1.6",
     "capitolo": "2 - Regole base"
   },
   "generato_da": "strumenti/estrai_dati.mjs",
@@ -15,7 +15,7 @@
       "effetti": [
         {
           "nome": "Abilità",
-          "testo": "aggiungi un dado alla pool di dadi per ogni ● presente in questa caratteristica quando si compie azioni che richiedono forza fisica, utilizzo di armi da mischia."
+          "testo": "aggiungi un dado alla pool di dadi per ogni ● presente in questa caratteristica quando si compie azioni che richiedono forza fisica e utilizzo di armi da mischia."
         },
         {
           "nome": "Punti ferita",
@@ -27,12 +27,12 @@
       "id": "agilita",
       "nome": "Agilità",
       "descrizione": [
-        "Rappresenta la velocità e i riflessi del soggetto. Usata per tutte quelle azioni che richiedono movimento e velocità, oltre per ridurre i danni in arrivo."
+        "Rappresenta la velocità e i riflessi del soggetto. Usata per tutte le azioni che richiedono movimento e velocità, oltre per ridurre i danni in arrivo."
       ],
       "effetti": [
         {
           "nome": "Abilità",
-          "testo": "aggiungi un dado alla pool di dadi per ogni ● presente in questa caratteristica quando si compie azioni che richiedono velocità, utilizzare armi a distanza."
+          "testo": "aggiungi un dado alla pool di dadi per ogni ● presente in questa caratteristica quando si compie azioni che richiedono velocità e utilizzare armi a distanza."
         },
         {
           "nome": "Schivare",

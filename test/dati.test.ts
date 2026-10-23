@@ -18,8 +18,8 @@ test("dati: le voci attese del manuale", async () => {
   const dati = await leggiDati();
   const quante = Object.fromEntries(Object.entries(dati).map(([nome, voci]) => [nome, (voci as unknown[]).length]));
   assert.deepEqual(quante, {
-    abilita: 23, archetipi: 10, armi: 13, base: 18, caratteristiche: 4, carriere: 8, colori: 3, dimensioni: 5,
-    distanze: 8, distruttivita: 6, poteri: 45, ricchezza: 7, seguaci: 4,
+    abilita: 23, archetipi: 10, armi: 13, base: 22, caratteristiche: 4, carriere: 7, colori: 3, dimensioni: 5,
+    distanze: 8, distruttivita: 6, poteri: 51, ricchezza: 7, seguaci: 4,
   });
 });
 

@@ -1,7 +1,7 @@
 {
   "$schema": "../schemi/ricchezza.schema.json",
   "fonte": {
-    "manuale": "Pad 1.5",
+    "manuale": "PHaG 1.6",
     "capitolo": "11 - Armi ed oggettistica"
   },
   "generato_da": "strumenti/estrai_dati.mjs",
@@ -15,14 +15,14 @@
     },
     {
       "valore": 1,
-      "testo": "Il personaggio ha un tenore di vita molto basso, potendosi permettere del cibo scadente, di dormire nelle stalle al posto di una camera in taverna ecc. Si può permettere almeno un arma.",
+      "testo": "Il personaggio ha un tenore di vita molto basso, potendosi permettere del cibo scadente, di dormire nelle stalle al posto di una camera in taverna ecc. Si può permettere almeno un'arma.",
       "munizioni_settimana": 3,
       "armi": 1,
       "animali": 1
     },
     {
       "valore": 2,
-      "testo": "Il personaggio ha un tenore di vita basso, ma può permettersi cibo, notti dentro delle taverne scadenti, il mantenimento di un'arma. Può accedere a servizi comuni come le poste, un medico oppure di mantenere una piccola casa. Si può permettere un paio di armi e lo stretto necessario per un avventura.",
+      "testo": "Il personaggio ha un tenore di vita basso, ma può permettersi cibo, notti dentro delle taverne scadenti, il mantenimento di un'arma. Può accedere a servizi comuni come le poste, un medico oppure di mantenere una piccola casa. Si può permettere un paio di armi e lo stretto necessario per un’avventura.",
       "munizioni_settimana": 4,
       "armi": 2,
       "animali": 1

@@ -4,7 +4,7 @@
 
 Scheda custom per Roll20 di **Paradise, Hell and Guns** (PHaG, a volte PHeG): gioco di ruolo weird west in cui i personaggi sono angeli e demoni («immortali») nel selvaggio west. Riserva di d6, successi a 4+, esuberi spesi nelle opportunità, caratteristiche e abilità a pallini (●).
 
-- **Il gioco è in sviluppo** ed è del master dell'utente («Jakob S.» su Roll20), che lo scrive. Dopo aver visto la scheda di Farsight dell'utente, gli ha chiesto questa. Il manuale (`manuali/Pad 1.5.docx`) e la scheda cartacea (`manuali/PHeG scheda 2.docx`) li ha dati lui. **Non sono pubblicati**: restano fuori da git.
+- **Il gioco è in sviluppo** ed è del master dell'utente («Jakob S.» su Roll20), che lo scrive. Dopo aver visto la scheda di Farsight dell'utente, gli ha chiesto questa. Il manuale (`manuali/PHaG 1.6.docx`, prima `Pad 1.5.docx`) e la scheda cartacea (`manuali/PHeG scheda 2.docx`) li ha dati lui. **Non sono pubblicati**: restano fuori da git.
 - **L'utente** (Carmine, «GreZZo» su Roll20) scrive in italiano e vuole risposte in italiano. Ha il Pro di Roll20; il master no, quindi le prove su Roll20 si fanno nelle partite dell'utente.
 - **Progetto gemello**: la scheda di Farsight, in `F:/Lavoro/Test/Farsight custom sheet`. Da lì vengono build, emulatore, controlli e quasi tutto quello che sappiamo di Roll20 ([docs/roll20.md](../docs/roll20.md)). Se serve un esempio di come si è risolto qualcosa (modali, roll template con Custom Roll Parsing, sezioni ripetibili, traduzioni), si guarda lì, ma il codice non si copia senza chiedere.
 

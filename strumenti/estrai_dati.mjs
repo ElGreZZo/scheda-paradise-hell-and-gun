@@ -11,7 +11,7 @@
 //   dati/elenchi/colori.json            nero, bianco, grigio
 //   dati/elenchi/ricchezza.json         livelli di ricchezza: munizioni ricaricate, armi, animali
 //   dati/archetipi.json                 i 10 archetipi di immortali
-//   dati/carriere.json                  le 8 carriere
+//   dati/carriere.json                  le 7 carriere, con i poteri di carriera (testo e livelli)
 //   dati/poteri.json                    i poteri: categoria, colore richiesto, livelli con nome e costo
 //   dati/equipaggiamento/armi.json      le armi del cap. 11
 //   dati/equipaggiamento/seguaci.json   gli animali del cap. 11
@@ -29,7 +29,7 @@ import { fileURLToPath } from "node:url";
 const RADICE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATI = path.join(RADICE, "dati");
 const MANUALE = path.join(RADICE, ".cache", "testo", "manuale.md");
-export const FONTE = "Pad 1.5";
+export const FONTE = "PHaG 1.6";
 
 export const NOMI = {
   caratteristiche: ["Possanza", "Agilità", "Astuzia", "Potenza"],
@@ -37,24 +37,26 @@ export const NOMI = {
     "Ingannare", "Intimidire", "Istruzione", "Meccanica", "Medicina", "Percezione", "Pianificare", "Socialità", "Sopravvivenza"],
   combattimento: ["Mischia", "Mira", "Demoralizzare", "Difesa"],
   archetipi: ["Arcangelo", "Caduto", "Cherubino", "Demone possessore", "Jinn", "Oni", "Puttino", "Serafino", "Wendingo", "Dullahan"],
-  carriere: ["Artista", "Avventuriero", "Banchiere", "Cacciatore di taglie", "Criminale", "Demagogo", "Giustiziere", "Soldato"],
+  carriere: ["Artista", "Avventuriero", "Becchino", "Cacciatore di taglie", "Dottore", "Messaggero", "Soldato"],
   poteri: {
-    comune: ["Addestratore", "Aggressore provetto", "Aiutanti", "Alchimista", "Cecchino provetto", "Entrate costanti", "Leader di Sgherri",
-      "Persona influente", "Pistolero provetto", "Reti di informatori", "Rituali", "Sfruttare l'ambiente", "Spirito di iniziativa", "Volontà di ferro", "Tecnico"],
+    comune: ["Addestratore", "Aggressore provetto", "Aiutanti", "Alchimista", "Artista marziale", "Cecchino provetto", "Entrate costanti",
+      "Lavoratore ispirato", "Leader di Sgherri", "Non si smette di lavorare quando si è stanchi …", "Persona influente", "Pistolero provetto",
+      "Reti di informatori", "Rituali", "Sfruttare l'ambiente", "Si smette di lavorare quando il lavoro è finito", "Spirito di iniziativa",
+      "Volontà di ferro", "Tecnico"],
     passivo: ["Ali", "Aspetto alieno", "Aura nascosta", "Breccia dell’aura", "Cacciatore di immortali", "Compagno innaturale", "Corpo pesante",
-      "Munizioni celesti", "Munizioni infernali", "Pelle a scaglie", "Pelle di mercurio"],
+      "Munizioni celesti", "Munizioni infernali", "Mutaforma", "Pelle a scaglie", "Pelle di mercurio"],
     attivo: ["Animalità", "Bestialità", "Dementia", "Empatia", "Evocazione", "Fuoco purificatore", "Geomanzia", "Illusione", "Lux", "Possessione",
       "Potere del sangue", "Potere della cenere", "Putrescenza", "Signore della tempesta", "Telepatia", "Umbra"],
-    superiore: ["Maestro della forgia", "Morte", "Signore della guerra"],
+    superiore: ["Guerra", "Maestro della forgia", "Morte", "Tefillin"],
   },
   armi: ["Pugni e calci", "Armi improvvisate", "Coltello", "Arma da mischia", "Coppia di armi da mischia", "Armi ad asta", "Armi da mischia grandi",
-    "Lazzo", "Pistola", "Coppia di pistole", "Arco", "Carabina", "Fucile a pallettoni"],
+    "Lazzo/Frusta", "Pistola", "Coppia di pistole", "Arco", "Carabina", "Fucile a pallettoni"],
   seguaci: ["Cavallo", "Cane/Falco", "Procione/Scimmia", "Pappagallo/Lontra"],
 };
 
 // Abilità con cui si usa ogni arma. Il manuale non lo scrive arma per arma: Mischia è per le armi da mischia, Mira
 // per quelle da tiro o da lancio (cap. 4, Attaccare). Pugni e calci e armi improvvisate sono attacchi in mischia.
-const ABILITA_ARMI = { lazzo: "mira", pistola: "mira", coppia_di_pistole: "mira", arco: "mira", carabina: "mira", fucile_a_pallettoni: "mira" };
+const ABILITA_ARMI = { lazzo_frusta: "mira", pistola: "mira", coppia_di_pistole: "mira", arco: "mira", carabina: "mira", fucile_a_pallettoni: "mira" };
 
 // Nomi dei poteri scritti in modo diverso negli archetipi e nelle carriere ("Pelle a scaglia" per l'Oni,
 // "munizioni infernali o celesti" per il Criminale).
@@ -230,41 +232,63 @@ function abilitaLavorative(testo) {
   };
 }
 
+// Ogni carriera (manuale 1.6): «motto», descrizione, Ferri del mestiere, Abilità lavorative, Ispirazione, poi
+// "Poteri del …" con i poteri di carriera. Un potere di carriera inizia con una riga che è solo il nome (niente
+// punto, due punti o ●); le righe prima del primo nome sono regole comuni ai poteri della carriera (Messaggero).
+const nomePotereCarriera = (r) => r.length < 50 && !/[.:●…]/.test(r) && !/^[-|<]/.test(r);
+
 function carriere() {
   return blocchi(sezione("## 8 - Carriere"), NOMI.carriere).map(({ nome, corpo }) => {
     const indice = (prefisso) => corpo.findIndex((r) => r.startsWith(prefisso));
     const dopoPrefisso = (r) => pulisci(r.replace(/^[^:.]+[:.]\s*/, ""));
     const iFerri = indice("Ferri del mestiere");
     const iAbilita = indice("Abilità lavorative");
-    const iAttivita = indice("Attività");
-    const iOpp = indice("Opportunità lavorative");
-    if ([iFerri, iAbilita, iAttivita, iOpp].some((i) => i < 0)) throw new Error(`${nome}: manca un campo della carriera`);
-    // Opportunità: sulla stessa riga ("Opportunità lavorative: Artista (1): …", "… Mani in alto!: (2) …") o sulla
-    // successiva, dopo una frase che dice a quali tiri si applica.
-    const resto = pulisci(corpo[iOpp].replace(/^Opportunità lavorative[:.]\s*/, ""));
-    const inLinea = opportunita(resto);
-    let i = iOpp + 1;
-    const opp = inLinea ?? opportunita(corpo[i++]);
-    if (!opp) throw new Error(`${nome}: opportunità lavorativa non trovata`);
-    if (!inLinea) opp.uso = resto;
-    opp.testo = [opp.testo];
-    // Righe di seguito senza "Nome:" continuano l'opportunità; poi il tratto speciale e le sue righe.
-    while (i < corpo.length && !/^[^:]{2,60}: /.test(corpo[i])) opp.testo.push(corpo[i++]);
-    const speciale = /^([^:]{2,60}): (.*)$/.exec(corpo[i] ?? "");
-    if (!speciale) throw new Error(`${nome}: tratto speciale non trovato`);
+    const iIspirazione = indice("Ispirazione");
+    const iPoteri = corpo.findIndex((r) => /^Poteri del/.test(r));
+    if ([iFerri, iAbilita, iIspirazione, iPoteri].some((i) => i < 0)) throw new Error(`${nome}: manca un campo della carriera`);
+    const motto = /^«(.*)»\.?$/.exec(corpo[0]);
+    const regole = [];
+    const poteri = [];
+    for (const r of corpo.slice(iPoteri + 1)) {
+      if (nomePotereCarriera(r)) poteri.push({ nome: r, testo: [] });
+      else if (!poteri.length) regole.push(r);
+      else poteri.at(-1).testo.push(r);
+    }
+    if (!poteri.length) throw new Error(`${nome}: nessun potere di carriera`);
     return {
       id: ident(nome), nome,
-      descrizione: corpo.slice(0, iFerri),
+      ...(motto ? { motto: motto[1] } : {}),
+      descrizione: corpo.slice(motto ? 1 : 0, iFerri),
       ferri_del_mestiere: dopoPrefisso(corpo[iFerri]),
       abilita_lavorative: abilitaLavorative(dopoPrefisso(corpo[iAbilita])),
-      attivita: dopoPrefisso(corpo[iAttivita]),
-      opportunita: opp,
-      speciale: { nome: speciale[1], testo: [speciale[2], ...corpo.slice(i + 1)] },
+      ispirazione: dopoPrefisso(corpo[iIspirazione]),
+      ...(regole.length ? { regole_poteri: regole } : {}),
+      poteri: poteri.map((p) => ({ id: ident(p.nome), nome: p.nome, testo: p.testo, livelli: livelliDa(p.testo) })),
     };
   });
 }
 
 // ------------------------------------------------------------------------------------------------ poteri
+// Livelli e costi di un potere, nei vari modi in cui li scrive il manuale: "| ● (4) | testo |", "● Nome (2): …",
+// "● (2), ●● (4)", "Nome ●● (8): …". "(2+)" (Tefillin) vuol dire 2 più il costo del potere associato.
+function livelliDa(corpo) {
+  const livelli = [];
+  const livello = (pallini, costo, nome) => livelli.push({
+    livello: pallini.length,
+    ...(nome ? { nome: pulisci(nome) } : {}),
+    costo_px: Number(costo.replace("+", "")),
+    ...(costo.endsWith("+") ? { costo_variabile: true } : {}),
+  });
+  for (const r of corpo) {
+    let m;
+    if ((m = /^\| (●+) \((\d+\+?)\) \| /.exec(r))) livello(m[1], m[2]);
+    else if ((m = /^(●+) ([^●(]+?) \((\d+\+?)\)/.exec(r))) livello(m[1], m[3], m[2]);
+    else if (/^●/.test(r)) for (const c of r.matchAll(/(●+) \((\d+\+?)\)/g)) livello(c[1], c[2]);
+    else if ((m = /^(.{2,45}?) (●+)\s+\((\d+\+?)\)/.exec(r))) livello(m[2], m[3], m[1]);
+  }
+  return livelli;
+}
+
 function poteri() {
   const capitolo = sezione("## 10 - Poteri");
   // Le sottosezioni sono titoli ### dentro il capitolo: le righe da un titolo al successivo.
@@ -275,16 +299,9 @@ function poteri() {
   };
   const sezioni = { comune: "### Poteri comuni", passivo: "### Poteri passivi", attivo: "### Poteri attivi", superiore: "### Poteri superiori" };
   return Object.entries(NOMI.poteri).flatMap(([categoria, nomi]) => blocchi(sottosezione(sezioni[categoria]), nomi).map(({ nome, corpo }) => {
-    let solo;
-    const livelli = [];
-    for (const r of corpo) {
-      let m;
-      if ((m = /^solo (?:per )?(bianchi|neri)$/i.exec(r))) solo = m[1].toLowerCase() === "bianchi" ? "bianco" : "nero";
-      else if ((m = /^\| (●+) \((\d+)\) \| /.exec(r))) livelli.push({ livello: m[1].length, costo_px: Number(m[2]) });
-      else if ((m = /^(●+) ([^●(]+?) \((\d+)\)/.exec(r))) livelli.push({ livello: m[1].length, nome: pulisci(m[2]), costo_px: Number(m[3]) });
-      else if (/^●/.test(r)) for (const c of r.matchAll(/(●+) \((\d+)\)/g)) livelli.push({ livello: c[1].length, costo_px: Number(c[2]) });
-      else if ((m = /^(.{2,45}?) (●+)\s+\((\d+)\)/.exec(r))) livelli.push({ livello: m[2].length, nome: pulisci(m[1]), costo_px: Number(m[3]) });
-    }
+    const colore = corpo.map((r) => /^solo (?:per )?(bianchi|neri)$/i.exec(r)).find(Boolean);
+    const solo = colore && (colore[1].toLowerCase() === "bianchi" ? "bianco" : "nero");
+    const livelli = livelliDa(corpo);
     const doppi = livelli.map((l) => l.livello).filter((l, k, tutti) => tutti.indexOf(l) !== k);
     if (doppi.length) throw new Error(`${nome}: livelli doppi (${doppi.join(", ")}): una voce nuova del manuale da aggiungere a NOMI.poteri?`);
     return {

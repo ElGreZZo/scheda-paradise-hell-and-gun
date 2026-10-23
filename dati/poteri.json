@@ -1,7 +1,7 @@
 {
   "$schema": "schemi/poteri.schema.json",
   "fonte": {
-    "manuale": "Pad 1.5",
+    "manuale": "PHaG 1.6",
     "capitolo": "10 - Poteri"
   },
   "generato_da": "strumenti/estrai_dati.mjs",
@@ -97,6 +97,40 @@
       "effetto_combo": true
     },
     {
+      "id": "artista_marziale",
+      "nome": "Artista marziale",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Corpo allenato",
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "nome": "Colpi precisi",
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "nome": "Addestramento marziale",
+          "costo_px": 6
+        },
+        {
+          "livello": 4,
+          "nome": "Pugni d’acciaio",
+          "costo_px": 8
+        },
+        {
+          "livello": 5,
+          "nome": "Difesa marziale",
+          "costo_px": 10
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
       "id": "cecchino_provetto",
       "nome": "Cecchino provetto",
       "categoria": "comune",
@@ -147,6 +181,27 @@
       "effetto_combo": false
     },
     {
+      "id": "lavoratore_ispirato",
+      "nome": "Lavoratore ispirato",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 2
+        },
+        {
+          "livello": 2,
+          "costo_px": 4
+        },
+        {
+          "livello": 3,
+          "costo_px": 6
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
       "id": "leader_di_sgherri",
       "nome": "Leader di Sgherri",
       "categoria": "comune",
@@ -169,6 +224,19 @@
       ],
       "reazione": false,
       "effetto_combo": true
+    },
+    {
+      "id": "non_si_smette_di_lavorare_quando_si_e_stanchi",
+      "nome": "Non si smette di lavorare quando si è stanchi …",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 2
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
     },
     {
       "id": "persona_influente",
@@ -284,6 +352,19 @@
           "livello": 3,
           "nome": "Difesa astuta",
           "costo_px": 12
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
+      "id": "si_smette_di_lavorare_quando_il_lavoro_e_finito",
+      "nome": "Si smette di lavorare quando il lavoro è finito",
+      "categoria": "comune",
+      "livelli": [
+        {
+          "livello": 1,
+          "costo_px": 2
         }
       ],
       "reazione": false,
@@ -569,6 +650,35 @@
       "effetto_combo": false
     },
     {
+      "id": "mutaforma",
+      "nome": "Mutaforma",
+      "categoria": "passivo",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Aspetto umano",
+          "costo_px": 4
+        },
+        {
+          "livello": 2,
+          "nome": "Aspetto animale",
+          "costo_px": 8
+        },
+        {
+          "livello": 3,
+          "nome": "Aspetto immortale",
+          "costo_px": 12
+        },
+        {
+          "livello": 4,
+          "nome": "Aspetto ibrido",
+          "costo_px": 16
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
       "id": "pelle_a_scaglie",
       "nome": "Pelle a scaglie",
       "categoria": "passivo",
@@ -649,7 +759,7 @@
         {
           "livello": 5,
           "nome": "Forma animale",
-          "costo_px": 20
+          "costo_px": 16
         }
       ],
       "reazione": false,
@@ -1175,6 +1285,40 @@
       "effetto_combo": true
     },
     {
+      "id": "guerra",
+      "nome": "Guerra",
+      "categoria": "superiore",
+      "livelli": [
+        {
+          "livello": 1,
+          "nome": "Mente bellica",
+          "costo_px": 5
+        },
+        {
+          "livello": 2,
+          "nome": "Arsenale potenziato",
+          "costo_px": 10
+        },
+        {
+          "livello": 3,
+          "nome": "Colpo mortale",
+          "costo_px": 15
+        },
+        {
+          "livello": 4,
+          "nome": "Arsenale",
+          "costo_px": 20
+        },
+        {
+          "livello": 5,
+          "nome": "Avatar della guerra",
+          "costo_px": 25
+        }
+      ],
+      "reazione": false,
+      "effetto_combo": false
+    },
+    {
       "id": "maestro_della_forgia",
       "nome": "Maestro della forgia",
       "categoria": "superiore",
@@ -1243,34 +1387,38 @@
       "effetto_combo": false
     },
     {
-      "id": "signore_della_guerra",
-      "nome": "Signore della guerra",
+      "id": "tefillin",
+      "nome": "Tefillin",
       "categoria": "superiore",
       "livelli": [
         {
           "livello": 1,
-          "nome": "Mente bellica",
-          "costo_px": 5
+          "nome": "Potere del tefillin",
+          "costo_px": 2,
+          "costo_variabile": true
         },
         {
           "livello": 2,
-          "nome": "Arsenale potenziato",
-          "costo_px": 10
+          "nome": "Osservazione",
+          "costo_px": 4
         },
         {
           "livello": 3,
-          "nome": "Colpo mortale",
-          "costo_px": 15
+          "nome": "Essenza separata",
+          "costo_px": 6,
+          "costo_variabile": true
         },
         {
           "livello": 4,
-          "nome": "Arsenale",
-          "costo_px": 20
+          "nome": "Richiamo",
+          "costo_px": 8,
+          "costo_variabile": true
         },
         {
           "livello": 5,
-          "nome": "Avatar della guerra",
-          "costo_px": 25
+          "nome": "Scopo del tefillin",
+          "costo_px": 10,
+          "costo_variabile": true
         }
       ],
       "reazione": false,

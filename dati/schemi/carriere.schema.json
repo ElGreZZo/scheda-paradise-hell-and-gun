@@ -20,15 +20,18 @@
         "descrizione",
         "ferri_del_mestiere",
         "abilita_lavorative",
-        "attivita",
-        "opportunita",
-        "speciale"
+        "ispirazione",
+        "poteri"
       ],
       "properties": {
         "id": {
           "$ref": "comune.schema.json#/$defs/id"
         },
         "nome": {
+          "$ref": "comune.schema.json#/$defs/testo"
+        },
+        "motto": {
+          "description": "La frase fra « » sotto il nome della carriera.",
           "$ref": "comune.schema.json#/$defs/testo"
         },
         "descrizione": {
@@ -102,25 +105,41 @@
             }
           }
         },
-        "attivita": {
+        "ispirazione": {
+          "description": "Come la carriera guadagna ispirazione.",
           "$ref": "comune.schema.json#/$defs/testo"
         },
-        "opportunita": {
-          "$ref": "comune.schema.json#/$defs/opportunita"
+        "regole_poteri": {
+          "description": "Regole comuni a tutti i poteri della carriera, prima del primo potere.",
+          "$ref": "comune.schema.json#/$defs/testi"
         },
-        "speciale": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "nome",
-            "testo"
-          ],
-          "properties": {
-            "nome": {
-              "$ref": "comune.schema.json#/$defs/testo"
-            },
-            "testo": {
-              "$ref": "comune.schema.json#/$defs/testi"
+        "poteri": {
+          "description": "Poteri di carriera: si comprano solo con questa carriera, molti si attivano con l'ispirazione.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "nome",
+              "testo",
+              "livelli"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "comune.schema.json#/$defs/id"
+              },
+              "nome": {
+                "$ref": "comune.schema.json#/$defs/testo"
+              },
+              "testo": {
+                "description": "Tutte le righe del potere, livelli compresi.",
+                "$ref": "comune.schema.json#/$defs/testi"
+              },
+              "livelli": {
+                "$ref": "comune.schema.json#/$defs/livelli"
+              }
             }
           }
         }
