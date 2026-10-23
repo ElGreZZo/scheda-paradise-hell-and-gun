@@ -66,6 +66,22 @@
   .iniz .v { font: 700 24px/1.2 "Cinzel", serif; }
   .iniz small { color: var(--tenue); font-size: 11px; }
 
+  /* Barra dei tiri */
+  .dock { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin-top: 14px; padding: 10px 12px; background: var(--pannello); border: 1px solid var(--linea); border-radius: 14px; position: sticky; top: 8px; z-index: 5; transition: border-color .2s, box-shadow .2s; }
+  .dock.attiva { border-color: var(--accento); box-shadow: 0 0 0 3px var(--accento-tenue); }
+  .dock .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: var(--tenue); margin-right: 6px; }
+  .soglie { display: flex; align-items: center; gap: 3px; }
+  .soglie button { width: 34px; height: 28px; border-radius: 8px; border: 1px solid var(--linea); background: var(--pannello-2); color: var(--tenue); font: 600 12px "Inter", sans-serif; cursor: pointer; }
+  .soglie button.on { background: var(--accento); border-color: var(--accento); color: #111; }
+  .soglie em { font-style: normal; font-size: 11px; color: var(--accento); margin-left: 6px; min-width: 84px; }
+  .stp { display: flex; align-items: center; gap: 4px; }
+  .stp button { width: 24px; height: 26px; border-radius: 7px; border: 1px solid var(--linea); background: var(--pannello-2); color: var(--testo); cursor: pointer; }
+  .stp b { min-width: 22px; text-align: center; }
+  .mods { display: flex; gap: 6px; flex-wrap: wrap; }
+  .mods button { border: 1px solid var(--linea); background: none; color: var(--tenue); border-radius: 99px; padding: 5px 10px; font: 500 12px "Inter", sans-serif; cursor: pointer; }
+  .mods button.on { border-color: var(--accento); color: var(--accento); background: var(--accento-tenue); }
+  .esito-b { text-align: center; font: 700 13px "Cinzel", serif; letter-spacing: .1em; color: #e3c26f; margin-bottom: 6px; }
+
   h2 { font: 600 11px/1 "Inter", sans-serif; letter-spacing: .16em; text-transform: uppercase; color: var(--tenue); margin: 18px 0 10px; display: flex; align-items: center; gap: 10px; }
   h2::after { content: ""; flex: 1; height: 1px; background: var(--linea); }
 
@@ -185,7 +201,7 @@
     <button data-p="3"><span>🎒</span>Zaino</button>
     <button data-p="4"><span>📜</span>Origini</button>
     <div class="spazio"></div>
-    <div class="opt">Tiri<b>Pubblici</b></div>
+    <div class="opt">Tiri<b data-out="gm">pubblico</b></div>
   </nav>
 
   <div class="corpo">
@@ -202,6 +218,15 @@
         <div class="seg forma"><button class="on">Immortale</button><button>Mortale</button></div>
       </div>
     </header>
+
+    <!-- Barra dei tiri: resta uguale dopo ogni tiro, e resta in vista mentre scorri -->
+    <div class="dock" data-barra>
+      <div class="seg"><button data-gm="0">Pubblico</button><button data-gm="1">Solo GM</button></div>
+      <div class="soglie"><span class="lbl">Soglia</span><button data-soglia="2">2+</button><button data-soglia="3">3+</button><button data-soglia="4">4+</button><button data-soglia="5">5+</button><button data-soglia="6">6+</button><em data-out="soglia-nome"></em></div>
+      <div class="stp"><span class="lbl">Difficoltà</span><button data-meno="diff">−</button><b data-out="diff">1</b><button data-piu="diff">+</button></div>
+      <div class="stp"><span class="lbl">Dadi ±</span><button data-meno="dadi">−</button><b data-out="dadi">0</b><button data-piu="dadi">+</button></div>
+      <div class="mods"><button data-mod="aspetto">✦ Aspetto alieno · +1 difesa</button><button data-mod="stordito">Stordito · −1</button><button data-mod="scosso">Scosso · −1</button></div>
+    </div>
 
     <!-- Scheda -->
     <section class="pag on" data-p="1">
@@ -226,9 +251,9 @@
 
       <h2>Armi</h2>
       <div class="armi">
-        <div class="arma"><div class="top"><div><b>Spadone medievale</b><div class="tipo">Armi da mischia grandi · Mischia</div></div><button class="btn">⚔ 5D6</button></div>
+        <div class="arma"><div class="top"><div><b>Spadone medievale</b><div class="tipo">Armi da mischia grandi · Mischia</div></div><button class="btn" data-base="5" data-ambito="attacco" data-prefisso="⚔ ">⚔ 5D6</button></div>
           <div class="stat"><div><small>Danno</small><span>3</span></div><div><small>Distanza</small><span>1</span></div><div><small>Distrutt.</small><span>●●</span></div><div><small>Munizioni</small><span>—</span></div></div></div>
-        <div class="arma"><div class="top"><div><b>Pistola</b><div class="tipo">Pistola · Mira</div></div><button class="btn">⚔ 2D6</button></div>
+        <div class="arma"><div class="top"><div><b>Pistola</b><div class="tipo">Pistola · Mira</div></div><button class="btn" data-base="2" data-ambito="attacco" data-prefisso="⚔ ">⚔ 2D6</button></div>
           <div class="stat"><div><small>Danno</small><span>1</span></div><div><small>Distanza</small><span>3</span></div><div><small>Distrutt.</small><span>●</span></div><div><small>Munizioni</small><span>1/1</span></div></div></div>
       </div>
     </section>
@@ -281,13 +306,14 @@
 
 <aside class="chat">
   <small>Chat · esempio di tiro</small>
-  <div class="tpl">
-    <div class="t2"><b>Mischia · Spadone</b><small>Ezekiel · 5D6 · successo 4+ · difficoltà 1</small></div>
+  <div class="tpl" data-chat>
+    <div class="t2"><b>Mischia · Spadone</b><small><span data-out="formula"></span><br>soglia <span data-out="soglia"></span> · difficoltà <span data-out="diff"></span> · <span data-out="gm"></span></small></div>
     <div class="c2">
-      <div class="dadi"><b class="s">6</b><b class="s">5</b><b class="s">4</b><b>2</b><b>1</b></div>
-      <div class="grandi"><div><b>3</b><small>successi</small></div><div><b>2</b><small>esuberi</small></div><div><b>3</b><small>danno</small></div></div>
+      <div class="dadi" data-out="dadi-chat"></div>
+      <div class="grandi"><div><b data-out="successi">3</b><small>successi</small></div><div><b data-out="esuberi">2</b><small>esuberi</small></div><div><b>3</b><small>danno</small></div></div>
+      <div class="esito-b" data-out="esito"></div>
       <div class="opp">
-        <div><span>Non letale</span><i>1</i></div><div><span>Rimuovere oggetto</span><i>1</i></div><div><span>Movimento</span><i>1</i></div><div><span>Distruttività (spadone)</span><i>1</i></div><div><span>Stordire</span><i>2</i></div><div><span>Danno extra</span><i>2</i></div>
+        <div data-costo="1"><span>Non letale</span><i>1</i></div><div data-costo="1"><span>Rimuovere oggetto</span><i>1</i></div><div data-costo="1"><span>Movimento</span><i>1</i></div><div data-costo="1"><span>Distruttività (spadone)</span><i>1</i></div><div data-costo="2"><span>Stordire</span><i>2</i></div><div data-costo="2"><span>Danno extra</span><i>2</i></div>
       </div>
     </div>
   </div>
@@ -300,10 +326,10 @@
     const v = +el.dataset.v, m = +el.dataset.m;
     el.innerHTML = Array.from({ length: m }, (_, i) => `<span class="${i < v ? "f" : ""}"></span>`).join("");
   });
-  const abilita = [["Mischia","Possanza",2,5,1],["Mira","Agilità",0,2,1],["Difesa","Agilità + aspetto alieno",2,5,1],["Demoralizzare","Astuzia",0,3,1],
+  const abilita = [["Mischia","Possanza",2,5,1],["Mira","Agilità",0,2,1],["Difesa","Agilità + aspetto alieno",2,4,1],["Demoralizzare","Astuzia",0,3,1],
     ["Atletica","Possanza",1,4],["Percezione","Astuzia",2,5],["Sopravvivenza","Astuzia",2,5],["Carpenteria","Astuzia",0,3],["Cavalcare","Agilità",0,2],["Consapevolezza","Potenza",0,5],["Contrattare","Astuzia",0,3],["Forgiare","Astuzia",0,3],["Furtività","Agilità",0,2],["Gioco","Astuzia o Possanza",0,3],["Grazia","Agilità",0,2],["Legge","Astuzia",0,3],["Ingannare","Astuzia",0,3],["Intimidire","Astuzia",0,3],["Istruzione","Astuzia",0,3],["Meccanica","Astuzia",0,3],["Medicina","Astuzia",0,3],["Pianificare","Astuzia",0,3],["Socialità","Astuzia",0,3]];
   document.getElementById("tessere").innerHTML = abilita.map(([n, k, v, pool, comb]) =>
-    `<div class="t ${v ? "" : "zero"} ${comb ? "comb" : ""}"><span class="n">${n}</span><span class="pool">${pool}D6</span><span class="k"><i class="p" data-v="${v}" data-m="5"></i> · ${k}</span></div>`).join("");
+    `<div class="t ${v ? "" : "zero"} ${comb ? "comb" : ""}"><span class="n">${n}</span><span class="pool" data-base="${pool}" data-ambito="${n === "Difesa" ? "difesa" : comb ? "attacco" : "abilita"}">${pool}D6</span><span class="k"><i class="p" data-v="${v}" data-m="5"></i> · ${k}</span></div>`).join("");
   pallini();
   document.querySelectorAll(".rail button").forEach(b => b.onclick = () => {
     document.querySelectorAll(".rail button").forEach(x => x.classList.toggle("on", x === b));
@@ -314,5 +340,6 @@
     if (b.dataset.c) document.querySelector(".scheda").dataset.colore = b.dataset.c;
   });
 </script>
+<script src="tiri.js"></script>
 </body>
 </html>

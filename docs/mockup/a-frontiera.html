@@ -50,6 +50,19 @@
   .soglia button { border: 0; background: none; width: 24px; height: 26px; cursor: pointer; color: var(--ruggine); font-weight: 700; }
   .soglia b { min-width: 74px; text-align: center; }
 
+  /* Barra dei tiri */
+  .tiri { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: flex-end; padding: 10px 22px 12px; background: var(--carta-2); border-bottom: 1px solid var(--bordo); transition: background .2s; }
+  .tiri.attiva { background: #f5dccd; }
+  .tiri label { display: block; font: 700 10px/1 "Alegreya Sans SC", sans-serif; letter-spacing: .12em; color: var(--tenue); margin-bottom: 5px; }
+  .tiri label span { color: var(--ruggine); letter-spacing: .04em; }
+  .num-step { display: inline-flex; align-items: center; border: 1px solid var(--bordo); border-radius: 8px; background: var(--riquadro); }
+  .num-step button { border: 0; background: none; width: 26px; height: 28px; color: var(--ruggine); font-weight: 700; cursor: pointer; }
+  .num-step b { min-width: 24px; text-align: center; }
+  .chipset { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chipset button { border: 1px solid var(--bordo); background: var(--riquadro); border-radius: 99px; padding: 5px 10px; font: 500 13px "Alegreya Sans", sans-serif; color: var(--tenue); cursor: pointer; }
+  .chipset button i { font-style: normal; font-weight: 700; margin-left: 2px; }
+  .chipset button.on { background: var(--inchiostro); border-color: var(--inchiostro); color: #fff; }
+
   .pagina { display: none; padding: 18px 22px 22px; }
   .pagina.on { display: block; }
 
@@ -188,11 +201,16 @@
     <div class="linguette" data-gruppo="a">
       <button class="on" data-p="1">Personaggio</button><button data-p="2">Poteri</button><button data-p="3">Equipaggiamento</button><button data-p="4">Archetipo e carriera</button>
     </div>
-    <div class="opzioni">
-      <div class="seg"><button class="on">Pubblico</button><button>Solo GM</button></div>
-      <div class="soglia" title="Ogni vantaggio abbassa la soglia di 1, ogni svantaggio la alza"><button>−</button><b>Successo 4+</b><button>+</button></div>
-    </div>
   </nav>
+
+  <!-- Barra dei tiri: resta uguale dopo ogni tiro -->
+  <div class="tiri" data-barra>
+    <div><label>Tiri</label><div class="seg"><button data-gm="0">Pubblico</button><button data-gm="1">Solo GM</button></div></div>
+    <div><label>Soglia · <span data-out="soglia-nome"></span></label><div class="seg"><button data-soglia="2">2+</button><button data-soglia="3">3+</button><button data-soglia="4">4+</button><button data-soglia="5">5+</button><button data-soglia="6">6+</button></div></div>
+    <div><label>Difficoltà</label><div class="num-step"><button data-meno="diff">−</button><b data-out="diff">1</b><button data-piu="diff">+</button></div></div>
+    <div><label>Dadi ±</label><div class="num-step"><button data-meno="dadi">−</button><b data-out="dadi">0</b><button data-piu="dadi">+</button></div></div>
+    <div><label>Modificatori</label><div class="chipset"><button data-mod="aspetto">Aspetto alieno <i>+1 difesa</i></button><button data-mod="stordito">Stordito <i>−1</i></button><button data-mod="scosso">Scosso <i>−1</i></button></div></div>
+  </div>
 
   <!-- Pagina 1 -->
   <section class="pagina on" data-p="1">
@@ -222,10 +240,10 @@
         <div class="box">
           <h3>Attacco e difesa <small>riserva = caratteristica + abilità</small></h3>
           <div class="comb">
-            <div class="cb"><span class="pool">5D6</span><div class="n">Mischia</div><i class="p" data-v="2" data-m="5"></i><div class="nt">Possanza</div></div>
-            <div class="cb"><span class="pool">2D6</span><div class="n">Mira</div><i class="p" data-v="0" data-m="5"></i><div class="nt">Agilità</div></div>
-            <div class="cb"><span class="pool">5D6</span><div class="n">Difesa</div><i class="p" data-v="2" data-m="5"></i><div class="nt">Agilità · +1D6 aspetto alieno</div></div>
-            <div class="cb"><span class="pool">3D6</span><div class="n">Demoralizzare</div><i class="p" data-v="0" data-m="5"></i><div class="nt">Astuzia</div></div>
+            <div class="cb"><span class="pool" data-base="5" data-ambito="attacco">5D6</span><div class="n">Mischia</div><i class="p" data-v="2" data-m="5"></i><div class="nt">Possanza</div></div>
+            <div class="cb"><span class="pool" data-base="2" data-ambito="attacco">2D6</span><div class="n">Mira</div><i class="p" data-v="0" data-m="5"></i><div class="nt">Agilità</div></div>
+            <div class="cb"><span class="pool" data-base="4" data-ambito="difesa">5D6</span><div class="n">Difesa</div><i class="p" data-v="2" data-m="5"></i><div class="nt">Agilità · +1D6 aspetto alieno</div></div>
+            <div class="cb"><span class="pool" data-base="3" data-ambito="attacco">3D6</span><div class="n">Demoralizzare</div><i class="p" data-v="0" data-m="5"></i><div class="nt">Astuzia</div></div>
           </div>
         </div>
 
@@ -233,8 +251,8 @@
           <h3>Armi <small>D1 danno · D2 distanza · D3 distruttività</small></h3>
           <table>
             <tr><th>Nome</th><th>Attacco</th><th class="c">Danno</th><th>Distanza</th><th class="c">Distr.</th><th>Munizioni</th><th></th></tr>
-            <tr><td><b>Spadone medievale</b><br><span class="tag">Armi da mischia grandi</span></td><td>Mischia 5D6</td><td class="c">3</td><td>1 · Contatto</td><td class="c"><i class="p" data-v="2" data-m="2"></i></td><td>—</td><td class="dado" style="opacity:1">🎲</td></tr>
-            <tr><td><b>Pistola</b><br><span class="tag">Pistola</span></td><td>Mira 2D6</td><td class="c">1</td><td>3 · Distante</td><td class="c"><i class="p" data-v="1" data-m="1"></i></td><td><span class="mun"><i></i></span> 1/1</td><td class="dado" style="opacity:1">🎲</td></tr>
+            <tr><td><b>Spadone medievale</b><br><span class="tag">Armi da mischia grandi</span></td><td data-base="5" data-ambito="attacco" data-prefisso="Mischia ">Mischia 5D6</td><td class="c">3</td><td>1 · Contatto</td><td class="c"><i class="p" data-v="2" data-m="2"></i></td><td>—</td><td class="dado" style="opacity:1">🎲</td></tr>
+            <tr><td><b>Pistola</b><br><span class="tag">Pistola</span></td><td data-base="2" data-ambito="attacco" data-prefisso="Mira ">Mira 2D6</td><td class="c">1</td><td>3 · Distante</td><td class="c"><i class="p" data-v="1" data-m="1"></i></td><td><span class="mun"><i></i></span> 1/1</td><td class="dado" style="opacity:1">🎲</td></tr>
           </table>
           <div class="agg">+ Aggiungi arma · Scegli dal manuale</div>
         </div>
@@ -337,18 +355,18 @@
 
 <aside class="chat">
   <small>Chat · esempio di tiro</small>
-  <div class="tpl">
-    <div class="t">Ezekiel · Mischia<small>Spadone medievale · 5D6 · successo 4+</small></div>
+  <div class="tpl" data-chat>
+    <div class="t">Ezekiel · Mischia con lo spadone<small><span data-out="formula"></span><br>soglia <span data-out="soglia"></span> · difficoltà <span data-out="diff"></span> · <span data-out="gm"></span></small></div>
     <div class="c">
-      <div class="dadi"><b class="s">6</b><b class="s">5</b><b class="s">4</b><b>2</b><b class="uno">1</b></div>
-      <div class="esito"><span>Successi <b>3</b></span><span>Difficoltà 1</span><span>Esuberi <b>2</b></span></div>
+      <div class="dadi" data-out="dadi-chat"></div>
+      <div class="esito"><span>Successi <b data-out="successi">3</b></span><span data-out="esito"></span><span>Esuberi <b data-out="esuberi">2</b></span></div>
       <div class="opp">
-        <div><span>Non letale</span><span>1</span></div>
-        <div><span>Rimuovere oggetto</span><span>1</span></div>
-        <div><span>Movimento</span><span>1</span></div>
-        <div><span>Distruttività <small>(−1 con quest'arma)</small></span><span>1</span></div>
-        <div><span>Stordire</span><span>2</span></div>
-        <div><span>Danno extra</span><span>2</span></div>
+        <div data-costo="1"><span>Non letale</span><span>1</span></div>
+        <div data-costo="1"><span>Rimuovere oggetto</span><span>1</span></div>
+        <div data-costo="1"><span>Movimento</span><span>1</span></div>
+        <div data-costo="1"><span>Distruttività <small>(−1 con quest'arma)</small></span><span>1</span></div>
+        <div data-costo="2"><span>Stordire</span><span>2</span></div>
+        <div data-costo="2"><span>Danno extra</span><span>2</span></div>
       </div>
       <div style="font-size:12px;color:var(--tenue);margin-top:6px">Danno 3 · Contro un immortale: +1 esubero (Una guerra infinita)</div>
     </div>
@@ -369,7 +387,8 @@
     document.querySelectorAll(".linguette button").forEach(x => x.classList.toggle("on", x === b));
     document.querySelectorAll(".pagina").forEach(p => p.classList.toggle("on", p.dataset.p === b.dataset.p));
   });
-  document.querySelectorAll(".forma button, .seg button").forEach(b => b.onclick = () => b.parentElement.querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b)));
+  document.querySelectorAll(".forma button").forEach(b => b.onclick = () => b.parentElement.querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b)));
 </script>
+<script src="tiri.js"></script>
 </body>
 </html>

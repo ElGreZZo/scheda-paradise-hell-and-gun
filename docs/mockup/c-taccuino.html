@@ -82,6 +82,17 @@
   .anteprima .pool { font: 600 26px "IBM Plex Mono"; color: var(--accento); }
   .anteprima .det { font-size: 12px; color: var(--tenue); grid-column: 1; }
   .anteprima button { grid-row: 1 / span 2; grid-column: 2; border: 0; border-radius: 10px; background: var(--accento); color: #fff; font: 600 14px "IBM Plex Sans"; padding: 12px 18px; cursor: pointer; }
+  /* Barra dei tiri */
+  .tiri { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; background: var(--carta); border: 1px solid var(--linea); border-radius: var(--r); padding: 8px 10px; transition: background .2s, border-color .2s; }
+  .tiri.attiva { border-color: var(--accento); background: var(--accento-chiaro); }
+  .tiri .seg.gm { width: 170px; }
+  .tiri .seg.soglia { width: 230px; }
+  .tiri .mod { padding: 3px 8px; background: var(--carta); }
+  .nome-soglia { font-size: 12px; color: var(--accento); min-width: 86px; }
+  .toggles { display: flex; gap: 6px; flex-wrap: wrap; }
+  .toggles button { border: 1px solid var(--linea); background: var(--carta); border-radius: 8px; padding: 5px 9px; font: 500 12px "IBM Plex Sans", sans-serif; color: var(--tenue); cursor: pointer; }
+  .toggles button.on { background: var(--testo); border-color: var(--testo); color: #fff; }
+
   .promemoria { margin-top: 10px; font-size: 12px; color: var(--tenue); display: flex; flex-direction: column; gap: 4px; }
   .promemoria div::before { content: "• "; color: var(--accento); }
 
@@ -169,7 +180,6 @@
     </div>
     <div class="dx">
       <span class="switch" id="mortale"><i></i>Forma mortale</span>
-      <span class="icona" title="Tiri solo al GM">👁</span>
       <span class="icona" title="Modifica">✎</span>
     </div>
   </header>
@@ -184,6 +194,15 @@
     <div class="r"><div><div class="lbl">Anime</div><div class="v">1</div></div><div class="step"><button>−</button><button>+</button></div><div class="barra"><div style="width:3%;background:#6b4fb0"></div></div></div>
     <div class="r"><div><div class="lbl">Cartucciera</div><div class="v">12<small>/40</small></div></div><div class="step"><button>−</button><button>+</button></div><div class="barra"><div style="width:30%;background:#c9a646"></div></div></div>
     <button class="iniz">Iniziativa<span>2D6+3</span></button>
+    <!-- Barra dei tiri: vale per tutti i tiri della scheda e resta uguale dopo ogni tiro -->
+    <div class="tiri" data-barra>
+      <div class="seg gm"><button data-gm="0">Pubblico</button><button data-gm="1">Solo GM</button></div>
+      <div class="seg soglia"><button data-soglia="2">2+</button><button data-soglia="3">3+</button><button data-soglia="4">4+</button><button data-soglia="5">5+</button><button data-soglia="6">6+</button></div>
+      <span class="nome-soglia" data-out="soglia-nome"></span>
+      <div class="mod"><span>Difficoltà</span><div><b data-out="diff">1</b><span class="step"><button data-meno="diff">−</button><button data-piu="diff">+</button></span></div></div>
+      <div class="mod"><span>Dadi ±</span><div><b data-out="dadi">0</b><span class="step"><button data-meno="dadi">−</button><button data-piu="dadi">+</button></span></div></div>
+      <div class="toggles"><button data-mod="aspetto">Aspetto alieno +1 difesa</button><button data-mod="stordito">Stordito −1</button><button data-mod="scosso">Scosso −1</button></div>
+    </div>
   </div>
 
   <!-- In gioco -->
@@ -194,13 +213,7 @@
         <div class="campo"><label>Caratteristica</label>
           <div class="seg" id="car"><button class="on">Possanza<b>3</b></button><button>Agilità<b>2</b></button><button>Astuzia<b>3</b></button><button>Potenza<b>5</b></button></div></div>
         <div class="campo"><label>Abilità</label><div class="select"><span>Mischia <i class="p" data-v="2" data-m="5"></i></span><span>▾</span></div></div>
-        <div class="campo"><label>Modificatori</label>
-          <div class="mods">
-            <div class="mod"><span>Vantaggi</span><div><b>0</b><span class="step"><button>−</button><button>+</button></span></div></div>
-            <div class="mod"><span>Svantaggi</span><div><b>0</b><span class="step"><button>−</button><button>+</button></span></div></div>
-            <div class="mod"><span>Difficoltà</span><div><b>1</b><span class="step"><button>−</button><button>+</button></span></div></div>
-          </div></div>
-        <div class="anteprima"><div class="pool">5D6 · 4+</div><div class="det">un vantaggio annulla uno svantaggio · da 2+ a 6+</div><button>Tira</button></div>
+        <div class="anteprima"><div class="pool"><span data-base="5" data-ambito="attacco">5D6</span> · <span data-out="soglia">4+</span></div><div class="det">difficoltà <span data-out="diff">1</span> · soglia, difficoltà e dadi dalla barra in alto</div><button>Tira</button></div>
         <div class="promemoria">
           <div>Mana: 1 punto per ritirare un dado, una volta per azione</div>
           <div>Contro un immortale: +1 esubero negli attacchi (Una guerra infinita)</div>
@@ -211,13 +224,13 @@
       <div class="stack">
         <div class="card">
           <h3>Attacchi</h3>
-          <div class="azione"><span class="n">Spadone medievale <span class="etichetta">Mischia</span></span><button class="bt">5D6</button><span class="d">danno 3 · distanza 1 · distruttività ●●</span></div>
-          <div class="azione"><span class="n">Pistola <span class="etichetta">Mira</span></span><button class="bt">2D6</button><span class="d">danno 1 · distanza 3 · ● · 1/1 colpi</span></div>
+          <div class="azione"><span class="n">Spadone medievale <span class="etichetta">Mischia</span></span><button class="bt" data-base="5" data-ambito="attacco">5D6</button><span class="d">danno 3 · distanza 1 · distruttività ●●</span></div>
+          <div class="azione"><span class="n">Pistola <span class="etichetta">Mira</span></span><button class="bt" data-base="2" data-ambito="attacco">2D6</button><span class="d">danno 1 · distanza 3 · ● · 1/1 colpi</span></div>
         </div>
         <div class="card">
           <h3>Reazioni e difesa</h3>
-          <div class="azione"><span class="n">Difesa</span><button class="bt">5D6</button><span class="d">Agilità 2 + Difesa 2 + Aspetto alieno 1</span></div>
-          <div class="azione"><span class="n">Demoralizzare</span><button class="bt">3D6</button><span class="d">Astuzia + Demoralizzare</span></div>
+          <div class="azione"><span class="n">Difesa</span><button class="bt" data-base="4" data-ambito="difesa">5D6</button><span class="d">Agilità 2 + Difesa 2 + Aspetto alieno 1</span></div>
+          <div class="azione"><span class="n">Demoralizzare</span><button class="bt" data-base="3" data-ambito="attacco">3D6</button><span class="d">Astuzia + Demoralizzare</span></div>
         </div>
         <div class="card">
           <h3>Poteri attivi</h3>
@@ -286,12 +299,12 @@
 
 <aside class="chat">
   <small>Chat · esempio di tiro</small>
-  <div class="tpl">
-    <div class="t"><b>Ezekiel attacca con lo spadone</b><small>Possanza 3 + Mischia 2 = 5D6 · 4+ · diff. 1</small></div>
+  <div class="tpl" data-chat>
+    <div class="t"><b>Ezekiel attacca con lo spadone</b><small><span data-out="formula"></span> · soglia <span data-out="soglia"></span> · diff. <span data-out="diff"></span> · <span data-out="gm"></span></small></div>
     <div class="c">
-      <div class="dadi"><b class="s">6</b><b class="s">5</b><b class="s">4</b><b>2</b><b>1</b></div>
-      <div class="riass"><b>2</b><span>esuberi · 3 successi · danno 3</span></div>
-      <div class="chips"><span>Non letale<i>1</i></span><span>Rimuovere oggetto<i>1</i></span><span>Movimento<i>1</i></span><span>Distruttività<i>1</i></span><span>Stordire<i>2</i></span><span>Danno extra<i>2</i></span></div>
+      <div class="dadi" data-out="dadi-chat"></div>
+      <div class="riass"><b data-out="esuberi">2</b><span>esuberi · <span data-out="successi">3</span> successi · <span data-out="esito"></span> · danno 3</span></div>
+      <div class="chips"><span data-costo="1">Non letale<i>1</i></span><span data-costo="1">Rimuovere oggetto<i>1</i></span><span data-costo="1">Movimento<i>1</i></span><span data-costo="1">Distruttività<i>1</i></span><span data-costo="2">Stordire<i>2</i></span><span data-costo="2">Danno extra<i>2</i></span></div>
     </div>
   </div>
 </aside>
@@ -301,7 +314,7 @@
   // Solo per il mockup.
   const abilita = [["Atletica","Possanza",1,4],["Carpenteria","Astuzia",0,3],["Cavalcare","Agilità",0,2],["Consapevolezza","Potenza",0,5],["Contrattare","Astuzia",0,3],["Demoralizzare","Astuzia",0,3],["Difesa","Agilità",2,5],["Forgiare","Astuzia",0,3],["Furtività","Agilità",0,2],["Gioco","Astuzia o Possanza",0,3],["Grazia","Agilità",0,2],["Ingannare","Astuzia",0,3],["Intimidire","Astuzia",0,3],["Istruzione","Astuzia",0,3],["Legge","Astuzia",0,3],["Meccanica","Astuzia",0,3],["Medicina","Astuzia",0,3],["Mira","Agilità",0,2],["Mischia","Possanza",2,5],["Percezione","Astuzia",2,5],["Pianificare","Astuzia",0,3],["Socialità","Astuzia",0,3],["Sopravvivenza","Astuzia",2,5]];
   document.getElementById("tab-abilita").insertAdjacentHTML("beforeend", abilita.map(([n, c, v, p]) =>
-    `<tr class="${v ? "" : "zero"}"><td>${n}</td><td>${c}</td><td><i class="p" data-v="${v}" data-m="5"></i></td><td class="num"><button class="bt">${p}D6</button></td></tr>`).join(""));
+    `<tr class="${v ? "" : "zero"}"><td>${n}</td><td>${c}</td><td><i class="p" data-v="${v}" data-m="5"></i></td><td class="num"><button class="bt" data-base="${n === "Difesa" ? p - 1 : p}" data-ambito="${n === "Difesa" ? "difesa" : ["Mischia", "Mira", "Demoralizzare"].includes(n) ? "attacco" : "abilita"}">${p}D6</button></td></tr>`).join(""));
   document.querySelectorAll(".p").forEach(el => {
     const v = +el.dataset.v, m = +el.dataset.m;
     el.innerHTML = Array.from({ length: m }, (_, i) => `<span class="${i < v ? "f" : ""}"></span>`).join("");
@@ -313,5 +326,6 @@
   document.querySelectorAll(".seg button").forEach(b => b.onclick = () => b.parentElement.querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b)));
   document.getElementById("mortale").onclick = e => e.currentTarget.classList.toggle("on");
 </script>
+<script src="tiri.js"></script>
 </body>
 </html>

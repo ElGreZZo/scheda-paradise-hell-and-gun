@@ -40,9 +40,17 @@
   .indice { position: sticky; top: 52px; z-index: 1; background: var(--carta-2); border-bottom: 1px solid var(--linea); display: flex; gap: 2px; padding: 0 18px; font: 500 12px "Oswald"; letter-spacing: .12em; text-transform: uppercase; }
   .indice a { padding: 7px 10px; color: var(--tenue); text-decoration: none; }
   .indice a:hover { color: var(--rosso); }
-  .indice .op { margin-left: auto; display: flex; gap: 6px; align-items: center; }
-  .indice .op span { padding: 2px 8px; border: 1px solid var(--linea); border-radius: 3px; cursor: pointer; }
-  .indice .op span.on { background: var(--nero); color: var(--bianco); border-color: var(--nero); }
+  .indice { flex-wrap: wrap; }
+  /* Barra dei tiri: seconda riga dell'indice, resta in vista mentre scorri */
+  .tiri { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; padding: 6px 0 8px; border-top: 1px solid var(--linea); transition: background .2s; }
+  .tiri.attiva { background: #e7c9b4; box-shadow: 0 0 0 100vmax #e7c9b4; clip-path: inset(0 -100vmax); }
+  .tiri .gr { display: inline-flex; gap: 3px; align-items: center; }
+  .tiri em { font-style: normal; color: var(--tenue); margin-right: 4px; }
+  .tiri .gr > span { padding: 2px 8px; border: 1px solid var(--linea); border-radius: 3px; cursor: pointer; background: var(--bianco); color: var(--nero); }
+  .tiri .gr > span.on { background: var(--nero); color: var(--bianco); border-color: var(--nero); }
+  .tiri b { min-width: 18px; text-align: center; color: var(--nero); }
+  .tiri i { font-style: normal; color: var(--rosso); margin-left: 6px; letter-spacing: .06em; min-width: 96px; }
+  .esito-d { text-align: center; font: 600 13px "Oswald"; letter-spacing: .3em; text-transform: uppercase; color: var(--rosso); margin-bottom: 6px; }
 
   details { margin: 0 18px; border-bottom: 1px solid var(--linea); }
   summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 14px 0 10px; }
@@ -153,7 +161,13 @@
     <div class="forma"><i></i>Mortale</div>
   </div>
   <nav class="indice"><a href="#s1">Abilità</a><a href="#s2">Combattimento</a><a href="#s3">Poteri</a><a href="#s4">Equipaggiamento</a><a href="#s5">Origini</a>
-    <span class="op"><span class="on">Pubblico</span><span>GM</span><span>Successo 4+ ±</span></span></nav>
+    <div class="tiri" data-barra>
+      <span class="gr"><span data-gm="0">Pubblico</span><span data-gm="1">Solo GM</span></span>
+      <span class="gr"><em>Soglia</em><span data-soglia="2">2+</span><span data-soglia="3">3+</span><span data-soglia="4">4+</span><span data-soglia="5">5+</span><span data-soglia="6">6+</span><i data-out="soglia-nome"></i></span>
+      <span class="gr"><em>Difficoltà</em><span data-meno="diff">−</span><b data-out="diff">1</b><span data-piu="diff">+</span></span>
+      <span class="gr"><em>Dadi</em><span data-meno="dadi">−</span><b data-out="dadi">0</b><span data-piu="dadi">+</span></span>
+      <span class="gr"><span data-mod="aspetto">Aspetto alieno +1 dif.</span><span data-mod="stordito">Stordito −1</span><span data-mod="scosso">Scosso −1</span></span>
+    </div></nav>
 
   <header class="manifesto">
     <div class="sopra">★ Paradise · Hell · Guns ★</div>
@@ -166,17 +180,17 @@
     <div class="dentro gruppi">
       <div class="col">
         <div class="gruppo"><div class="h"><b>Possanza</b><span class="tot">3</span><span class="det"><i class="p" data-v="3" data-m="6"></i> PF</span></div>
-          <div class="ab"><span class="n">Atletica</span><i class="p" data-v="1" data-m="5"></i><span class="pool">4D6</span></div>
-          <div class="ab comb"><span class="n">Mischia</span><i class="p" data-v="2" data-m="5"></i><span class="pool">5D6</span></div>
-          <div class="ab zero"><span class="n">Gioco <small>per gli sport</small></span><i class="p" data-v="0" data-m="5"></i><span class="pool">3D6</span></div></div>
+          <div class="ab"><span class="n">Atletica</span><i class="p" data-v="1" data-m="5"></i><span class="pool" data-base="4">4D6</span></div>
+          <div class="ab comb"><span class="n">Mischia</span><i class="p" data-v="2" data-m="5"></i><span class="pool" data-base="5" data-ambito="attacco">5D6</span></div>
+          <div class="ab zero"><span class="n">Gioco <small>per gli sport</small></span><i class="p" data-v="0" data-m="5"></i><span class="pool" data-base="3">3D6</span></div></div>
         <div class="gruppo"><div class="h"><b>Agilità</b><span class="tot">2</span><span class="det"><i class="p" data-v="2" data-m="6"></i> Schivare</span></div>
-          <div class="ab zero"><span class="n">Cavalcare</span><i class="p" data-v="0" data-m="5"></i><span class="pool">2D6</span></div>
-          <div class="ab comb"><span class="n">Difesa <small>+1D6 aspetto alieno</small></span><i class="p" data-v="2" data-m="5"></i><span class="pool">5D6</span></div>
-          <div class="ab zero"><span class="n">Furtività</span><i class="p" data-v="0" data-m="5"></i><span class="pool">2D6</span></div>
-          <div class="ab zero"><span class="n">Grazia</span><i class="p" data-v="0" data-m="5"></i><span class="pool">2D6</span></div>
-          <div class="ab zero comb"><span class="n">Mira</span><i class="p" data-v="0" data-m="5"></i><span class="pool">2D6</span></div></div>
+          <div class="ab zero"><span class="n">Cavalcare</span><i class="p" data-v="0" data-m="5"></i><span class="pool" data-base="2">2D6</span></div>
+          <div class="ab comb"><span class="n">Difesa <small>+1D6 aspetto alieno</small></span><i class="p" data-v="2" data-m="5"></i><span class="pool" data-base="4" data-ambito="difesa">5D6</span></div>
+          <div class="ab zero"><span class="n">Furtività</span><i class="p" data-v="0" data-m="5"></i><span class="pool" data-base="2">2D6</span></div>
+          <div class="ab zero"><span class="n">Grazia</span><i class="p" data-v="0" data-m="5"></i><span class="pool" data-base="2">2D6</span></div>
+          <div class="ab zero comb"><span class="n">Mira</span><i class="p" data-v="0" data-m="5"></i><span class="pool" data-base="2" data-ambito="attacco">2D6</span></div></div>
         <div class="gruppo"><div class="h"><b>Potenza</b><span class="tot">5</span><span class="det"><i class="p" data-v="2" data-m="6"></i><i class="p inc" data-v="3" data-m="4"></i> Mana</span></div>
-          <div class="ab zero"><span class="n">Consapevolezza</span><i class="p" data-v="0" data-m="5"></i><span class="pool">5D6</span></div></div>
+          <div class="ab zero"><span class="n">Consapevolezza</span><i class="p" data-v="0" data-m="5"></i><span class="pool" data-base="5">5D6</span></div></div>
       </div>
       <div class="col">
         <div class="gruppo" id="astuzia"><div class="h"><b>Astuzia</b><span class="tot">3</span><span class="det"><i class="p" data-v="2" data-m="6"></i><i class="p inc" data-v="1" data-m="4"></i> Iniziativa</span></div></div>
@@ -187,15 +201,15 @@
   <details open id="s2"><summary><h2>Combattimento</h2></summary>
     <div class="dentro">
       <div class="comb4">
-        <div><div class="n">Mischia</div><div class="pool">5D6</div><small>Possanza + ●●</small></div>
-        <div><div class="n">Mira</div><div class="pool">2D6</div><small>Agilità + ○</small></div>
-        <div><div class="n">Difesa</div><div class="pool">5D6</div><small>Agilità + ●● + aspetto alieno</small></div>
-        <div><div class="n">Demoralizzare</div><div class="pool">3D6</div><small>Astuzia + ○</small></div>
+        <div><div class="n">Mischia</div><div class="pool" data-base="5" data-ambito="attacco">5D6</div><small>Possanza + ●●</small></div>
+        <div><div class="n">Mira</div><div class="pool" data-base="2" data-ambito="attacco">2D6</div><small>Agilità + ○</small></div>
+        <div><div class="n">Difesa</div><div class="pool" data-base="4" data-ambito="difesa">5D6</div><small>Agilità + ●● + aspetto alieno</small></div>
+        <div><div class="n">Demoralizzare</div><div class="pool" data-base="3" data-ambito="attacco">3D6</div><small>Astuzia + ○</small></div>
       </div>
       <table>
         <tr><th>Arma</th><th class="c">Danno</th><th>Distanza</th><th class="c">Distrutt.</th><th class="c">Colpi</th><th>Note</th><th></th></tr>
-        <tr><td><b>Spadone medievale</b><br><small style="color:var(--tenue);font-style:italic">Armi da mischia grandi</small></td><td class="c">3</td><td>1 · Contatto</td><td class="c">●●</td><td class="c">—</td><td style="font-size:12px">Distruttività: un esubero in meno</td><td><button class="tira">5D6</button></td></tr>
-        <tr><td><b>Pistola</b><br><small style="color:var(--tenue);font-style:italic">Pistola</small></td><td class="c">1</td><td>3 · Distante</td><td class="c">●</td><td class="c">1/1</td><td style="font-size:12px">+1 danno a distanza 2</td><td><button class="tira">2D6</button></td></tr>
+        <tr><td><b>Spadone medievale</b><br><small style="color:var(--tenue);font-style:italic">Armi da mischia grandi</small></td><td class="c">3</td><td>1 · Contatto</td><td class="c">●●</td><td class="c">—</td><td style="font-size:12px">Distruttività: un esubero in meno</td><td><button class="tira" data-base="5" data-ambito="attacco">5D6</button></td></tr>
+        <tr><td><b>Pistola</b><br><small style="color:var(--tenue);font-style:italic">Pistola</small></td><td class="c">1</td><td>3 · Distante</td><td class="c">●</td><td class="c">1/1</td><td style="font-size:12px">+1 danno a distanza 2</td><td><button class="tira" data-base="2" data-ambito="attacco">2D6</button></td></tr>
       </table>
     </div>
   </details>
@@ -243,12 +257,13 @@
 
 <aside class="chat">
   <small>Chat · esempio di tiro</small>
-  <div class="tpl">
-    <div class="t"><b>Mischia</b><small>Ezekiel con lo spadone · 5D6 · 4+</small></div>
+  <div class="tpl" data-chat>
+    <div class="t"><b>Mischia</b><small>Ezekiel con lo spadone<br><span data-out="formula"></span><br>soglia <span data-out="soglia"></span> · difficoltà <span data-out="diff"></span> · <span data-out="gm"></span></small></div>
     <div class="c">
-      <div class="dadi"><b class="s">6</b><b class="s">5</b><b class="s">4</b><b>2</b><b>1</b></div>
-      <div class="tot3"><div><b>3</b><small>successi</small></div><div><b>2</b><small>esuberi</small></div><div><b>3</b><small>danno</small></div></div>
-      <div class="opp"><div>Non letale<b>1</b></div><div>Rimuovere oggetto<b>1</b></div><div>Movimento<b>1</b></div><div>Distruttività (spadone)<b>1</b></div><div>Stordire<b>2</b></div><div>Danno extra<b>2</b></div></div>
+      <div class="dadi" data-out="dadi-chat"></div>
+      <div class="tot3"><div><b data-out="successi">3</b><small>successi</small></div><div><b data-out="esuberi">2</b><small>esuberi</small></div><div><b>3</b><small>danno</small></div></div>
+      <div class="esito-d" data-out="esito"></div>
+      <div class="opp"><div data-costo="1">Non letale<b>1</b></div><div data-costo="1">Rimuovere oggetto<b>1</b></div><div data-costo="1">Movimento<b>1</b></div><div data-costo="1">Distruttività (spadone)<b>1</b></div><div data-costo="2">Stordire<b>2</b></div><div data-costo="2">Danno extra<b>2</b></div></div>
     </div>
   </div>
 </aside>
@@ -258,12 +273,12 @@
   // Solo per il mockup.
   const astuzia = [["Carpenteria",0],["Contrattare",0],["Demoralizzare",0,1],["Forgiare",0],["Gioco",0],["Ingannare",0],["Intimidire",0],["Istruzione",0],["Legge",0],["Meccanica",0],["Medicina",0],["Percezione",2],["Pianificare",0],["Socialità",0],["Sopravvivenza",2]];
   document.getElementById("astuzia").insertAdjacentHTML("beforeend", astuzia.map(([n, v, c]) =>
-    `<div class="ab ${v ? "" : "zero"} ${c ? "comb" : ""}"><span class="n">${n}</span><i class="p" data-v="${v}" data-m="5"></i><span class="pool">${3 + v}D6</span></div>`).join(""));
+    `<div class="ab ${v ? "" : "zero"} ${c ? "comb" : ""}"><span class="n">${n}</span><i class="p" data-v="${v}" data-m="5"></i><span class="pool" data-base="${3 + v}" data-ambito="${c ? "attacco" : "abilita"}">${3 + v}D6</span></div>`).join(""));
   document.querySelectorAll(".p").forEach(el => {
     const v = +el.dataset.v, m = +el.dataset.m;
     el.innerHTML = Array.from({ length: m }, (_, i) => `<span class="${i < v ? "f" : ""}"></span>`).join("");
   });
-  document.querySelectorAll(".indice .op span").forEach(b => b.onclick = () => { if (b.textContent.length < 9) b.parentElement.querySelectorAll("span").forEach(x => x.classList.toggle("on", x === b)); });
 </script>
+<script src="tiri.js"></script>
 </body>
 </html>
