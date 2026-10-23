@@ -45,6 +45,7 @@ Il messaggio deve essere breve, chiaro e all'imperativo, con un ambito coerente 
 ## Regole
 
 - **Dati solo dal manuale.** Mai inventare valori o testi. Se un dato manca o è incoerente, va in `docs/domande-per-il-master.md` e si chiede all'utente.
+- **Risposte del master**: vanno in `docs/domande-per-il-master.md` e nel manuale, con il testo sbagliato barrato e la correzione in corsivo (originale in `manuali/originali/`). `npm run estrai-testo` salta il testo barrato.
 - **File generati**: i file di `dati/` con `generato_da` li scrive `npm run estrai-dati` dal testo del manuale (`npm run estrai-testo` lo estrae dai docx). Si corregge l'estrazione (`strumenti/estrai_dati.mjs`), non il JSON. `dati/regole/base.json` è scritto a mano, con le frasi del manuale. Dopo ogni modifica ai dati: `npm run controlla`, poi `npm test`.
 - **Nomi degli attributi** (`attr_…`): si decidono con l'utente e poi non si rinominano più. Quando la scheda sarà usata in una partita, un attributo rinominato fa perdere i dati. Se proprio serve, si aggiunge il nuovo e lo script converte il vecchio all'apertura.
 - **Testi dentro la scheda**: se un giorno la scheda va pubblicata nel catalogo di Roll20, i testi creativi dentro la scheda devono averli scritti persone (politica di Roll20 sull'IA). I testi del manuale li ha scritti il master; riassunti e descrizioni nuove no, quindi non scriverli tu senza dirlo.
