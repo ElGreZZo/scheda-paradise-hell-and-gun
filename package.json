@@ -12,7 +12,8 @@
     "tipi": "tsc -p . && tsc -p test",
     "estrai-testo": "python strumenti/estrai_testo.py",
     "estrai-dati": "node strumenti/estrai_dati.mjs",
-    "controlla": "node strumenti/controlla.mjs"
+    "controlla": "node strumenti/controlla.mjs",
+    "stampa": "node strumenti/stampa.mjs"
   },
   "engines": {
     "node": ">=22"
@@ -22,6 +23,7 @@
     "ajv": "^8.20.0",
     "esbuild": "^0.28.2",
     "nunjucks": "^3.2.4",
+    "pdf-lib": "^1.17.1",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   }
