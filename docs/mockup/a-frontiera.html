@@ -169,12 +169,38 @@
   .opp div { display: flex; justify-content: space-between; padding: 4px 0; border-top: 1px dashed var(--bordo); }
   .opp div span:last-child { color: var(--ruggine); font-weight: 700; }
 
+  /* Manuale 1.6: usi limitati, ispirazione, danni non letali, poteri di carriera */
+  .uso { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: var(--tenue); white-space: nowrap; }
+  .uso i { width: 14px; height: 14px; border: 1.5px solid var(--ruggine); border-radius: 3px; cursor: pointer; display: inline-grid; place-items: center; font-style: normal; font-size: 11px; color: #fff; }
+  .uso i.on { background: var(--ruggine); }
+  .uso i.on::after { content: "✓"; }
+  .nuova { border: 1px dashed var(--ruggine); background: none; color: var(--ruggine); border-radius: 8px; padding: 6px 10px; font: 700 12px "Alegreya Sans SC", sans-serif; letter-spacing: .08em; cursor: pointer; align-self: end; }
+  .risorse { grid-template-columns: 1.35fr 1fr 96px 118px 112px; }
+  .traccia.pf i.nl { background: repeating-linear-gradient(45deg, var(--ruggine) 0 2px, #f3dfd3 2px 4px); border-color: var(--ruggine); }
+  .traccia.pf i.t { border-style: dashed; background: none; border-color: var(--oro); }
+  .legenda-pf { font-size: 11px; color: var(--tenue); margin-top: 4px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .legenda-pf b { font-weight: 500; color: var(--inchiostro); }
+  .ispira i { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--oro); display: inline-block; margin-right: 2px; }
+  .ispira i.f { background: var(--oro); }
+  .tag.carriera { background: #e8e1f2; color: #5b4787; }
+  .tag.innato, .tag.affine { background: #f6ecd2; color: #8a6d1d; }
+  .pot .uso { margin-top: 8px; }
+  .pot li .ispir { font-size: 12px; color: #5b4787; }
+  .sezione-titolo { grid-column: 1 / -1; font: 700 12px/1 "Alegreya Sans SC", sans-serif; letter-spacing: .16em; color: var(--ruggine); margin: 6px 0 -4px; display: flex; gap: 10px; align-items: center; }
+  .sezione-titolo::after { content: ""; flex: 1; height: 1px; background: var(--bordo); }
+  .sezione-titolo small { font: 400 12px "Alegreya Sans", sans-serif; letter-spacing: 0; color: var(--tenue); }
+  .motto { font-style: italic; color: var(--tenue); margin: -2px 0 8px; }
+  .riga-campo { display: grid; grid-template-columns: 110px 1fr; gap: 8px; padding: 6px 0; border-top: 1px dashed var(--bordo); font-size: 14px; }
+  .riga-campo b { font: 700 11px "Alegreya Sans SC", sans-serif; letter-spacing: .08em; color: var(--tenue); padding-top: 2px; }
+  .vuoto { color: #b9ad9c; font-style: italic; }
+
   /* Finestra stretta o larga: la scheda si adatta (su Roll20 la finestra si ridimensiona e si stacca) */
   .barra { flex-wrap: wrap; }
   @container (min-width: 1100px) { .pagina[data-p="1"] .griglia { grid-template-columns: 300px 1fr; } }
   @container (max-width: 720px) {
     .griglia { grid-template-columns: 1fr !important; }
     .risorse, .comb { grid-template-columns: 1fr 1fr; }
+    .risorse .ris:first-child { grid-column: 1 / -1; }
     .poteri { grid-template-columns: 1fr; }
   }
 </style>
@@ -194,6 +220,8 @@
       <div class="campo"><label>Archetipo</label><div class="v menu">Serafino <span class="colore">bianco</span></div></div>
       <div class="campo"><label>Carriera</label><div class="v menu">Soldato</div></div>
       <div class="campo"><label>Punti esperienza</label><div class="v">0 <span style="color:var(--tenue)">/ spesi 50</span></div></div>
+      <div class="campo"><label>Velocità</label><div class="v">1 <span style="color:var(--tenue)">a piedi</span></div></div>
+      <button class="nuova" id="nuova-sessione" title="Svuota gli usi «per sessione» e «per scenario» e azzera l'ispirazione">↻ Nuova sessione</button>
     </div>
   </header>
 
@@ -231,14 +259,17 @@
 
       <div class="col">
         <div class="risorse">
-          <div class="ris"><label>Punti ferita</label><div class="num">5 <small>/ 5</small></div><div class="traccia pf"><i></i><i></i><i></i><i></i><i></i></div></div>
-          <div class="ris"><label>Mana</label><div class="num">8 <small>/ 10</small></div><div class="traccia mana"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="u"></i><i class="u"></i></div></div>
+          <div class="ris"><label>Punti ferita</label><div class="num">4 <small>/ 5 · +2 temp.</small></div>
+            <div class="traccia pf"><i class="d"></i><i class="nl"></i><i></i><i></i><i></i><i class="t"></i><i class="t"></i></div>
+            <div class="legenda-pf"><span>■ danni <b>1</b></span><span>▨ non letali <b>1</b></span><span>┆ temporanei <b>2</b>, −1 a turno</span></div></div>
+          <div class="ris"><label>Mana</label><div class="num">8 <small>/ 10</small></div><div class="traccia mana"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="u"></i><i class="u"></i></div><div class="legenda-pf">1 mana: ritira un dado, una volta per azione</div></div>
           <div class="ris"><label>Anime</label><div class="num">1</div><div class="pm"><button>−</button><button>+</button></div></div>
+          <div class="ris"><label>Ispirazione</label><div class="num" data-ispirazione>1</div><div class="pm"><button>−</button><button>+</button></div><div class="legenda-pf">da 0 a ogni sessione</div></div>
           <div class="ris"><label>Iniziativa</label><div class="num">2D6+3</div><button class="tira">🎲 Tira</button></div>
         </div>
 
         <div class="box">
-          <h3>Attacco e difesa <small>riserva = caratteristica + abilità</small></h3>
+          <h3>Attacco e difesa <small>riserva = caratteristica + abilità · <span class="uso">reazione usata in questo turno <i data-uso="turno"></i></span></small></h3>
           <div class="comb">
             <div class="cb"><span class="pool" data-base="5" data-ambito="attacco">5D6</span><div class="n">Mischia</div><i class="p" data-v="2" data-m="5"></i><div class="nt">Possanza</div></div>
             <div class="cb"><span class="pool" data-base="2" data-ambito="attacco">2D6</span><div class="n">Mira</div><i class="p" data-v="0" data-m="5"></i><div class="nt">Agilità</div></div>
@@ -260,10 +291,11 @@
         <div class="box">
           <h3>Poteri <small>riepilogo · dettagli nella linguetta Poteri</small></h3>
           <table>
-            <tr><th>Potere</th><th>Livello</th><th>Tipo</th><th>Costo</th><th></th></tr>
-            <tr><td><b>Aspetto alieno</b></td><td><i class="p" data-v="1" data-m="3"></i> Corpo bizzarro</td><td><span class="tag">passivo</span></td><td>—</td><td></td></tr>
-            <tr><td><b>Ali</b></td><td><i class="p" data-v="2" data-m="3"></i> Ali forti</td><td><span class="tag">passivo</span></td><td>—</td><td></td></tr>
-            <tr><td><b>Evocazione</b></td><td><i class="p" data-v="2" data-m="5"></i> Evocare intervento</td><td><span class="tag">attivo · reazione</span></td><td>1 anima</td><td class="dado" style="opacity:1">🎲</td></tr>
+            <tr><th>Potere</th><th>Livello</th><th>Tipo</th><th>Costo</th><th>Usi</th><th></th></tr>
+            <tr><td><b>Aspetto alieno</b></td><td><i class="p" data-v="1" data-m="3"></i> Corpo bizzarro</td><td><span class="tag">passivo</span></td><td>—</td><td></td><td></td></tr>
+            <tr><td><b>Ali</b></td><td><i class="p" data-v="2" data-m="3"></i> Ali forti</td><td><span class="tag">passivo</span></td><td>—</td><td></td><td></td></tr>
+            <tr><td><b>Evocazione</b></td><td><i class="p" data-v="2" data-m="5"></i> Evocare intervento</td><td><span class="tag">attivo · reazione</span></td><td>1 anima</td><td><span class="uso">scenario <i data-uso="scenario" data-gruppo="evocare"></i></span></td><td class="dado" style="opacity:1">🎲</td></tr>
+            <tr><td><b>Cicatrici di guerra</b></td><td><i class="p" data-v="1" data-m="1"></i></td><td><span class="tag carriera">carriera</span></td><td>1 ispirazione</td><td></td><td></td></tr>
           </table>
         </div>
       </div>
@@ -273,7 +305,8 @@
   <!-- Pagina 2 -->
   <section class="pagina" data-p="2">
     <div class="poteri">
-      <div class="box pot"><h4>Evocazione <span class="tag">innato · affine</span></h4><div class="cat">Attivo · reazione · costo PX dimezzato (affine)</div>
+      <div class="sezione-titolo">Poteri <small>innati e affini costano metà PX</small></div>
+      <div class="box pot"><h4>Evocazione <span class="tag affine">affine</span></h4><div class="cat">Attivo · reazione · costo PX dimezzato (affine)</div>
         <ol>
           <li><i class="p" data-v="1" data-m="1"></i><span>Evocare attacco</span><span class="costo">4 PX</span></li>
           <li><i class="p" data-v="2" data-m="2"></i><span>Evocare intervento</span><span class="costo">8 PX</span></li>
@@ -282,8 +315,9 @@
           <li class="no"><i class="p" data-v="0" data-m="5"></i><span>Evocare la devastazione</span><span class="costo">20 PX</span></li>
         </ol>
         <div class="nota">● 1 anima: attacco a distanza 3, danno 5 · ●● 1 anima: +2D6 ad una azione</div>
+        <div class="uso">Evocare intervento: una volta per scenario <i data-uso="scenario" data-gruppo="evocare"></i></div>
       </div>
-      <div class="box pot"><h4>Ali <span class="tag">innato</span></h4><div class="cat">Passivo</div>
+      <div class="box pot"><h4>Ali <span class="tag innato">innato</span></h4><div class="cat">Passivo</div>
         <ol>
           <li><i class="p" data-v="1" data-m="1"></i><span>Ali deboli</span><span class="costo">4 PX</span></li>
           <li><i class="p" data-v="2" data-m="2"></i><span>Ali forti</span><span class="costo">8 PX</span></li>
@@ -291,7 +325,7 @@
         </ol>
         <div class="nota">● Esubero gratuito ogni volta che uso le ali · ●● Posso usare il movimento più volte in un turno</div>
       </div>
-      <div class="box pot"><h4>Aspetto alieno <span class="tag">innato</span></h4><div class="cat">Passivo · solo bianchi</div>
+      <div class="box pot"><h4>Aspetto alieno <span class="tag innato">innato</span></h4><div class="cat">Passivo · solo bianchi</div>
         <ol>
           <li><i class="p" data-v="1" data-m="1"></i><span>Corpo bizzarro</span><span class="costo">4 PX</span></li>
           <li class="no"><i class="p" data-v="0" data-m="2"></i><span>Sensi bizzarri</span><span class="costo">8 PX</span></li>
@@ -300,6 +334,32 @@
         <div class="nota">+1D6 in difesa per ogni pallino</div>
       </div>
       <div class="box" style="display:grid;place-items:center;color:var(--tenue);border-style:dashed;box-shadow:none">+ Aggiungi potere<br><small>dal manuale o scritto a mano</small></div>
+
+      <div class="sezione-titolo">Poteri di carriera · Soldato <small>si comprano solo con questa carriera, molti si attivano con l'ispirazione</small></div>
+      <div class="box pot"><h4>Cicatrici di guerra <span class="tag carriera">carriera</span></h4><div class="cat">Anche in forma mortale</div>
+        <ol>
+          <li><i class="p" data-v="1" data-m="1"></i><span>Al costo di un ispirazione, il personaggio può ridurre di uno i danni in arrivo fino ad un minimo di 1.</span><span class="costo">4 PX</span></li>
+        </ol>
+      </div>
+      <div class="box pot"><h4>Abile nelle armi <span class="tag carriera">carriera</span></h4><div class="cat">Non comprato</div>
+        <ol>
+          <li class="no"><i class="p" data-v="0" data-m="1"></i><span>Sfollagente</span><span class="costo">4 PX</span></li>
+          <li class="no"><i class="p" data-v="0" data-m="2"></i><span>Nella breccia</span><span class="costo">8 PX</span></li>
+          <li class="no"><i class="p" data-v="0" data-m="3"></i><span>Guerra eterna</span><span class="costo">12 PX</span></li>
+        </ol>
+      </div>
+      <div class="box pot"><h4>Veterano di guerra <span class="tag carriera">carriera</span></h4><div class="cat">Non comprato</div>
+        <ol>
+          <li class="no"><i class="p" data-v="0" data-m="1"></i><span>Rispetto per i veterani</span><span class="costo">4 PX</span></li>
+          <li class="no"><i class="p" data-v="0" data-m="2"></i><span>Tosto tosto</span><span class="costo">8 PX</span></li>
+          <li class="no"><i class="p" data-v="0" data-m="3"></i><span>Supremazia</span><span class="costo">12 PX</span></li>
+        </ol>
+      </div>
+      <div class="box pot"><h4>Licenza da soldato <span class="tag carriera">carriera</span></h4><div class="cat">Non comprato</div>
+        <ol>
+          <li class="no"><i class="p" data-v="0" data-m="1"></i><span>Spendendo un anima, il personaggio può richiamare la licenza e, SE sta svolgendo il suo mestiere, dimostrare che è autorizzato a stare nel mondo materiale.</span><span class="costo">4 PX</span></li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -311,9 +371,9 @@
           <h3>Oggetti e manufatti <small>I indossato · A sella · B banca · C carrozza · N nascosto</small></h3>
           <table>
             <tr><th>Oggetto</th><th>Dove</th><th>Note</th></tr>
-            <tr><td>Attrezzatura per accamparsi</td><td><span class="dove"><i>I</i><i class="on">A</i><i>B</i><i>C</i><i>N</i></span></td><td>ferri del mestiere</td></tr>
+            <tr><td>Vecchia uniforme da ufficiale</td><td><span class="dove"><i class="on">I</i><i>A</i><i>B</i><i>C</i><i>N</i></span></td><td>ferri del mestiere</td></tr>
+            <tr><td>Attrezzi da viaggio</td><td><span class="dove"><i>I</i><i class="on">A</i><i>B</i><i>C</i><i>N</i></span></td><td>ferri del mestiere</td></tr>
             <tr><td>Attrezzi per riparare armi</td><td><span class="dove"><i>I</i><i class="on">A</i><i>B</i><i>C</i><i>N</i></span></td><td>ferri del mestiere</td></tr>
-            <tr><td>Coltello</td><td><span class="dove"><i class="on">I</i><i>A</i><i>B</i><i>C</i><i>N</i></span></td><td></td></tr>
           </table>
           <div class="agg">+ Aggiungi oggetto</div>
         </div>
@@ -327,9 +387,9 @@
         </div>
       </div>
       <div class="col">
-        <div class="box"><h3>Cartucciera</h3><div class="num" style="font:700 26px 'Alegreya Sans'">12 <small style="color:var(--tenue);font-weight:400">/ 40</small></div><div class="barra-mun"><div style="width:30%"></div></div><div class="pm"><button>−</button><button>+</button><span style="font-size:12px;color:var(--tenue)">ricarica: un intero turno</span></div></div>
+        <div class="box"><h3>Cartucciera <small>40 con Armaiolo</small></h3><div class="num" style="font:700 26px 'Alegreya Sans'">12 <small style="color:var(--tenue);font-weight:400">/ 30</small></div><div class="barra-mun"><div style="width:40%"></div></div><div class="pm"><button>−</button><button>+</button><span style="font-size:12px;color:var(--tenue)">ricaricare consuma ● ma non azioni</span></div></div>
         <div class="box"><h3>Ricchezza</h3><i class="p" data-v="2" data-m="6"></i><div style="font-size:12px;color:var(--tenue);margin-top:6px">cala di ● a settimana</div></div>
-        <div class="box"><h3>Seguaci</h3><div style="font-size:14px">Cavallo</div><div style="font-size:12px;color:var(--tenue)">massimo: metà dell'astuzia</div></div>
+        <div class="box"><h3>Seguaci <small>massimo: metà dell'astuzia</small></h3><div style="font-size:14px">Cavallo <span class="tag">velocità 3</span></div><div style="font-size:12px;color:var(--tenue)">in sella: movimento una volta in più</div></div>
       </div>
     </div>
   </section>
@@ -340,15 +400,22 @@
       <div class="box testo"><h3>Archetipo · Serafino <small>bianco</small></h3>
         <p><b>Incrementi:</b> Potenza ●●●, Astuzia ●</p>
         <p><b>Poteri innati:</b> Ali ●, Aspetto alieno ●<br><b>Poteri affini:</b> Ali, Aspetto alieno, Lux, Evocazione, Aura distruttiva</p>
-        <h4>Nato per il comando</h4><p>Una volta per sessione. Riceve automaticamente un'anima la prima volta che riesce a prendere il comando di altri immortali in una situazione di pericolo.</p>
-        <h4>Potere assoluto</h4><p>Una volta per sessione, prima di effettuare i tiri per attivare un potere, può scegliere di spendere un'anima (oltre al normale costo per il potere) e ottiene automaticamente +2 punti esubero.</p>
+        <h4>Nato per il comando <span class="uso">sessione <i data-uso="sessione"></i></span></h4><p>Una volta per sessione. Riceve automaticamente un'anima la prima volta che riesce a prendere il comando di altri immortali in una situazione di pericolo.</p>
+        <h4>Potere assoluto <span class="uso">sessione <i data-uso="sessione"></i></span></h4><p>Una volta per sessione, prima di effettuare i tiri per attivare un potere, può scegliere di spendere un'anima (oltre al normale costo per il potere) e ottiene automaticamente +2 punti esubero.</p>
       </div>
       <div class="box testo"><h3>Carriera · Soldato</h3>
-        <h4>Attività</h4><p>Il personaggio ha vantaggio a tutti i tiri legati a strategie militari e riconoscere armi ed i loro effetti.</p>
-        <h4>Ancora! <span class="tag">3 esuberi</span></h4><p>Il personaggio può usare questa opportunità ogni volta che infligge danno ad un individuo di colore diverso dal suo. Il personaggio raddoppia il danno dell'arma.</p>
-        <h4>Una guerra infinita</h4><p>Il personaggio, quando combatte contro altri immortali, aggiunge +1 punti in esubero in tutte le azioni di attacco, indipendentemente dal risultato.</p>
+        <p class="motto">«La guerra non cambia mai, non si ferma mai».</p>
+        <div class="riga-campo"><b>Ferri</b><span>Vecchia uniforme da ufficiale, arma da mischia, attrezzi da viaggio, attrezzi per riparare armi.</span></div>
+        <div class="riga-campo"><b>Abilità lavorative</b><span>20 PX in sopravvivenza, intimidire, mischia, possanza, Guerra</span></div>
+        <div class="riga-campo"><b>Ispirazione</b><span>Il personaggio ottiene ispirazione ogni volta che vince un duello con la pistola, inizia un combattimento, sconfigge o mette in fuga una squadra di sgherri.</span></div>
+        <div class="riga-campo"><b>Poteri</b><span>Abile nelle armi, Cicatrici di guerra, Veterano di guerra, Licenza da soldato · <a href="#" data-vai="2" style="color:var(--ruggine)">nella linguetta Poteri</a></span></div>
       </div>
-      <div class="box testo" style="grid-column: 1 / -1"><h3>Storia e note</h3><p>Ezekiel è un veterano della guerra civile che non ha apprezzato molto la decisione di fare una tregua…</p></div>
+      <div class="box testo"><h3>Patto, flashback e punti fissi</h3>
+        <div class="riga-campo"><b>Patto attivo</b><span class="vuoto">nessuno · uno alla volta, dato o ricevuto</span></div>
+        <div class="riga-campo"><b>Flashback</b><span class="uso">usato in questo arco narrativo <i data-uso="arco"></i></span></div>
+        <div class="riga-campo"><b>Punti fissi</b><span class="vuoto">uno o due tratti della sua morale</span></div>
+      </div>
+      <div class="box testo"><h3>Storia e note</h3><p>Ezekiel è un veterano della guerra civile che non ha apprezzato molto la decisione di fare una tregua…</p></div>
     </div>
   </section>
 </div>
@@ -364,11 +431,11 @@
         <div data-costo="1"><span>Non letale</span><span>1</span></div>
         <div data-costo="1"><span>Rimuovere oggetto</span><span>1</span></div>
         <div data-costo="1"><span>Movimento</span><span>1</span></div>
-        <div data-costo="1"><span>Distruttività <small>(−1 con quest'arma)</small></span><span>1</span></div>
+        <div data-costo="1"><span>Distruttività <small>(costa 1 con quest'arma)</small></span><span>1</span></div>
         <div data-costo="2"><span>Stordire</span><span>2</span></div>
         <div data-costo="2"><span>Danno extra</span><span>2</span></div>
       </div>
-      <div style="font-size:12px;color:var(--tenue);margin-top:6px">Danno 3 · Contro un immortale: +1 esubero (Una guerra infinita)</div>
+      <div style="font-size:12px;color:var(--tenue);margin-top:6px">Danno 3 · distruttività ●●</div>
     </div>
   </div>
 </aside>
@@ -388,6 +455,18 @@
     document.querySelectorAll(".pagina").forEach(p => p.classList.toggle("on", p.dataset.p === b.dataset.p));
   });
   document.querySelectorAll(".forma button").forEach(b => b.onclick = () => b.parentElement.querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b)));
+  // Usi limitati: un clic segna o toglie l'uso (le caselle dello stesso gruppo vanno insieme). «Nuova sessione» svuota
+  // gli usi per sessione, scenario e turno (non quelli per arco narrativo) e azzera l'ispirazione: lo preme il giocatore.
+  document.querySelectorAll("[data-uso]").forEach(c => c.onclick = () => {
+    const on = !c.classList.contains("on");
+    const gruppo = c.dataset.gruppo;
+    (gruppo ? document.querySelectorAll(`[data-gruppo="${gruppo}"]`) : [c]).forEach(x => x.classList.toggle("on", on));
+  });
+  document.getElementById("nuova-sessione").onclick = () => {
+    document.querySelectorAll('[data-uso]:not([data-uso="arco"])').forEach(x => x.classList.remove("on"));
+    document.querySelectorAll("[data-ispirazione]").forEach(x => { x.textContent = "0"; });
+  };
+  document.querySelectorAll("[data-vai]").forEach(a => a.onclick = e => { e.preventDefault(); document.querySelector(`.linguette button[data-p="${a.dataset.vai}"]`).click(); });
 </script>
 <script src="tiri.js"></script>
 </body>

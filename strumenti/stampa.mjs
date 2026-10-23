@@ -3,7 +3,7 @@
 // righe, .c casella tonda, .q casella quadrata). Due elementi con lo stesso nome diventano lo stesso campo, con lo
 // stesso valore (il nome del personaggio sui due fogli).
 //
-// Uso:  npm run stampa      ->  docs/stampa/scheda-phag-a4.pdf
+// Uso:  npm run stampa      ->  docs/stampa/scheda-phag-a4-v<versione>.pdf (versione: meta "versione" della pagina)
 import { spawn } from "node:child_process";
 import { mkdtemp, rm, readFile, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
@@ -13,7 +13,7 @@ import { PDFDocument, PDFName, StandardFonts, TextAlignment, rgb, drawEllipse, d
 
 const RADICE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PAGINA = path.join(RADICE, "docs", "stampa", "scheda-a4.html");
-const USCITA = path.join(RADICE, "docs", "stampa", "scheda-phag-a4.pdf");
+const USCITA = (versione) => path.join(RADICE, "docs", "stampa", `scheda-phag-a4-v${versione}.pdf`);
 const CHROME = process.env.CHROME ?? path.join(process.env.ProgramFiles ?? "C:\\Program Files", "Google", "Chrome", "Application", "chrome.exe");
 const PORTA = 9334;
 const PT_PER_PX = 72 / 96;
@@ -54,6 +54,7 @@ async function stampa() {
     await valuta("document.fonts.ready.then(() => true)");
 
     // Posizione di ogni campo, in px CSS, rispetto al suo foglio.
+    const versione = await valuta(`document.querySelector('meta[name="versione"]').content`);
     const campi = await valuta(`[...document.querySelectorAll(".foglio")].flatMap((foglio, pagina) => {
       const f = foglio.getBoundingClientRect();
       return [...foglio.querySelectorAll(".f")].map(el => {
@@ -65,7 +66,7 @@ async function stampa() {
     })`);
     const pdf = await cdp("Page.printToPDF", { preferCSSPageSize: true, printBackground: true, marginTop: 0, marginBottom: 0, marginLeft: 0, marginRight: 0 });
     ws.close();
-    return { pdf: Buffer.from(pdf.data, "base64"), campi };
+    return { pdf: Buffer.from(pdf.data, "base64"), campi, versione };
   } finally {
     chrome.kill();
     await aspetta(300);
@@ -92,7 +93,7 @@ function trasparente(campo) {
 }
 
 async function main() {
-  const { pdf, campi } = await stampa();
+  const { pdf, campi, versione } = await stampa();
   const doc = await PDFDocument.load(pdf);
   const form = doc.getForm();
   const font = await doc.embedFont(StandardFonts.Helvetica);
@@ -125,9 +126,10 @@ async function main() {
   // Le caselle hanno gia' il loro aspetto: si rigenerano solo i campi di testo.
   for (const campo of fatti.values()) if (campo.constructor.name === "PDFTextField") campo.defaultUpdateAppearances(font);
 
-  doc.setTitle("Paradise, Hell and Guns - scheda del personaggio");
-  await writeFile(USCITA, await doc.save({ updateFieldAppearances: false }));
-  console.log(`${path.relative(RADICE, USCITA)}: ${pagine.length} pagine, ${fatti.size} campi (${campi.length} riquadri)`);
+  doc.setTitle(`Paradise, Hell and Guns - scheda del personaggio v${versione}`);
+  const uscita = USCITA(versione);
+  await writeFile(uscita, await doc.save({ updateFieldAppearances: false }));
+  console.log(`${path.relative(RADICE, uscita)}: ${pagine.length} pagine, ${fatti.size} campi (${campi.length} riquadri)`);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
