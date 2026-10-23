@@ -1,0 +1,1 @@
+Questa cartella contine le schede di altri manuali che possono essere utilizzate come riferimento o confronto con la scheda di Paradise Hell And Gun.
