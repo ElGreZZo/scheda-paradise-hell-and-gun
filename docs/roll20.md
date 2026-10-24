@@ -32,9 +32,10 @@ Raccolto lavorando alla scheda di Farsight (repo `Farsight custom sheet`, settem
 - **Stili di Roll20 da annullare** (visti il 23/10/2026 nella partita di prova, l'emulatore non li ha):
   - `.largedialog label { width: 100%; display: block; padding-right: 10px }`: ogni `label` va a capo da solo;
   - `.largedialog small { display: block; width: 100%; text-align: right }`: ogni `small` diventa un blocco allineato a destra;
-  - `.ui-dialog .charsheet input[type="number"] { width: 3.5em }`, che pesa (0,3,1).
+  - `.ui-dialog .charsheet input[type="number"] { width: 3.5em }`, che pesa (0,3,1);
+  - `p { font-family: "Helvetica Neue", Helvetica, Arial; font-size: 13px; line-height: 18px }` (Bootstrap, visto il 24/10/2026): i paragrafi escono in Helvetica.
   
-  La scheda li annulla in `src/stili/base.css` (`.scheda label`, `.scheda small`, `[name]` sui campi numerici).
+  La scheda li annulla in `src/stili/base.css` (`.scheda label`, `.scheda small`, `.scheda p`, `[name]` sui campi numerici).
 - **Pulsanti d'azione**: il reset `.scheda button[type="action"][name]` pesa (0,3,1); le regole di un pulsante con una classe devono pesare uguale e venire dopo (`.scheda button.pallino[name]`), altrimenti larghezza e altezza tornano `auto`.
 
 ## Script della scheda (sheet worker)

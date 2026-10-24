@@ -1,6 +1,6 @@
 # Attributi della scheda
 
-Nomi degli attributi di Roll20 (`attr_…`), decisi con l'utente il 23/10/2026 per la versione 0.0.1 e il 24/10/2026 per la 0.0.2 (equipaggiamento). **Non si rinominano più**: in una partita in corso un attributo rinominato fa perdere i dati. Se proprio serve, si aggiunge il nuovo e lo script converte il vecchio all'apertura. Sono gli stessi nomi dei campi della scheda PDF (`docs/stampa/`), dove esistono.
+Nomi degli attributi di Roll20 (`attr_…`), decisi con l'utente il 23/10/2026 per la versione 0.0.1 e il 24/10/2026 per la 0.0.2 (equipaggiamento) e la 0.0.3 (archetipo e carriera). **Non si rinominano più**: in una partita in corso un attributo rinominato fa perdere i dati. Se proprio serve, si aggiunge il nuovo e lo script converte il vecchio all'apertura. Sono gli stessi nomi dei campi della scheda PDF (`docs/stampa/`), dove esistono.
 
 | Cosa | Attributi | Valori |
 |---|---|---|
@@ -13,6 +13,7 @@ Nomi degli attributi di Roll20 (`attr_…`), decisi con l'utente il 23/10/2026 p
 | Oggetti (`repeating_oggetti`) | `nome`, `dove`, `note` | `dove`: `I`, `A`, `B`, `C`, `N` |
 | Seguaci (`repeating_seguaci`) | `nome`, `tipo`, `velocita`, `note` | `tipo`: id di `dati/equipaggiamento/seguaci.json` o vuoto |
 | Cartucciera e ricchezza | `cartucciera` (con il massimo in `cartucciera_max`), `ricchezza`, `anime_depositate`, `anime_depositate_dove`, `ricchezza_depositata`, `ricchezza_depositata_dove` | `cartucciera_max` 30, 40 con Armaiolo; ricchezza da 0 a 6 |
+| Archetipo e carriera | `natura1_uso`, `natura2_uso`, `flashback_uso`, `patto`, `punti_fissi`, `storia`, `note` | `natura1_uso`, `natura2_uso`: `1` se la prima o la seconda natura dell'archetipo è già usata in questa sessione; `flashback_uso`: `1` se il flashback è usato in questo arco narrativo; gli altri sono testo libero |
 | Barra dei tiri | `tiro_gm`, `tiro_soglia`, `tiro_difficolta`, `tiro_dadi`, `mod_stordito`, `mod_scosso` | `tiro_gm`: `0` pubblico, `1` solo GM; `tiro_soglia` da 2 a 6 |
 
 Calcolati dallo script (si possono cambiare senza perdere dati, perché si ricalcolano):

@@ -1,0 +1,148 @@
+/* Pagina Archetipo e carriera. Si vedono solo i testi dell archetipo e della carriera scelti: l input nascosto
+   (.archetipo-scelto, .carriera-scelta) precede i blocchi. Selettori generati dagli id di dati/. */
+.scheda .griglia-origini {
+  grid-template-columns: 1fr 1fr;
+}
+@container (max-width: 700px) {
+  .scheda .griglia-origini {
+    grid-template-columns: 1fr;
+  }
+}
+.scheda .testo-manuale {
+  display: none;
+}
+.archetipo-scelto[value="arcangelo"] ~ .testo-manuale.archetipo-arcangelo,
+.archetipo-scelto[value="caduto"] ~ .testo-manuale.archetipo-caduto,
+.archetipo-scelto[value="cherubino"] ~ .testo-manuale.archetipo-cherubino,
+.archetipo-scelto[value="demone_possessore"] ~ .testo-manuale.archetipo-demone_possessore,
+.archetipo-scelto[value="jinn"] ~ .testo-manuale.archetipo-jinn,
+.archetipo-scelto[value="oni"] ~ .testo-manuale.archetipo-oni,
+.archetipo-scelto[value="puttino"] ~ .testo-manuale.archetipo-puttino,
+.archetipo-scelto[value="serafino"] ~ .testo-manuale.archetipo-serafino,
+.archetipo-scelto[value="wendingo"] ~ .testo-manuale.archetipo-wendingo,
+.archetipo-scelto[value="dullahan"] ~ .testo-manuale.archetipo-dullahan,
+.carriera-scelta[value="artista"] ~ .testo-manuale.carriera-artista,
+.carriera-scelta[value="avventuriero"] ~ .testo-manuale.carriera-avventuriero,
+.carriera-scelta[value="becchino"] ~ .testo-manuale.carriera-becchino,
+.carriera-scelta[value="cacciatore_di_taglie"] ~ .testo-manuale.carriera-cacciatore_di_taglie,
+.carriera-scelta[value="dottore"] ~ .testo-manuale.carriera-dottore,
+.carriera-scelta[value="messaggero"] ~ .testo-manuale.carriera-messaggero,
+.carriera-scelta[value="soldato"] ~ .testo-manuale.carriera-soldato {
+  display: block;
+}
+.archetipo-scelto:not([value=""]) ~ .nessuna-scelta,
+.carriera-scelta:not([value=""]) ~ .nessuna-scelta {
+  display: none;
+}
+.scheda .vuoto {
+  font-style: italic;
+  color: var(--tenue);
+}
+.scheda .testo-manuale h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 6px;
+  font: 700 20px/1.2 "Alegreya Sans", sans-serif;
+}
+.scheda .testo-manuale p {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+.scheda .testo-manuale .descrizione {
+  color: var(--tenue);
+}
+.scheda .motto {
+  font-style: italic;
+  color: var(--tenue);
+}
+.scheda .etichetta-colore {
+  padding: 0 8px;
+  font: 500 12px/1.6 "Alegreya Sans", sans-serif;
+  border: 1px solid var(--bordo);
+  border-radius: 99px;
+}
+.scheda .colore-bianco { color: #8a6d1d; background: #fff; }
+.scheda .colore-nero { color: #fff; background: var(--inchiostro); }
+.scheda .colore-grigio { color: var(--inchiostro); background: #ddd; }
+.scheda .voce-manuale {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 14px;
+  border-top: 1px dashed var(--bordo);
+}
+.scheda .voce-manuale b {
+  font: 700 11px/1.5 "Alegreya Sans SC", sans-serif;
+  letter-spacing: 0.08em;
+  color: var(--tenue);
+}
+.scheda .sottotitolo {
+  margin: 10px 0 4px;
+  font: 700 12px/1.2 "Alegreya Sans SC", sans-serif;
+  letter-spacing: 0.14em;
+  color: var(--ruggine);
+}
+.scheda .natura {
+  padding: 6px 0;
+  border-top: 1px dashed var(--bordo);
+}
+.scheda .natura-testa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.scheda .usata {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--ruggine);
+  cursor: pointer;
+}
+.scheda .usata input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  accent-color: var(--ruggine);
+}
+.scheda .usata-flashback {
+  margin: 8px 0;
+}
+.scheda .poteri-carriera {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.scheda .poteri-carriera li {
+  padding: 4px 0;
+  font-size: 14px;
+  border-top: 1px dashed var(--bordo);
+}
+.scheda .poteri-carriera li span {
+  color: var(--tenue);
+  font-size: 13px;
+}
+.scheda .campo-pagina {
+  display: block;
+  margin-bottom: 8px;
+}
+.scheda textarea {
+  width: 100%;
+  min-height: 60px;
+  margin: 0;
+  padding: 6px 8px;
+  font: 400 14px/1.4 "Alegreya Sans", sans-serif;
+  color: var(--inchiostro);
+  background: var(--carta);
+  border: 1px solid var(--bordo);
+  border-radius: 8px;
+  box-shadow: none;
+  resize: vertical;
+}
+.scheda .etichetta-note {
+  margin-top: 10px;
+}

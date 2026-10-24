@@ -1,0 +1,74 @@
+{#- Pagina Archetipo e carriera (manuale 1.6, cap. 7 e 8). I testi del manuale di tutti gli archetipi e di tutte le
+    carriere sono nella pagina; il CSS (stili/origini.css) mostra solo quelli scelti nell'intestazione: l'input
+    nascosto con lo stesso attributo (archetipo-scelto, carriera-scelta) precede i blocchi. Sotto, le note del
+    giocatore: patto, flashback, punti fissi della morale, storia, note. Le caselle «usata» non si svuotano da sole:
+    le toglie il giocatore a inizio sessione. -#}
+{#- Nome di un potere dal suo id; i poteri che il capitolo 10 non descrive (Orgoglio, Gola…) restano con l'id leggibile. -#}
+{% set poteriPerId = dati.poteri | groupby("id") %}
+{% macro nomePotere(id) %}{$ poteriPerId[id][0].nome if poteriPerId[id] else (id | replace("_", " ") | capitalize) $}{% endmacro %}
+<section class="pagina pagina-origini">
+  <div class="griglia griglia-origini">
+    <div class="riquadro origine">
+      <input type="hidden" class="archetipo-scelto" name="attr_archetipo" value="">
+      <h3 data-i18n="origins.archetype"></h3>
+      <p class="vuoto nessuna-scelta" data-i18n="origins.choose_archetype"></p>
+      {% for a in dati.archetipi %}
+      <div class="testo-manuale archetipo-{$ a.id $}">
+        <h4>{$ a.nome $} <span class="etichetta-colore colore-{$ a.colore $}" data-i18n="header.colours.{$ a.colore $}"></span></h4>
+        {% for riga in a.descrizione %}<p class="descrizione">{$ riga $}</p>{% endfor %}
+        <div class="voce-manuale"><b data-i18n="origins.increments"></b><span>{% for c, v in a.incrementi %}{% for k in dati.caratteristiche %}{% if k.id == c %}{$ k.nome $}{% endif %}{% endfor %} {$ "●".repeat(v) $}{% if not loop.last %}, {% endif %}{% endfor %}</span></div>
+        <div class="voce-manuale"><b data-i18n="origins.innate"></b><span>{% for p in a.poteri_innati %}{$ nomePotere(p.potere) $} {$ "●".repeat(p.livello) $}{% if not loop.last %}, {% endif %}{% endfor %}</span></div>
+        <div class="voce-manuale"><b data-i18n="origins.affine"></b><span>{% for p in a.poteri_affini %}{$ nomePotere(p) $}{% if not loop.last %}, {% endif %}{% endfor %}</span></div>
+        <p class="nota" data-i18n="origins.half_cost"></p>
+        <div class="sottotitolo" data-i18n="origins.nature"></div>
+        {% for n in a.natura %}
+        <div class="natura">
+          <div class="natura-testa"><b>{$ n.nome $}</b>
+            <label class="usata"><input type="checkbox" name="attr_natura{$ loop.index $}_uso" value="1"><span data-i18n="origins.used_session"></span></label>
+          </div>
+          {% for riga in n.testo %}<p>{$ riga $}</p>{% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="riquadro origine">
+      <input type="hidden" class="carriera-scelta" name="attr_carriera" value="">
+      <h3 data-i18n="origins.career"></h3>
+      <p class="vuoto nessuna-scelta" data-i18n="origins.choose_career"></p>
+      {% for c in dati.carriere %}
+      <div class="testo-manuale carriera-{$ c.id $}">
+        <h4>{$ c.nome $}</h4>
+        {% if c.motto %}<p class="motto">«{$ c.motto $}»</p>{% endif %}
+        {% for riga in c.descrizione %}<p class="descrizione">{$ riga $}</p>{% endfor %}
+        <div class="voce-manuale"><b data-i18n="origins.tools"></b><span>{$ c.ferri_del_mestiere $}</span></div>
+        <div class="voce-manuale"><b data-i18n="origins.work_skills"></b><span>{$ c.abilita_lavorative.testo $}</span></div>
+        <div class="voce-manuale"><b data-i18n="origins.inspiration"></b><span>{$ c.ispirazione $}</span></div>
+        <div class="sottotitolo" data-i18n="origins.career_powers"></div>
+        {% for riga in c.regole_poteri or [] %}<p class="nota">{$ riga $}</p>{% endfor %}
+        <ul class="poteri-carriera">
+          {% for p in c.poteri %}
+          <li><b>{$ p.nome $}</b> <span>{% for l in p.livelli %}{$ "●".repeat(l.livello) $}{% if l.nome %} {$ l.nome $}{% endif %} ({$ l.costo_px $}){% if not loop.last %} · {% endif %}{% endfor %}</span></li>
+          {% endfor %}
+        </ul>
+        <p class="nota" data-i18n="origins.career_powers_hint"></p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="riquadro">
+      <h3 data-i18n="origins.bonds"></h3>
+      <label class="campo-pagina"><span class="etichetta" data-i18n="origins.pact"></span><input type="text" name="attr_patto" data-i18n-placeholder="origins.pact_placeholder"></label>
+      <label class="usata usata-flashback"><input type="checkbox" name="attr_flashback_uso" value="1"><span data-i18n="origins.flashback"></span></label>
+      <label class="campo-pagina"><span class="etichetta" data-i18n="origins.fixed_points"></span><textarea name="attr_punti_fissi" rows="3" data-i18n-placeholder="origins.fixed_points_placeholder"></textarea></label>
+    </div>
+
+    <div class="riquadro">
+      <h3 data-i18n="origins.story"></h3>
+      <textarea name="attr_storia" rows="6"></textarea>
+      <span class="etichetta etichetta-note" data-i18n="origins.notes"></span>
+      <textarea name="attr_note" rows="6"></textarea>
+    </div>
+  </div>
+</section>

@@ -268,3 +268,9 @@
   color: inherit;
   text-align: inherit;
 }
+/* Paragrafi: Roll20 (Bootstrap) li scrive in Helvetica 13px con interlinea fissa a 18px. */
+.scheda p {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}

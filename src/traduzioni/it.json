@@ -146,5 +146,30 @@
     "followers_hint": "massimo: metà dell'astuzia",
     "follower": "Seguace",
     "speed": "Velocità"
+  },
+  "origins": {
+    "archetype": "Archetipo",
+    "career": "Carriera",
+    "choose_archetype": "Scegli l'archetipo nell'intestazione: qui compaiono i suoi tratti dal manuale.",
+    "choose_career": "Scegli la carriera nell'intestazione: qui compaiono i suoi tratti dal manuale.",
+    "increments": "Incrementi di caratteristica",
+    "innate": "Poteri innati",
+    "affine": "Poteri affini",
+    "half_cost": "Innati e affini costano la metà dei punti esperienza.",
+    "nature": "Natura dell'immortale",
+    "used_session": "usata in questa sessione",
+    "tools": "Ferri del mestiere",
+    "work_skills": "Abilità lavorative",
+    "inspiration": "Ispirazione",
+    "career_powers": "Poteri di carriera",
+    "career_powers_hint": "Tra parentesi il costo in punti esperienza. Si comprano solo con questa carriera.",
+    "bonds": "Patto, flashback e punti fissi",
+    "pact": "Patto attivo",
+    "pact_placeholder": "Uno alla volta, dato o ricevuto",
+    "flashback": "Flashback usato in questo arco narrativo",
+    "fixed_points": "Punti fissi della morale",
+    "fixed_points_placeholder": "Uno o due tratti che rappresentano il personaggio",
+    "story": "Storia",
+    "notes": "Note"
   }
 }
