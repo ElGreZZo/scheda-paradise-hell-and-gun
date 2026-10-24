@@ -2,7 +2,8 @@
 //
 //   dist/scheda.html        src/scheda/scheda.njk (Nunjucks) con lo script dentro <script type="text/worker">: i moduli
 //                           TypeScript di src/worker/, uniti da esbuild a partire da main.ts
-//   dist/scheda.css         src/scheda.css, con gli @import locali ("parte.css") copiati al loro posto
+//   dist/scheda.css         src/scheda.css, con gli @import locali ("parte.css", o "parte.css.njk" passata da
+//                           Nunjucks) copiati al loro posto
 //   dist/translation.json   src/traduzioni/it.json appiattito (strumenti/traduzioni.mjs); la build scrive i testi
 //                           anche negli elementi con data-i18n
 //
@@ -57,13 +58,15 @@ export function espandiRollTemplate(testo, nomi) {
 }
 const nomiRollTemplate = async () => (await readdir(path.join(SRC, "scheda", "pagine", "rolltemplate")).catch(() => [])).filter((f) => f.endsWith(".njk")).map((f) => path.basename(f, ".njk")).sort();
 
-// CSS: un @import "file.css" locale viene sostituito dal file (ricorsivo); gli @import url(...) restano.
-async function css(file) {
-  const testo = espandiRollTemplate(await readFile(file, "utf8"), await nomiRollTemplate());
+// CSS: un @import "file.css" locale viene sostituito dal file (ricorsivo); gli @import url(...) restano. Un
+// "file.css.njk" passa prima da Nunjucks, con le stesse variabili dei template (i selettori fatti dagli id di dati/).
+async function css(file, variabili) {
+  const sorgente = await readFile(file, "utf8");
+  const testo = espandiRollTemplate(file.endsWith(".njk") ? ambiente().renderString(sorgente, variabili) : sorgente, await nomiRollTemplate());
   const parti = [];
   for (const riga of testo.split("\n")) {
-    const m = /^@import\s+"([^"]+\.css)";\s*$/.exec(riga.trim());
-    parti.push(m ? (await css(path.join(path.dirname(file), m[1]))).trimEnd() : riga);
+    const m = /^@import\s+"([^"]+\.css(?:\.njk)?)";\s*$/.exec(riga.trim());
+    parti.push(m ? (await css(path.join(path.dirname(file), m[1]), variabili)).trimEnd() : riga);
   }
   return parti.join("\n");
 }
@@ -177,7 +180,7 @@ export async function build({ minifica = true, mappa = false, sviluppo = false, 
   if (/<optgroup\b/i.test(html)) throw new Error("<optgroup> nella scheda: Roll20 lo toglie, usa una voce disattivata come intestazione");
   const senzaValore = riferimentiSenzaValore(html);
   if (senzaValore.length) throw new Error(`pulsanti di tiro con campi senza valore iniziale (serve un input, anche nascosto): ${senzaValore.join(", ")}`);
-  const foglio = await css(path.join(SRC, "scheda.css"));
+  const foglio = await css(path.join(SRC, "scheda.css"), variabili);
   // L'emulatore, che imita Roll20 portando gli import in cima, prende ogni "@import" fino al primo punto e virgola,
   // anche dentro un commento: il foglio si rompe (09/10/2026, la prima regola della scheda è sparita). Su Roll20 non
   // è provato: meglio non scriverlo.

@@ -118,3 +118,13 @@ test("inceppamento: due 1 per le armi da fuoco, tre per la pistola, mai per le a
   assert.equal("inceppata" in calcolatiProva([1, 1, 6], { ...prova, inceppa: 0 }), false);
   assert.match(comandoProva({ titolo: "Carabina", voci: [{ nome: "Agilità", valore: 2 }], soglia: 4, difficolta: 1, gm: false, opportunita: [], dettaglio: "danno 2", nota: "Richiede due mani.", inceppa: 2 }), /\{\{dettaglio=danno 2\}\} \{\{nota=Richiede due mani\.\}\} \{\{inceppata=\[\[0\]\]\}\}/);
 });
+
+test("poteri: innato o affine rispetto all'archetipo, mai per i poteri di carriera", async () => {
+  const { tipoPotere } = await import("../src/worker/poteri/poteri.ts");
+  assert.equal(tipoPotere("ali", "serafino"), "innato");
+  assert.equal(tipoPotere("lux", "serafino"), "affine");
+  assert.equal(tipoPotere("umbra", "serafino"), "");
+  assert.equal(tipoPotere("soldato/abile_nelle_armi", "serafino"), "");
+  assert.equal(tipoPotere("ali", ""), "");
+  assert.equal(tipoPotere("", "serafino"), "");
+});

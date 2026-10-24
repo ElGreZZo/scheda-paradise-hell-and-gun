@@ -23,13 +23,18 @@ export interface Archetipo {
   id: string;
   colore: string;
   incrementi: Record<string, number>;
+  /** Id dei poteri innati e affini (cap. 7): costano la metà dei punti esperienza. */
+  innati: string[];
+  affini: string[];
 }
 
 export const CARATTERISTICHE: { id: string; nome: string }[] = caratteristicheJson.voci.map(({ id, nome }) => ({ id, nome }));
 export const ABILITA: Abilita[] = abilitaJson.voci.map(({ id, nome, tipo, caratteristiche, opportunita }) => ({
   id, nome, tipo: tipo as Abilita["tipo"], caratteristiche, opportunita: opportunita.map(({ nome, esuberi }) => ({ nome, esuberi })),
 }));
-export const ARCHETIPI: Archetipo[] = archetipiJson.voci.map(({ id, colore, incrementi }) => ({ id, colore, incrementi: incrementi as Record<string, number> }));
+export const ARCHETIPI: Archetipo[] = archetipiJson.voci.map(({ id, colore, incrementi, poteri_innati, poteri_affini }) => ({
+  id, colore, incrementi: incrementi as Record<string, number>, innati: poteri_innati.map((p) => p.potere), affini: poteri_affini,
+}));
 
 export interface Arma {
   id: string;

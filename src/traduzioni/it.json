@@ -1,8 +1,7 @@
 {
   "sheet": {
     "title": "Paradise, Hell & Guns",
-    "subtitle": "Scheda dell'immortale",
-    "coming_soon": "In arrivo nelle prossime versioni della scheda."
+    "subtitle": "Scheda dell'immortale"
   },
   "header": {
     "name": "Nome",
@@ -170,6 +169,43 @@
     "fixed_points": "Punti fissi della morale",
     "fixed_points_placeholder": "Uno o due tratti che rappresentano il personaggio",
     "story": "Storia",
+    "notes": "Note"
+  },
+  "powers": {
+    "title": "Poteri",
+    "hint": "Innati e affini costano la metà dei punti esperienza.",
+    "choose": "Potere dal manuale, o Altro per uno scritto a mano",
+    "other": "Altro (scritto a mano)",
+    "name_placeholder": "Nome del potere",
+    "groups": {
+      "comune": "Poteri comuni",
+      "passivo": "Poteri passivi",
+      "attivo": "Poteri attivi",
+      "superiore": "Poteri superiori",
+      "carriera": "Poteri di carriera"
+    },
+    "categories": {
+      "comune": "Comune",
+      "passivo": "Passivo",
+      "attivo": "Attivo",
+      "superiore": "Superiore"
+    },
+    "career": "Carriera:",
+    "only": {
+      "bianco": "Solo bianchi",
+      "nero": "Solo neri"
+    },
+    "innate": "innato",
+    "affine": "affine",
+    "half_cost": "costa la metà dei punti esperienza",
+    "xp": "PX",
+    "open": "Testo",
+    "open_tooltip": "Mostra o nasconde il testo del manuale",
+    "sections": {
+      "effetti_scenografici": "Effetti scenografici",
+      "reazione": "Reazione",
+      "effetto_combo": "Effetto combo"
+    },
     "notes": "Note"
   }
 }

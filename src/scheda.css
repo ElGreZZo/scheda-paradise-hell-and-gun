@@ -14,4 +14,5 @@
 @import "stili/personaggio.css";
 @import "stili/equipaggiamento.css";
 @import "stili/origini.css";
+@import "stili/poteri.css.njk";
 @import "stili/rolltemplate.css";

@@ -2,7 +2,7 @@
 
 Scheda custom per Roll20 del gioco di ruolo **Paradise, Hell and Guns** (weird west con angeli e demoni), in sviluppo.
 
-**Stato:** versione 0.0.3 della scheda, in stile «Frontiera»: funzionano la pagina Personaggio (caratteristiche, abilità, punti ferita, mana, risorse, barra dei tiri, tiri con successi, esuberi e opportunità in chat), la pagina Equipaggiamento (armi dal manuale con attacco e inceppamento, cartucciera, oggetti, ricchezza, depositi, seguaci) e la pagina Archetipo e carriera (testi del manuale dell'archetipo e della carriera scelti, nature con «usata in questa sessione», patto, flashback, punti fissi, storia e note). I poteri arrivano con la prossima versione.
+**Stato:** versione 0.0.4 della scheda, in stile «Frontiera»: funzionano la pagina Personaggio (caratteristiche, abilità, punti ferita, mana, risorse, barra dei tiri, tiri con successi, esuberi e opportunità in chat), la pagina Equipaggiamento (armi dal manuale con attacco e inceppamento, cartucciera, oggetti, ricchezza, depositi, seguaci) e la pagina Archetipo e carriera (testi del manuale dell'archetipo e della carriera scelti, nature con «usata in questa sessione», patto, flashback, punti fissi, storia e note) e la pagina Poteri (una card per potere, dal manuale o di carriera, con pallini, etichetta innato o affine e testi del manuale livello per livello). Tiri dei poteri, costi in mana e anime e usi limitati arrivano con le prossime versioni.
 
 ## Struttura
 

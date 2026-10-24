@@ -24,6 +24,8 @@ Raccolto lavorando alla scheda di Farsight (repo `Farsight custom sheet`, settem
   «●» passa. I commenti senza `*` dentro vengono tolti prima del controllo. La build si ferma prima (`violazioniCssRoll20`).
 - **`@import` dentro un commento del CSS** rompe il foglio nell'emulatore: gli import vengono portati in cima fino al primo `;`. Su Roll20 non è provato; la build si ferma comunque.
 - **HTML ripulito**: `<optgroup>` sparisce (le `<option>` restano in fila), mentre `<option disabled>` e `&nbsp;` restano. Le intestazioni dei menu si fanno con voci disattivate.
+- **Righe vuote delle sezioni ripetibili**: una riga aggiunta e lasciata senza valori non si salva. Quando un'altra riga cambia, la sezione si ridisegna dagli attributi e le righe vuote spariscono (visto il 24/10/2026 con i poteri: quattro «Aggiungi», poi un valore nella prima, ne resta una). L'emulatore invece le tiene.
+- **Sezioni ripetibili pesanti**: ogni card dei poteri contiene i testi di tutti i 79 poteri (51 del cap. 10, 28 di carriera), nascosti, cioè circa 3150 elementi. Su Roll20 una card nuova compare in circa 45 ms e la scheda si riapre in circa 0,4 s con 4 card (24/10/2026).
 - **Valori `computed::`** dei roll template diventano `span.inlinerollresult` viola.
 - **Roll template**: li rende Mustache.js 1.0.0, che nella pagina è globale e si prova con `Mustache.render`. `{{#^prop}}` su una proprietà non si vede mai; la sezione inversa è `{{^prop}}…{{/prop}}`. Negano solo le funzioni di Roll20 (`{{#^rollTotal() …}}`).
 - **Pulsanti di tiro**: un `@{campo}` senza un input (anche nascosto) con valore iniziale dà «No attribute was found» in chat. Uno `<span name="attr_…">` non basta.

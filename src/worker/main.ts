@@ -7,6 +7,7 @@ import { registraDerivati } from "./personaggio/derivati";
 import { registraInterfaccia } from "./personaggio/interfaccia";
 import { registraPallini } from "./personaggio/pallini";
 import { registraRisorse } from "./personaggio/risorse";
+import { registraPoteri } from "./poteri/poteri";
 import { registraProve } from "./tiri/prove";
 
 registraInterfaccia();
@@ -16,3 +17,4 @@ registraPallini();
 registraRisorse();
 registraProve();
 registraEquipaggiamento();
+registraPoteri();

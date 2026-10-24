@@ -1,0 +1,90 @@
+{#- Pagina Poteri (manuale 1.6, cap. 10, e i poteri di carriera del cap. 8). Una card per potere nella sezione
+    ripetibile repeating_poteri: il potere si sceglie dal menu (id di dati/poteri.json, o "<carriera>/<id>" per i
+    poteri di carriera, vuoto per un potere scritto a mano), i pallini sono il livello posseduto.
+    Ogni card contiene i testi del manuale di tutti i poteri; il CSS (stili/poteri.css.njk) mostra solo quello
+    scelto, ingrigisce i livelli non posseduti e apre i testi con attr_aperto. Gli input nascosti in cima alla card
+    precedono tutto il resto perché il CSS li confronta con quello che segue. attr_tipo (innato, affine) lo scrive lo
+    script (poteri/poteri.ts) dall'archetipo. -#}
+{% import "macro.njk" as m %}
+{#- Blocco dei testi di un potere. valore: il valore di attr_potere; testo: i paragrafi fuori dai livelli; per i poteri
+    di carriera i livelli non hanno testo proprio (il testo del manuale li contiene tutti). -#}
+{% macro bloccoPotere(valore, p, carriera = null) %}
+<div class="testo-potere potere-{$ valore | replace("/", "--") $}">
+  <div class="cat-potere">
+    {% if carriera %}<span data-i18n="powers.career"></span> {$ carriera.nome $}{% else %}<span data-i18n="powers.categories.{$ p.categoria $}"></span>{% endif %}
+    {% if p.solo %} · <span data-i18n="powers.only.{$ p.solo $}"></span>{% endif %}
+  </div>
+  {% if p.testo.length %}<div class="solo-aperto">{% for r in p.testo %}<p>{$ r $}</p>{% endfor %}</div>{% endif %}
+  <ol class="livelli-potere">
+    {% for l in p.livelli %}
+    <li class="liv liv-{$ l.livello $}">
+      <div class="liv-testa"><span class="pallini-liv">{$ "●".repeat(l.livello) $}</span><b>{$ l.nome or "" $}</b><span class="costo">{$ l.costo_px $}{% if l.costo_variabile %}+{% endif %} <span data-i18n="powers.xp"></span></span></div>
+      {% if l.testo or l.attacco or l.opportunita %}
+      <div class="solo-aperto testo-liv">
+        {% for r in l.testo or [] %}<p>{$ r $}</p>{% endfor %}
+        {% if l.attacco %}<p class="attacco-potere">{$ l.attacco.statistiche $}</p>{% endif %}
+        {% if l.opportunita %}
+        <ul class="opportunita-potere">
+          {% for o in l.opportunita %}<li><b>{$ o.nome $} ({$ o.esuberi $})</b> {$ o.testo $}</li>{% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+  {% for campo in ["effetti_scenografici", "reazione", "effetto_combo"] %}
+  {% if p[campo] %}
+  <div class="solo-aperto voce-potere">
+    <div class="sottotitolo" data-i18n="powers.sections.{$ campo $}"></div>
+    {% for r in p[campo] %}<p>{$ r $}</p>{% endfor %}
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% if p.riquadri %}<div class="solo-aperto riquadro-manuale">{% for r in p.riquadri %}<p>{$ r $}</p>{% endfor %}</div>{% endif %}
+</div>
+{% endmacro %}
+<section class="pagina pagina-poteri">
+  <div class="riquadro intro-poteri">
+    <h3><span data-i18n="powers.title"></span><small data-i18n="powers.hint"></small></h3>
+  </div>
+  <fieldset class="repeating_poteri">
+    <div class="potere">
+      <input type="hidden" class="potere-scelto" name="attr_potere" value="">
+      <input type="hidden" class="livello-scelto" name="attr_livello" value="0">
+      <input type="hidden" class="tipo-scelto" name="attr_tipo" value="">
+      <input type="hidden" class="aperto-scelto" name="attr_aperto" value="0">
+      <div class="testa-potere">
+        <select name="attr_potere" data-i18n-title="powers.choose">
+          <option value="" data-i18n="powers.other"></option>
+          {% for cat in ["comune", "passivo", "attivo", "superiore"] %}
+          <option value="gruppo-{$ cat $}" disabled data-i18n="powers.groups.{$ cat $}"></option>
+          {% for p in dati.poteri %}{% if p.categoria == cat %}
+          <option value="{$ p.id $}">{$ p.nome $}</option>
+          {% endif %}{% endfor %}
+          {% endfor %}
+          <option value="gruppo-carriera" disabled data-i18n="powers.groups.carriera"></option>
+          {% for c in dati.carriere %}
+          <option value="gruppo-{$ c.id $}" disabled>{$ c.nome $}</option>
+          {% for p in c.poteri %}
+          <option value="{$ c.id $}/{$ p.id $}">{$ p.nome $}</option>
+          {% endfor %}
+          {% endfor %}
+        </select>
+        {$ m.pallini("livello", "livello", 5, 0, "pallini-potere") $}
+        <button type="action" class="apri-potere" name="act_apri" data-i18n="powers.open" data-i18n-title="powers.open_tooltip"></button>
+      </div>
+      <input type="text" class="nome-potere" name="attr_nome" data-i18n-placeholder="powers.name_placeholder">
+      <div class="etichette-potere">
+        <span class="tag-potere tag-innato" data-i18n="powers.innate"></span>
+        <span class="tag-potere tag-affine" data-i18n="powers.affine"></span>
+        <span class="nota-meta" data-i18n="powers.half_cost"></span>
+      </div>
+      <div class="testi-potere">
+        {% for p in dati.poteri %}{$ bloccoPotere(p.id, p) $}{% endfor %}
+        {% for c in dati.carriere %}{% for p in c.poteri %}{$ bloccoPotere(c.id + "/" + p.id, p, c) $}{% endfor %}{% endfor %}
+      </div>
+      <input type="text" class="note-potere" name="attr_note" data-i18n-placeholder="powers.notes">
+    </div>
+  </fieldset>
+</section>

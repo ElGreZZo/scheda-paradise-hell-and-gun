@@ -132,10 +132,6 @@
   line-height: 1.25;
   color: var(--tenue);
 }
-.scheda .in-arrivo {
-  color: var(--tenue);
-  font-style: italic;
-}
 
 /* Selettore a segmenti (forma, pubblico o GM, soglia): la radio vera e trasparente sopra la sua etichetta. */
 .scheda .segmenti,
