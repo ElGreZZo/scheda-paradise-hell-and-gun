@@ -102,6 +102,49 @@
     "initiative": "Iniziativa",
     "stunned": "Stordito",
     "shaken": "Scosso",
-    "extra_dice": "dadi"
+    "extra_dice": "dadi",
+    "jammed": "Arma scarica o inceppata"
+  },
+  "equipment": {
+    "weapons": "Armi",
+    "weapons_hint": "scegli dal manuale o scrivi a mano",
+    "weapon": {
+      "type_tooltip": "Scegliendo un'arma del manuale si riempiono abilità, danno, distanza, distruttività, munizioni e note",
+      "damage": "danno",
+      "range": "distanza",
+      "destructiveness": "distruttività",
+      "ammo": "Munizioni consumate da una ricarica",
+      "ammo_short": "Munizioni",
+      "attack": "Attacca",
+      "reload": "Ricarica",
+      "reload_tooltip": "Toglie dalla cartucciera le munizioni che l'arma consuma",
+      "name": "Nome"
+    },
+    "other": "Altro",
+    "notes": "Note",
+    "items": "Oggetti e manufatti",
+    "item": "Oggetto",
+    "where_legend": "I indossato · A sella · B banca · C carrozza · N nascosto",
+    "where": {
+      "I": "Indossato",
+      "A": "Sella della cavalcatura",
+      "B": "Banca",
+      "C": "Carrozza",
+      "N": "Nascosto"
+    },
+    "where_placeholder": "Dove",
+    "ammo": "Cartucciera",
+    "ammo_hint": "30 ●, 40 con Armaiolo",
+    "ammo_max": "Massimo della cartucciera",
+    "ammo_reload": "Ricaricare consuma un certo numero di ● dalla propria riserva di munizioni, tale numero dipende dall’arma",
+    "wealth": "Ricchezza",
+    "wealth_hint": "cala di ● a settimana",
+    "deposits": "Depositi",
+    "souls_deposited": "Anime depositate",
+    "wealth_deposited": "Ricchezza depositata",
+    "followers": "Seguaci",
+    "followers_hint": "massimo: metà dell'astuzia",
+    "follower": "Seguace",
+    "speed": "Velocità"
   }
 }

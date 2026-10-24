@@ -18,6 +18,9 @@ const GRUPPI: Gruppo[] = [
     { pulsante: `${id}inc`, attributo: `${id}_inc`, quanti: 4, predefinito: 0 },
   ]),
   ...ABILITA.map(({ id }) => ({ pulsante: id, attributo: id, quanti: 5, predefinito: 0 })),
+  // Ricchezza da ○ a ●●●●●● (cap. 11), anche quella depositata.
+  { pulsante: "ricchezza", attributo: "ricchezza", quanti: 6, predefinito: 0 },
+  { pulsante: "ricchezzadep", attributo: "ricchezza_depositata", quanti: 6, predefinito: 0 },
 ];
 
 export const registraPallini = (): void => {

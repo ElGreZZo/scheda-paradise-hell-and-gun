@@ -7,26 +7,27 @@ import { ABILITA, CARATTERISTICHE, campiCaratteristica, nomeCaratteristica, type
 import { fra, intero } from "../base/numeri";
 import { traduci } from "../base/testi";
 import { totaleCaratteristica } from "../personaggio/calcoli";
-import { calcolatiProva, comandoProva, dadiUsciti, type Voce } from "./dadi";
+import { calcolatiProva, comandoProva, dadiUsciti, type Prova, type Voce } from "./dadi";
 
-const BARRA = ["tiro_gm", "tiro_soglia", "tiro_difficolta", "tiro_dadi", "mod_stordito", "mod_scosso", "forma"];
+export const BARRA = ["tiro_gm", "tiro_soglia", "tiro_difficolta", "tiro_dadi", "mod_stordito", "mod_scosso", "forma"];
 
 /** Il totale di una caratteristica dai valori letti (● + Inc, −2 in forma mortale). */
-const totale = (valori: Valori, id: string): number => {
+export const totale = (valori: Valori, id: string): number => {
   const { base, inc } = campiCaratteristica(id);
   return totaleCaratteristica(intero(valori[base], 2), intero(valori[inc], 0), valori.forma === "mortale");
 };
 
 /** Le voci della barra: dadi ±, Stordito, Scosso. */
-const vociBarra = (valori: Valori): Voce[] => [
+export const vociBarra = (valori: Valori): Voce[] => [
   { nome: traduci("chat.extra_dice"), valore: intero(valori.tiro_dadi) },
   { nome: traduci("chat.stunned"), valore: valori.mod_stordito === "1" ? -1 : 0 },
   { nome: traduci("chat.shaken"), valore: valori.mod_scosso === "1" ? -1 : 0 },
 ];
 
-const tira = (titolo: string, voci: Voce[], valori: Valori, opportunita: Opportunita[]): void => {
+/** Tira una prova con le opzioni della barra (soglia, difficoltà, pubblico o GM). altro: dettaglio, nota, inceppa. */
+export const tira = (titolo: string, voci: Voce[], valori: Valori, opportunita: Opportunita[], altro: Pick<Prova, "dettaglio" | "nota" | "inceppa"> = {}): void => {
   const prova = {
-    titolo, voci, opportunita,
+    titolo, voci, opportunita, ...altro,
     soglia: fra(intero(valori.tiro_soglia, 4), 2, 6),
     difficolta: fra(intero(valori.tiro_difficolta, 1), 1, 20),
     gm: valori.tiro_gm === "1",

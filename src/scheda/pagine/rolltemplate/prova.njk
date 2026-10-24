@@ -1,7 +1,8 @@
 {#- Roll template delle prove: riserva di d6, successi da soglia+ (4+ normale), esuberi oltre la difficoltà
     (manuale, cap. 2). Lo script (tiri/prove.ts) tira con Custom Roll Parsing e passa a finishRoll:
     d1..d20 i dadi e s1..s20 il loro stile (1 fallito, 2 successo, 3 un 1), successi, esuberi, esito (1 riuscito,
-    2 fallito), k1..k12 se l'opportunità o1..o12 si può pagare con gli esuberi (1) o no (0).
+    2 fallito), k1..k16 se l'opportunità o1..o16 si può pagare con gli esuberi (1) o no (0), inceppata (1 se un'arma da
+    fuoco si è scaricata o inceppata). Per gli attacchi: dettaglio (danno, distanza, distruttività) e nota (note dell'arma).
     Nei roll template le classi vogliono il prefisso sheet-. Le sezioni inverse si scrivono {{^prop}}…{{/prop}}. -#}
 {% set stili = [[1, ""], [2, " sheet-successo"], [3, " sheet-uno"]] %}
 <rolltemplate class="sheet-rolltemplate-prova">
@@ -10,6 +11,7 @@
       <div class="sheet-tiro-titolo">{{titolo}}</div>
       {{#personaggio}}<div class="sheet-tiro-personaggio">{{personaggio}}</div>{{/personaggio}}
       {{#formula}}<div class="sheet-tiro-formula">{{formula}}</div>{{/formula}}
+      {{#dettaglio}}<div class="sheet-tiro-formula">{{dettaglio}}</div>{{/dettaglio}}
       <div class="sheet-tiro-formula"><span data-i18n="chat.threshold"></span> {{soglia}} · <span data-i18n="chat.difficulty"></span> {{difficolta}}</div>
     </div>
     <div class="sheet-tiro-corpo">
@@ -23,8 +25,10 @@
         {{#rollTotal() computed::esito 2}}<span class="sheet-fallito" data-i18n="chat.failure"></span>{{/rollTotal() computed::esito 2}}
         <span><span data-i18n="chat.overruns"></span> <b>{{computed::esuberi}}</b></span>
       </div>
+      {{#rollTotal() computed::inceppata 1}}<div class="sheet-inceppata" data-i18n="chat.jammed"></div>{{/rollTotal() computed::inceppata 1}}
       {{#o1}}<div class="sheet-opportunita-titolo" data-i18n="chat.opportunities"></div>{{/o1}}
-      {% for i in range(1, 13) %}{{#o{$ i $}}}{{#rollTotal() computed::k{$ i $} 1}}<div class="sheet-opp sheet-opp-si">{{o{$ i $}}}</div>{{/rollTotal() computed::k{$ i $} 1}}{{#rollTotal() computed::k{$ i $} 0}}<div class="sheet-opp">{{o{$ i $}}}</div>{{/rollTotal() computed::k{$ i $} 0}}{{/o{$ i $}}}{% endfor %}
+      {% for i in range(1, 17) %}{{#o{$ i $}}}{{#rollTotal() computed::k{$ i $} 1}}<div class="sheet-opp sheet-opp-si">{{o{$ i $}}}</div>{{/rollTotal() computed::k{$ i $} 1}}{{#rollTotal() computed::k{$ i $} 0}}<div class="sheet-opp">{{o{$ i $}}}</div>{{/rollTotal() computed::k{$ i $} 0}}{{/o{$ i $}}}{% endfor %}
+      {{#nota}}<div class="sheet-nota">{{nota}}</div>{{/nota}}
     </div>
   </div>
 </rolltemplate>

@@ -9,8 +9,8 @@ import type { Opportunita } from "../base/modello";
 
 /** Dadi mostrati nella card in chat (d1..d20 nel roll template prova). */
 export const DADI_IN_CHAT = 20;
-/** Opportunità mostrate nella card (o1..o12). */
-export const OPPORTUNITA_IN_CHAT = 12;
+/** Opportunità mostrate nella card (o1..o16): Mira ne ha 11, il lazzo ne aggiunge 3. */
+export const OPPORTUNITA_IN_CHAT = 16;
 
 export interface Voce {
   nome: string;
@@ -44,7 +44,7 @@ export const esitoProva = (dadi: number[], soglia: number, difficolta: number): 
   return { successi, esito: riuscito ? 1 : 2, esuberi: riuscito ? successi - difficolta : 0 };
 };
 
-/** Per ogni opportunità, 1 se gli esuberi bastano a pagarla, altrimenti 0 (k1..k12 nel roll template). */
+/** Per ogni opportunità, 1 se gli esuberi bastano a pagarla, altrimenti 0 (k1..k16 nel roll template). */
 export const opportunitaPagabili = (opportunita: Opportunita[], esito: Esito): number[] =>
   opportunita.slice(0, OPPORTUNITA_IN_CHAT).map((o) => (esito.esito === 1 && o.esuberi <= esito.esuberi ? 1 : 0));
 
@@ -55,10 +55,19 @@ export interface Prova {
   difficolta: number;
   gm: boolean;
   opportunita: Opportunita[];
+  /** Riga in più sotto la formula (l'arma: danno, distanza, distruttività). */
+  dettaglio?: string;
+  /** Note in fondo alla card (le note dell'arma). */
+  nota?: string;
+  /** Quanti 1 inceppano l'arma da fuoco (0 o assente: nessun controllo). */
+  inceppa?: number;
 }
 
+/** 1 se i dadi hanno almeno «inceppa» 1 (arma da fuoco scarica o inceppata), altrimenti 0. */
+export const inceppata = (dadi: number[], inceppa = 0): number => (inceppa > 0 && dadi.filter((d) => d === 1).length >= inceppa ? 1 : 0);
+
 /** Il comando del tiro, con il roll template prova. Le proprietà con [[0]] le riempie finishRoll. */
-export const comandoProva = ({ titolo, voci, soglia, difficolta, gm, opportunita }: Prova): string => {
+export const comandoProva = ({ titolo, voci, soglia, difficolta, gm, opportunita, dettaglio, nota, inceppa }: Prova): string => {
   const dadi = riserva(voci);
   const mostrati = Math.min(dadi, DADI_IN_CHAT);
   return [
@@ -67,6 +76,9 @@ export const comandoProva = ({ titolo, voci, soglia, difficolta, gm, opportunita
     `{{titolo=${titolo}}} `,
     "{{personaggio=@{character_name}}} ",
     `{{formula=${formula(voci)}}} `,
+    dettaglio ? `{{dettaglio=${dettaglio}}} ` : "",
+    nota ? `{{nota=${nota}}} ` : "",
+    inceppa ? "{{inceppata=[[0]]}} " : "",
     `{{soglia=${soglia}+}} {{difficolta=${difficolta}}} `,
     dadi > 0 ? `{{tiro=[[${dadi}d6]]}} ` : "{{tiro=[[0]]}} {{nessundado=1}} ",
     "{{successi=[[0]]}} {{esuberi=[[0]]}} {{esito=[[0]]}} ",
@@ -80,9 +92,9 @@ export const dadiUsciti = (risultato: RisultatoTiro | undefined): number[] =>
   [...(risultato?.rolls?.[0]?.results ?? risultato?.dice ?? [])].map(Number);
 
 /** I valori calcolati da passare a finishRoll. */
-export const calcolatiProva = (dadi: number[], prova: Pick<Prova, "soglia" | "difficolta" | "opportunita">): Record<string, number> => {
+export const calcolatiProva = (dadi: number[], prova: Pick<Prova, "soglia" | "difficolta" | "opportunita" | "inceppa">): Record<string, number> => {
   const esito = esitoProva(dadi, prova.soglia, prova.difficolta);
-  const calcolati: Record<string, number> = { ...esito };
+  const calcolati: Record<string, number> = { ...esito, ...(prova.inceppa ? { inceppata: inceppata(dadi, prova.inceppa) } : {}) };
   dadi.slice(0, DADI_IN_CHAT).forEach((d, i) => {
     calcolati[`d${i + 1}`] = d;
     calcolati[`s${i + 1}`] = stileDado(d, prova.soglia);

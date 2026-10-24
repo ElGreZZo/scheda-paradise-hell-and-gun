@@ -15,11 +15,12 @@
 
 {#- Caselle di un tracciato con un massimo (danni dei punti ferita, mana usato). attributo_massimo è il massimo
     (attr_<...>_max): le caselle oltre il massimo si nascondono. attributo_pieni è il numero di caselle piene,
-    calcolato dallo script. Un clic su una casella porta i pieni a n, sull'ultima piena li porta a n - 1. -#}
-{% macro tracciato(attributo_massimo, attributo_pieni, pulsante, quante, classe = "") %}
+    calcolato dallo script (o contato direttamente, come la cartucciera). iniziale: il valore di partenza di
+    entrambi (la cartucciera parte piena, 30 su 30). Un clic su una casella porta i pieni a n, sull'ultima piena li porta a n - 1. -#}
+{% macro tracciato(attributo_massimo, attributo_pieni, pulsante, quante, classe = "", iniziale = 0) %}
 <span class="tracciato {$ classe $}">
-  <input type="hidden" class="massimo" name="attr_{$ attributo_massimo $}" value="0">
-  <input type="hidden" class="contatore" name="attr_{$ attributo_pieni $}" value="0">
+  <input type="hidden" class="massimo" name="attr_{$ attributo_massimo $}" value="{$ iniziale $}">
+  <input type="hidden" class="contatore" name="attr_{$ attributo_pieni $}" value="{$ iniziale $}">
   {% for n in range(1, quante + 1) %}
   <button type="action" class="casella" name="act_{$ pulsante $}{$ n $}"><span></span></button>
   {% endfor %}

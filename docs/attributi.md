@@ -1,6 +1,6 @@
 # Attributi della scheda
 
-Nomi degli attributi di Roll20 (`attr_…`), decisi con l'utente il 23/10/2026 per la versione 0.0.1. **Non si rinominano più**: in una partita in corso un attributo rinominato fa perdere i dati. Se proprio serve, si aggiunge il nuovo e lo script converte il vecchio all'apertura. Sono gli stessi nomi dei campi della scheda PDF (`docs/stampa/`), dove esistono.
+Nomi degli attributi di Roll20 (`attr_…`), decisi con l'utente il 23/10/2026 per la versione 0.0.1 e il 24/10/2026 per la 0.0.2 (equipaggiamento). **Non si rinominano più**: in una partita in corso un attributo rinominato fa perdere i dati. Se proprio serve, si aggiunge il nuovo e lo script converte il vecchio all'apertura. Sono gli stessi nomi dei campi della scheda PDF (`docs/stampa/`), dove esistono.
 
 | Cosa | Attributi | Valori |
 |---|---|---|
@@ -9,6 +9,10 @@ Nomi degli attributi di Roll20 (`attr_…`), decisi con l'utente il 23/10/2026 p
 | Abilità | gli id di `dati/elenchi/abilita.json`: `atletica` … `sopravvivenza`, `mischia`, `mira`, `demoralizzare`, `difesa` | da 0 a 5 |
 | Punti ferita | `pf` (rimasti, con il massimo in `pf_max`), `pf_non_letali`, `pf_temporanei` | `pf` e `pf_max` vanno sulla barra del token |
 | Altre risorse | `mana` (con `mana_max`), `anime`, `ispirazione` | |
+| Armi (`repeating_armi`) | `nome`, `tipo`, `abilita`, `danno`, `distanza`, `distruttivita`, `munizioni`, `note` | `tipo`: id di `dati/equipaggiamento/armi.json` o vuoto (Altro); `abilita`: `mischia` o `mira`; `munizioni`: ● consumati da una ricarica |
+| Oggetti (`repeating_oggetti`) | `nome`, `dove`, `note` | `dove`: `I`, `A`, `B`, `C`, `N` |
+| Seguaci (`repeating_seguaci`) | `nome`, `tipo`, `velocita`, `note` | `tipo`: id di `dati/equipaggiamento/seguaci.json` o vuoto |
+| Cartucciera e ricchezza | `cartucciera` (con il massimo in `cartucciera_max`), `ricchezza`, `anime_depositate`, `anime_depositate_dove`, `ricchezza_depositata`, `ricchezza_depositata_dove` | `cartucciera_max` 30, 40 con Armaiolo; ricchezza da 0 a 6 |
 | Barra dei tiri | `tiro_gm`, `tiro_soglia`, `tiro_difficolta`, `tiro_dadi`, `mod_stordito`, `mod_scosso` | `tiro_gm`: `0` pubblico, `1` solo GM; `tiro_soglia` da 2 a 6 |
 
 Calcolati dallo script (si possono cambiare senza perdere dati, perché si ricalcolano):
@@ -20,3 +24,4 @@ Calcolati dallo script (si possono cambiare senza perdere dati, perché si rical
 | `pf_danni`, `mana_usato` | caselle piene dei tracciati |
 | `pagina` | linguetta aperta |
 | `tiro_attivo` | 1 se la barra dei tiri non è normale (barra colorata) |
+| `repeating_armi_…_inceppa` | quanti 1 scaricano l'arma da fuoco (2, 3 la pistola, 0 se non è da fuoco); lo scrive la scelta del tipo |

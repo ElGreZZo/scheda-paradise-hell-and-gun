@@ -1,6 +1,7 @@
 /* Pallini e caselle che si riempiono in ordine (macro pallini e tracciato in src/scheda/macro.njk).
    Il numero sta nell input nascosto .contatore, che precede i pulsanti: con valore N si riempiono i primi N
-   (--pieno: 1). Nei tracciati .massimo nasconde le caselle oltre il massimo. Regole generate fino a 24. */
+   (--pieno: 1). Nei tracciati .massimo nasconde le caselle oltre il massimo. Regole generate fino a 40
+   (la cartucciera con Armaiolo). */
 .contatore[value="1"] ~ button:nth-of-type(-n+1),
 .contatore[value="2"] ~ button:nth-of-type(-n+2),
 .contatore[value="3"] ~ button:nth-of-type(-n+3),
@@ -24,7 +25,23 @@
 .contatore[value="21"] ~ button:nth-of-type(-n+21),
 .contatore[value="22"] ~ button:nth-of-type(-n+22),
 .contatore[value="23"] ~ button:nth-of-type(-n+23),
-.contatore[value="24"] ~ button:nth-of-type(-n+24) {
+.contatore[value="24"] ~ button:nth-of-type(-n+24),
+.contatore[value="25"] ~ button:nth-of-type(-n+25),
+.contatore[value="26"] ~ button:nth-of-type(-n+26),
+.contatore[value="27"] ~ button:nth-of-type(-n+27),
+.contatore[value="28"] ~ button:nth-of-type(-n+28),
+.contatore[value="29"] ~ button:nth-of-type(-n+29),
+.contatore[value="30"] ~ button:nth-of-type(-n+30),
+.contatore[value="31"] ~ button:nth-of-type(-n+31),
+.contatore[value="32"] ~ button:nth-of-type(-n+32),
+.contatore[value="33"] ~ button:nth-of-type(-n+33),
+.contatore[value="34"] ~ button:nth-of-type(-n+34),
+.contatore[value="35"] ~ button:nth-of-type(-n+35),
+.contatore[value="36"] ~ button:nth-of-type(-n+36),
+.contatore[value="37"] ~ button:nth-of-type(-n+37),
+.contatore[value="38"] ~ button:nth-of-type(-n+38),
+.contatore[value="39"] ~ button:nth-of-type(-n+39),
+.contatore[value="40"] ~ button:nth-of-type(-n+40) {
   --pieno: 1;
 }
 .massimo[value="0"] ~ button:nth-of-type(n+1),
@@ -51,6 +68,22 @@
 .massimo[value="21"] ~ button:nth-of-type(n+22),
 .massimo[value="22"] ~ button:nth-of-type(n+23),
 .massimo[value="23"] ~ button:nth-of-type(n+24),
-.massimo[value="24"] ~ button:nth-of-type(n+25) {
+.massimo[value="24"] ~ button:nth-of-type(n+25),
+.massimo[value="25"] ~ button:nth-of-type(n+26),
+.massimo[value="26"] ~ button:nth-of-type(n+27),
+.massimo[value="27"] ~ button:nth-of-type(n+28),
+.massimo[value="28"] ~ button:nth-of-type(n+29),
+.massimo[value="29"] ~ button:nth-of-type(n+30),
+.massimo[value="30"] ~ button:nth-of-type(n+31),
+.massimo[value="31"] ~ button:nth-of-type(n+32),
+.massimo[value="32"] ~ button:nth-of-type(n+33),
+.massimo[value="33"] ~ button:nth-of-type(n+34),
+.massimo[value="34"] ~ button:nth-of-type(n+35),
+.massimo[value="35"] ~ button:nth-of-type(n+36),
+.massimo[value="36"] ~ button:nth-of-type(n+37),
+.massimo[value="37"] ~ button:nth-of-type(n+38),
+.massimo[value="38"] ~ button:nth-of-type(n+39),
+.massimo[value="39"] ~ button:nth-of-type(n+40),
+.massimo[value="40"] ~ button:nth-of-type(n+41) {
   display: none;
 }

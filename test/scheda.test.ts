@@ -87,3 +87,34 @@ test("comando del tiro: template, dadi, opportunità; zero dadi senza tiro", () 
   assert.match(vuoto, /\{\{tiro=\[\[0\]\]\}\} \{\{nessundado=1\}\}/);
   assert.deepEqual(calcolatiProva([6, 1], prova), { successi: 1, esito: 1, esuberi: 0, d1: 6, s1: 2, d2: 1, s2: 3, k1: 0 });
 });
+
+test("armi del manuale: valori della riga, armi da fuoco e note senza le righe che introducono le opportunità", async () => {
+  const { valoriArma, prefissoRiga, dettaglioArma } = await import("../src/worker/equipaggiamento/equipaggiamento.ts");
+  assert.deepEqual(valoriArma("carabina", ""), { nome: "Carabina", abilita: "mira", danno: "2", distanza: "4", distruttivita: "2", munizioni: "2", note: "L’opportunità colpo critico costa un esubero in meno (quindi 3). Richiede due mani per essere usato.", inceppa: "2" });
+  assert.equal(valoriArma("pistola", "La mia Colt").nome, undefined);
+  assert.equal(valoriArma("pistola", "").inceppa, "3");
+  assert.equal(valoriArma("arco", "").inceppa, "0");
+  assert.equal(valoriArma("coltello", "").note, "In caso di necessità quest’arma può essere lanciata a distanza 2.");
+  assert.deepEqual(valoriArma("", ""), {});
+  assert.equal(prefissoRiga("repeating_armi_-AbC123_tipo", "armi"), "repeating_armi_-AbC123_");
+  assert.equal(dettaglioArma(3, 1, 2), "danno 3 · distanza 1 · distruttività ●●");
+  assert.equal(dettaglioArma(1, 0, 0), "danno 1 · distanza 0 · distruttività ○");
+});
+
+test("seguaci del manuale: velocità dalla riga Velocità", async () => {
+  const { SEGUACI } = await import("../src/worker/base/modello.ts");
+  assert.deepEqual(SEGUACI.map((s) => [s.id, s.velocita]), [["cavallo", 3], ["cane_falco", 2], ["procione_scimmia", 1], ["pappagallo_lontra", 1]]);
+  assert.match(SEGUACI[1].note, /^Il personaggio guadagna 2D6/);
+});
+
+test("inceppamento: due 1 per le armi da fuoco, tre per la pistola, mai per le altre", async () => {
+  const { inceppata } = await import("../src/worker/tiri/dadi.ts");
+  assert.equal(inceppata([1, 1, 5], 2), 1);
+  assert.equal(inceppata([1, 1, 5], 3), 0);
+  assert.equal(inceppata([1, 1, 1], 3), 1);
+  assert.equal(inceppata([1, 1, 1], 0), 0);
+  const prova = { soglia: 4, difficolta: 1, opportunita: [], inceppa: 2 };
+  assert.equal(calcolatiProva([1, 1, 6], prova).inceppata, 1);
+  assert.equal("inceppata" in calcolatiProva([1, 1, 6], { ...prova, inceppa: 0 }), false);
+  assert.match(comandoProva({ titolo: "Carabina", voci: [{ nome: "Agilità", valore: 2 }], soglia: 4, difficolta: 1, gm: false, opportunita: [], dettaglio: "danno 2", nota: "Richiede due mani.", inceppa: 2 }), /\{\{dettaglio=danno 2\}\} \{\{nota=Richiede due mani\.\}\} \{\{inceppata=\[\[0\]\]\}\}/);
+});

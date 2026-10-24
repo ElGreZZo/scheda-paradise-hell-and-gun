@@ -1,0 +1,103 @@
+{#- Pagina Equipaggiamento (manuale 1.6, cap. 11): armi, oggetti e manufatti a sinistra; cartucciera, ricchezza,
+    depositi e seguaci a destra. Armi, oggetti e seguaci sono sezioni ripetibili; armi e seguaci si scelgono dal
+    manuale (equipaggiamento/equipaggiamento.ts) e restano modificabili. -#}
+{% import "macro.njk" as m %}
+<section class="pagina pagina-equipaggiamento">
+  <div class="griglia griglia-equipaggiamento">
+    <div class="colonna">
+      <div class="riquadro">
+        <h3><span data-i18n="equipment.weapons"></span><small data-i18n="equipment.weapons_hint"></small></h3>
+        <fieldset class="repeating_armi">
+          <div class="arma">
+            <input type="text" name="attr_nome" data-i18n-placeholder="equipment.weapon.name">
+            <select name="attr_tipo" data-i18n-title="equipment.weapon.type_tooltip">
+              <option value="" data-i18n="equipment.other"></option>
+              {% for a in dati.armi %}
+              <option value="{$ a.id $}">{$ a.nome $}</option>
+              {% endfor %}
+            </select>
+            <select name="attr_abilita">
+              <option value="mischia">Mischia</option>
+              <option value="mira">Mira</option>
+            </select>
+            <div class="numeri-arma">
+              <label class="numero-arma"><span data-i18n="equipment.weapon.damage"></span><input type="number" name="attr_danno" value="0" min="0"></label>
+              <label class="numero-arma"><span data-i18n="equipment.weapon.range"></span><input type="number" name="attr_distanza" value="0" min="0" max="7"></label>
+              <label class="numero-arma"><span data-i18n="equipment.weapon.destructiveness"></span><input type="number" name="attr_distruttivita" value="0" min="0" max="6"></label>
+              <label class="numero-arma" data-i18n-title="equipment.weapon.ammo"><span data-i18n="equipment.weapon.ammo_short"></span><input type="number" name="attr_munizioni" value="0" min="0"></label>
+              <span class="azioni-arma">
+                <button type="action" class="tira" name="act_attacco" data-i18n="equipment.weapon.attack"></button>
+                <button type="action" class="ricarica" name="act_ricarica" data-i18n="equipment.weapon.reload" data-i18n-title="equipment.weapon.reload_tooltip"></button>
+              </span>
+            </div>
+            <input type="text" class="note-arma" name="attr_note" data-i18n-placeholder="equipment.notes">
+            <input type="hidden" name="attr_inceppa" value="0">
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="riquadro">
+        <h3><span data-i18n="equipment.items"></span><small data-i18n="equipment.where_legend"></small></h3>
+        <fieldset class="repeating_oggetti">
+          <div class="oggetto">
+            <input type="text" name="attr_nome" data-i18n-placeholder="equipment.item">
+            <span class="dove">
+              {% for d in ["I", "A", "B", "C", "N"] %}
+              <label class="lettera" data-i18n-title="equipment.where.{$ d $}"><input type="radio" name="attr_dove" value="{$ d $}"{% if d == "I" %} checked{% endif %}><span>{$ d $}</span></label>
+              {% endfor %}
+            </span>
+            <input type="text" name="attr_note" data-i18n-placeholder="equipment.notes">
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="colonna">
+      <div class="riquadro">
+        <h3><span data-i18n="equipment.ammo"></span><small data-i18n="equipment.ammo_hint"></small></h3>
+        <div class="numero-max">
+          <span class="cartucciera-numero"><span name="attr_cartucciera"></span> / </span>
+          <input type="number" name="attr_cartucciera_max" value="30" min="0" max="40" data-i18n-title="equipment.ammo_max">
+        </div>
+        {$ m.tracciato("cartucciera_max", "cartucciera", "colpo", 40, "munizioni", 30) $}
+        <small class="nota" data-i18n="equipment.ammo_reload"></small>
+      </div>
+
+      <div class="riquadro">
+        <h3><span data-i18n="equipment.wealth"></span><small data-i18n="equipment.wealth_hint"></small></h3>
+        {$ m.pallini("ricchezza", "ricchezza", 6) $}
+      </div>
+
+      <div class="riquadro">
+        <h3 data-i18n="equipment.deposits"></h3>
+        <div class="deposito">
+          <span class="etichetta" data-i18n="equipment.souls_deposited"></span>
+          {$ m.passi("anime_depositate", "animedep", 0, 0, 999) $}
+          <input type="text" name="attr_anime_depositate_dove" data-i18n-placeholder="equipment.where_placeholder">
+        </div>
+        <div class="deposito">
+          <span class="etichetta" data-i18n="equipment.wealth_deposited"></span>
+          {$ m.pallini("ricchezza_depositata", "ricchezzadep", 6) $}
+          <input type="text" name="attr_ricchezza_depositata_dove" data-i18n-placeholder="equipment.where_placeholder">
+        </div>
+      </div>
+
+      <div class="riquadro">
+        <h3><span data-i18n="equipment.followers"></span><small data-i18n="equipment.followers_hint"></small></h3>
+        <fieldset class="repeating_seguaci">
+          <div class="seguace">
+            <input type="text" name="attr_nome" data-i18n-placeholder="equipment.follower">
+            <select name="attr_tipo">
+              <option value="" data-i18n="equipment.other"></option>
+              {% for s in dati.seguaci %}
+              <option value="{$ s.id $}">{$ s.nome $}</option>
+              {% endfor %}
+            </select>
+            <input type="number" name="attr_velocita" value="1" min="1" max="3" data-i18n-title="equipment.speed">
+            <input type="text" class="note-seguace" name="attr_note" data-i18n-placeholder="equipment.notes">
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,203 @@
+/* Pagina Equipaggiamento e sezioni ripetibili. Niente lettere accentate qui: il filtro di Roll20. */
+.scheda .griglia-equipaggiamento {
+  grid-template-columns: 1fr 280px;
+}
+@container (max-width: 760px) {
+  .scheda .griglia-equipaggiamento {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Righe delle armi: nome, tipo e abilita sopra; danno, distanza, distruttivita, munizioni e pulsanti sotto; note in fondo.
+   Su due livelli perche la finestra di Roll20 parte da 830px e la colonna delle armi e larga meno di 500px. */
+.scheda .arma {
+  display: grid;
+  grid-template-columns: 1.3fr 1.2fr 90px;
+  gap: 4px 6px;
+  align-items: center;
+  padding: 8px 4px;
+}
+.scheda .numeri-arma {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+}
+.scheda .numero-arma {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--tenue);
+}
+.scheda .numero-arma input[type="number"][name] {
+  width: 34px;
+  padding: 2px 0;
+}
+.scheda .arma .note-arma {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--tenue);
+}
+.scheda .azioni-arma {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+.scheda .azioni-arma button.tira[name] {
+  margin: 0;
+  padding: 4px 10px;
+}
+.scheda button.ricarica[name] {
+  padding: 4px 8px;
+  font: 700 12px "Alegreya Sans", sans-serif;
+  color: var(--ruggine);
+  border: 1px solid var(--bordo);
+  border-radius: 8px;
+}
+@container (max-width: 640px) {
+  .scheda .arma {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Oggetti: nome, dove (cinque lettere), note. */
+.scheda .oggetto {
+  display: grid;
+  grid-template-columns: 1.3fr auto 1fr;
+  gap: 6px;
+  align-items: center;
+  padding: 4px;
+}
+.scheda .dove {
+  display: inline-flex;
+  gap: 3px;
+}
+.scheda .lettera {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+.scheda .lettera input[type="radio"] {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.scheda .lettera span {
+  display: block;
+  width: 22px;
+  font: 700 11px/22px "Alegreya Sans", sans-serif;
+  text-align: center;
+  color: var(--tenue);
+  border: 1px solid var(--bordo);
+  border-radius: 5px;
+}
+.scheda .lettera input[type="radio"]:checked + span {
+  color: #fff;
+  background: var(--inchiostro);
+  border-color: var(--inchiostro);
+}
+
+/* Seguaci: nome, tipo, velocita; note sotto. */
+.scheda .seguace {
+  display: grid;
+  grid-template-columns: 1fr 1fr 40px;
+  gap: 4px 6px;
+  align-items: center;
+  padding: 4px;
+}
+.scheda .seguace .note-seguace {
+  grid-column: 1 / -1;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--tenue);
+}
+
+/* Cartucciera, ricchezza, depositi */
+.scheda .numero-max {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 6px;
+  font: 700 22px/1.2 "Alegreya Sans", sans-serif;
+}
+.scheda .numero-max input[type="number"][name] {
+  width: 44px;
+  padding: 0;
+  font: 400 15px "Alegreya Sans", sans-serif;
+  color: var(--tenue);
+  text-align: left;
+  border: 0;
+}
+.scheda .munizioni .casella span {
+  border-color: var(--oro);
+  background: linear-gradient(var(--oro), var(--oro)) no-repeat, #f6ecd2;
+  background-size: calc(var(--pieno, 0) * 100%) 100%, auto;
+}
+.scheda .deposito {
+  display: grid;
+  gap: 4px;
+  padding: 6px 0;
+  border-top: 1px dashed var(--bordo);
+}
+.scheda .deposito:first-of-type {
+  border-top: 0;
+}
+
+/* Sezioni ripetibili: i controlli li crea Roll20 in inglese (Add, Modify): si nascondono le scritte e si riscrivono. */
+.scheda .repitem {
+  border-bottom: 1px dashed var(--bordo);
+}
+.scheda .repcontrol {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+.scheda .repcontrol .repcontrol_add,
+.scheda .repcontrol .repcontrol_edit {
+  float: none;
+  height: auto;
+  margin: 0;
+  padding: 5px 12px;
+  font-size: 0;
+  line-height: 1;
+  color: var(--ruggine);
+  background: var(--riquadro);
+  background-image: none;
+  border: 1px solid var(--bordo);
+  border-radius: 8px;
+  box-shadow: none;
+  text-shadow: none;
+  cursor: pointer;
+}
+.scheda .repcontrol .repcontrol_add {
+  order: -1;
+}
+.scheda .repcontrol .repcontrol_add::before,
+.scheda .repcontrol .repcontrol_edit::before {
+  font: 700 12px "Alegreya Sans", sans-serif;
+}
+.scheda .repcontrol .repcontrol_add::before {
+  content: "+ Aggiungi";
+}
+.scheda .repcontrol .repcontrol_edit::before {
+  content: "Modifica";
+}
+.scheda .repcontainer.editmode ~ .repcontrol .repcontrol_edit::before {
+  content: "Fatto";
+}
+.scheda .repcontainer.editmode ~ .repcontrol .repcontrol_edit {
+  color: #fff;
+  background: var(--inchiostro);
+}
+.scheda .deposito .passi,
+.scheda .deposito .pallini {
+  justify-self: start;
+}

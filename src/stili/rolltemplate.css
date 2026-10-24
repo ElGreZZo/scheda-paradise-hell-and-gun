@@ -107,3 +107,19 @@
   background: none;
   border: 0;
 }
+.sheet-rolltemplate-ogni .sheet-inceppata {
+  margin: 4px 0;
+  padding: 4px 8px;
+  font-weight: 700;
+  color: #fff;
+  background: #a9472a;
+  border-radius: 6px;
+}
+.sheet-rolltemplate-ogni .sheet-nota {
+  margin-top: 8px;
+  padding-top: 6px;
+  font-size: 12px;
+  font-style: italic;
+  color: #7a6e62;
+  border-top: 1px solid #e2d7c3;
+}
