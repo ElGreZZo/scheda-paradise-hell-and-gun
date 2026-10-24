@@ -2,6 +2,8 @@
 
 Dubbi trovati estraendo i dati per la scheda. Riguardano valori che la scheda dovrebbe calcolare o mostrare. Finché non sono chiariti, nella base dati vale quello che dice il testo.
 
+Le domande aperte da mandare al master, numerate e scritte per lui, sono in [domande-al-master-2026-10-24.md](domande-al-master-2026-10-24.md). Quando risponde, le risposte vanno qui sotto e nel manuale.
+
 Le risposte del master sono riportate nel manuale (`manuali/PHaG 1.6.docx`): il testo sbagliato è barrato e la correzione segue in corsivo. Gli originali sono in `manuali/originali/`. `npm run estrai-testo` salta il testo barrato.
 
 ## Risposte del master (23/10/2026, sul manuale 1.5)
@@ -70,6 +72,7 @@ Risolti nel manuale 1.6: Pelle d'argento (ora Pelle di mercurio, Cherubino) e Co
 - **Evocazione, Reazione**: «Un personaggio con il potere Empatia può, spendendo un'anima, provare a contrastare i poteri Evocazione». È il potere Evocazione?
 - **Umbra, Attacchi d'ombra**: «Attacco: Mira + umbra». Gli altri attacchi dei poteri sono caratteristica + potere (Potenza + fuoco purificatore, Possanza + Geomanzia). Qui è un'abilità + potere: manca la caratteristica (Agilità + Mira + umbra?) o si tira solo Mira + Umbra?
 - **Signore della tempesta, Attacco elettrico**: l'opportunità «Stordire (0)» costa zero esuberi: è voluto, o è (1) come negli altri attacchi? E il danno «½ potenza» si arrotonda per difetto, come in Evocazione («metà per difetto della potenza»)?
+- **Evocazione, Evocare alleato**: l'avatar attacca con «Potenza dell'avatar + evocazione». Quanto vale la Potenza dell'avatar? È la stessa dell'evocatore?
 
 ## Armi
 
