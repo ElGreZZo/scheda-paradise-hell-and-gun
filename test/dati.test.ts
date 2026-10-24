@@ -23,6 +23,18 @@ test("dati: le voci attese del manuale", async () => {
   });
 });
 
+test("dati: i poteri attivi e superiori hanno il testo di ogni livello e gli attacchi hanno le statistiche", () => {
+  type Livello = { livello: number; testo?: string[]; attacco?: { distruttivita: number } };
+  type Potere = { id: string; categoria: string; livelli: Livello[] };
+  const { voci } = JSON.parse(readFileSync(new URL("../dati/poteri.json", import.meta.url), "utf8")) as { voci: Potere[] };
+  const senzaTesto = voci.filter((p) => ["attivo", "superiore"].includes(p.categoria))
+    .flatMap((p) => p.livelli.filter((l) => !l.testo?.length).map((l) => `${p.id} ${l.livello}`));
+  assert.deepEqual(senzaTesto, []);
+  const attacchi = voci.flatMap((p) => p.livelli.filter((l) => l.attacco).map((l) => `${p.id} ${l.livello}`));
+  assert.deepEqual(attacchi, ["bestialita 2", "fuoco_purificatore 3", "geomanzia 4", "potere_del_sangue 3", "potere_della_cenere 3",
+    "putrescenza 4", "signore_della_tempesta 4", "umbra 3"]);
+});
+
 test("dati: l'estrazione rifatta dà gli stessi file", { skip: !conManuale && "manca .cache/testo/manuale.md (npm run estrai-testo)" }, async () => {
   const file = ["elenchi/abilita.json", "archetipi.json", "carriere.json", "poteri.json", "equipaggiamento/armi.json"];
   const prima = file.map((f) => readFileSync(new URL(`../dati/${f}`, import.meta.url), "utf8"));

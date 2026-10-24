@@ -12,7 +12,8 @@
 //   dati/elenchi/ricchezza.json         livelli di ricchezza: munizioni ricaricate, armi, animali
 //   dati/archetipi.json                 i 10 archetipi di immortali
 //   dati/carriere.json                  le 7 carriere, con i poteri di carriera (testo e livelli)
-//   dati/poteri.json                    i poteri: categoria, colore richiesto, livelli con nome e costo
+//   dati/poteri.json                    i poteri: categoria, colore richiesto, testo, livelli con nome, costo e testo
+//                                       (attacco e opportunità a parte), effetti scenografici, reazione, effetto combo
 //   dati/equipaggiamento/armi.json      le armi del cap. 11
 //   dati/equipaggiamento/seguaci.json   gli animali del cap. 11
 //
@@ -271,22 +272,86 @@ function carriere() {
 // ------------------------------------------------------------------------------------------------ poteri
 // Livelli e costi di un potere, nei vari modi in cui li scrive il manuale: "| ● (4) | testo |", "● Nome (2): …",
 // "● (2), ●● (4)", "Nome ●● (8): …". "(2+)" (Tefillin) vuol dire 2 più il costo del potere associato.
-function livelliDa(corpo) {
-  const livelli = [];
-  const livello = (pallini, costo, nome) => livelli.push({
+// Una riga che apre uno o più livelli dà [{ livello, nome?, costo_px, costo_variabile?, resto }], dove resto è il testo
+// del livello sulla stessa riga; le altre righe danno null.
+function apreLivelli(r) {
+  const livello = (pallini, costo, nome, resto = "") => ({
     livello: pallini.length,
     ...(nome ? { nome: pulisci(nome) } : {}),
     costo_px: Number(costo.replace("+", "")),
     ...(costo.endsWith("+") ? { costo_variabile: true } : {}),
+    resto: pulisci(resto.replace(/^[\s:.]+/, "")),
   });
+  let m;
+  if ((m = /^\| (●+) \((\d+\+?)\) \| /.exec(r))) return [livello(m[1], m[2], undefined, celle(r)[1])];
+  if ((m = /^(●+) ([^●(]+?) \((\d+\+?)\)(.*)$/.exec(r))) return [livello(m[1], m[3], m[2], m[4])];
+  if (/^●/.test(r)) return [...r.matchAll(/(●+) \((\d+\+?)\)/g)].map((c) => livello(c[1], c[2]));
+  if ((m = /^(.{2,45}?) (●+)\s+\((\d+\+?)\)(.*)$/.exec(r))) return [livello(m[2], m[3], m[1], m[4])];
+  return null;
+}
+const livelliDa = (corpo) => corpo.flatMap((r) => apreLivelli(r) ?? []).map(({ resto, ...l }) => l);
+
+// Statistiche di un attacco: "Attacco: Potenza + fuoco purificatore. Danno: 4. Distanza: 3. Distruttività:●●."
+// (Armi bestiali: solo "Danno: 2. Distanza: 1. …"). Danno e distanza solo se sono numeri ("Danno: ½ potenza" no).
+function attacco(r) {
+  const tiro = /^Attacco:\s*(.+?)\.\s*Danno:/.exec(r)?.[1];
+  const danno = /Danno:\s*(\d+)/.exec(r)?.[1];
+  const distanza = /Distanza:?\s*(\d+)/.exec(r)?.[1];
+  return {
+    statistiche: r,
+    ...(tiro ? { tiro: pulisci(tiro) } : {}),
+    ...(danno ? { danno: Number(danno) } : {}),
+    ...(distanza ? { distanza: Number(distanza) } : {}),
+    distruttivita: pallini(/Distruttività:\s*([●○]+)/.exec(r)?.[1] ?? ""),
+  };
+}
+
+// Paragrafi con un'etichetta: il testo va nel campo fino alla prossima etichetta o al prossimo livello.
+const ETICHETTE = [
+  ["effetti_scenografici", /^Effett[oi] scenografic[oi]\s*[:.]\s*/i],
+  ["reazione", /^Reazione\s*:\s*/],
+  ["effetto_combo", /^Effett[oi] combo\s*[:.]\s*/i],
+];
+
+// Testi di un potere del capitolo 10, livello per livello. Le righe senza etichetta prima del primo livello (o dopo un
+// elenco di soli costi, "● (2), ●● (4)") sono il testo del potere; quelle dopo un livello continuano il livello, con
+// le statistiche dell'attacco e le opportunità ("Nome (2): …") a parte. Le tabelle che non sono livelli sono riquadri.
+function testiPotere(corpo) {
+  const voce = { testo: [], livelli: [] };
+  let dove = voce.testo;
+  let livello = null;
+  let tabella = false;
   for (const r of corpo) {
-    let m;
-    if ((m = /^\| (●+) \((\d+\+?)\) \| /.exec(r))) livello(m[1], m[2]);
-    else if ((m = /^(●+) ([^●(]+?) \((\d+\+?)\)/.exec(r))) livello(m[1], m[3], m[2]);
-    else if (/^●/.test(r)) for (const c of r.matchAll(/(●+) \((\d+\+?)\)/g)) livello(c[1], c[2]);
-    else if ((m = /^(.{2,45}?) (●+)\s+\((\d+\+?)\)/.exec(r))) livello(m[2], m[3], m[1]);
+    if (/^\[IMMAGINE /.test(r) || /^solo (?:per )?(bianchi|neri)$/i.test(r)) continue;
+    if (r === "<TABELLA>" || r === "</TABELLA>") {
+      tabella = r === "<TABELLA>";
+      continue;
+    }
+    const aperti = apreLivelli(r);
+    if (aperti) {
+      voce.livelli.push(...aperti.map(({ resto, ...l }) => ({ ...l, testo: resto ? [resto] : [] })));
+      const conTesto = aperti.length === 1 && (aperti[0].resto || aperti[0].nome);
+      livello = conTesto ? voce.livelli.at(-1) : null;
+      dove = livello ? livello.testo : voce.testo;
+      continue;
+    }
+    if (tabella) {
+      (voce.riquadri ??= []).push(...celle(r).join(" / ").split(" / ").map(pulisci).filter(Boolean));
+      continue;
+    }
+    const etichetta = ETICHETTE.find(([, re]) => re.test(r));
+    if (etichetta) {
+      livello = null;
+      dove = voce[etichetta[0]] ??= [];
+      const resto = pulisci(r.replace(etichetta[1], ""));
+      if (resto) dove.push(resto);
+      continue;
+    }
+    if (livello && /^(Attacco|Danno):/.test(r)) livello.attacco = attacco(r);
+    else if (livello && opportunita(r)) (livello.opportunita ??= []).push(opportunita(r));
+    else dove.push(r);
   }
-  return livelli;
+  return voce;
 }
 
 function poteri() {
@@ -301,15 +366,15 @@ function poteri() {
   return Object.entries(NOMI.poteri).flatMap(([categoria, nomi]) => blocchi(sottosezione(sezioni[categoria]), nomi).map(({ nome, corpo }) => {
     const colore = corpo.map((r) => /^solo (?:per )?(bianchi|neri)$/i.exec(r)).find(Boolean);
     const solo = colore && (colore[1].toLowerCase() === "bianchi" ? "bianco" : "nero");
-    const livelli = livelliDa(corpo);
+    const { testo, livelli, ...altri } = testiPotere(corpo);
     const doppi = livelli.map((l) => l.livello).filter((l, k, tutti) => tutti.indexOf(l) !== k);
     if (doppi.length) throw new Error(`${nome}: livelli doppi (${doppi.join(", ")}): una voce nuova del manuale da aggiungere a NOMI.poteri?`);
     return {
       id: ident(nome), nome, categoria,
       ...(solo ? { solo } : {}),
-      livelli,
-      reazione: corpo.some((r) => r.startsWith("Reazione")),
-      effetto_combo: corpo.some((r) => /^effett[oi] combo/i.test(r)),
+      testo,
+      livelli: livelli.map(({ testo: t, attacco: a, opportunita: o, ...l }) => ({ ...l, ...(t.length ? { testo: t } : {}), ...(a ? { attacco: a } : {}), ...(o ? { opportunita: o } : {}) })),
+      ...altri,
     };
   }));
 }

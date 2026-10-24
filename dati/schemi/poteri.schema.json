@@ -18,9 +18,8 @@
         "id",
         "nome",
         "categoria",
-        "livelli",
-        "reazione",
-        "effetto_combo"
+        "testo",
+        "livelli"
       ],
       "properties": {
         "id": {
@@ -44,16 +43,27 @@
             "nero"
           ]
         },
+        "testo": {
+          "description": "Testo del potere fuori dai livelli (descrizione e regole comuni a tutti i livelli).",
+          "$ref": "comune.schema.json#/$defs/testi"
+        },
         "livelli": {
           "$ref": "comune.schema.json#/$defs/livelli"
         },
+        "effetti_scenografici": {
+          "$ref": "comune.schema.json#/$defs/testi"
+        },
         "reazione": {
-          "description": "Il potere ha una reazione.",
-          "type": "boolean"
+          "description": "Reazione contro altri poteri (cap. 10, Reazioni).",
+          "$ref": "comune.schema.json#/$defs/testi"
         },
         "effetto_combo": {
-          "description": "Il potere ha un effetto combo con altri poteri.",
-          "type": "boolean"
+          "description": "Effetto combo con altri poteri.",
+          "$ref": "comune.schema.json#/$defs/testi"
+        },
+        "riquadri": {
+          "description": "Riquadri del manuale dentro il potere (Istruzioni, La regola del cool).",
+          "$ref": "comune.schema.json#/$defs/testi"
         }
       }
     }

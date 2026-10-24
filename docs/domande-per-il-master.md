@@ -68,6 +68,8 @@ Risolti nel manuale 1.6: Pelle d'argento (ora Pelle di mercurio, Cherubino) e Co
 - **Animalità ●●●●● costa 16.** Gli altri livelli costano 2, 4, 6, 8, come Lux, Possessione e Dementia, che arrivano a 10. È 10? (Nel manuale 1.5 costava 20.)
 - **Aiutanti e Leader di Sgherri costano 4, 6, 8.** Gli altri poteri crescono di un multiplo fisso (2, 4, 6 oppure 4, 8, 12). È voluto?
 - **Evocazione, Reazione**: «Un personaggio con il potere Empatia può, spendendo un'anima, provare a contrastare i poteri Evocazione». È il potere Evocazione?
+- **Umbra, Attacchi d'ombra**: «Attacco: Mira + umbra». Gli altri attacchi dei poteri sono caratteristica + potere (Potenza + fuoco purificatore, Possanza + Geomanzia). Qui è un'abilità + potere: manca la caratteristica (Agilità + Mira + umbra?) o si tira solo Mira + Umbra?
+- **Signore della tempesta, Attacco elettrico**: l'opportunità «Stordire (0)» costa zero esuberi: è voluto, o è (1) come negli altri attacchi? E il danno «½ potenza» si arrotonda per difetto, come in Evocazione («metà per difetto della potenza»)?
 
 ## Armi
 

@@ -71,9 +71,9 @@
           "$ref": "#/$defs/testo"
         },
         "esuberi": {
-          "description": "Esuberi da spendere (il numero fra parentesi).",
+          "description": "Esuberi da spendere (il numero fra parentesi; 0 in Signore della tempesta, Stordire).",
           "type": "integer",
-          "minimum": 1
+          "minimum": 0
         },
         "testo": {
           "anyOf": [
@@ -92,7 +92,7 @@
       }
     },
     "livelli": {
-      "description": "Livelli di un potere (anche di carriera): pallini, nome del livello se c'è, costo in punti esperienza.",
+      "description": "Livelli di un potere (anche di carriera): pallini, nome del livello se c'è, costo in punti esperienza; per i poteri del cap. 10 anche testo, attacco e opportunità del livello.",
       "type": "array",
       "minItems": 1,
       "items": {
@@ -118,6 +118,18 @@
           "costo_variabile": {
             "description": "Il costo è scritto «(2+)»: si aggiunge il costo del potere associato (Tefillin).",
             "const": true
+          },
+          "testo": {
+            "$ref": "#/$defs/testi"
+          },
+          "attacco": {
+            "$ref": "#/$defs/attacco"
+          },
+          "opportunita": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/opportunita"
+            }
           }
         }
       }
@@ -144,6 +156,37 @@
         "voci": {
           "type": "array",
           "minItems": 1
+        }
+      }
+    },
+    "attacco": {
+      "description": "Statistiche di un attacco di un potere, con la riga del manuale.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statistiche",
+        "distruttivita"
+      ],
+      "properties": {
+        "statistiche": {
+          "$ref": "#/$defs/testo"
+        },
+        "tiro": {
+          "description": "Riserva di dadi, come la scrive il manuale (\"Potenza + fuoco purificatore\").",
+          "$ref": "#/$defs/testo"
+        },
+        "danno": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "distanza": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "distruttivita": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
         }
       }
     }

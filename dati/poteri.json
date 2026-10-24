@@ -10,30 +10,44 @@
       "id": "addestratore",
       "nome": "Addestratore",
       "categoria": "comune",
+      "testo": [
+        "Il personaggio ha addestrato alla perfezione gli animali che lo circondano, dedicando impegno e dedizione assoluta ad essi e ricevendo in cambio la medesima devozione."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Tante bestie",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Il personaggio aggiunge un numero aggiuntivo di seguaci animali pari al numero di ● in addestratore."
+          ]
         },
         {
           "livello": 2,
           "nome": "Zampette dannose",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Una volta per scenario, il personaggio può farsi aiutare da un suo seguace animale per compiere una qualsivoglia azione in cui il compagno può, effettivamente aiutare, come rubare oggetti, distrarre persone, scavalcare un muro. Il personaggio aggiunge un numero di dadi nell'azione pari al numero di ● in addestratore."
+          ]
         },
         {
           "livello": 3,
           "nome": "Compagni di battaglia",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Una volta per sessione, un seguace animale aiuta il padrone attaccando lo stesso bersaglio di quest'ultimo, aggiungendo un numero di danni a quel singolo attacco pari al numero di ● in addestratore. L'effetto di questo attacco va dichiarato prima di effettuare i tiri di attacco."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "aggressore_provetto",
       "nome": "Aggressore provetto",
       "categoria": "comune",
+      "testo": [
+        "In un mondo dove tutti sparano, ci vuole coraggio e ferocia per buttarsi in mischia. Anime disperate o immortali feroci lo fanno e se sopravvivono alla salva iniziale, ripagano i loro avversari dieci volte tanto.",
+        "Il personaggio aggiunge +1 esubero per ogni ● posseduto in aggressore provetto."
+      ],
       "livelli": [
         {
           "livello": 1,
@@ -47,38 +61,57 @@
           "livello": 3,
           "costo_px": 6
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "aiutanti",
       "nome": "Aiutanti",
       "categoria": "comune",
+      "testo": [
+        "Il personaggio ha numerosi aiutanti sparsi per il continente pronti ad aiutarlo in modi legali o meno. Il personaggio ha un numero di aiutanti pari alla sua caratteristica di astuzia (in forma originale) che può utilizzarli nei modi sotto elencati.",
+        "Questi individui hanno diverse motivazioni per essere fedeli al personaggio, per vecchi debiti, senso di onore, per paura o come fedeli cultisti e non tradiranno facilmente il loro capo, ma non tenteranno mai di fare omicidi o altre azioni pericolose per lui.",
+        "Ma che fortuna! un aiutante è sempre presente nel villaggio o città più vicina, quindi può sempre usufruire di uno di loro in tempi relativamente brevi.",
+        "Un aiutante può morire se si trova in una situazione pericolosa e il personaggio ci impiega circa una settimana per riuscire a rimpiazzarlo."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Assistente",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Il personaggio ha con sé un assistente, che si tratta di un maggiordomo, un portaborse o un segretario. Non si tratta di una persona d'azione, non è nemmeno un esperto osservatore, ma può essere mandato a dialogare con le autorità locali, recuperare risorse comuni, organizzare appuntamenti, pulire attrezzature, cucinare ecc."
+          ]
         },
         {
           "livello": 2,
           "nome": "Aiutanti sparsi",
-          "costo_px": 6
+          "costo_px": 6,
+          "testo": [
+            "Il personaggio ha accesso a numerosi alleati pronti a fornirgli piccoli aiuti come fornirgli un riparo sicuro nel momento del bisogno, fornirgli risorse minori, un passaggio sicuro o accesso a luoghi esclusivi o che richiedono biglietti."
+          ]
         },
         {
           "livello": 3,
           "nome": "Amicizie importanti",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Tra gli aiutanti ci sono avvocati altolocati, ricercatori, ingegneri capaci e politici di un certo livello, pronti ad assistere il personaggio con le loro specializzazioni, arrivando QUASI a compromettere la loro brillante carriera."
+          ]
         }
       ],
-      "reazione": false,
-      "effetto_combo": true
+      "effetto_combo": [
+        "Se il personaggio possiede il potere persona influente, guadagna un numero di aiutanti in più pari al numero di ● che possiede in persona influente Questi aiutanti in più sono individui legati alla fama ed area di influenza del personaggio."
+      ]
     },
     {
       "id": "alchimista",
       "nome": "Alchimista",
       "categoria": "comune",
+      "testo": [
+        "Il personaggio ha numerose conoscenze alchemiche ed è in grado di generare cose meravigliose usando composti chimici e materiali soprannaturali per le sue fantastiche creazioni.",
+        "Spendendo un'anima, il personaggio può aggiunge un numero di D6 a tutti i suoi tiri per costruire qualcosa (vedi le abilità forgiatura, carpenteria e meccanica) pari al numero di ● in alchimia.",
+        "Per applicare tale bonus, il personaggio ha comunque bisogno di tutti i ferri del mestiere e di un luogo che può attrezzare come un laboratorio."
+      ],
       "livelli": [
         {
           "livello": 1,
@@ -93,47 +126,68 @@
           "costo_px": 12
         }
       ],
-      "reazione": false,
-      "effetto_combo": true
+      "effetto_combo": [
+        "Tale bonus può essere usato anche per incrementare i tiri del potere Rituali."
+      ]
     },
     {
       "id": "artista_marziale",
       "nome": "Artista marziale",
       "categoria": "comune",
+      "testo": [
+        "In un mondo governato dalle armi solo un folle si affiderebbe solo ai propri pugni e propri calci. Eppure antichi e nuovi stili di combattimento a mani nude continuano a essere insegnati e le risse nei saloon si rivelano ottime occasioni dove apprendere."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Corpo allenato",
-          "costo_px": 2
+          "costo_px": 2,
+          "testo": [
+            "Il personaggio aggiunge a tutti i tiri di grazia un numero di D6 pari al numero di ● in artista marziale."
+          ]
         },
         {
           "livello": 2,
           "nome": "Colpi precisi",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Il personaggio aggiunge un esubero ogni volta che attacca a mani nude."
+          ]
         },
         {
           "livello": 3,
           "nome": "Addestramento marziale",
-          "costo_px": 6
+          "costo_px": 6,
+          "testo": [
+            "Ogniqualvolta esegue l'attacco pugni e calci può scegliere le opportunità danno extra e stordire una volta in più."
+          ]
         },
         {
           "livello": 4,
           "nome": "Pugni d’acciaio",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Il personaggio aggiunge ● in distruttività e +1d6 agli attacchi pugni e calci."
+          ]
         },
         {
           "livello": 5,
           "nome": "Difesa marziale",
-          "costo_px": 10
+          "costo_px": 10,
+          "testo": [
+            "Il personaggio aggiunge +1D6 ai tiri di difesa contro tutti gli attacchi portati da distanza 1 o inferiore. L’opportunità contrattacco costa un esubero in meno."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "cecchino_provetto",
       "nome": "Cecchino provetto",
       "categoria": "comune",
+      "testo": [
+        "Data la natura relativamente inaccurata delle armi da fuoco, molti preferiscono sparare un gran numero di proiettili a discapito della precisione. Ma i pazienti e i veterani hanno imparato a favorire l’approccio opposto.",
+        "Ogni volta che esegue azioni con archi e fucili, il personaggio aggiunge +1 esubero per ogni ● posseduto in cecchino provetto."
+      ],
       "livelli": [
         {
           "livello": 1,
@@ -147,14 +201,16 @@
           "livello": 3,
           "costo_px": 6
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "entrate_costanti",
       "nome": "Entrate costanti",
       "categoria": "comune",
+      "testo": [
+        "Il personaggio ha diverse fonti di reddito che gli garantiscono entrate costanti di denaro.",
+        "Ad ogni ● in questo “super potere” garantisce un ● in ricchezza ad inizio di ogni settimana. La ricchezza guadagnata in questo modo non si somma, quindi se un personaggio ha ●●● in entrate costanti, ogni settimana la ricchezza data da tale potere è sempre ●●● e non si accumula, se non per altre fonti, come ad esempio taglie recuperate o furti."
+      ],
       "livelli": [
         {
           "livello": 1,
@@ -176,14 +232,16 @@
           "livello": 5,
           "costo_px": 10
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "lavoratore_ispirato",
       "nome": "Lavoratore ispirato",
       "categoria": "comune",
+      "testo": [
+        "Molti immortali ci tengono a far bene il loro lavoro, quasi in maniera maniacale. Per questi soggetti non esiste niente di meglio della consapevolezza di aver fatto il loro lavoro in maniera impeccabile.",
+        "Il personaggio inizia con un numero di punti ispirazione pari al numero di ● in lavoratore ispirato."
+      ],
       "livelli": [
         {
           "livello": 1,
@@ -197,51 +255,71 @@
           "livello": 3,
           "costo_px": 6
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "leader_di_sgherri",
       "nome": "Leader di Sgherri",
       "categoria": "comune",
+      "testo": [
+        "Il personaggio ha diversi sgherri al suo seguito. Il personaggio ha un numero di pistoleri sgherri (vedi capitolo 12) pari alla sua caratteristica di astuzia (in forma originale) + il numero di ● in leader di sgherri che può utilizzarli per combattere o fare delle attività legali o meno come assaltare una banca, difendere una carovana ecc.",
+        "Questi individui hanno diverse motivazioni per essere fedeli al personaggio, per vecchi debiti, senso di onore o per paura e non tradiranno facilmente il loro capo, ma non faranno mai azioni palesemente suicide.",
+        "Uno o più sgherri possono morire se si trovano in una situazione pericolosa e il personaggio ci impiega circa una settimana per riuscire a rimpiazzarli."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Combattenti fedeli",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Se la squadra di sgherri si trova a distanza 3 o inferiore può subire i danni fisici destinati al personaggio stesso. Dare un ordine agli sgherri non costa alcuna azione."
+          ]
         },
         {
           "livello": 2,
           "nome": "Ben equipaggiati",
-          "costo_px": 6
+          "costo_px": 6,
+          "testo": [
+            "Gli sgherri hanno sempre l’attrezzatura giusta per il lavoro giusto, come piedi di porco se devono fare una rapina ad un portavalori, corde e sacchi a pelo per esplorazioni, finte divise per operazioni di infiltrazione.",
+            "Oltre alle pistole, sono sempre armati di carabina."
+          ]
         },
         {
           "livello": 3,
           "nome": "Reclute esperte",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "I pistoleri sgherri al servizio del personaggio guadagnano un ● possanza, agilità e astuzia."
+          ]
         }
       ],
-      "reazione": false,
-      "effetto_combo": true
+      "effetto_combo": [
+        "Se il personaggio possiede il potere entrate costanti, aggiunge un numero di sgherri pari al numero di ● in entrate costanti."
+      ]
     },
     {
       "id": "non_si_smette_di_lavorare_quando_si_e_stanchi",
       "nome": "Non si smette di lavorare quando si è stanchi …",
       "categoria": "comune",
+      "testo": [
+        "Ogni qualvolta un personaggio ottiene un punto ispirazione, guadagna un ● in ricchezza."
+      ],
       "livelli": [
         {
           "livello": 1,
           "costo_px": 2
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "persona_influente",
       "nome": "Persona influente",
       "categoria": "comune",
+      "testo": [
+        "Il personaggio è noto ed apprezzato, almeno per la fama, nel suo ambito lavorativo e come persona.",
+        "Il giocatore specifica in che ambito è noto il personaggio e se lo è come immortale o nella sua forma mortale.",
+        "Il personaggio aggiunge i suoi ● in persona influente a tutti i tiri (fatta eccezione per quelli di attacco, difesa e poteri) inerenti alla sua area di influenza. Esempio, se il personaggio è un avvocato di successo aggiungerà il bonus a tutti i tiri per conoscenza e applicazione della legge, per fare discorsi virtuosi verso la giuria, intrattenere a chiacchiere facoltosi signori in una festa. Mentre un famoso fuorilegge, potrebbe aggiungere tali bonus a tutti i tiri per minacciare qualcuno, piazzare della dinamite, riconoscere la qualità di una cassaforte o organizzare un riscatto."
+      ],
       "livelli": [
         {
           "livello": 1,
@@ -263,14 +341,16 @@
           "livello": 5,
           "costo_px": 10
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "pistolero_provetto",
       "nome": "Pistolero provetto",
       "categoria": "comune",
+      "testo": [
+        "Molti hanno fatto dell’uso della pistola una vera e propria opera d’arte, che si tratti di mortali talentuosi o di immortali spacconi.",
+        "Ogni volta che esegue azioni con la pistola, il personaggio aggiunge +1 esubero per ogni ● posseduto in pistolero provetto."
+      ],
       "livelli": [
         {
           "livello": 1,
@@ -284,38 +364,62 @@
           "livello": 3,
           "costo_px": 6
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "reti_di_informatori",
       "nome": "Reti di informatori",
       "categoria": "comune",
+      "testo": [
+        "Il personaggio vanta una rete di mortali che per svariati motivi sono al suo servizio come comuni osservatori, divulgatori di informazioni (vere o false) o infiltratori.",
+        "Il personaggio ha un numero di informatori pari alla sua caratteristica di astuzia (nella forma originale) e li può inviare separatamente per eseguire le differenti attività sotto elencate.",
+        "Questi individui hanno diverse motivazioni per essere fedeli al personaggio, per vecchi debiti, senso di onore o per paura e non tradiranno facilmente il loro capo, ma non tenteranno mai di fare omicidi o altre azioni pericolose per lui. Hanno diversi modi per contattare il personaggio, come missive, messaggi segreti lasciati in punti prestabiliti o piccioni viaggiatori e il personaggio può usare gli stessi mezzi, ma questi scambi di informazioni richiederanno sempre diversi giorni. Ma che fortuna! un informatore è sempre presente nel villaggio o città più vicina, quindi può sempre usufruire di uno di loro in tempi relativamente brevi.",
+        "Un informatore può morire se si trova in una situazione pericolosa e il personaggio ci impiega circa una settimana per riuscire a rimpiazzarlo."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Raccolta di informazioni",
-          "costo_px": 2
+          "costo_px": 2,
+          "testo": [
+            "Il personaggio può ricevere notizie su un luogo, una leggenda o uno o più individui. Se mandato in un luogo specifico come una cava, una città o foresta, guadagna vantaggio a tutti i tiri per pianificare, sopravvivenza o raccogliere informazioni su quella zona."
+          ]
         },
         {
           "livello": 2,
           "nome": "Traffico di informazioni",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Il personaggio ha imparato a sfruttare i giusti contatti per far girare determinate informazioni in determinate zone, che si tratti di informazioni vere o false, come l’innocenza o meno di un ricercato, la presenza di oro in una zona ecc.",
+            "Tale effetto di disinformazione causa svantaggio a tutti coloro (normalmente nemici) che tentano di pianificare o raccogliere informazioni sull’argomento divulgato dagli informatori."
+          ]
         },
         {
           "livello": 3,
           "nome": "Infiltrazione",
-          "costo_px": 6
+          "costo_px": 6,
+          "testo": [
+            "L’informatore ha dimostrato di essere particolarmente bravo e può infiltrarsi in un'organizzazione, banda, setta di cui il personaggio è a conoscenza. Le organizzazioni più complesse potrebbero richiedere qualche sforzo per aiutare l'infiltrato.",
+            "L’infiltrato è in grado di passare in segreto informazioni dell’organizzazione, come mobilitazione di risorse, obiettivi minori ecc."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "rituali",
       "nome": "Rituali",
       "categoria": "comune",
+      "testo": [
+        "Il personaggio ha le conoscenze necessarie per eseguire i rituali. Questi sono molto rispettati nella cultura degli immortali e i mortali che sono in grado di farli meritano un trattamento speciale.",
+        "Un personaggio deve consumare un'anima per generare un rituale che, di per sé richiede almeno un’ora di preparazione. Nella maggior parte dei casi consiste in una serie di cerchi e incisioni che causano effetti magici quando potenziati con un'anima. Candele accese, sacrifici di sangue e cose simili non sono necessarie, ma di sicuro possono migliorare il risultato del rituale stesso, oltre a renderlo più elegante.",
+        "Il personaggio sceglie uno dei rituali sottostanti, oppure si accorda con il narratore per inventarne uno nuovo. Una volta deciso quale eseguire, spende un’anima, effettua un tiro di astuzia + rituali, se ottiene un numero di successi pari a quelli necessari per far funzionare il rituale, allora quest'ultimo ha avuto effetto.",
+        "Un personaggio può effettuare un rituale per sessione.",
+        "Cerchio del silenzio: Richiede almeno 2 successi. Il personaggio crea un piccolo cerchio rituale che ha effetto per un'ora + un'ora per successo extra. Finché si trova al centro del cerchio, l'aura di un immortale non può essere percepita.",
+        "Convocare: Richiede almeno 2 successi per convocare un mortale o un mostro senziente, 5 per un immortale. Il personaggio crea un piccolo cerchio rituale che ha effetto per mezz'ora + 10 minuti per ogni successo extra. Il personaggio evoca all'interno del cerchio un mortale o immortale che conosce. Nessuno dei due può interagire fisicamente o attraverso i poteri finché il cerchio è integro, così entrambi possono solo parlare, anche se, di fatto, colui che si trova al suo interno è imprigionato e non può decidere di fuggire dal cerchio o ritornare dove si trovava prima di essere evocato. Se il cerchio è danneggiato o scade il tempo, la creatura evocata può decidere di restare lì, teletrasportandosi a tutti gli effetti in quella posizione, oppure può decidere di tornare dove si trovava prima.",
+        "Potenziare oggetto: Richiede almeno 3 successi. Il personaggio posiziona un oggetto all'interno di un cerchio rituale, facendo diventare l'oggetto magico. Per ogni 4 successi extra, il narratore può decidere di applicare ulteriori effetti sull'oggetto in questione.",
+        "Contingenza: Richiede almeno 3 successi. Il personaggio sceglie uno dei suoi poteri e descrive, nella maniera più accurata possibile, in quale situazione parte tale potere. Il potere parte dal cerchio stesso e produce gli effetti desiderati dall’immortale.",
+        "Es. Un demone con il potere della cenere crea un cerchio rituale all’ingresso del suo covo, piazza al suo interno il potere di cenere alla cenere dichiarando “Se entra qualcuno che non sono io, parte la palla di lapilli e fiamme contro il vicino barile di polvere da sparo”. Ovviamente se il suddetto barile di polvere da sparo non è presente, il requisito non è soddisfatto e la contingenza non parte."
+      ],
       "livelli": [
         {
           "livello": 1,
@@ -329,51 +433,66 @@
           "livello": 3,
           "costo_px": 12
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "sfruttare_l_ambiente",
       "nome": "Sfruttare l'ambiente",
       "categoria": "comune",
+      "testo": [
+        "Il personaggio sa sfruttare l'ambiente circostante per infliggere più dolore possibile al proprio avversario. Che si tratti di far cadere un lampadario in testa ai suoi avversari, far cadere una trave per far crollare il pavimento sotto i piedi dell'avversario, il personaggio sa sfruttare al massimo queste situazioni."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Azione astuta",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Una volta per sessione, il personaggio può sfruttare l'ambiente circostante per avvantaggiarsi in un'azione.",
+            "Una volta per sessione, il personaggio aggiunge un numero di dadi pari al numero di ● in astuzia a qualsiasi azione (non di attacco o difesa)."
+          ]
         },
         {
           "livello": 2,
           "nome": "Attacco astuto",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Per una volta per sessione, SE è in grado di sfruttare l'ambiente circostante, prima di tirare i dadi di attacco, il personaggio può dichiarare di usare questo attacco.",
+            "Aggiunge al tiro di attacco un numero di dadi pari al numero di ● in astuzia,  mentre aggiunge danno dell'arma pari al numero di ● in sfruttare l’ambiente."
+          ]
         },
         {
           "livello": 3,
           "nome": "Difesa astuta",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Una volta per sessione, il personaggio può aggiungere un numero dadi nel suo tiro di difesa pari al numero di ● in astuzia."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "si_smette_di_lavorare_quando_il_lavoro_e_finito",
       "nome": "Si smette di lavorare quando il lavoro è finito",
       "categoria": "comune",
+      "testo": [
+        "Ogni qualvolta un personaggio ottiene un punto ispirazione, recupera un punto mana."
+      ],
       "livelli": [
         {
           "livello": 1,
           "costo_px": 2
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "spirito_di_iniziativa",
       "nome": "Spirito di iniziativa",
       "categoria": "comune",
+      "testo": [
+        "Il personaggio riesce a leggere meglio le situazioni, oppure semplicemente ha dei riflessi migliori della media.",
+        "Ha un +1 al tiro di iniziativa."
+      ],
       "livelli": [
         {
           "livello": 1,
@@ -391,14 +510,16 @@
           "livello": 4,
           "costo_px": 8
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "volonta_di_ferro",
       "nome": "Volontà di ferro",
       "categoria": "comune",
+      "testo": [
+        "La volontà dell’immortale è tale che riesce a resistere agli effetti mentali che ne potrebbero compromettere la lucidità di pensiero.",
+        "Il personaggio aggiunge 1D6 per ogni ● in volontà di ferro, a tutti i tiri per resistere agli effetti mentali, illusioni, paura ecc."
+      ],
       "livelli": [
         {
           "livello": 1,
@@ -420,14 +541,16 @@
           "livello": 5,
           "costo_px": 10
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "tecnico",
       "nome": "Tecnico",
       "categoria": "comune",
+      "testo": [
+        "Il personaggio è sempre preparato ad ogni evenienza e nelle sue tasche possiede sempre un gran numero di attrezzi, spesso stravaganti, ma sempre quello che serve al momento giusto.",
+        "Per un numero di volte a sessione pari al numero di ● in tecnico, il personaggio può tirare fuori l'oggetto non magico giusto, al momento giusto. Come ad esempio come attrezzi per scassinare una porta, attrezzature per pulire un'arma da fuoco, chiodi e martello per riparare la ruota del carro in corsa."
+      ],
       "livelli": [
         {
           "livello": 1,
@@ -441,87 +564,122 @@
           "livello": 3,
           "costo_px": 6
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "ali",
       "nome": "Ali",
       "categoria": "passivo",
+      "testo": [
+        "Molti immortali sono nati con il dono delle ali, un privilegio fisico perfetto per i loro mondi di origine, dove possono volare alti nel cielo, con una grazia ed eleganza senza pari, ma sulla terra tale potere ha perso parte del suo fascino ed efficienza. Per problemi fisici, nel mondo dei mortali, le ali non sfruttano al meglio le leggi “dell'aerodinamica” (come osano dire i mortali) e gli consentono di muoversi più veloci, oppure di assistere in grandi salti, comunque un grosso vantaggio in confronto degli sventurati con i piedi ben piantati a terra.",
+        "Questo potere è attivo solo in forma immortale."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Ali deboli",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Il personaggio possiede solo un’ala oppure una coppia di ali molto debolucce che gli consentono di muoversi meglio, ma nulla di più. Ogni volta che compie azioni legate al movimento in cui può sfruttare le ali per una spinta, planata, correzione di rotta ecc, possiede automaticamente un punto in esubero da spendere in opportunità con tale azione, anche se ha fallito il tiro."
+          ]
         },
         {
           "livello": 2,
           "nome": "Ali forti",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Le ali del personaggio sono una bella coppia quasi pienamente funzionante che gli consentono di compiere grossi balsi pari anche a tre o quattro volte quelli di un essere umano ben alleato. Il personaggio può usare l’opportunità Muoversi tutte le volte che vuole in un turno, finché ha successi in esubero da spendere."
+          ]
         },
         {
           "livello": 3,
           "nome": "Multiple ali",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "L’immortale ha due ali enormi, oppure molteplici coppie di ali, che gli consentono di fluttuare da terra oltre che di volare a bassa quota. Il personaggio vola fino ad un'altezza massima di distanza 3, ma se per qualche motivo subisce degli effetti che lo buttano a terra, subisce 4 danni difendibili."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "aspetto_alieno",
       "nome": "Aspetto alieno",
       "categoria": "passivo",
       "solo": "bianco",
+      "testo": [
+        "Di norma gli immortali hanno un aspetto umanoide, ma alcuni hanno degli aspetti decisamente bizzarri. Per alcuni è solo qualche parte anatomica assente o dislocata, ma per altri si tratta di forme geometriche bizzarre con occhi e cerchi contornati da ali."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Corpo bizzarro",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Guadagna un dado aggiuntivo alla difesa per ogni ● in aspetto alieno."
+          ]
         },
         {
           "livello": 2,
           "nome": "Sensi bizzarri",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "È difficile avvicinarsi alle spalle di una creatura che ….. non ha le spalle. Il personaggio ha vantaggio a tutti i tiri per individuare nemici nascosti o riconoscere illusioni."
+          ]
         },
         {
           "livello": 3,
           "nome": "Aspetto della follia",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "La creatura ha un aspetto totalmente folle ed incomprensibile per una mente mortale. I mortali devono effettuare un tiro su potenza + il numero di ● della loro anima con difficoltà pari a metà della potenza dell’immortale per poter fare un qualsiasi tipo di azione finché è presente nella scena, se falliscono il tiro, non compiono nessuna azione o le falliscono automaticamente."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "aura_nascosta",
       "nome": "Aura nascosta",
       "categoria": "passivo",
+      "testo": [
+        "Imparare a dominare l'aura è una cosa dura per un immortale, è come negare la propria natura o imparare a cadere di faccia. Alcuni di coloro che riescono a controllare e manipolare la loro aura, riescono a ridurre la loro intensità, come un camuffamento."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Aura soffocata",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Il personaggio riduce di 1 la distanza di percezione per ogni ● in aura nascosta."
+          ]
         },
         {
           "livello": 2,
           "nome": "Falsa traccia",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Tutti i poteri che usa lasciano segni meno evidenti in giro e di conseguenza meno prove che un immortale è passato da quelle parti lasciando segni del proprio passaggio.",
+            "Tutti i tiri per trovare e riconoscere i segni lasciati dai poteri del personaggio, hanno svantaggio."
+          ]
         },
         {
           "livello": 3,
           "nome": "Mimetizzazione totale",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "In maniera passiva (quindi mentre compie altre azioni), il personaggio può spendere un punto mana per rendere la sua aura impercettibile per quel turno."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "breccia_dell_aura",
       "nome": "Breccia dell’aura",
       "categoria": "passivo",
+      "testo": [
+        "L’immortale ha imparato ad essere più sfuggente nell’utilizzo dei suoi poteri, riuscendo ad usarli senza dover assumere la forma originale.",
+        "Il personaggio può, al costo di un punto mana (in aggiunta al costo del potere) usare uno dei suoi poteri che richiedono l’uso della forma originale anche se è in forma umana.",
+        "Il personaggio può usare questo potere un numero di volte a sessione pari al numero di ● in breccia dell’aura."
+      ],
       "livelli": [
         {
           "livello": 1,
@@ -535,35 +693,52 @@
           "livello": 3,
           "costo_px": 12
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "cacciatore_di_immortali",
       "nome": "Cacciatore di immortali",
       "categoria": "passivo",
+      "testo": [
+        "La trasformazione in mortali è ciò che salva molti criminali immortali nascosti sulla terra, ma la giustizia, a modo suo, raggiunge tutti. Alcuni immortali e, in casi molto rari, mortali hanno sviluppato un dono che gli consente di percepire le auree assopite dalla trasformazione."
+      ],
       "livelli": [
         {
           "livello": 1,
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Il personaggio può percepire l’aura di un immortale trasformato a distanza 0 (toccandolo)"
+          ]
         },
         {
           "livello": 2,
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Il personaggio può percepire l’aura di un immortale trasformato a distanza 2."
+          ]
         },
         {
           "livello": 3,
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Il personaggio può percepire l’aura di un immortale trasformato a distanza 4."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "compagno_innaturale",
       "nome": "Compagno innaturale",
       "categoria": "passivo",
+      "testo": [
+        "L’immortale è accompagnato da una o più creature non appartenenti al mondo dei mortali, come segugi celesti, voraci avvoltoi infernali o cavalli del vuoto.",
+        "Queste creature contano a tutti gli effetti come la loro controparte mortale (Vedi seguaci), con le seguenti eccezioni.",
+        "- Se vengono utilizzate per effettuare azioni, aggiungono un ulteriore bonus di +2D6 ai tiri di dado (compreso il potere compagno da battaglia)",
+        "- Compaiono al fianco del personaggio solo nella sua forma naturale e scompaiono quando è nella sua forma mortale.",
+        "- Allontanare il seguace e sistemare il seguace (opportunità) costano due esuberi in più.",
+        "- La loro velocità aumenta sempre di 1, fino ad un massimo di velocità 3.",
+        "Un personaggio può avere un numero di compagni innaturali pari al numero di ● in compagno innaturale."
+      ],
       "livelli": [
         {
           "livello": 1,
@@ -577,852 +752,1973 @@
           "livello": 3,
           "costo_px": 6
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "corpo_pesante",
       "nome": "Corpo pesante",
       "categoria": "passivo",
+      "testo": [
+        "L’immortale ha un corpo particolarmente robusto o più pesante di quanto il suo aspetto da a vedere. Quando accumulano sufficiente potere, tendono anche a crescere di dimensioni, sembrando dei giganti inumani."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Corpo massiccio",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Guadagna distruttività ● per ogni ● in corpo pesante."
+          ]
         },
         {
           "livello": 2,
           "nome": "Resistenza del colosso",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Il personaggio non usa più la caratteristica di agilità per la difesa, ma la sua possanza."
+          ]
         },
         {
           "livello": 3,
           "nome": "Atlante",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Il personaggio e il suo equipaggiamento magico diventano permanentemente di taglia grande, aggiungendo +1 a tutti i danni che infligge con attacchi fisici e le armi ingrandite con lui. Per ovvi motivi, ha svantaggio a tutti i tiri per nascondersi e muoversi silenziosamente."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "munizioni_celesti",
       "nome": "Munizioni celesti",
       "categoria": "passivo",
       "solo": "bianco",
+      "testo": [
+        "L’immortale è un armaiolo provetto e usa i proiettili infusi di energia celeste.",
+        "Queste munizioni rendono magica un'arma comune, consentendogli di ferire gravemente gli altri immortali. Se vengono caricate su armi magiche, aggiungono +1D6 a tutti i tiri per usare armi da fuoco.",
+        "Un immortale può usare queste munizioni pure in forma mortale."
+      ],
       "livelli": [
         {
           "livello": 1,
-          "costo_px": 2
+          "costo_px": 2,
+          "testo": [
+            "¼ delle munizioni trasportate è celeste."
+          ]
         },
         {
           "livello": 2,
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "½ delle munizioni trasportate è celeste."
+          ]
         },
         {
           "livello": 3,
-          "costo_px": 6
+          "costo_px": 6,
+          "testo": [
+            "Tutte le munizioni in possesso del personaggio sono celesti."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "munizioni_infernali",
       "nome": "Munizioni infernali",
       "categoria": "passivo",
       "solo": "nero",
+      "testo": [
+        "L'immortale è un esperto fabbricante di armi e la sua esperienza è bravura è tale che con sé ha sempre i suoi fidati proiettili infernali.",
+        "Queste munizioni rendono magica un'arma comune, consentendogli di ferire gravemente gli altri immortali. Se vengono caricate su armi magiche, aggiungono ● distruttività.",
+        "Un immortale può usare queste munizioni pure in forma mortale."
+      ],
       "livelli": [
         {
           "livello": 1,
-          "costo_px": 2
+          "costo_px": 2,
+          "testo": [
+            "¼ delle munizioni trasportate è infernale."
+          ]
         },
         {
           "livello": 2,
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "½ delle munizioni trasportate è infernale."
+          ]
         },
         {
           "livello": 3,
-          "costo_px": 6
+          "costo_px": 6,
+          "testo": [
+            "Tutte le munizioni in possesso del personaggio sono infernali."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "mutaforma",
       "nome": "Mutaforma",
       "categoria": "passivo",
+      "testo": [
+        "Il potere del mutaforma è uno dei poteri più subdoli nell’arsenale di un immortale. Considerato disdicevole dai molti, questo potere consente al suo utilizzatore di modificare il suo aspetto da mortale, che si tratti di piccoli dettagli come forma e colore degli occhi fino a cambiare sesso e dimensioni.",
+        "I più esperti in questo potere hanno imparato ad assumere l’aspetto di animali e addirittura modificare il loro aspetto da immortali, arrivando a assumere l’identità di altri."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Aspetto umano",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere può essere attivato anche in forma mortale. Il personaggio non è più vincolato ad un solo aspetto da mortale e in qualsiasi momento può cambiare ogni parte del suo aspetto.",
+            "Aggiunge a tutti i tiri per ingannare un numero di dadi pari al numero di ● in mutaforma."
+          ]
         },
         {
           "livello": 2,
           "nome": "Aspetto animale",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Questo potere può essere attivato anche in forma mortale. Il personaggio può assumere l'aspetto di un comune animale di dimensioni piccole, medio o grandi. Perde l’uso della parola, l’equipaggiamento scompare nella trasformazione e possiede velocità 2.",
+            "Questa trasformazione non gli consente di poter comprendere gli altri animali, ma gli conferisce alcuni loro tratti specifici, come branchie nel caso di un pesce e ali nel caso di un falco."
+          ]
         },
         {
           "livello": 3,
           "nome": "Aspetto immortale",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Il personaggio può alterare il suo aspetto anche quando è in forma immortale. Per quanto può assumere diverse forme e apparire come un angelo o un demone a suo piacimento, non può comunque alterare il colore della sua anima."
+          ]
         },
         {
           "livello": 4,
           "nome": "Aspetto ibrido",
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "Questo potere può essere attivato anche in forma mortale. Al costo di un’anima, il personaggio può assumere un aspetto ibrido, cioè assumere alcuni vistosi tratti estetici della sua originale forma immortale quando è camuffato in forma mortale o animale. Quando è in questo stato ibrido, l’immortale può usare tutti i suoi poteri anche in queste forme, senza rilasciare l’aura. Usare i poteri in questa forma ha un costo energetico molto alto e consuma sempre un punto mana per ogni potere usato, oltre ao ogni eventuale costa del potere stesso.",
+            "Questo effetto dura un numero di turni pari all’astuzia del personaggio."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "pelle_a_scaglie",
       "nome": "Pelle a scaglie",
       "categoria": "passivo",
       "solo": "nero",
+      "testo": [
+        "L’immortale ha una pelle molto spessa, ricoperta da grosse scaglie, placche o escrescenze ossee  che ne garantisce una resistenza elevata pure per gli standard dei suoi pari."
+      ],
       "livelli": [
         {
           "livello": 1,
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Guadagna 1 punto ferita."
+          ]
         },
         {
           "livello": 2,
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Guadagna 2 punti ferita."
+          ]
         },
         {
           "livello": 3,
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Guadagna 3 punti ferita."
+          ]
         },
         {
           "livello": 4,
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "Guadagna 4 punti ferita."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "pelle_di_mercurio",
       "nome": "Pelle di mercurio",
       "categoria": "passivo",
       "solo": "bianco",
+      "testo": [
+        "La pelle dell'immortale appare come fatta di un metallo vivente simile al mercurio o in alcuni casi sembra quasi essere uno squarcio nella realtà che si affaccia verso costellazioni lontane. Questa pelle, normalmente una benedizione celeste, dà un'elevata resistenza alle influenze e poteri."
+      ],
       "livelli": [
         {
           "livello": 1,
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Il personaggio aggiunge 1 dado a qualsiasi tiro per resistere ad effetti di poteri che ne potrebbero influenzare la mente o il corpo."
+          ]
         },
         {
           "livello": 2,
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Il personaggio aggiunge 2 dadi a qualsiasi tiro per resistere ad effetti di poteri che ne potrebbero influenzare la mente o il corpo."
+          ]
         },
         {
           "livello": 3,
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Il personaggio aggiunge 3 dadi a qualsiasi tiro per resistere ad effetti di poteri che ne potrebbero influenzare la mente o il corpo."
+          ]
         },
         {
           "livello": 4,
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "Il personaggio aggiunge 4 dadi a qualsiasi tiro per resistere ad effetti di poteri che ne potrebbero influenzare la mente o il corpo."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     },
     {
       "id": "animalita",
       "nome": "Animalità",
       "categoria": "attivo",
       "solo": "bianco",
+      "testo": [
+        "L'immortale ha sviluppato questo potere entrando in comunione con la natura selvatica del mondo materiale. È un potere relativamente raro tra gli immortali, dato che per poter attingere a tale potere, bisogna ammettere che il mondo dei mortali ha un potere altrettanto potente come quello delle terre degli immortali.",
+        "A differenza della bestialità dei demoni, che gira attorno alla natura predatoria della natura, l'animalità degli angeli tende più a ordinarla ed indirizzarla per i propri scopi."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Sensi animali",
-          "costo_px": 2
+          "costo_px": 2,
+          "testo": [
+            "Questo potere è perennemente attivo, anche in forma mortale. Il personaggio non ha alcuna penalità nell'usare i suoi sensi all'interno di un ambiente naturale saturo, come una foresta, sott'acqua o in mezzo ad una nebbia.",
+            "Se si trova in un ambiente totalmente incontaminato e ricco di vita animale e vegetale, i suoi sensi si ampliano e vengono condivisi parzialmente con quelli della flora e fauna locali, aggiungendo un numero di D6 pari ai ● in animalità per tutti i tiri di percezione e sopravvivenza."
+          ]
         },
         {
           "livello": 2,
           "nome": "Parlare con gli animali",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere funziona anche in forma mortale ed è perennemente attivo. Il personaggio può parlare con gli animali come se fossero dotati di linguaggio proprio.",
+            "Questo potere può essere usato per sapere cose che gli animali sanno o hanno visto, potendo anche scendere a patti con loro per ottenere dei piccoli servigi, come spiare qualcuno o fare baccano.",
+            "Vien da se che gli animali non sono particolarmente intelligenti, sono incapaci di contare, leggere o altre cose che il loro intelletto limitato gli può consentire, oltre al fatto che la loro memoria difficilmente sarà così duratura da ricordare l’immortale dopo qualche giorno.",
+            "Gli animali che hanno la possibilità di parlare con il personaggio difficilmente possono mentire e diventano meno ostili nei suoi confronti, però potrebbero chiedere ferocemente del cibo o di allontanarsi dal loro territorio."
+          ]
         },
         {
           "livello": 3,
           "nome": "Sgherri animali",
-          "costo_px": 6
+          "costo_px": 6,
+          "testo": [
+            "Il personaggio può avere a sua disposizione un numero di sgherri animali pari alla somma della sua caratteristica di potenza + animalità.",
+            "Può attingere ai seguenti tipi di sgherri animali; Lupi, sciami di gatti, sciami di corvi, orsi (ogni orso occupa 3 sgherri), cavalli (ogni cavallo occupa 2 sgherri), selvaggina (cervi).",
+            "In caso di perdite o di sostituzioni, rimpiazza due sgherri al giorno."
+          ]
         },
         {
           "livello": 4,
           "nome": "Movimento animale",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Il personaggio può compiere enormi distanze trasformandosi esso stesso in diversi animali per viaggiare e passare inosservato agli occhi di animali e persone.",
+            "Il personaggio spende un punto mana per trasformarsi in un cavallo, un delfino, uno sciame di ratti, di farfalle, pipistrelli o uccelli. In questo modo si muove alla stessa velocità si un personaggio a cavallo, passando però inosservato o meglio, come un normale animale che passa da quelle parti.",
+            "La sua aura si estende per metà della distanza. In tale forma non può usare oggetti, poteri o attaccare. Se subisce un singolo attacco che infligge almeno 2 danni, ritorna automaticamente nella sua forma originale.",
+            "Gli effetti della trasformazione durano fino a quando il personaggio lo desidera, spendendo un altro punto mana per cambiare nuovamente la forma animale in caso la situazione lo richiede (es. Come passare dalla forma di cavallo a quella di un delfino per attraversare un largo fiume per poi diventare uno sciame di parassiti per sbarcare ed entrare in una casa li vicino)."
+          ]
         },
         {
           "livello": 5,
           "nome": "Forma animale",
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "Il personaggio si trasforma in una versione ancora più grossa e animalesca di quello che è già.",
+            "Spendendo un'anima, ottiene i seguenti bonus fino alla fine dello scenario. La sua taglia aumenta di uno, guadagna ●● distruttività, tutti i suoi attacchi con pugni e calci (in questo caso artigli e corna) hanno un +1 ai danni (se diventa grande aggiunge un ulteriore +1 ai danni) e sono magici, aggiunge +2D6 per ogni azione in cui può sfruttare il suo grosso fisico, come saltare, scalare, attaccare o difendersi da una casa che gli crolla addosso.",
+            "Abbandonarsi a questa forma ha un terribile prezzo per l'immortale, dato che la natura bestiale che tenta di dominare non appartiene al suo mondo, ma solo a quello dei mortali. L'immortale è in una sorta di frenesia e ha svantaggio nell'uso di ogni potere che usa in tale forma. Non può usare armi né oggetti, oltre a perdere l'uso della parola (anche se è in grado di comprendere le parole di chi gli sta attorno). Ogni turno deve tentare di attaccare, demolire o correre verso il bersaglio più vicino, a partire dai nemici, fino al termine dello scenario."
+          ]
         }
       ],
-      "reazione": false,
-      "effetto_combo": true
+      "effetti_scenografici": [
+        "Proprio come i propri fratelli oscuri, questo potere tende ad aggiungere tratti animali o per lo meno naturali, all'immortale, in alcuni casi sembrando più a grossi uomini albero o addirittura alla versione antropomorfa di animali stessi.",
+        "Al solo passaggio del personaggio, la natura stessa sembra rinvigorire, gli animali sembrano più docili e le piante sembrano diventare più rigogliose."
+      ],
+      "effetto_combo": [
+        "Se il personaggio possiede almeno ● in possessione, può usare I poteri di possessione sugli animali."
+      ]
     },
     {
       "id": "bestialita",
       "nome": "Bestialità",
       "categoria": "attivo",
       "solo": "nero",
+      "testo": [
+        "L'immortale ha un forte legame con il lato selvaggio del mondo dei mortali. Proprio come animalità, questo potere non è nativo del Paradiso o Inferno, ma è una contaminazione del mondo materiale, ma a differenza della controparte angelica, bestialità non cerca di imporre ordine nel caos della natura, ma ne abbraccia semplicemente la selvaggia potenza."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Sensi bestiali",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Perennemente attivo, anche in forma mortale. Aggiunge +1D6 per ogni ● in bestialità a tutti i tiri basati sui sensi come udito, fiuto, vista ecc."
+          ]
         },
         {
           "livello": 2,
           "nome": "Armi bestiali",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Perennemente attivo. L'immortale ha sviluppato artigli, corna e zanne utili per predare i suoi nemici.",
+            "Aggiunge la seguente arma da mischia magica.",
+            "Opportunità uniche dell'arma (in aggiunta alle normali opportunità date dalle armi da mischia):"
+          ],
+          "attacco": {
+            "statistiche": "Danno: 2. Distanza: 1. Distruttività: ●●●",
+            "danno": 2,
+            "distanza": 1,
+            "distruttivita": 3
+          },
+          "opportunita": [
+            {
+              "nome": "Sbranare",
+              "esuberi": 2,
+              "testo": "Il personaggio si avventa sul bersaglio serrando le fauci e gli artigli nella carne del malcapitato. Il bersaglio di questo attacco può fare un'azione di movimento come un’azione completa e non gratuita come di consueto e le opportunità del bersaglio di movimento costano un esubero in più. Gli effetti di questo attacco hanno effetto fino all’inizio del prossimo turno del demone bestiale."
+            }
+          ]
         },
         {
           "livello": 3,
           "nome": "Movimento bestiale",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Perennemente attivo. Il personaggio si muove ad una velocità tale che è difficile stargli dietro.",
+            "Se il personaggio decide di dedicare il suo turno solo a muoversi, si muove fino a distanza 4, guadagnando distruttività ●● nel movimento e, nonostante la velocità, può ugualmente tentare di muoversi silenziosamente, ma con svantaggio al tiro di furtività.",
+            "Il personaggio non può usare questo effetto per più di due turni consecutivi e necessita di due turni di movimento normale."
+          ]
         },
         {
           "livello": 4,
           "nome": "Rigenerazione bestiale",
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "Il personaggio può spendere un punto mana per attivare questo potere alla fine di ogni suo turno.",
+            "Tira 1D6 per ogni ferita subita, con ogni 6 guarisce immediatamente una ferita."
+          ]
         },
         {
           "livello": 5,
           "nome": "Predatore bestiale",
-          "costo_px": 20
+          "costo_px": 20,
+          "testo": [
+            "Il personaggio si trasforma in una versione ancora più grossa e animalesca di quello che è già.",
+            "Spendendo un'anima, ottiene i seguenti bonus fino alla fine dello scenario. La sua taglia aumenta di uno, guadagna ●● distruttività, ottiene rigenerazione bestiale senza spendere mana, aggiunge +1D6 per ogni azione in cui può sfruttare il suo grosso fisico, come saltare, scalare, attaccare o difendersi da un grosso palazzo che gli crolla addosso.",
+            "Abbandonarsi a questa forma ha un terribile prezzo per l'immortale, dato che la natura bestiale che tenta di dominare non appartiene al suo mondo, ma solo a quello dei mortali. L'immortale è in una sorta di frenesia e ha svantaggio nell'uso di ogni potere che usa in tale forma. Non può usare armi né oggetti, oltre a perdere l'uso della parola (anche se è in grado di comprendere le parole di chi gli sta attorno). Ogni turno deve tentare di attaccare, demolire o correre verso il bersaglio più vicino, a partire dai nemici, fino al termine dello scenario.",
+            "In questa forma, il personaggio può usare movimento bestiale tutte le volte che vuole, senza doversi alternare con movimento normale."
+          ]
         }
       ],
-      "reazione": false,
-      "effetto_combo": true
+      "effetti_scenografici": [
+        "Pian piano che un immortale incrementa la sua affinità con questo potere, inizia ad assumere dei tratti animaleschi, come occhi, orecchie, peluria, code. Spesso iniziano ad assomigliare alla versione grossa e deviata di bestie mitologiche come i mannari, minotauri, uomini pesce e centauri.",
+        "La sola presenza dell’immortale in un ambiente selvatico è causa di bizzarri e sinistri suoni in lontananza, alternati da silenzi inquietanti a seconda dell'umore del demone stesso."
+      ],
+      "effetto_combo": [
+        "Se il personaggio possiede il potere empatia, può emettere dei versi che possono essere una copia perfetta di una voce sentita poco prima, oppure essere terrificanti ruggito animaleschi in cui è udibile una straziante voce umana.",
+        "I predatori più fantasiosi usano questi effetti sonori per attirare le vittime o terrorizzare."
+      ]
     },
     {
       "id": "dementia",
       "nome": "Dementia",
       "categoria": "attivo",
       "solo": "nero",
+      "testo": [
+        "Il potere di dementia è una versione corrotta del potere empatia. Quest'ultimo è un potere per comprendere i sentimenti degli altri, mentre dementia tende a trasformare questi sentimenti in armi."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Follia",
-          "costo_px": 2
+          "costo_px": 2,
+          "testo": [
+            "Questo potere può essere usato anche in forma mortale ed è perennemente attivo.",
+            "Il demone è in grado di comprendere, solo con lo sguardo, se un individuo è…. pazzo. Non è in grado di comprendere la patologia del soggetto, né come curarlo, solo che è mentalmente instabile.",
+            "Se il suo bersaglio si trova entro distanza 2, può spendere un punto mana per fare un tiro contrapposto di astuzia + dementia contro potenza + consapevolezza del bersaglio. Se il demone ha successo, ha una vaga nozione delle paure del suo bersaglio. Ulteriori opportunità consentono di vedere ulteriori paure."
+          ]
         },
         {
           "livello": 2,
           "nome": "Rete di pazzia",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere può essere usato anche in forma mortale. Il personaggio è in grado di percepire i mortali affetti da disturbi mentali che si trovano entro distanza 5.",
+            "Spendendo un punto mana, il personaggio può scegliere come bersaglio uno di questi malati e tentare di violare la sua mente con un tiro di astuzia + dementia contrapposto da potenza + consapevolezza della vittima. Se il demone ha successo, riesce a vedere e sentire tutto ciò che vede e sente la vittima stessa per un numero di minuti pari ai ● in potenza del demone stesso."
+          ]
         },
         {
           "livello": 3,
           "nome": "Demone della paralisi",
-          "costo_px": 6
+          "costo_px": 6,
+          "testo": [
+            "Spendendo un punto mana, il demone può scegliere una vittima folle (in caso dei mortali, anche un non folle) entro distanza 5, generando una proiezione di sua fantasia per perseguitare questo bersaglio.",
+            "L'illusione dura un turno per ogni ● in potenza, è estremamente realistica e spaventosa. Nonostante la proiezione è a fantasia del demone, ha sempre qualcosa che ricorda il demone stesso, qualche tratto caratteristico come corna, forma dei denti, zoccoli ecc. A discrezione del demone, questa visione può essere vista solo dalla vittima o essere visibile da tutti i presenti nella scena.",
+            "Per la durata del potere, il demone vede, sente e utilizza la proiezione come se fosse lui stesso presente lì, potendo parlare, fare patti, anche utilizzare il potere follia, ma senza poter attaccare, spostare oggetti ecc."
+          ]
         },
         {
           "livello": 4,
           "nome": "Orinofobia",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Il demone può entrare nei sogni di una sua vittima che ha già tormentato in passato.",
+            "Al costo di un punto mana, il demone può mentalmente entrare nel sogno della vittima, vedere e sentire ciò che accade nel sogno e potendosi muovere al suo interno a piacimento. Il demone può usare liberamente i suoi poteri arrivando così a manipolare i sogni a suo piacimento. Tale potere ha molteplici scopi, tra cui vedere i pensieri inconsci della vittima, buttargli un tarlo nella mente, soppesare la sua volontà."
+          ]
         },
         {
           "livello": 5,
           "nome": "Tra le fauci della follia",
-          "costo_px": 10
+          "costo_px": 10,
+          "testo": [
+            "Il demone può spendere un'anima per trasformare tutti i mortali pazzi entro distanza 4 da lui, in suoi avatar da incubo.",
+            "L'effetto dura uno scenario, il demone scompare e riappare solo se tutti gli avatar sono distrutti o se finisce prima l'effetto del potere. Gli avatar da incubo sono una versione distorta del demone stesso, con tratti estetici simili a alle paure della vittima che si è trasformata (se una persona ha paura dei ragni, l’avatar avrà zampette da ragno ecc). Questi avatar hanno solo un quarto (per difetto) dei punti ferita e caratteristiche del demone originale.",
+            "Il personaggio può interpretare uno o tutti questi avatar, ma questi tenteranno sempre di agire separatamente per portare caos e paura in tutte le direzioni, mantenendo con difficoltà eventuali intenzioni iniziali del demone che li ha generati.",
+            "Una volta eliminato un avatar della follia, riappare la vittima trasformata, consapevole di quello che ha fatto nel lasso di tempo in cui è stato trasformato."
+          ]
         }
       ],
-      "reazione": true,
-      "effetto_combo": true
+      "effetti_scenografici": [
+        "I demoni che possiedono il potere di Dementia tendono ad essere disturbanti. Voci distorte, espressioni folli e un aspetto disturbante, pure per gli standard degli immortali.",
+        "Essere in un luogo chiuso in compagnia di un portatore di Dementia è un'esperienza terribile per un mortale. Sussurri, ombre che assumono sagome familiari, bambole che si spostano da sole quando nessuno le guarda, sono tutte cose che fanno dubitare della propria salute mentale."
+      ],
+      "reazione": [
+        "Un personaggio con il potere Dementia può, spendendo un punto mana, provare a contrastare i poteri Empatia. Il tiro contrapposto è potenza + Dementia contro potenza + Empatia di colui che sta usando il potere. Per contrastare in tal modo, deve essere a distanza 3 ed interagire in maniera sonora."
+      ],
+      "effetto_combo": [
+        "Se il personaggio possiede il potere Illusione, può spendere un punto mana per rimpiazzare una delle sue illusioni o diavoli della paralisi entro distanza 3, con se stesso, facendo, di fatto, un teletrasporto."
+      ],
+      "riquadri": [
+        "Istruzioni. Non esistono regole per far impazzire un mortale, anche in questo caso è tutto lasciato nelle mani del Narratore e della sua capacità di trovare un compromesso con il giocatore. Può essere utile ispirarsi alle malefatte di psicopatici come il Joker che hanno come obiettivo quello di tormentare le loro vittime fino a farle impazzire."
+      ]
     },
     {
       "id": "empatia",
       "nome": "Empatia",
       "categoria": "attivo",
       "solo": "bianco",
+      "testo": [
+        "Questo potere consente agli angeli di comprendere meglio le emozioni dei mortali e manipolarle. Questo potere non consente all'immortale di leggere la mente del bersaglio, ma “solo” di comprendere cosa sta realmente provando. Questo è uno dei principali metodi per cercare di salvare delle anime, oltre che per prevedere le azioni di un probabile nemico."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Percepire emozioni",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere è sempre attivo, anche in forma mortale.",
+            "L'angelo che vede in maniera diretta un individuo, lo vede circondato da una fioca luce che, a seconda della luce e forma di irradiazione, ne percepisce le reali emozioni in quel momento. Questo potere non consente al personaggio di percepire automaticamente la verità, ma può dare comodi indizi sullo stato d'animo del suo interlocutore, in modo da avere comodi indizi sulla verità.",
+            "Le emozioni percepibili sono; Rabbia, paura, disgusto,  felicità, eccitazione, dubbio.",
+            "Aggiunge un numero di D6 pari al numero di ● in empatia a tutti i tiri in cui è utile sapere e capire lo stato d’animo del suo interlocutore, come intimidire, socialità, gioco (es. poker)."
+          ]
         },
         {
           "livello": 2,
           "nome": "Mutare emozione",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Questo potere può essere usato anche in forma mortale.",
+            "Il personaggio che è in grado di alterare, anche se in maniera impercettibile, lo stato emozionale di un individuo che si trova entro distanza 2 e in linea di vista.",
+            "Effettuando un tiro su astuzia + empatia, contrapposto da astuzia + consapevolezza del bersaglio, entro distanza 4. Se ha successo può cambiare uno degli stati d'animo (rabbia, paura, felicità,  eccitazione e dubbio) per un minuto, più un minuto per ogni successo ottenuto oltre il primo. Se la vittima supera il tiro, sa che per un attimo il suo umore stava per mutare, ma non sa dire il perché e diventa immune a tale potere per il resto dello scenario."
+          ]
         },
         {
           "livello": 3,
           "nome": "Percezione emozionale estesa",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Questo potere è perennemente attivo, anche in forma mortale.",
+            "Il personaggio può percepire le emozioni anche di individui che non può vedere direttamente che si trovano entro distanza 3. Così facendo, oltre a sapere quante persone si trovano in determinati luoghi, può spendere un punto mana per usare mutare emozioni anche su bersagli che non sono in linea di vista."
+          ]
         },
         {
           "livello": 4,
           "nome": "Esacerbare emozione",
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "Al costo di un punto mana, il personaggio può modificare lo stato che una persona sta già provando, portandolo a livelli eccessivi o ridurli. Quindi un individuo che prova rabbia, può provare una leggera irritazione o una furia che lo potrebbe portare anche ad attaccare la fonte della sua rabbia, mentre un individuo che prova piacere, può portarlo a perdere la libido verso la fonte del suo piacere.",
+            "L'empatico deve effettuare un tiro si astuzia + empatia mentre il suo difensore deve effettuare un tiro su astuzia + consapevolezza per resistere.",
+            "Gli esuberi possono essere spesi nelle seguenti opportunità."
+          ],
+          "opportunita": [
+            {
+              "nome": "Conflitto emozionale",
+              "esuberi": 1,
+              "testo": "l'empatico può tentare di usare mutare emozioni ad un altro soggetto entro distanza 2 dal primo bersaglio senza spendere punti mana aggiuntivi. Questa opportunità può essere fatta più volte."
+            }
+          ]
         },
         {
           "livello": 5,
           "nome": "Vento di passione",
-          "costo_px": 20
+          "costo_px": 20,
+          "testo": [
+            "Il personaggio è in grado di trarre grandi benefici dalle emozioni di chi lo circonda, arrivando quasi a prevedere le azioni dei presenti.",
+            "Spendendo un'anima, fino a fine scenario, il personaggio ha i seguenti bonus contro gli individui che provano emozioni.",
+            "Rabbia: Vantaggio nei tiri di difesa contro gli attacchi di questi individui.",
+            "Paura: Vantaggio ad intimidire.",
+            "Disgusto: Vantaggio nei tiri per colpire.",
+            "Felicità: Vantaggio in socialità.",
+            "Eccitazione: Vantaggio in ingannare.",
+            "Dubbio: Vantaggio in istruzione (quindi usare le conoscenze per far valere il proprio punto)."
+          ]
         }
       ],
-      "reazione": true,
-      "effetto_combo": false
+      "effetti_scenografici": [
+        "Gli angeli con questo potere non lanciano molti segnali se non l’impressione di mettere a proprio agio chiunque li circonda. L’interlocutore dell’angelo inizia a sentire inavvertitamente odori, suoni e luci piacevoli, rilassanti, che in linea generale fanno si che il portatore di Empatia non sia una minaccia, almeno non la più prossima."
+      ],
+      "reazione": [
+        "Un personaggio con il potere Empatia può, spendendo un punto mana, provare a contrastare i poteri di Dementia. Il tiro contrapposto è potenza + Empatia contro potenza + Dementia di colui che sta usando il potere. Per contrastare in tal modo, deve essere a distanza 3 ed interagire in maniera sonora."
+      ]
     },
     {
       "id": "evocazione",
       "nome": "Evocazione",
       "categoria": "attivo",
+      "testo": [
+        "Il personaggio ha il potere di richiamare i suoi alleati o servi di altre dimensioni, che si tratti di sciami di corvi delle ombre, un esercito di soldati angelici o addirittura un drago.",
+        "Indipendentemente da come avviene l'evocazione, la sua distruttività è pari al numero di ● in Evocazione e costa sempre un'anima attivare questo potere."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Evocare attacco",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Un portale si apre a fianco al personaggio e da esso la creatura (o creature) effettua un singolo attacco entro distanza 3.",
+            "L'attacco è portato con potenza + evocazione. Il danno è pari a metà per difetto della potenza del personaggio. L'attacco è così ampio che infligge danno doppio alle squadre di sgherri.",
+            "Gli esuberi possono essere spesi nelle seguenti opportunità."
+          ],
+          "opportunita": [
+            {
+              "nome": "Stordire",
+              "esuberi": 1,
+              "testo": "Il bersaglio tira un dado in meno a tutte le pool di dadi fino al termine del suo prossimo turno."
+            },
+            {
+              "nome": "Distruttività",
+              "esuberi": 2,
+              "testo": "Il personaggio aggiunge ● in distruttività. Questo gli consente anche di demolire oggetti e pareti nella medesima azione."
+            },
+            {
+              "nome": "Danno extra",
+              "esuberi": 2,
+              "testo": "+ 1 al danno."
+            },
+            {
+              "nome": "Colpo critico",
+              "esuberi": 4,
+              "testo": "Il personaggio infligge una seconda volta il danno del potere."
+            }
+          ]
         },
         {
           "livello": 2,
           "nome": "Evocare intervento",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Questo potere può essere usato come una reazione e solo una volta per scenario. L'evocazione interviene per assistere il suo evocatore.",
+            "Il personaggio può aggiungere un numero di dadi pari al numero di ● in evocazione in una singola azione (compresa difesa)."
+          ]
         },
         {
           "livello": 3,
           "nome": "Evocare avatar",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Alle spalle del personaggio appare un portale che assorbe il personaggio stesso e al suo posto esce una grossa creatura con fattezze simili.",
+            "Il personaggio è sostituito con un suo avatar, con la differenza che questo sostituisce la distruttività caratteristica dell'evocazione a tutti i movimenti, armi e poteri (che hanno almeno un ● in distruttività). L'avatar perdura per uno scenario o finché non viene distrutta, dopo di che, il personaggio appare al posto di essa."
+          ]
         },
         {
           "livello": 4,
           "nome": "Evocare alleato",
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "Il personaggio usa il potere evoca avatar, ma questo non sostituisce il personaggio, ma bensì combatte al suo fianco.",
+            "Questo avatar non possiede le armi dell'evocatore ne i medesimi poteri, può solo usare il seguente attacco:",
+            "Potenza dell'avatar + evocazione, danno pari alla metà per difetto della potenza dell'evocatore a distanza 3.",
+            "Gli esuberi possono essere spesi nelle seguenti opportunità.",
+            "Mantenere questa evocazione nel mondo dei mortali e sotto controllo è un enorme dispendio di energia. Per ogni turno in cui è nello scenario, costa un punto mana del suo evocatore."
+          ],
+          "opportunita": [
+            {
+              "nome": "Stordire",
+              "esuberi": 1,
+              "testo": "Il bersaglio tira un dado in meno a tutte le pool di dadi fino al termine del suo prossimo turno."
+            },
+            {
+              "nome": "Danno extra",
+              "esuberi": 2,
+              "testo": "+ 1 al danno."
+            },
+            {
+              "nome": "Colpo critico",
+              "esuberi": 4,
+              "testo": "Il personaggio infligge una seconda volta il danno del potere."
+            }
+          ]
         },
         {
           "livello": 5,
           "nome": "Evocare la devastazione",
-          "costo_px": 20
+          "costo_px": 20,
+          "testo": [
+            "Il personaggio effettua un'azione estrema rilasciando completamente la creatura (o un enorme sciame di creature) che vagano per il campo di battaglia causando una devastazione totale.",
+            "In aggiunta al normale costo, per lanciare questo potere il personaggio deve spendere due punti mana.",
+            "L'evocazione vaga nel campo di battaglia devastando tutto quello che trova non risparmiando niente e nessuno e perdura per un numero di turni pari al doppio dei ● in potenza del suo evocatore.",
+            "Ogni turno, una struttura a caso viene attaccata (nella maggior parte dei casi demolita) automaticamente, mai la stessa per due turni filati. Ogni personaggio o squadra di sgherri, presenti nello scenario devono tirare 1D6, con 5+ (4+ per gli sgherri), la creatura li attacca e devono fare un tiro di difesa + agilità con difficoltà pari a 2 + ● in potenza dell'evocatore. Se fallisce il tiro, subisce 3 danni + la differenza (quindi se la difficoltà è 8 e il difensore ottiene solo 5 successi, subisce +3 danni per un totale di 6 danni) e conta come intralciata fino alla fine della sua prossima azione.",
+            "L'evocazione può essere attaccata e tira 5D6 per difesa in vantaggio e possiede un quantitativo di punti ferita pari al triplo del suo evocatore, attaccherà tutti, tranne quest'ultimo e se questo viene sconfitto, l'evocazione farà un ultimo turno attaccando solo colui che ha dato il colpo di grazia al padrone, che colpisce con un 4+, 3+ se sono sgherri, per poi svanire."
+          ]
         }
       ],
-      "reazione": true,
-      "effetto_combo": false
+      "effetti_scenografici": [
+        "L'evocazione appare in maniera piuttosto vistosa, tramite un portale, causando rumori distorti dall'ingresso delle creature nel mondo dei mortali, oltre ad effetti di luce impressionanti come fiamme o scariche elettriche."
+      ],
+      "reazione": [
+        "Un personaggio con il potere Empatia può, spendendo un'anima, provare a contrastare i poteri Evocazione di un altro immortale. Il tiro contrapposto è potenza + Evocazione contro potenza + Evocazione dell’avversario che sta usando il potere. Per contrastare in tal modo, deve essere a distanza 3 e consiste nell’apertura di un portale con le creature occupate a lottare tra loro."
+      ],
+      "riquadri": [
+        "La regola del cool",
+        "Per le evocazioni i giocatori si possono sbizzarrire come vogliono per renderle più tematiche possibili con il suo personaggio.",
+        "Un demone incentrato sul putridume e pestilenza, potrebbe evocare sciami di mosche di enormi dimensioni e l'avatar evocato potrebbe essere una versione di sé stesso formato da un ammasso di esse. Un angelo condottiero potrebbe invece evocare soldati angelici, i loro attacchi potrebbero rappresentare loro che caricano con alabarde argentee o rombanti colpi di fucili con munizioni sacre. Un personaggio con tematiche più tecnologiche potrebbe evocare un treno volante con distorte proprietà demoniache, magari direttamente una delle macchine demoniache della legione."
+      ]
     },
     {
       "id": "fuoco_purificatore",
       "nome": "Fuoco purificatore",
       "categoria": "attivo",
       "solo": "bianco",
+      "testo": [
+        "Uno dei poteri più caratteristici delle forze angeliche è la loro fiamma che col tempo, anche per gli umani è diventato simbolo di purificazione."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Piromanzia",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere è perennemente attivo, anche in forma umana.",
+            "L’angelo non ha mai penalità nell'osservare attraverso il fuoco ed è in grado di incrementare o diminuire l'intensità delle fiamme attorno a lui, arrivando a poter spegnere tutti i fuochi di un accampamento per far calare il buio oppure incrementare di dimensioni per generare più luce o addirittura causare piccoli incendi.",
+            "Se è entro distanza 1 da una fiamma, aggiunge un numero di D6 a tutti i tiri per intimidire pari al numero di ● in fuoco purificatore."
+          ]
         },
         {
           "livello": 2,
           "nome": "Maestro delle fiamme",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Questo potere può essere usato anche in forma mortale.",
+            "L’angelo può generare, con lo schiocco delle dita, piccole scintille in grado di generare fuoco, oltre ad essere in grado di manipolare, entro distanza 3, piccole fiamme a suo piacimento, spostandole da un punto all'altro con un movimento delle mani, poterle tenere a mezz'aria o dargli bizzarre forme artistiche.",
+            "Lo spostamento del fuoco in questo modo non può essere usato per danneggiare il nemico, ma può comunque essere usato per incendiare cumuli di paglia, carrozze o strutture in legno."
+          ]
         },
         {
           "livello": 3,
           "nome": "Fiamma del castigo",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "L’angelo è in grado di lanciare fiamme contro i suoi nemici. Cosa curiosa, ogni angelo ha metodi diversi di usare questo potere, alcuni generano un getto di fiamme emanato dalla bocca, altri generano una palla di fuoco nella mano e la lanciano, altri generano un’esplosione di fiamma direttamente sotto il nemico schioccando le dita.",
+            "Usare questo potere richiede l’uso di un punto mana.",
+            "Gli esuberi possono essere spesi nelle seguenti opportunità."
+          ],
+          "attacco": {
+            "statistiche": "Attacco: Potenza + fuoco purificatore. Danno: 4. Distanza: 3. Distruttività:●●.",
+            "tiro": "Potenza + fuoco purificatore",
+            "danno": 4,
+            "distanza": 3,
+            "distruttivita": 2
+          },
+          "opportunita": [
+            {
+              "nome": "Incendiare",
+              "esuberi": 1,
+              "testo": "Il personaggio da fuoco ad un oggetto o struttura a scelta vicino al bersaglio."
+            },
+            {
+              "nome": "Stordire",
+              "esuberi": 1,
+              "testo": "Il bersaglio tira un dado in meno a tutte le pool di dadi fino al termine del suo prossimo turno."
+            },
+            {
+              "nome": "Distruttività",
+              "esuberi": 2,
+              "testo": "Il personaggio aggiunge ● in distruttività. Questo gli consente anche di demolire oggetti e pareti nella medesima azione."
+            },
+            {
+              "nome": "Danno extra",
+              "esuberi": 2,
+              "testo": "+ 1 al danno."
+            },
+            {
+              "nome": "Colpo critico",
+              "esuberi": 4,
+              "testo": "Il personaggio infligge una seconda volta il danno del potere."
+            }
+          ]
         },
         {
           "livello": 4,
           "nome": "Corpo di fiamme",
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "Il personaggio ha come effetto passivo quello di prende metà dei danni da fuoco, anche in forma mortale.",
+            "Spendendo un punto mana, il personaggio viene ricoperto da un sottile strato di fuoco per un numero di turni pari alla sua potenza, diventando immune agli effetti del fuoco. Ogni arma o oggetto impugnato diventa magico ed infuocato e aggiungi +1 danno da fuoco ai danni dell’arma. Ovviamente, essendo ricoperto da fiamme, il personaggio può dare fuoco ad oggetti infiammabili semplicemente col tocco."
+          ]
         },
         {
           "livello": 5,
           "nome": "Tempesta di fuoco",
-          "costo_px": 20
+          "costo_px": 20,
+          "testo": [
+            "In passato, molti angeli hanno usato questo potere come forma ultima di castigo contro insediamenti di umani che hanno supportato in qualche modo i nemici del Paradiso. Il personaggio consuma un punto anima e un mana per generare una violentissima tempesta di fiamme che ha lui come epicentro che devasta tutto in pochi secondi. Per 3 turni, tutto ciò che si trova a distanza 4 dell'immortale subisce danni da fuoco pari alla sua potenza (sono concessi tiri per difendersi) e distruttività ●●●●●."
+          ]
         }
       ],
-      "reazione": true,
-      "effetto_combo": true
+      "effetti_scenografici": [
+        "Nessun fuoco naturale resta indifferente ad un portatore della fiamma, di fatti, le fiamme sembrano avere almeno un sussulto quando gli si avvicina, prendendo forme, anche se per un attimo solo, più singolari ed affascinanti, oltre ad ardere con ammaliante splendore. Gli stessi portatori del fuoco purificatori spesso sembrano avere, quasi letteralmente, il fuoco negli occhi, dando loro un aspetto ancora più autoritario."
+      ],
+      "reazione": [
+        "L'angelo del castigo è in grado di distruggere con il suo fuoco anche le più corrotte fiamme.",
+        "Un personaggio con il potere Fuoco purificatore può, spendendo un punto mana, provare a contrastare i poteri Umbra e Potere della cenere. Il tiro contrapposto è potenza + Fuoco purificatore contro potenza + umbra o potere della cenere di colui che sta usando il potere. Per contrastare in tal modo, deve essere presente una fiamma (non corrotta) vicino all’attaccante e deve essere visibile."
+      ],
+      "effetto_combo": [
+        "Se il personaggio possiede almeno ●● nel potere Lux, quando usa un effetto del potere fuoco purificatore su un bersaglio vicino ad una o più sfere di luce, può detonare quest'ultime, aggiungendo +1 danno quando usa fiamma del castigo o un'arma incendiata con il potere corpo di fiamme."
+      ]
     },
     {
       "id": "geomanzia",
       "nome": "Geomanzia",
       "categoria": "attivo",
+      "testo": [
+        "La geomanzia è uno di quei poteri caratteristici di quegli immortali che sono sul mondo dei mortali da troppi anni. Sfruttando le energie della terra, l’immortale è in grado di manipolare la terra a proprio vantaggio.",
+        "Il potere gli consente anche di conoscere perfettamente ogni tipo di terreno e rocca, dove conviene scavare, un minimo di nozioni di geoarcheologia ecc."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Percezione della terra",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere è sempre attivo, anche in forma mortale.",
+            "L’immortale è in grado di percepire tutto ciò che percepisce la terra stessa, come vibrazioni, presenza di gallerie sotterranee, presenza di elementi “invasivi”.",
+            "Il personaggio percepisce la presenza di elementi nel terreno sotto di lui, senza capire di preciso di cosa si tratta, se di un tesoro seppellito, di un cadavere, di un blocco di pietra meteorica ecc. In più, può eseguire i tiri dell’abilità di percezione per tutto quello che tocca il terreno entro il raggio di percezione di questo potere.",
+            "La distanza di questa percezione è pari al numero di ● in geomanzia. Quindi un personaggio con geomanzia ●● percepisce nella terra entro distanza 2, mentre un personaggio con geomanzia ●●●●● percepisce tutto quello che sta a distanza 5, ovviamente anche in profondità."
+          ]
         },
         {
           "livello": 2,
           "nome": "Muovere la terra",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Questo potere può essere usato anche in forma mortale.",
+            "Il personaggio è in grado di muovere la terra entro distanza 2, potendo scavare trincee, dissotterrare oggetti, preparare tunnel, creare piccole costruzioni di terra come scale, far diventare la terra più o meno compatta. Il quantitativo di terra che sposta in un turno è di circa di circa un metro cubo, il doppio quando arriva a geomanzia ●●●●.",
+            "Questo spostamento non è né abbastanza forte, né abbastanza veloce per essere usato in maniera utile in combattimento, per lo meno, non per infliggere danni a qualcuno, al massimo per mettergli difficoltà nei movimenti."
+          ]
         },
         {
           "livello": 3,
           "nome": "Scudo della terra",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Il personaggio crea istantaneamente un muro di terra per difendersi da un attacco.",
+            "Come reazione, al posto di fare un tiro di difesa, l’immortale spende un punto mana creando istantaneamente questo muro di terra che assorbe un numero di danni pari alla somma dei ● di geomanzia + possanza. Per ogni ● in distruttività dell’attacco rimuove ulteriori 3 punti ferita allo scudo.",
+            "Se lo scudo non riesce ad assorbire tutti danni, il personaggio ne subisce i restanti."
+          ]
         },
         {
           "livello": 4,
           "nome": "Attacco della terra",
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "L’immortale solleva grossi blocchi di terra con il semplice movimento delle braccia e le scaglia contro i suoi nemici.",
+            "Finché ha della terra vicino a lui da cui può attingere le sue “munizioni”, può spendere un punto mana per eseguire il seguente attacco.",
+            "Gli esuberi possono essere spesi nelle seguenti opportunità."
+          ],
+          "attacco": {
+            "statistiche": "Attacco: Possanza + Geomanzia. Danno: 4. Distanza: 3. Distruttività: ●●●.",
+            "tiro": "Possanza + Geomanzia",
+            "danno": 4,
+            "distanza": 3,
+            "distruttivita": 3
+          },
+          "opportunita": [
+            {
+              "nome": "Stordire",
+              "esuberi": 1,
+              "testo": "Il bersaglio tira un dado in meno a tutte le pool di dadi fino al termine del suo prossimo turno."
+            },
+            {
+              "nome": "Muovere la terra",
+              "esuberi": 1,
+              "testo": "Il personaggio applica gli effetti di muovere la terra o sotto di se o nella zona dell’impatto."
+            },
+            {
+              "nome": "Demolizione",
+              "esuberi": 2,
+              "testo": "La distruttività dell’attacco colpisce un edificio o carro entro distanza 1."
+            },
+            {
+              "nome": "Distruttività",
+              "esuberi": 2,
+              "testo": "Il personaggio aggiunge ● in distruttività. Questo gli consente anche di demolire oggetti e pareti nella medesima azione."
+            },
+            {
+              "nome": "Danno extra",
+              "esuberi": 2,
+              "testo": "+ 1 al danno."
+            },
+            {
+              "nome": "Colpo critico",
+              "esuberi": 4,
+              "testo": "Il personaggio infligge una seconda volta il danno del potere."
+            }
+          ]
         },
         {
           "livello": 5,
           "nome": "Terremoto",
-          "costo_px": 20
+          "costo_px": 20,
+          "testo": [
+            "Con tonante pestone o pugno diretto nel terreno, l’immortale scatena istantaneamente uno spaventoso terremoto ed il punto di impatto è il suo epicentro.",
+            "Spendendo un punto mana e colpendo con forza direttamente la terra, il personaggio scatena un terremoto che coinvolge tutto ciò che è a distanza X, dove X è pari alla metà per eccesso dei ● in possanza.",
+            "Per 2 turni, tutti i coinvolti (tranne coloro che possiedono il potere di geomanzia e che volano) hanno svantaggio a tutti i tiri per azioni e poteri. Tutti gli edifici subiscono gli effetti di distruttività ● + ● per il numero di turni in cui è attivo il potere (quindi ●● nel primo turno, ●●● nel secondo ecc). Ad ogni turno il geomante può fare, in aggiunta alle sue azioni, un uso aggiuntivo (e senza il costo di mana) di muovere la terra, scudo di terra e attacco della terra.",
+            "Il geomante può prolungare l’effetto del terremoto semplicemente spendendo un punto mana per ogni turno extra oltre i primi 2, fino ad un massimo di 5 turni."
+          ]
         }
       ],
-      "reazione": false,
-      "effetto_combo": false
+      "effetti_scenografici": [
+        "Ad ogni passo dell’immortale, la terra sembra reagire, facendo un accenno di suoni soffocati, come il poco rassicurante suono di un terremoto molto lontano."
+      ]
     },
     {
       "id": "illusione",
       "nome": "Illusione",
       "categoria": "attivo",
+      "testo": [
+        "Il personaggio è in grado di manipolare le capacità sensoriali delle sue vittime creando vere e proprie illusioni visive ed uditive. Quelli più talentuosi sono in grado di creare veri e propri spettacoli o incubi ad occhi aperti.",
+        "Le vittime di tali poteri, per riconoscere se quello che vedono/sentono è un'illusione, devono effettuare un tiro su potenza + percezione con difficoltà pari a astuzia + metà per difetto dell’illusione dell'immortale. Tale tiro può essere fatto una volta per turno, ma per fare ciò la vittima non può fare altre azioni."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Illusione minore",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere può essere usato pure in forma mortale. Il personaggio è in grado di generare piccole illusioni visive o uditive, come il tintinnio di monete, risate di bambini, creare sagome in lontananza o variazioni nei tratti di una persona (o se stesso). Queste illusioni non sono mai troppo rumorose o vistose, ma l'immortale può far sì che appaiono solo agli occhi/orecchie di un bersaglio a distanza 3 o manifestarla entro distanza 2 così che tutti possano “goderne”, anche se queste illusioni perdurano solo per pochi secondi.",
+            "Come effetto perennemente attivo, anche in forma mortale, il personaggio aggiunge a tutti i tiri di consapevolezza un numero di D6 pari al numero di ● in illusione."
+          ]
         },
         {
           "livello": 2,
           "nome": "Copie illusorie",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "L'immortale genera diverse copie di se stesso che si muovono attorno a lui, ognuna compiendo una diversa azione, inerente alla situazione in cui si trova. Quindi se si trovano in combattimento cercano un riparo, sparano, lanciano poteri. Invece se si trova a cercare un oggetto in una casa, le copie vanno in giro ad aprire cassetti, spostare quadri ecc. Al costo di un punto mana, il personaggio crea un numero di copie pari al numero di ● in astuzia e perdurano fino alla fine dello scenario. In qualsiasi momento può decidere di distruggere una copia per dare svantaggio a un qualsiasi tiro di un'azione di un personaggio presente nello scenario che non ha modo di riconoscere l'originale dalle copie (es. con il potere vera vista oppure attraverso il fiuto di bestialità),  ciò rappresenta che i nemici sparano alla copia sbagliata o che sono infastiditi dalle copie stesse.",
+            "Tutti gli attacchi o poteri che hanno effetti bonus sugli sgherri, rimuovono automaticamente una copia quando attaccano l’illusionista."
+          ]
         },
         {
           "livello": 3,
           "nome": "Illusione maggiore",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Al costo di un punto mana, l'immortale può creare un’immagine e o suono che perdura un numero di turni pari al numero di ● alla caratteristica di potenza. Queste illusioni possono essere anche piuttosto complesse, come diverse persone che ballano, un duello con pistole tra due pistoleri, con tanto di spari, un treno fantasma o una casa."
+          ]
         },
         {
           "livello": 4,
           "nome": "Illusione tangibile",
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "Il personaggio altera così tanto la realtà da farla sembrare reale, oppure nasconde una cosa reale all'interno dell'illusione, oppure diventa reale perché la vittima crede che sia tale ….. tant'è che comunque può creare l'illusione di una spranga di ferro ed usarla per spostare un oggetto, può creare l'illusione di un ponte e attraversarlo ecc.",
+            "Al costo di un mana, l'illusionista può trasformare un’illusione maggiore o una delle sue copie, in un'illusione tangibile. Le illusioni fatte in questo modo non possono comunque danneggiare i nemici, quindi le copie illusorie non possono sparare ed infliggere danno al nemico, ma possono sollevare di peso l'originale per consentirgli di scavalcare un muro, placcare un nemico ecc."
+          ]
         },
         {
           "livello": 5,
           "nome": "Dio dell'inganno",
-          "costo_px": 20
+          "costo_px": 20,
+          "testo": [
+            "L'immortale è arrivato a dei livelli tali di bravura nell'illusione che è in grado di, spendendo un'anima, creare un avatar di se stesso. Questo avatar è normale sotto ogni punto di vista, ma tutti gli effetti e danni da lui creati, come ferite, colpi di grazia, strutture distrutte, vengono annullati al termine dello scenario, essendosi trattati di un'illusione estremamente realistica, tanto che quelli che sono morti nel combattimento, si rialzano sorpresi di essere ancora vivi.",
+            "Tutti gli effetti illusori terminano nel momento preciso in cui l’avatar scompare, che sia perché l’avatar viene sconfitto, che scade il suo effetto, per scelta dell’immortale stesso oppure se quest'ultimo infligge un danno a qualcuno."
+          ]
         }
       ],
-      "reazione": false,
-      "effetto_combo": true
+      "effetti_scenografici": [
+        "L'immortale è in grado di fare continuamente piccoli giochi di prestigio, come tirare fuori un tovagliolo dal proprio naso per asciugarsi la fronte, piegare la testa di lato per far uscire dell'acqua con cui riempie un bicchiere, strapparsi la pelle del viso facendo vedere uno scheletrico ghigno.",
+        "In sua presenza la realtà sembra leggermente alterarsi, corridoi sembrano allungarsi, i ritratti dipinti nei quadri sembrano seguire con lo sguardo i presenti, risate di bambini che provengono dai condotti dell'aria ecc."
+      ],
+      "effetto_combo": [
+        "Se il personaggio possiede il potere di bestialità e animalità, aggiunge un numero di D6 pari ai ● in illusione per tutti i tiri per riconoscere altre illusioni."
+      ]
     },
     {
       "id": "lux",
       "nome": "Lux",
       "categoria": "attivo",
       "solo": "bianco",
+      "testo": [
+        "L'angelo è in grado di generare e manipolare la propria luce interiore. La luce di un celestiale, che è più intensa ed abbagliante di qualsiasi luce un umano abbia mai visto, è un'energia potente che l’immortale può sfruttare sia per proteggere i giusti che per indebolire gli indegni."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Luce degli occhi",
-          "costo_px": 2
+          "costo_px": 2,
+          "testo": [
+            "Questo potere funziona anche in forma umana ed è perennemente attivo.",
+            "Il personaggio non ha mai alcuna penalità alla vista per effetti di luce intensa, potendo di fatto, osservare il sole senza aver alcuna problematica.",
+            "Finché l'ambiente è perfettamente illuminato, come ad esempio una vallata illuminata dal sole, aggiunge ai suoi tiri di percezione (in questo caso osservare) un numero di D6 pari al numero di ● in Lux."
+          ]
         },
         {
           "livello": 2,
           "nome": "Manipolare luce",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere funziona anche in forma mortale.",
+            "Il personaggio è in grado di manipolare leggermente le fonti luce entro distanza 3, come fiaccole, lanterne ecc, aumentando o diminuendo l'intensità della luce stessa (manipolare la luce solare la muta solo entro distanza 3)",
+            "Le luci manipolate in questo modo possono illuminare anche punti normalmente non illuminabili a causa di angolazioni, facendo di fatto, curvare la luce (cioè far fare letteralmente una curva al fascio di luce).",
+            "Gli effetti di questo potere durano fino a fine scenario o finché l'angelo non decide di fermarli (o finché un demone con Umbra non lo contrasta)."
+          ]
         },
         {
           "livello": 3,
           "nome": "Sfere di luce",
-          "costo_px": 6
+          "costo_px": 6,
+          "testo": [
+            "Il personaggio è in grado di generare piccole sfere di luce fluttuanti che seguono l'immortale o possono essere lasciate in una specifica posizione.",
+            "Il personaggio genera un numero di sfere pari al numero di ● in Lux e ne può controllare un numero massimo pari al doppio dei ● in potenza. Tali sfere perdurano fino alla fine dello scenario e possono seguire il personaggio, essere spostate entro distanza 3 o essere lasciate ferme a fluttuare sul posto e possono essere influenzate dagli effetti di Manipolare luce.",
+            "Queste sfere di luce hanno il bizzarro effetto di infondere coraggio e serenità agli esseri umani con un'anima bianca, aiutandoli a resistere al panico causato dai poteri delle forze del male. Tutti i bianchi entro distanza 1 da queste sfere, aggiungono 1D6 a tutti i tiri per resistere agli effetti mentali."
+          ]
         },
         {
           "livello": 4,
           "nome": "Irradiazione",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Al costo di un punto mana, il personaggio genera un lampo che irradia una luce intensa in grado di abbagliare tutti i presenti, come se il personaggio stesso è l'epicentro di un’esplosione di luce.",
+            "Il personaggio effettua un attacco con potenza + Lux a tutti i nemici entro distanza 3 che si possono difendere con possanza + difesa. Se falliscono il tiro, sono abbagliati e hanno svantaggio per tutte le loro azioni nel loro prossimo turno.",
+            "Gli esuberi possono essere spesi nelle seguenti opportunità."
+          ],
+          "opportunita": [
+            {
+              "nome": "Sfere di luce",
+              "esuberi": 1,
+              "testo": "Il personaggio genera una sfera di luce ovunque entro distanza 2."
+            },
+            {
+              "nome": "Ispirare devozione",
+              "esuberi": 2,
+              "testo": "Tutti i mortali Bianchi ostili all’immortale cessano ogni azione ostile finché l’immortale non inizia ad attaccarli."
+            },
+            {
+              "nome": "Movimento",
+              "esuberi": 3,
+              "testo": "Mentre i suoi avversari sono abbagliati, può compiere un'azione di movimento, così da sembrare di sparire nel nulla dopo il fascio di luce, se trova un nascondiglio adeguato o si allontana a sufficienza."
+            }
+          ]
         },
         {
           "livello": 5,
           "nome": "Purezza irradiante",
-          "costo_px": 10
+          "costo_px": 10,
+          "testo": [
+            "Questo potere costa un'anima. L'angelo genera una grande sfera di luce purissima ed intensa che fluttua sopra di lui e lo segue per il resto dello scenario.",
+            "L'angelo e i suoi alleati che si trovano entro distanza 2 dalla sfera, ottengono vantaggio a tutti i tiri e guariscono immediatamente di 3 punti ferita nel momento in cui la luce viene evocata."
+          ]
         }
       ],
-      "reazione": true,
-      "effetto_combo": true
+      "effetti_scenografici": [
+        "Un personaggio che possiede il potere di Lux tende ad avere occhi o capelli luminescenti, di un intenso color oro, bianco o celeste, oltre ad essere contornati da una sottile luce.",
+        "Quando usano i loro poteri, spesso lo fanno creando evidenti lampi di luce, fastidiosi per i demoni che li vedono.",
+        "Con la loro sola presenza in un ambiente, la luce tende a fare bizzarri giochi, rendendo il tutto più ovattato e bello, sopratutto lo stesso portatore di luce."
+      ],
+      "reazione": [
+        "L'angelo della luce è in grado di disperdere con la sua luce abbagliante anche le più oscure delle tenebre.",
+        "Un personaggio con il potere Lux può, spendendo un punto mana, provare a contrastare i poteri Umbra e Potere della cenere. Il tiro contrapposto è potenza + Lux contro potenza + umbra o potere della cenere di colui che sta usando il potere. Per contrastare in tal modo, deve essere presente una fonte di luce vicino all’attaccante e deve essere visibile."
+      ],
+      "effetto_combo": [
+        "Se il personaggio possiede ● nel potere rituali, possiede il seguente potere.",
+        "Marchi di luce. Questo potere può essere usato in forma mortale. Al costo di un punto mana, il personaggio può imprimere con il solo tatto, un sigillo di luce o individuare eventuali sigilli messi da altri portatori di luce.",
+        "Il sigillo è una scritta enochiana fatta di pura luce che diventa invisibile dopo essere stata impressa. Questo marchio ha due possibili applicazioni.",
+        "La prima è inserire messaggi nascosti in punti specifici, magari per eventuali alleati che sono in grado di individuarli.",
+        "La seconda applicazione è se lo applica su un mortale. Tale marchio, al livello burocratico, è il segno che l'immortale possiede il mortale e ne può rivendicare l'anima in caso di morte e ciò ha valenza legislativa secondo le leggi degli immortali.",
+        "In qualsiasi momento può spendere un punto mana per percepire la direzione in cui si trova il mortale oltre che per vedere e sentire quello che vede e sente il mortale per circa un minuto per ogni ● in potenza.",
+        "Un angelo può applicare un numero di marchi di luce pari al numero di ● in Lux e li può rimuovere a piacimento."
+      ]
     },
     {
       "id": "possessione",
       "nome": "Possessione",
       "categoria": "attivo",
       "solo": "nero",
+      "testo": [
+        "La possessione è il potere di influenzare la mente ed il corpo altrui, arrivando addirittura a prendere completamente il controllo del corpo della vittima.",
+        "Questo potere oscuro è usato dalle creature infernali per poter corrompere anime o eseguire efferatezze senza doversi esporre.",
+        "Questo potere ha effetto solo sui mortali e nello specifico, gli umani. Per poter effettuare una possessione, l'immortale deve conoscere, almeno vagamente, la sua vittima (se la conoscenza della vittima è profonda, il tiro di possessione è in vantaggio) e stare almeno a distanza 5.",
+        "Il tiro della possessione (indipendentemente da quale dei poteri della possessione sotto elencati si vuole fare) è potenza + possessione, la difficoltà della vittima è la somma della sua astuzia + potenza. Se la vittima ottiene almeno esuberi nel tiro per resistere alla possessione, è consapevole che qualcosa di esterno ha provato ad influenzare le sue scelte. Se il demone ha successo, il legame di possessione può durare un numero di giorni pari al numero di ● in possessione.",
+        "Eccezion fatta per influenzare, che consente al demone di essere nella mente della vittima e nel contempo agire normalmente, tutti gli altri effetti di tale potere richiedono che il demone è fermo immobile in una sorta di trance, capace di parlare e ascoltare ciò che gli accade attorno, però impossibilitato di muoversi o agire.",
+        "Il demone può influenzare alla volta un numero di mortali pari alla metà di ● in astuzia."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Influenzare",
-          "costo_px": 2
+          "costo_px": 2,
+          "testo": [
+            "Questo potere può essere usato anche in forma mortale.",
+            "Il demone, a seguito del tiro di possessione sopra citato, è in grado di vedere la sua vittima, anche se in maniera vaga, capire cosa sta facendo in quel momento, ma non è in grado di vedere dove si trova attorno a lei né i suoi eventuali interlocutori. Il demone può provare ad influenzare la sua vittima, che si tratti di convincerlo, minacciarlo o tentarlo (effettuando il tiro contrapposto del caso), a fare determinate scelte. La vittima si accorge che qualcosa non va, ma non sa ben spiegare cosa lo ha influenzato."
+          ]
         },
         {
           "livello": 2,
           "nome": "Possessione dei sensi",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere può essere usato anche in forma mortale. Il demone, eseguendo con successo una possessione, riesce a percepire con i cinque sensi della vittima per un lasso di tempo pari a 10 minuti per ogni ● in potenza."
+          ]
         },
         {
           "livello": 3,
           "nome": "Possessione del corpo",
-          "costo_px": 6
+          "costo_px": 6,
+          "testo": [
+            "Questo potere può essere usato su una vittima solo dopo averla influenzata con successo per due volte facendogli fare delle azioni che non avrebbe mai fatto di sua spontanea volontà.",
+            "Se il potere ha successo, al costo di un punto mana, prende il controllo del corpo del mortale per uno scenario. Ogni volta che il possessore sta per compiere un'azione che la vittima normalmente non vorrebbe mai fare, come autolesionarsi, separarsi da un oggetto caro o peggio ancora, parlare con il suo detestato vicino di casa, l'ospite può tentare di interrompere la possessione costringendo il demone a rifare il tiro di possessione in svantaggio.",
+            "Al termine della possessione, la vittima avrà memoria dell'accaduto e la consapevolezza che qualcosa o qualcuno ha controllato le sue azioni."
+          ]
         },
         {
           "livello": 4,
           "nome": "Possessione complice",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Il demone, se è accettato in qualche modo dalla sua vittima ed usa un punto mana, può usare i poteri attivi (come Umbra e bestialità) usando il corpo del suo ospite come origine del lancio del potere.",
+            "Ogni volta che il demone usa un potere che non richiede alcun punto mana o anima, la vittima perderà i sensi dopo alcuni secondi dal lancio. Se usa un potere che richiede almeno un punto mana, la vittima subisce una ferita senza alcuna possibilità di difesa. Se viene usato un potere che richiede almeno un'anima per essere attivata, la vittima morirà automaticamente al termine del potere stesso."
+          ]
         },
         {
           "livello": 5,
           "nome": "Possessione dell'anima",
-          "costo_px": 10
+          "costo_px": 10,
+          "testo": [
+            "Per attivare questo potere su una vittima, il demone deve aver fatto possessione del corpo su quel bersaglio per due volte facendogli  compiere azioni che normalmente non avrebbe mai compiuto.",
+            "Spendendo un'anima, il demone che è dentro una vittima attraverso possessione del corpo, può trasformare la sua vittima in un avatar di se stesso fino alla fine dello scenario. Se il demone viene sconfitto in questa forma, anche senza subire il colpo di grazia, termina la possessione e abbandona il corpo della vittima, mentre quest'ultima giace a terra, probabilmente morta per le ferite subite. Se la vittima sopravvive all'evento, è consapevole che qualcosa di terribile è accaduto, ma non si sa spiegare cos'è non avrà ricordi dell'evento."
+          ]
         }
       ],
-      "reazione": false,
-      "effetto_combo": true
+      "effetti_scenografici": [
+        "Il demone non causa particolari effetti sugli immortali, ma un mortale potrebbe iniziare a sentire sospetti sussurri provenire da aree non ben definite della stanza o nelle steppe."
+      ],
+      "effetto_combo": [
+        "Aggiunge ai tiri per la possessione un numero di dadi pari a metà dei ● del potere telepatia."
+      ]
     },
     {
       "id": "potere_del_sangue",
       "nome": "Potere del sangue",
       "categoria": "attivo",
+      "testo": [
+        "Gli immortali con questi poteri hanno il dono di trarre beneficio, creare oggetti e attaccare con il sangue dei mortali. Creature con tali poteri hanno nel tempo dato vita alla leggenda dei vampiri, sviando e confondendo in maniera inconsapevole i cacciatori di immortali."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Bevitore di sangue",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere è  perennemente attivo e può essere usato anche in forma mortale.",
+            "L’immortale è in grado di bere il sangue di un mortale, che si tratti di un animale o umano, per acquistarne dei ricordi.",
+            "Il quantitativo di ricordi e la chiarezza di questi ricordi dipende dal quantitativo di sangue bevuto: bere poche gocce porterà al vago ricordo di dove vive la vittima, il nome di un suo caro ecc, mentre bere tutto il sangue presente nel corpo della creatura permetterà di prendere tutti i ricordi importanti della vittima è con grande chiarezza, comprese parole segrete e codici, uccidendo il mortale nel processo.",
+            "Il personaggio impiega un turno per bere circa ¼ o ½ del sangue di una vittima, 2 turni se vuole completamente dissanguarla."
+          ]
         },
         {
           "livello": 2,
           "nome": "Modellatore di sangue",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Questo potere può essere usato anche in forma mortale.",
+            "Il personaggio che ha a disposizione del sangue o dei cadaveri con abbondante sangue nel loro interno, può usare tale sangue per creare oggetti comuni di ferro, come delle manette, chiavi, coltelli, catene, sbarre di ferro ecc. La qualità di tale oggetto è abbastanza scarsa e tende a rompersi al termine dello scenario.",
+            "Oltre a tale effetto, il personaggio ha il potere passivo di percepire i battiti cardiaci dei mortali (animali compresi) entro distanza 3, anche se non li tiene in linea di vista."
+          ]
         },
         {
           "livello": 3,
           "nome": "Strappare via il sangue",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Il personaggio è in grado di usare il sangue all'interno delle sue vittime come arma per eliminarle in maniera istantanea, oltre che per imbrattare di sangue tutta l'area. In alternativa, i meno cruenti, sono in grado di usare questa tecnica per creare dei problemi cardiaci sufficienti per tramortire i mortali che vede.",
+            "Al costo di un punto mana può effettuare il seguente attacco ad un numero di mortali o mostri (che possiedono sangue) pari al suo valore di possanza (nel caso degli sgherri, 5 sgherri contano come una singola creatura, quindi una squadra di 10 sgherri può essere colpita 2 volte da tale potere).",
+            "Se usato contro gli sgherri, ottiene automaticamente due esuberi extra.",
+            "Gli esuberi possono essere spesi nelle seguenti opportunità."
+          ],
+          "attacco": {
+            "statistiche": "Attacco: Potenza + Potere del sangue. Danno: 2. Distanza: 2. Distruttività: ○.",
+            "tiro": "Potenza + Potere del sangue",
+            "danno": 2,
+            "distanza": 2,
+            "distruttivita": 0
+          },
+          "opportunita": [
+            {
+              "nome": "Bevitore di sangue",
+              "esuberi": 1,
+              "testo": "Il personaggio attiva gli effetti di bevitore di sangue."
+            },
+            {
+              "nome": "Modellatore di sangue",
+              "esuberi": 2,
+              "testo": "Il personaggio attiva gli effetti di modellatore di sangue."
+            },
+            {
+              "nome": "Sincope",
+              "esuberi": 2,
+              "testo": "Il bersaglio deve fare un tiro di possanza contrapposta con quella dell'immortale, se non ha successo, perde automaticamente i sensi."
+            },
+            {
+              "nome": "Danno extra",
+              "esuberi": 2,
+              "testo": "+ 1 al danno."
+            },
+            {
+              "nome": "Colpo critico",
+              "esuberi": 4,
+              "testo": "Il personaggio infligge una seconda volta il danno del potere."
+            }
+          ]
         },
         {
           "livello": 4,
           "nome": "Sangue in vita",
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "Questo potere è perennemente attivo, anche in forma mortale.",
+            "L'immortale ha trovato il modo di convertire il sangue che beve in energia vitale.",
+            "Ogni volta che dissangua completamente una vittima con bevitore di sangue, guarisce istantaneamente un punto ferita (in caso di sgherri, devono essere dissanguati minimo in 5)."
+          ]
         },
         {
           "livello": 5,
           "nome": "Forma del sangue",
-          "costo_px": 20
+          "costo_px": 20,
+          "testo": [
+            "Al costo di un'anima, il personaggio diventa istantaneamente sangue, una pozza di sangue mobile, in grado di passare attraverso muri con piccole fessure, terra non compatta, sgocciolare attraverso un pavimento in legno e scalare pareti in verticale senza alcuna penalità, potendo terminare tale effetto in qualsiasi momento lui desidera. Si muove alla stessa velocità di una persona appiedata, ma è completamente silenzioso e difficile da notare, guadagnando vantaggio a tutti i tiri di furtività.",
+            "Il personaggio può restare in questa forma per un intero scenario, essendo immune a  qualsiasi attacco fisico e dimezzando danni dati dai poteri. In questa forma non può attaccare, né usare altri poteri. Finire in un corso o pozza di liquido più grande di una vasca da bagno farà terminare immediatamente l’effetto.",
+            "Se sei quello che mangi, bere il sangue ti rende …."
+          ]
         }
       ],
-      "reazione": false,
-      "effetto_combo": false
+      "effetti_scenografici": [
+        "La sola presenza di immortali con questo potere, causa nei mortali un leggero aumento della frequenza cardiaca.",
+        "Il loro aspetto spesso è arricchito dalla presenza di canini piuttosto allungati, anche nella forma mortale, utili per lacerare la carne delle vittime per potersi nutrire."
+      ]
     },
     {
       "id": "potere_della_cenere",
       "nome": "Potere della cenere",
       "categoria": "attivo",
       "solo": "nero",
+      "testo": [
+        "I demoni si sono corrotti nell’aspetto, ma anche i loro poteri sono degenerati ed alterati nei secoli di esilio nell’Inferno. La cenere è la versione corrotta del fuoco purificatori della controparte angelica, ennesimo ricordo di un passato glorioso ed un presente decadente."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Fuoco corrotto",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere può essere usato in forma mortale.",
+            "Il demone è in grado di corrompere ogni forma di fuoco entro distanza 3, per la precisione un numero di fiamme per turno pari al numero di ● in potenza. Le fonti di fuoco così corrotte sono meno intense, ma producono molto più fumo e cenere che offuscano la vista e ottenebrano ogni odore, rendendo l'aria difficilmente respirabile.",
+            "Un personaggio che non possiede il potere della cenere che si trova a distanza 2 da un fuoco corrotto delle dimensioni minime di un fuoco da campo, ha svantaggio a tutti i tiri per percepire, mentre un personaggio con il potere della cenere si sente rinvigorito e aggiunge 1D6 per ogni  ● in potere della cenere a tutti i tiri di consapevolezza."
+          ]
         },
         {
           "livello": 2,
           "nome": "Maestro della cenere",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Questo potere può essere usato anche in forma mortale. Il demone può generare, con lo schiocco delle dita, piccole scintille in grado di generare fuoco corrotto, oltre ad essere in grado di manipolare, entro distanza 3, fumo e cenere, spostandole da un punto all'altro con un movimento delle mani, poterle tenere a mezz'aria o dargli bizzarre forme artistiche. Spendendo un mana, può usare questo fumo e cenere per causare delle esplosioni di fumo di svariati metri che negano la vista dando svantaggio a tutti i tiri per colpire a bersagli occultati da questo fumo. Un maestro di cenere non è afflitto da tale penalità e, in generale, non ha mai penalità nel guardare attraverso il fumo e vapori."
+          ]
         },
         {
           "livello": 3,
           "nome": "Cenere alla cenere",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Il demone è in grado di lanciare fiamme fumose contro i suoi nemici. Proprio come la loro controparte angelica, ogni demone ha metodi diversi di usare questo potere, alcuni generano un getto di fiamme emanato dalla bocca, altri generano una palla di fuoco nella mano e la lanciano, altri generano un’esplosione di fiamma direttamente sotto il nemico schioccando le dita.",
+            "Usare questo potere richiede l’uso di un punto mana.",
+            "Se il bersaglio è entro distanza 1 da un fuoco corrotto, il demone guadagna un +2D6 con questo attacco.",
+            "Gli esuberi possono essere spesi nelle seguenti opportunità."
+          ],
+          "attacco": {
+            "statistiche": "Attacco: Potenza + potere della cenere. Danno: 2. Distanza: 3. Distruttività: ●●.",
+            "tiro": "Potenza + potere della cenere",
+            "danno": 2,
+            "distanza": 3,
+            "distruttivita": 2
+          },
+          "opportunita": [
+            {
+              "nome": "Maestro della cenere",
+              "esuberi": 1,
+              "testo": "Il personaggio può causare gli effetti di Maestro della cenere su se stesso o sul bersaglio fino alla fine del suo prossimo turno."
+            },
+            {
+              "nome": "Stordire",
+              "esuberi": 1,
+              "testo": "Il bersaglio tira un dado in meno a tutte le pool di dadi fino al termine del suo prossimo turno."
+            },
+            {
+              "nome": "Distruttività",
+              "esuberi": 2,
+              "testo": "Il personaggio aggiunge ● in distruttività. Questo gli consente anche di demolire oggetti e pareti nella medesima azione."
+            },
+            {
+              "nome": "Danno extra",
+              "esuberi": 2,
+              "testo": "+ 1 al danno."
+            },
+            {
+              "nome": "Colpo critico",
+              "esuberi": 4,
+              "testo": "Il personaggio infligge una seconda volta il danno del potere."
+            }
+          ]
         },
         {
           "livello": 4,
           "nome": "Schiavo della cenere",
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "Il personaggio non ha mai penalità quando si trova circondato dal calore, fumo, cenere e subisce sempre metà dei danni da fuoco, anche quando è in forma mortale.",
+            "Spendendo un punto mana, il personaggio viene ricoperto da un sottile strato di braci fino alla fine dello scenario, diventando immune agli effetti del fuoco. Ogni arma o oggetto impugnato diventa magico ed infuocato e aggiungi un danno da fuoco ai danni dell’arma."
+          ]
         },
         {
           "livello": 5,
           "nome": "Tempesta di cenere",
-          "costo_px": 20
+          "costo_px": 20,
+          "testo": [
+            "La versione corrotta della tempesta di fuoco degli angeli, questa tempesta è un piccolo tornado di cenere, lapilli e fumo che va lentamente crescendo fino a diventare un crudele e mortale tormenta. Il personaggio consuma un'anima e un mana per generare una tempesta di fiamme che ha come epicentro il demone e che va lentamente ad aumentare di potenza, creando fin da subito l'effetto di maestro di cenere e fuoco corrotto all'interno dell'area colpita. La distruttività e danno massimo che questo potere può causare è pari alla metà della potenza del diavolo e tutto ciò che è all'interno di questo tornado subisce gli effetti di fuoco corrotto.",
+            "Turno 1. Tutto ciò che si trova a distanza 2 subisce 1 danno a distruttività ●.",
+            "Turno 2. Tutto ciò che si trova a distanza 3 subisce 2 danni a distruttività ●●.",
+            "Turno 3. Tutto ciò che si trova a distanza 4 e coinvolto dalla tempesta, subendo 3 danni a distruttività ●●●.",
+            "Il potere continua a manifestarsi invariato fino a fine scenario o finché il diavolo non viene sconfitto.",
+            "Un personaggio può fare normali tiri per difendersi da questo tipo di danno da fuoco, ma l'ambiente circostante viene completamente devastato dalle forti raffiche incandescenti e i materiali infiammabili tendono a prendere fuoco, normalmente esplodendo mentre vengono lanciati in aria dalla forte corrente."
+          ]
         }
       ],
-      "reazione": true,
-      "effetto_combo": true
+      "effetti_scenografici": [
+        "I portatori di questo potere, tendono ad avere le estremità dei loro indumenti e corna accese come delle braci.",
+        "Con la loro sola presenza le fiamme presenti nella zona tendono a perdere di intensità, oltre che a emettere più fumo e scintille."
+      ],
+      "reazione": [
+        "Il demone della cenere è in grado di spegnere con il suo fumo anche le più pure delle fiamme. Un personaggio con il Potere della cenere può, spendendo un punto mana, provare a contrastare i poteri Lux e Fuoco purificatore. Il tiro contrapposto è potenza + Potere della cenere contro potenza + lux o fuoco purificatore di colui che sta usando il potere. Per contrastare in tal modo, deve essere presente del fumo o cenere vicino all’attaccante e deve essere visibile."
+      ],
+      "effetto_combo": [
+        "Se il personaggio possiede ● nel potere rituali, possiede il seguente potere.",
+        "Marchi a fuoco. Questo potere può essere usato in forma mortale. Al costo di un punto mana, il personaggio può imprimere con il solo tatto, un sigillo impresso a fuoco o percepire entro distanza 5 eventuali sigilli messi da altri portatori della cenere.",
+        "Il sigillo è una scritta enochiana, un'incisione impressa a fuoco, che diventa invisibile dopo essere stata impressa. Questo marchio ha due possibili applicazioni.",
+        "La prima è inserire messaggi nascosti in punti specifici, magari per eventuali alleati che sono in grado di individuarli.",
+        "La seconda applicazione è se lo applica su un mortale. Tale marchio, al livello burocratico, è il segno che l'immortale possiede il mortale e ne può rivendicare l'anima in caso di morte e ciò ha valenza legislativa secondo le leggi degli immortali.",
+        "In qualsiasi momento può spendere un punto mana per percepire la direzione in cui si trova il mortale oltre che per vedere e sentire quello che vede e sente il mortale per circa un minuto per ogni ● in potenza.",
+        "Un demone può applicare un numero di marchi a fuoco pari al numero di ● in Potere della cenere e li può rimuovere a piacimento."
+      ]
     },
     {
       "id": "putrescenza",
       "nome": "Putrescenza",
       "categoria": "attivo",
       "solo": "nero",
+      "testo": [
+        "Uno dei vari poteri che i demoni hanno imparato a incanalare le proprie energie in una bizzarra forma di stato, la marcescenza della carne. Lo stato di decomposizione, stato inesistente per gli immortali dato che i loro cadaveri si dissipano in pochi secondi rilasciando energia, è qualcosa che i più bizzarri demoni hanno imparato ad apprezzare e studiare con fascino malato."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Percezione cadaverica",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere è perennemente attivo, anche in forma umana. Il demone è in grado di percepire la carne morta che si trova entro distanza 4, comprendendo perfettamente di che genere di cadavere si tratta e in che stato sta, oltre che alla sua posizione.",
+            "L'immortale è così intimo con le malattie e ferite infette che aggiunge a tutti i suoi tiri su medicina un numero di D6 pari al numero di ● in Putrescenza.",
+            "Quando è nella sua forma naturale, può spendere un punto mana e poter percepire dai cadaveri stessi, come se i suoi occhi ed orecchie fossero in quella precisa posizione. Questa visione perdura fino alla fine dello scenario e mentre è attiva, il demone può compiere altre azioni."
+          ]
         },
         {
           "livello": 2,
           "nome": "Aura di marcescenza",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Questo potere è perennemente attivo nella forma originale dell’immortale. Quando prende la sua vera forma, l'aria attorno all'immortale cambia, diventando più pesante, malsana e piena di mosche che con i loro terribili ronzii si infilano in ogni cavità possibile di papabili cadaveri.",
+            "Tutti i mortali che si trovano entro distanza 2 dal personaggio devono effettuare un tiro su possanza + difesa con difficoltà pari a possanza + putrescenza dell'immortale. Se falliscono il tiro svilupperanno immediatamente una malattia a caso (difficilmente un immortale distingue una malattia da un'altra) e li rende inabili fino ad una loro eventuale guarigione.",
+            "Tutti coloro che si trovano a distanza 2 dall'immortale, sono investiti dal fetore e sciami di mosche, tirando un -1D6 per ogni azione."
+          ]
         },
         {
           "livello": 3,
           "nome": "Sgherri putridi",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Attraverso la malattia e alla carne morta, il demone riesce a prendere il controllo delle sue vittime improvvisandosi come un macabro burattinaio.",
+            "Per ogni cadavere che ha ancora della carne a dosso o persona malata (sgherri o civili senza nome), può spendere un punto mana per farla diventare uno sgherro non morto al suo servizio.",
+            "Può avere un numero massimo di sgherri non morti pari al suo valore di potenza + putrescenza. Questi non morti prendono i suoi ordini anche telepaticamente, a grandi distanze e possono essere usati sia per combattere, che come infiltratori, fingendosi malati ed appestati bisognosi di aiuto."
+          ]
         },
         {
           "livello": 4,
           "nome": "Miasma",
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "Il personaggio può spendere un punto mana per generare un concentrato di vapore marcescente contenente la natura stessa della putrescenza.",
+            "Il bersaglio tira 1D6 in meno al tiro di difesa contro questo attacco, 2D6 in meno in caso di sgherri.",
+            "Gli esuberi possono essere spesi nelle seguenti opportunità."
+          ],
+          "attacco": {
+            "statistiche": "Attacco: Potenza + putrescenza. Danno: 2. Distanza: 2. Distruttività: ○.",
+            "tiro": "Potenza + putrescenza",
+            "danno": 2,
+            "distanza": 2,
+            "distruttivita": 0
+          },
+          "opportunita": [
+            {
+              "nome": "Stordire",
+              "esuberi": 1,
+              "testo": "Il bersaglio tira un dado in meno a tutte le pool di dadi fino al termine del suo prossimo turno."
+            },
+            {
+              "nome": "Ammalare",
+              "esuberi": 1,
+              "testo": "Se il bersaglio è un mortale, gli viene inflitta una malattia che lo rende inabile fino ad una sua eventuale guarigione."
+            },
+            {
+              "nome": "Getto continuo",
+              "esuberi": 2,
+              "testo": "Può colpire un secondo bersaglio (che a sua volta deve fare il tiro di difesa)."
+            },
+            {
+              "nome": "Danno extra",
+              "esuberi": 2,
+              "testo": "+ 1 al danno."
+            },
+            {
+              "nome": "Colpo critico",
+              "esuberi": 4,
+              "testo": "Il personaggio infligge una seconda volta il danno del potere."
+            }
+          ]
         },
         {
           "livello": 5,
           "nome": "Signore delle mosche",
-          "costo_px": 20
+          "costo_px": 20,
+          "testo": [
+            "Il demone ha raggiunto il massimo della sua conoscenza della putrescenza ed è in grado di incanalare tutto se stesso nella carne in putrefazione.",
+            "Se in pochi metri quadri sono presenti un quantitativo di cadaveri dello stesso volume del demone stesso, come 3 cadaveri umani, un cadavere di cavallo ecc, entro distanza 5 (di cui il demone è a conoscenza), può spendere un punto anima e generare un suo avatar da quei cadaveri."
+          ]
         }
       ],
-      "reazione": false,
-      "effetto_combo": true
+      "effetti_scenografici": [
+        "I demoni legati alla putrescenza tendono ad avere aspetti più cadaverici o malaticci, dal semplice pallore della pelle, alla vera e propria carne marcia.",
+        "Il sinistro e fastidioso suono di sciami di mosche (e spesso non soldato il suono) si manifesta in maniera spontanea attorno al demone e il cibo, spesso, assume un sapore guasto."
+      ],
+      "effetto_combo": [
+        "Se il personaggio possiede il potere animalità, possiede il potere di interagire con sciami di topo o insetti che, al costo di un mana, possono essere portatori di malattie ai fini dei poteri di putrescenza, oltre a poter diffondere malattie."
+      ]
     },
     {
       "id": "signore_della_tempesta",
       "nome": "Signore della tempesta",
       "categoria": "attivo",
+      "testo": [
+        "Potere che da secoli terrorizza I mortali, simbolo dell’ira divina. Nei secoli si è imparato a temerlo anche grazie ad alcuni potenti utilizzatori come l'angelo Zeus e il demone Thor.",
+        "Questo potere, relativamente raro tra gli immortali, richiede un buon controllo delle energie interiori dell’immortale stesso e delle energie del mondo dei mortali. Questo potere consente di generare scariche elettriche e, nel caso dei più potenti signori delle tempeste, modificare il clima stesso, generando a volte un peggioramento del clima se l’immortale stesso è di cattivo umore.",
+        "Tutti i poteri del signore delle tempeste possono essere potenziati nel momento in cui vengono usati. Ogni volta che viene lanciato un potere di Signore delle Tempeste, l’immortale può spendere X punti mana extra (oltre a quelli necessari per il potere stesso) per far durare il potere X turni in più."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Scariche elettriche",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere è perennemente attivo, anche in forma mortale. L’immortale è in grado di generare piccole scariche elettriche da qualsiasi parte del corpo. Queste scariche non sono sufficientemente forti da danneggiare un nemico, ma sufficienti a provocare un po' di dolore e creare un flash luminoso che illumina una zona buia per un solo istante.",
+            "Il personaggio non ha mai penalità per effetti di tempeste, vento forte e subisce metà dei danni elettrici."
+          ]
         },
         {
           "livello": 2,
           "nome": "Elettrizzato",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "L’immortale è in grado di convertire il suo stesso mana in corrente elettrica e così facendo potenziando se stesso a seconda di dove concentra questa elettricità.",
+            "Esterna: L’immortale spende un punto mana e genera una serie di scariche elettriche attorno a lui che danneggiano i nemici attorno a lui. Tutti gli attacchi causati da armi hanno svantaggio per 3 turni.",
+            "Interna: Il personaggio si muove alla velocità del fulmine, tanto che chi lo osserva non è in grado di vederlo, ma solo di sentire un fragoroso tuono nel punto lì dove si ferma. Per 2 turni, il personaggio si può spostare fino a distanza 4. Se si muove in questo modo non può fare altre azioni se non attacchi in mischia."
+          ]
         },
         {
           "livello": 3,
           "nome": "Controllo meteo",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Questo potere può essere usato anche in forma mortale. L’immortale è in grado di manipolare il clima tanto da poter far arrivare la pioggia, una piccola bufera o placare tutto rendendo il cielo sereno e soleggiato.",
+            "Una volta attivato il potere, il clima ci impiega ben 6 turni per passare da sereno a tempesta e viceversa, ma l’immortale può accelerare il processo riducendo di un turno per ogni mana speso al lancio del potere."
+          ]
         },
         {
           "livello": 4,
           "nome": "Attacco elettrico",
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "L’immortale usa il suo mana per elettrificare le sue mani per scatenare un folgorante attacco contro i suoi nemici. Spendendo un punto mana, il personaggio può effettuare il seguente attacco che causa danni elettrici:",
+            "Gli esuberi possono essere spesi nelle seguenti opportunità.",
+            "L’immortale può decidere di sovraccaricare l’attacco, consumando un turno solo a caricare l’attacco per poi attaccare nel seguente, se riesce, aggiunge i seguenti effetti all’attacco; se il bersaglio subisce almeno 2 danni ha -2d6 a tutti i tiri per due turni e nel caso degli sgherri subiscono anche danni doppi."
+          ],
+          "attacco": {
+            "statistiche": "Attacco: Possanza + mischia se è un attacco in mischia, agilità + mira se è un attacco a distanza. Danno: ½ potenza. Gittata: Distanza 4. Distruttività: ○.",
+            "tiro": "Possanza + mischia se è un attacco in mischia, agilità + mira se è un attacco a distanza",
+            "distanza": 4,
+            "distruttivita": 0
+          },
+          "opportunita": [
+            {
+              "nome": "Stordire",
+              "esuberi": 0,
+              "testo": "Il bersaglio tira un dado in meno a tutte le pool di dadi fino al termine del suo prossimo turno."
+            },
+            {
+              "nome": "Rimuovere oggetto",
+              "esuberi": 1,
+              "testo": "Il bersaglio perde un oggetto che indossa o che tiene appeso alla cintola (a scelta dell'attaccante)"
+            },
+            {
+              "nome": "Rimbalzo",
+              "esuberi": 1,
+              "testo": "Dopo aver colpito ed inflitto danno ad un bersaglio, può essere attaccato un altro bersaglio entro distanza 2."
+            },
+            {
+              "nome": "Disarmare",
+              "esuberi": 2,
+              "testo": "Il bersaglio perde una delle armi (a scelta dell'attaccante)."
+            },
+            {
+              "nome": "Danno extra",
+              "esuberi": 2,
+              "testo": "+1 ai danni."
+            },
+            {
+              "nome": "Distruttività",
+              "esuberi": 2,
+              "testo": "Il personaggio aggiunge ● in distruttività. Questo gli consente anche di demolire oggetti e pareti nella medesima azione."
+            },
+            {
+              "nome": "Movimento",
+              "esuberi": 3,
+              "testo": "Il personaggio si può muovere."
+            },
+            {
+              "nome": "Danno critico",
+              "esuberi": 4,
+              "testo": "Il personaggio infligge una seconda volta il danno."
+            }
+          ]
         },
         {
           "livello": 5,
           "nome": "Tempesta",
-          "costo_px": 20
+          "costo_px": 20,
+          "testo": [
+            "Il Signore della tempesta scatena tutto il suo potere generando istantaneamente una soprannaturale tempesta con tanto di vento fortissimo, nuvoloni che oscurano il cielo, fulmini fatti di colori inspiegabili che tormentano incessantemente il terreno.",
+            "Spendendo un'anima, il personaggio evoca una tempesta che appare istantaneamente che influenza tutto entro distanza 5 e che perdura per 3 turni.",
+            "Tutto ciò che non si ritrova al riparo o vicino ad un parafulmine deve tirare ogni turno 1D6.",
+            "Edifici o veicoli: Con un 6 l’edificio subisce un attacco a distruttività ●●●●.",
+            "Personaggi e mostri: Con un 5+ (4+ nel caso dei Signori della tempesta) vengono colpiti da un fulmine subendo danni difendibili pari alla potenza del signore della tempesta.",
+            "Sgherri: Con 4+ subiscono danni difendibili pari alla metà della potenza del Signore della tempesta e sono così storditi che non possono agire nel loro seguente turno.",
+            "Se un signore della tempesta viene colpito da questi fulmini, non subisce danno, ma rigenera un punto mana."
+          ]
         }
       ],
-      "reazione": true,
-      "effetto_combo": false
+      "effetti_scenografici": [
+        "Gli immortali con questo dono tendono ad avere occhi di colore molto chiaro, quasi di un blu elettrico. Il cielo stesso sembra rispecchiare la rabbia dell'immortale, in sua presenza l'aria può assumere un forte odore di ozono."
+      ],
+      "reazione": [
+        "Un possessore di potere del fulmine può cercare di contrastare un potere del fulmine usato da altri, dando vita ad una spettacolare danza di scariche elettriche. Per contrastare bisogna eseguire un tiro contrapposto di Potenza + Signore delle tempeste. Questa reazione funziona anche contro armi che scagliano scariche elettriche come il cannone ad arco dei Maestri della Forgia."
+      ]
     },
     {
       "id": "telepatia",
       "nome": "Telepatia",
       "categoria": "attivo",
+      "testo": [
+        "L’immortale è in grado di leggere le menti, proiettare visioni e inviare messaggi.",
+        "Questi poteri non necessitano di alcuna linea di vista sul proprio bersaglio, ma hanno effetti diversi sui diversi tipi di menti. Animali e altre creature prive di una forma complessa di comunicazione sembrano schermate da tale potere, probabilmente troppo semplici per essere leggibili. Nel caso di un mortale, gli effetti di questo potere sembrano pensieri vaghi, spesso spontanei o che affiorano alla mente come ricordi distanti o effetto di un sesto senso. Nel caso di un immortale o creatura paranormale è consapevole che è sotto gli effetti di un telepate e possono provare ad identificare la fonte di tale potere o annullando gli effetti su se stessi facendo un tiro di potenza + difesa contro la potenza + telepatia del telepate."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Messaggio mentale",
-          "costo_px": 2
+          "costo_px": 2,
+          "testo": [
+            "Questo potere può essere usato anche in forma mortale. L'immortale manda un messaggio mentale di poche parole ad un bersaglio che si trova entro distanza 3, che conosce o che è in grado di percepire (vedi percezioni delle menti). La distanza in cui può essere mandato il messaggio aumenta di 1 per ogni ● in telepatia oltre il primo."
+          ]
         },
         {
           "livello": 2,
           "nome": "Percezioni delle menti",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere è perennemente attivo, anche in forma umana. Il personaggio percepisce automaticamente tutte le menti presenti entro distanza 4 da lui. Ogni mente ha una sua nota particolare, tanto da poter distinguere i singoli individui (se li conosce), capirne la natura (se umani, animali, mostri), anche se, un immortale in forma umana appare come la mente di un banale mortale. Questa percezione indica in maniera vaga dove si trovano questi individui, può capire che sono al secondo piano di un saloon, ma non capire chi è in quale stanza, almeno finché non si trova davanti ad ogni singola stanza.",
+            "Dato che in maniera diretta o indiretta è collegato alle menti delle persone che lo circondano, ha un bonus passivo a tutti i tiri di percezione per trovare individui attorno a lui pari al numero di ● in Telepatia. Che sia per cercare uno specifico individuo in una città o vedere se nel canyon davanti a lui sono nascosti dei banditi che gli vogliono tendere un’imboscata."
+          ]
         },
         {
           "livello": 3,
           "nome": "Leggere menti",
-          "costo_px": 6
+          "costo_px": 6,
+          "testo": [
+            "Questo potere può essere usato anche in forma mortale. Il telepate può tentare di leggere la mente di un bersaglio che è entro distanza 1, spendendo un punto mana e facendo un tiro contrapposto di potenza + telepatia contro la potenza + difesa del bersaglio. Se il tiro riesce, il personaggio può sapere un dettaglio della mente del bersaglio,  un ricordo, un'immagine, un desiderio ecc. Il personaggio deve sapere cosa cercare, decidendo prima di effettuare il tiro.",
+            "Gli esuberi possono essere spesi nelle seguenti opportunità."
+          ],
+          "opportunita": [
+            {
+              "nome": "Più in profondità",
+              "esuberi": 1,
+              "testo": "Il personaggio può venire a conoscenza di un altro dettaglio della mente della vittima."
+            },
+            {
+              "nome": "Alterare ricordo o pensiero",
+              "esuberi": 3,
+              "testo": "Se il bersaglio è un mortale, il telepate può alterare parzialmente un ricordo o un pensiero del personaggio. Nulla di radicale che gli faccia cambiare automaticamente il colore della sua anima, ma sicuramente è una prima incrinatura."
+            }
+          ]
         },
         {
           "livello": 4,
           "nome": "Collegare menti",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Al costo di un punto mana, il telepate può collegare telepaticamente diverse menti, consentendo a tutti gli individui collegati di poter comunicare perfettamente tra di loro, seguendo le stesse regola del messaggio mentale, causando un certo sforzo fisico per il telepate. Il personaggio può collegare un numero di metri pari alla possanza + telepatia fino alla fine dello scenario."
+          ]
         },
         {
           "livello": 5,
           "nome": "Duello mentale",
-          "costo_px": 10
+          "costo_px": 10,
+          "testo": [
+            "Il telepate proietta tutto se stesso nella mente della propria vittima, arrivando a fare un vero e proprio duello delle menti.",
+            "Il personaggio si deve trovare entro distanza 3 dal proprio bersaglio e in linea di vista. Il personaggio può spendere un'anima e i due si ritrovano in un’arena limitata immaginata dal telepate, qualcosa di chiuso ed isolato come una grossa stanza senza porte e finestre o un'isola fluttuante o circondata da lava.",
+            "I due possono combattere il duello mentale, di per sé un normale combattimento se non fosse per le seguenti modifiche.",
+            "- La caratteristica di possanza è rimpiazzata dalla caratteristica di potenza.",
+            "- La caratteristica di agilità è rimpiazzata dalla caratteristica di astuzia.",
+            "- L'effetto del duello termina dopo 5 turni o quando uno dei 2 combattenti è sconfitto.",
+            "- I punti mana, ferita e anime consumate nel duello mentale sono persi, mentre gli oggetti usati come proiettili, non vengono consumati.",
+            "- Il combattimento dura turni interi nelle menti dei due combattenti, ma nel mondo reale dura si e no pochi istanti. Quindi si risolve prima il duello mentale poi potranno agire tutti gli altri personaggi presenti nello scenario."
+          ]
         }
       ],
-      "reazione": false,
-      "effetto_combo": true
+      "effetti_scenografici": [
+        "Visivamente un telepate non lascia segni distintivi, ma le menti dei presenti potrebbero iniziare a sentire ronzii e sussurri assillanti direttamente dentro il cranio, una cosa piuttosto preoccupante se accade ad un umano."
+      ],
+      "effetto_combo": [
+        "Se il personaggio possiede il potere volontà di ferro, passa il bonus di bastione mentale a tutti coloro che sono sotto l'influenza di collegare menti."
+      ]
     },
     {
       "id": "umbra",
       "nome": "Umbra",
       "categoria": "attivo",
       "solo": "nero",
+      "testo": [
+        "Il demone ha perso da anni la capacità di manipolare la luce, ma questo vuoto gli ha concesso di applicare la sua energia nelle ombre, per gli angeli da sempre considerate materiale di scarto della luce stessa, mentre per il demone, considerate semplicemente il reale stato delle cose in assenza di luce.",
+        "Una problematica di questo potere è la luce così forte da eliminare le ombre, se per qualche motivo ci sono fonti di luci di tale intensità, come un fulmine che cade vicino al personaggio, le sue ombre vengono distrutte e deve ricominciare a manipolare le ombre presenti dopo che la luce intensa è sparita. Se non ci sono ombre, che si tratti di troppa luce, il personaggio non ha modo di usare tale potere."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Ombra",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere è perennemente attivo, anche in forma mortale.",
+            "Il demone vede perfettamente al buio e finché è in zone d'ombra, aggiunge ai suoi tiri di furtività un numero di D6 pari ai suoi ● in Umbra.",
+            "Il personaggio è in grado di manipolare le ombre presenti attorno a lui, facendole muovere lentamente, arrivando a dargli forme sinistre, ed allungandole o rimpicciolendole, finché è entro distanza 3 da esse ed è in grado di vederle."
+          ]
         },
         {
           "livello": 2,
           "nome": "Ombre solide",
-          "costo_px": 8
+          "costo_px": 8,
+          "testo": [
+            "Questo potere può essere usato pure in forma mortale. Le ombre manipolate dal personaggio diventano momentaneamente solide, consentendogli di spostare oggetti, infastidire persone e generare rumori."
+          ]
         },
         {
           "livello": 3,
           "nome": "Attacchi d'ombra",
-          "costo_px": 12
+          "costo_px": 12,
+          "testo": [
+            "Le ombre manipolate dal personaggio diventano vere e proprie armi, facendo sì che attaccano, cogliendo alla sprovvista i suoi nemici. Spesso vengono usate le ombre stesse degli avversari per attaccarli, delle volte trasformandosi in tentacoli o artigli, altre volte, sembrando dei mimic di ombre che escono dal terreno o dalle pareti per colpire le loro versioni reali.",
+            "Se l'attacco è portato ad un bersaglio che è in una zona molto ombrosa, allora l'attacco guadagna +2D6 al tiro per colpire.",
+            "Gli esuberi possono essere spesi nelle seguenti opportunità."
+          ],
+          "attacco": {
+            "statistiche": "Attacco: Mira + umbra. Danno: 2. Distanza: 2. Distruttività: ●.",
+            "tiro": "Mira + umbra",
+            "danno": 2,
+            "distanza": 2,
+            "distruttivita": 1
+          },
+          "opportunita": [
+            {
+              "nome": "Distruttività",
+              "esuberi": 2,
+              "testo": "Il personaggio aggiunge ● in distruttività e può essere speso più di una volta. Questo gli consente anche di demolire oggetti e pareti nella medesima azione."
+            },
+            {
+              "nome": "Rubare oggetto",
+              "esuberi": 2,
+              "testo": "Sottrae un oggetto dalle tasche o cintura del bersaglio e lo consegna nelle mani del demone."
+            },
+            {
+              "nome": "Danno extra",
+              "esuberi": 2,
+              "testo": "+ 1 al danno."
+            },
+            {
+              "nome": "Vincolare a terra",
+              "esuberi": 3,
+              "testo": "Le ombre si gettano sul bersaglio che diventa intralciato."
+            },
+            {
+              "nome": "Colpo critico",
+              "esuberi": 4,
+              "testo": "Il personaggio infligge una seconda volta il danno del potere."
+            }
+          ]
         },
         {
           "livello": 4,
           "nome": "Movimento nell’ombra",
-          "costo_px": 16
+          "costo_px": 16,
+          "testo": [
+            "Se il personaggio resta fermo, in ombra e concentrato, può vagare con la mente alla ricerca di un'ombra entro distanza 5 da lui, abbastanza grande da poterlo contenere, se la trova, con un’altra azione, può generare una proiezione d’ombra di se stesso in quella ombra e da lì può osservare, ascoltare e parlare. Se effettua un “passo” al di fuori di quell’ombra, si sostituisce con la sua proiezione e quest’ultima svanisce, facendo di fatto un teletrasporto, anche se tale azione costa un punto mana.",
+            "La proiezione può essere interrotta se, l’ombra in cui si trova il personaggio o la proiezione viene illuminata, se il personaggio viene scosso, si muove o viene danneggiato."
+          ]
         },
         {
           "livello": 5,
           "nome": "Aspetto dell’ombra",
-          "costo_px": 20
+          "costo_px": 20,
+          "testo": [
+            "Il personaggio consuma un’anima e si trasforma in pura ombra e contrasta la luce entro distanza 2 da sé fino alla fine dello scenario.",
+            "In tale forma, lui e i suoi compagni avvolti dalla sua ombra, tira in vantaggio tutti i tiri sull’abilità di furtività, intimidire e socialità (fatti per spaventare, estorcere informazioni ecc) ed i suoi attacchi fatti con attacchi d’ombra. Questi ultimi possono essere portati anche dalle fonti d’ombra abbastanza grandi da poter contenere lo stesso personaggio, a distanza 4."
+          ]
         }
       ],
-      "reazione": true,
-      "effetto_combo": true
+      "effetti_scenografici": [
+        "Il personaggio è perennemente avvolto da una sorta di fumo nefasto, come se le ombre attorno a lui diventano allo stato gassoso o che vengono direttamente generate da lui.",
+        "In sua presenza le ombre iniziano a comportarsi in maniera anormale, fanno movimenti strani, si muovono a rallentatore, assumono forme strane."
+      ],
+      "reazione": [
+        "Il demone delle ombre è in grado di soffocare le luci nascenti ammassando con le tenebre il proprio avversario.",
+        "Un personaggio con il potere Umbra può, spendendo un punto mana, provare a contrastare i poteri Lux e Fuoco purificatore. Il tiro contrapposto è potenza + umbra contro potenza + lux o fuoco purificatore di colui che sta usando il potere. Per contrastare in tal modo, deve essere presente un’ombra vicino all’attaccante e deve essere visibile."
+      ],
+      "effetto_combo": [
+        "Se il personaggio possiede il potere della cenere, tutte le sue fonti di fuoco corrotto contano come zone in ombra ai fini del potere umbra."
+      ]
     },
     {
       "id": "guerra",
       "nome": "Guerra",
       "categoria": "superiore",
+      "testo": [
+        "Coloro che hanno combattuto durante la guerra civile dei cieli hanno superato tante battaglie molto difficili e ciò li ha motivati a sviluppare dei poteri specifici per la guerra."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Mente bellica",
-          "costo_px": 5
+          "costo_px": 5,
+          "testo": [
+            "Questo potere è perennemente attivo, anche quando è in forma umana.",
+            "Il personaggio è un esperto di armi e tattica militare, aggiunge 1D6 per ogni ● in Guerra in tutti i tiri per pianificare operazioni militari e costruire/riparare armi.",
+            "Scaricare un'arma richiede un ulteriore 1 di dado."
+          ]
         },
         {
           "livello": 2,
           "nome": "Arsenale potenziato",
-          "costo_px": 10
+          "costo_px": 10,
+          "testo": [
+            "Questo potere è perennemente attivo, anche quando è in forma umana.",
+            "Il personaggio spende un punto mana ed evoca un’arma magica (o una coppia) direttamente nelle sue mani. Il potere dura fino a fine scenario e l’arma evocata aggiunge un numero di esuberi ai suoi tiri pari ai ● in potenza dell'immortale che la evoca."
+          ]
         },
         {
           "livello": 3,
           "nome": "Colpo mortale",
-          "costo_px": 15
+          "costo_px": 15,
+          "testo": [
+            "Molti combattenti hanno imparato a concentrare le loro energie in un singolo attacco, sparando un devastante laser o creando micro esplosioni con le loro armi da mischia.",
+            "Il personaggio spende 1 mana mentre esegue un attacco armato. Per quel singolo attacco, l'arma aggiunge distruttività ●● e +1 dado di attacco e al danno."
+          ]
         },
         {
           "livello": 4,
           "nome": "Arsenale",
-          "costo_px": 20
+          "costo_px": 20,
+          "testo": [
+            "Il personaggio fa fluttuare delle armi attorno a lui e le utilizza senza bisogno di impugnare.",
+            "Il personaggio, spendendo un'anima, può far fluttuare un numero di armi incustodite (quindi non possedute da qualcuno) pari al numero di ● in astuzia. Il personaggio guadagna i seguenti bonus a seconda dell’arma che controlla in questo modo, gli stessi bonus sono cumulabili fino a due volte. Il potere dura un numero di turni pari al numero di  ● in Guerra.",
+            "- Coltello: -1D6 per difendersi dagli attacchi del Guerra.",
+            "- Arma da mischia: +1 esubero a tutti i tiri di difesa.",
+            "- Lazzo: -1D6 a tutti i tiri per atletica e grazia dei nemici entro distanza 2.",
+            "- Armi ad asta: +1D6 a tutti i tiri per attaccare quando si usano armi da mischia.",
+            "- Arma da mischia grande: +1 ai danni con le armi da mischia.",
+            "- Pistola: +1 esubero a tutti gli attacchi a distanza.",
+            "- Carabina: +1D6 a tutti gli attacchi a distanza.",
+            "- Fucile a pallettoni: +1 a tutti i danni a distanza."
+          ]
         },
         {
           "livello": 5,
           "nome": "Avatar della guerra",
-          "costo_px": 25
+          "costo_px": 25,
+          "testo": [
+            "Il personaggio sparisce dando spazio a un Avatar della guerra. Questo avatar può consistere in una squadra degli ex commilitoni del personaggio, in un colosso meccanico o golem che reincarna la guerra stessa.",
+            "Spendendo un'anima, il personaggio viene sostituito da un suo avatar senza le comuni penalità (malus alle caratteristiche e tiri), in più è di taglia molto grande è aggiunge distruttività ●●."
+          ]
         }
       ],
-      "reazione": false,
-      "effetto_combo": false
+      "effetti_scenografici": [
+        "Il personaggio non ha particolari segni particolari se non i tatuaggi che ne rappresentano il reggimento di origine, pratica molto in voga nei tempi della guerra civile."
+      ]
     },
     {
       "id": "maestro_della_forgia",
       "nome": "Maestro della forgia",
       "categoria": "superiore",
+      "testo": [
+        "La Legione dei mortali non è considerata una vera e propria minaccia per gli immortali, ma solo chi ne finisce prigioniero sa che questo è un grave errore.",
+        "Chi riesce a sfuggire dalle loro macchine infernali torna cambiato, con una strana affinità con la forgia che li ha sottomessi ed intrappolati per anni."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Magnetite empia",
-          "costo_px": 5
+          "costo_px": 5,
+          "testo": [
+            "Questo potere è perennemente attivo e funziona anche in forma mortale.",
+            "Il personaggio ha un innaturale comprensione della metallurgia e del funzionamento dei meccanismi. Il personaggio aggiunge un numero di D6 pari al numero di ● in maestro della forgia a tutti i tiri di meccanica e forgiatura.",
+            "In più possiede il dono di telecinesi sugli oggetti di metallo entro distanza 3. Questa telecinesi non può essere usata in maniera utile in combattimento, almeno non tanto da ferire i suoi nemici e non riesce a spostare oggetti troppo pesanti come treni."
+          ]
         },
         {
           "livello": 2,
           "nome": "Arsenale inciso",
-          "costo_px": 10
+          "costo_px": 10,
+          "testo": [
+            "Il personaggio, al costo di un punto mana, è in grado di generare un qualsiasi tipo di arma da qualsiasi parte del corpo e utilizza già dal turno stesso in cui viene generata. L'arma non dev'essere per forza visibile e dura un numero di turni pari all'astuzia del personaggio. Per le armi da fuoco, il personaggio deve aver mangiato prima le pallottole (anche quelle celestiali e infernali) per poter sparare e si ricaricano automaticamente se scaricate.",
+            "Queste armi sono considerate magiche, ma non possono essere usate in combinazione con eventuali poteri che danno bonus alle armi stesse (come corpo di fiamme di Fuoco purificatore)."
+          ]
         },
         {
           "livello": 3,
           "nome": "Possessione della macchina",
-          "costo_px": 15
+          "costo_px": 15,
+          "testo": [
+            "Spendendo un punto mana, il personaggio può letteralmente fondersi con un macchinario complesso come una locomotiva e muoverla a suo piacimento migliorandone le prestazioni.",
+            "La macchina in questione guadagna tratti distintivi del personaggio stesso, rendendo palese la possessione. Inoltre ha un incremento di velocità, resistenza e mobilità pari all'astuzia del personaggio."
+          ]
         },
         {
           "livello": 4,
           "nome": "Potenziare gli ingranaggi",
-          "costo_px": 20
+          "costo_px": 20,
+          "testo": [
+            "Al costo di un mana, il personaggio sfrutta le sue energie per potenziare un numero di armi di metallo pari al numero di ● in astuzia entro distanza 2.",
+            "Effettua tiro di potenza + maestro della forgia e il risultato è il numero di miglioramenti che dà alle armi selezionate e perdura un numero di turni pari ai ● in maestro della forgia.",
+            "Successo e 0 esuberi: 1 potenziamento a scelta.",
+            "3 esuberi: 2 potenziamenti.",
+            "5 esuberi 3 potenziamenti.",
+            "I potenziamenti sono a scelta tra i seguenti.",
+            "- L'arma fa danni di tipo fuoco.",
+            "- L'arma è considerata magica.",
+            "- +1 al danno dell'arma.",
+            "- +1D6 ai tiri di attacco.",
+            "- Raddoppia il tempo di durata del bonus.",
+            "- Un'arma rotta si ripara automaticamente."
+          ]
         },
         {
           "livello": 5,
           "nome": "Macchina di distruzione",
-          "costo_px": 25
+          "costo_px": 25,
+          "testo": [
+            "Quando il personaggio acquista questo potere deve dichiarare in che genere di veicolo era stato trasformato quando era prigioniero della Legione; Veicolo da assedio, veicolo da corsa, veicolo di distruzione, veicolo di trivellazione, veicolo subacqueo, veicolo volante.",
+            "Il personaggio, con grande sofferenza e al costo di due anime, si trasforma nella macchina di morte e distruzione in cui era stata confinata dalla legione.",
+            "L'effetto dura per un numero di turni pari ai ● in potenza. Il personaggio diventa un avatar e usa il profilo della macchina demoniaca (vedi capitolo 13 Fazioni ).",
+            "Ad ogni trasformazione può assumere una nuova configurazione, ma il suo aspetto è sempre familiare, quindi facilmente riconoscibile da chi lo ha già visto in questa forma."
+          ]
         }
       ],
-      "reazione": false,
-      "effetto_combo": false
+      "effetti_scenografici": [
+        "Il personaggio ha una certa affinità con i congegni meccanici e tutti i suoi poteri sembrano avere componenti estetiche e sonore che ricordano ingranaggi in funzione.",
+        "Con la sua sola presenza, tutti i congegni meccanici sembrano operare diversamente, spesso con maggiore precisione o aggressività. L'orologio a cucù diventa più….. inquietante."
+      ]
     },
     {
       "id": "morte",
       "nome": "Morte",
       "categoria": "superiore",
+      "testo": [
+        "Questo raro potere, da cui l'immortale riesce ad attingere da un altro piano di esistenza, è molto raro tra gli immortali. I portatori di questo dono hanno generato tra i mortali, la leggenda del “mietitore”, dato che funziona soprattutto con i mortali stessi.",
+        "Il pregio di questo potere è che, eccezion fatta per occhio della morte, non ha limiti di distanza."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Occhio della morte",
-          "costo_px": 5
+          "costo_px": 5,
+          "testo": [
+            "Questo potere può essere usato in forma mortale. Il personaggio può marchiare un mortale che tiene in linea di vista. Da quel momento in poi è consapevole della sua posizione finché non muore.",
+            "Quando un marchiato dall'occhio della morte muore, la sua anima viene automaticamente assorbita dal personaggio che ha marchiato. Se il mortale è stato marchiato da più immortali la cosa diventa …. complicata. Il tempo per loro di ferma e i loro avatar si incontrano in un’arena per decidere chi è il legittimo proprietario del mortale a chiacchiere, documenti o pallottole.",
+            "Il personaggio può marchiare un numero di mortali pari a metà della sua caratteristica di potenza."
+          ]
         },
         {
           "livello": 2,
           "nome": "Memento mori",
-          "costo_px": 10
+          "costo_px": 10,
+          "testo": [
+            "Questo potere può essere usato anche in forma mortale.",
+            "Il personaggio seleziona un bersaglio che tiene in linea di vista o un marchiato di occhio della morte.",
+            "Il personaggio crea una proiezione di se stesso (magari più tetra) visibile solo alla vittima.",
+            "La proiezione può fare una vaga e banale apparizione, quasi di sfuggita oppure palesare e annunciare la morte in arrivo (e magari invitare la vittima a comportarsi meglio o peggio).",
+            "L'effetto del potere smuove comunque lo stato del bersaglio. Il personaggio effettua un tiro di potenza + morte contrapposto a potenza + consapevolezza del bersaglio. Se il personaggio ha successo, il bersaglio sarà scosso e tirerà un dado in meno a qualsiasi azione per lo scenario che sta compiendo o che sta per avere inizio.",
+            "Gli esuberi in eccesso possono essere spesi nel seguente modo"
+          ],
+          "opportunita": [
+            {
+              "nome": "Gelo della morte",
+              "esuberi": 1,
+              "testo": "Tutti quelli che si trovano entro distanza 2 dal bersaglio sentono un brivido di freddo, consapevoli che qualcosa di innaturale sta accadendo."
+            },
+            {
+              "nome": "Memento",
+              "esuberi": 2,
+              "testo": "Il bersaglio, anche se è mortale, si ricorderà per sempre la visita della proiezione."
+            }
+          ]
         },
         {
           "livello": 3,
           "nome": "I morti vedono",
-          "costo_px": 15
+          "costo_px": 15,
+          "testo": [
+            "Il personaggio, al costo di un mana, può evocare davanti a sé uno dei marchiati dall'occhio della morte che è morto. Lo spettro del marchiato è al fianco del personaggio, con i ricordi che avevano in vita più tutti i ricordi dell'immortale ottenuti dal momento della sua morte, come se avesse visto e sentito tutto quello che ha vissuto il personaggio dal momento della morte del marchiato.",
+            "Per un numero di minuti pari ai ● in astuzia del personaggio, lo spettro resta lì. Utile per fare domande o una semplice discussione."
+          ]
         },
         {
           "livello": 4,
           "nome": "Condanna",
-          "costo_px": 20
+          "costo_px": 20,
+          "testo": [
+            "Attivare questo potere costa un punto mana. Il personaggio seleziona un bersaglio che ha in linea di vista ed entro distanza 4 (in caso di un marchiato da occhio della morte, non c'è limite di distanza). Il personaggio punta il dito verso il bersaglio e con voce tonante lo condanna a morte, guadagnando una riserva di D6 pari al numero di ● in morte. Questi D6 sono monouso e possono essere usati in aggiunta al normale numero di dadi usati nelle azioni contro il bersaglio, come attacchi, poteri, intimidire e simili. Questi dadi extra possono essere usati tutti assieme  o poco alla volta e possono essere usati fino alla fine dello scenario.",
+            "Non si può fare più di una condanna per scenario."
+          ]
         },
         {
           "livello": 5,
           "nome": "Vita o morte",
-          "costo_px": 25
+          "costo_px": 25,
+          "testo": [
+            "Il potere finale della morte è quella di decidere chi vive o chi muole, perlomeno è quello che un immortale ha l'arroganza di dire.",
+            "Questo potere costa due anime e i suoi effetti variano a seconda del colore del personaggio che la usa.",
+            "Bianco: Morte Il personaggio emana la sentenza di morte un bersaglio sotto l'effetto occhio della morte. Indipendentemente dalla distanza, il tempo si ferma per entrambi, l’immortale e il mortale si incontrano in un’arena fittizia e chiusa, come un'isola fluttuante nelle tenebre, un piazzale circondato dalla lava o un treno in corsa in una bufera di neve. I due hanno tempo di chiacchierare, almeno finché uno dei due non decide di risolvere la cosa con un combattimento, duello, partita a carte o altri metodi che gli vengono in mente. Se il mortale vince, è salvo e per un anno sarà immune al potere vita o morte. Il valore della sua anima aumenta di ●●● e da questo momento in poi manterrà memoria degli immortali e ne potrà percepire l'aura. Se vince l'immortale, otterrà l'anima del mortale con un aumento di ●●●, il mortale muore senza possibilità di essere rianimato in alcun modo. Nessun artefatto o trucco per lui, ha avuto la possibilità di battere la morte e ha fallito.",
+            "Nero: Vita Se uno dei bersagli di occhio della morte muore, l'immortale può decidere di avere un incontro immediato con il defunto (per immediato si intende che ha pochi secondi a disposizione per decidere se incontrarlo o meno). Il tempo si ferma ed entrambi si incontrano in un posto familiare per il defunto. Li entrambi possono parlare, avere il tempo di fare un patto ecc. Al termine di questo tempo, il personaggio può riportare in vita il bersaglio. Se ciò accade, il valore dell'anima del mortale diminuisce di ● e da questo momento in poi manterrà memoria degli immortali e ne potrà percepire l'aura.",
+            "Non può essere rianimato in questo modo un mortale che è morto di vecchiaia.",
+            "Grigio: È libero di scegliere tra vita e morte."
+          ]
         }
       ],
-      "reazione": false,
-      "effetto_combo": false
+      "effetti_scenografici": [
+        "La sola presenza del personaggio genera una sensazione di gelo ed inquietudine nei presenti. Spesso si ha l’impressione di vedere delle sagome riflesse negli specchi o fluttuare strane presenze nei pressi dell’immortale, come spettri"
+      ]
     },
     {
       "id": "tefillin",
       "nome": "Tefillin",
       "categoria": "superiore",
+      "testo": [
+        "Gli immortali fanno un sacco di esperimenti con i loro poteri, uno di questi è quello che ha portato alla creazione del tefillin.",
+        "Il tefillin è un oggetto, così piccolo che può essere tenuto in una mano, con un aspetto e materiale variabile a seconda del suo creatore. Per alcuni è una sfera dorata con una serie di incisioni curviformi, per altri è una gemma incastonata in delle radici di legno nero, per altri è un tamburo di una pistola fatto di un metallo nero opaco. Indipendentemente dalla sua forma, la sua origine non cambia, essendo tale oggetto un pezzo dell’essenza dell’immortale ed estratta con un brutale rituale. Alcuni fanno tale blasfemia per strapparsi di dosso un lato della loro personalità che non apprezzano, altri per curiosità, i più preoccupanti lo fanno per …. non sentirsi più soli.",
+        "Il tefillin è un oggetto piccolo che rappresenta la personalità estratta dell’immortale. E’ un oggetto senziente, ma che non è in grado di comunicare in maniera normale, spesso manifesta il suo volere attraverso il potere a lui legato. I punti ferita di tale oggetto sono pari ai ● in tefillin e la difesa è pari al doppio di tale valore, eventuali danni vengono rimossi nello stesso modo del suo proprietario. Il proprietario di tale potere sa approssimativamente la direzione di tale oggetto, ma non la distanza. A causa del trauma nel generare tale oggetto, il suo creatore perde in maniera permanente 2 punti ferita.",
+        "Se il tefillin viene distrutto, il proprietario ne sarà consapevole e l’oggetto si ricrea in una settimana direttamente nella sua mano.",
+        "Quando il personaggio crea il tefillin, dovrà scegliere a quale potere attivo associarlo. Ogni volta che vuole acquistare un ● in tefillin, deve aggiungere il costo del potere associato. Se tale potere non arriva allo stesso numero di ● a cui si vuole portare il potere tefillin non ci sono costi aggiuntivi."
+      ],
       "livelli": [
         {
           "livello": 1,
           "nome": "Potere del tefillin",
           "costo_px": 2,
-          "costo_variabile": true
+          "costo_variabile": true,
+          "testo": [
+            "Questo potere è sempre attivo, anche in forma mortale.",
+            "Chiunque abbia in mano il tefillin è in grado di usare il potere ad esso associato. Eventuali costi in mana o anime sono a carico di chi lo usa."
+          ]
         },
         {
           "livello": 2,
           "nome": "Osservazione",
-          "costo_px": 4
+          "costo_px": 4,
+          "testo": [
+            "Questo potere è sempre attivo, anche in forma mortale.",
+            "Il proprietario del tefillin è in grado di vedere e sentire tutto ciò che si trova attorno all’oggetto."
+          ]
         },
         {
           "livello": 3,
           "nome": "Essenza separata",
           "costo_px": 6,
-          "costo_variabile": true
+          "costo_variabile": true,
+          "testo": [
+            "Il personaggio può spendere un anima e teletrasportarsi immediatamente entro distanza 2 dalla posizione del tefillin."
+          ]
         },
         {
           "livello": 4,
           "nome": "Richiamo",
           "costo_px": 8,
-          "costo_variabile": true
+          "costo_variabile": true,
+          "testo": [
+            "Se il proprietario del tefillin sta usando un potere attivo, può spendere un mana per attivare un potere associato all’oggetto. Il potere attivato dal tefillin tirerà in svantaggio."
+          ]
         },
         {
           "livello": 5,
           "nome": "Scopo del tefillin",
           "costo_px": 10,
-          "costo_variabile": true
+          "costo_variabile": true,
+          "testo": [
+            "Questo potere è sempre attivo, anche in forma mortale.",
+            "Se il proprietario del tefillin viene ucciso, questo consuma automaticamente tutte le anime in suo successo e si rigenera dove si trova il tefillin privo di sensi per un’intera giornata. L’oggetto viene distrutto ed impiega due settimane per essere rigenerato, oltre a dover investire 20 anime nella sua ricostruzione."
+          ]
         }
-      ],
-      "reazione": false,
-      "effetto_combo": false
+      ]
     }
   ]
 }

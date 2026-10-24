@@ -23,7 +23,7 @@ const MANUALE = path.join(RADICE, ".cache", "testo", "manuale.md");
 
 // Campi con testi copiati dal manuale; gli altri (id, numeri, nota) sono nostri.
 const CAMPI_TESTO = new Set(["nome", "testo", "descrizione", "citazioni", "statistiche", "ferri_del_mestiere", "uso", "note", "motto",
-  "ispirazione", "regole_poteri"]);
+  "ispirazione", "regole_poteri", "tiro", "effetti_scenografici", "reazione", "effetto_combo", "riquadri"]);
 
 // Apostrofi e virgolette tipografici come quelli dritti, spazi ridotti a uno.
 export const normalizza = (s) => s.replace(/[’‘]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, " ").trim();

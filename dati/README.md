@@ -13,7 +13,7 @@ I dati del manuale di Paradise, Hell and Guns (`manuali/PHaG 1.6.docx`) che serv
 | `elenchi/ricchezza.json` | livelli di ricchezza da ○ a ●●●●●●: munizioni ricaricate a settimana, armi, animali | cap. 11 |
 | `archetipi.json` | 10 archetipi: colore, incrementi di caratteristica, poteri innati e affini, natura dell'immortale | cap. 7 |
 | `carriere.json` | 7 carriere: motto, ferri del mestiere, abilità lavorative, come si guadagna ispirazione, poteri di carriera (testo e livelli con costo) | cap. 8 |
-| `poteri.json` | 51 poteri: categoria (comune, passivo, attivo, superiore), colore richiesto, livelli con nome e costo | cap. 10 |
+| `poteri.json` | 51 poteri: categoria (comune, passivo, attivo, superiore), colore richiesto, testo, livelli con nome, costo e testo (con statistiche dell'attacco e opportunità a parte), effetti scenografici, reazione, effetto combo, riquadri | cap. 10 |
 | `equipaggiamento/armi.json` | 13 armi: danno, distanza, munizioni, distruttività, note, opportunità proprie | cap. 11 |
 | `equipaggiamento/seguaci.json` | 4 animali | cap. 11 |
 | `regole/base.json` | i numeri delle regole (soglie dei dadi, PF, mana, ispirazione, iniziativa, munizioni, anime, forma mortale, flashback, patto, creazione, punti esperienza), con le frasi del manuale | cap. 2–15 |
@@ -26,7 +26,8 @@ I dati del manuale di Paradise, Hell and Guns (`manuali/PHaG 1.6.docx`) che serv
   - `abilita` delle armi (Mischia o Mira, da cap. 4 «Attaccare»);
   - `caratteristiche` delle abilità (dalla frase «Normalmente associata a…»).
 - **Riferimenti**: i poteri di archetipi e carriere sono id di `poteri.json`. Quelli che il manuale cita senza descriverli restano come id, e `controlla` li segnala come avviso.
-- **Cosa non c'è ancora**: le descrizioni dei poteri livello per livello (attacchi, opportunità, costi in mana e anime), gli oggetti magici e i manufatti, i nemici del cap. 12, le nemesi del cap. 13 e le fazioni del cap. 14. Sono i testi che cambiano di più fra una versione e l'altra del manuale: si aggiungono quando servono alla scheda.
+- **Poteri, livello per livello**: il testo di un livello è quello che il manuale scrive dopo «Nome ●● (8):», più le righe che seguono fino al livello o all'etichetta successivi. Le statistiche dell'attacco (`attacco`, dalla riga «Attacco: …» o «Danno: …») e le opportunità («Nome (2): …») stanno in campi propri: una frase scritta dopo le opportunità (il sovraccarico di Attacco elettrico) resta nel testo, prima di loro. Le righe senza livello vanno nel `testo` del potere; le introduzioni delle quattro categorie non sono di nessun potere e restano fuori.
+- **Cosa non c'è ancora**: i costi in mana e anime dei poteri come numeri (oggi sono solo nel testo: «Spendendo un punto mana», «Questo potere costa un'anima»), gli oggetti magici e i manufatti, i nemici del cap. 12, le nemesi del cap. 13 e le fazioni del cap. 14. Sono i testi che cambiano di più fra una versione e l'altra del manuale: si aggiungono quando servono alla scheda.
 
 ## File generati e file scritti a mano
 
